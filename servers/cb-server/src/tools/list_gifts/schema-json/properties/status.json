@@ -1,0 +1,38 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Status of the gift. Possible values are : <dfn>scheduled, unclaimed, claimed, cancelled, expired.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"claimed\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`scheduled\\` - Gift has been scheduled. \\* \\`unclaimed\\` - Gift is not yet claimed and is ready to be claimed. \\* \\`claimed\\` - Gift is claimed. \\* \\`cancelled\\` - Gift is cancelled. \\* \\`expired\\` - Gift is expired.\n",
+      "enum": [
+        "scheduled",
+        "unclaimed",
+        "claimed",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`scheduled\\` - Gift has been scheduled. \\* \\`unclaimed\\` - Gift is not yet claimed and is ready to be claimed. \\* \\`claimed\\` - Gift is claimed. \\* \\`cancelled\\` - Gift is cancelled. \\* \\`expired\\` - Gift is expired.\n",
+      "enum": [
+        "scheduled",
+        "unclaimed",
+        "claimed",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(scheduled|unclaimed|claimed|cancelled|expired)(,(scheduled|unclaimed|claimed|cancelled|expired))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(scheduled|unclaimed|claimed|cancelled|expired)(,(scheduled|unclaimed|claimed|cancelled|expired))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "claimed",
+  "deprecated": false
+}

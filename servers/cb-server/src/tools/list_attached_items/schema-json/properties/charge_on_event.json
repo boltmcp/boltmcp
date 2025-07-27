@@ -1,0 +1,40 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Indicates when the item is charged. This attribute only applies to charge-items. Possible values are : <dfn>subscription_creation, subscription_trial_start, plan_activation, subscription_activation, contract_termination, on_demand.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>charge_on_event[is] = \"subscription_creation\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`subscription_creation\\` - the time of creation of the subscription. \\* \\`subscription_trial_start\\` - the time when the trial period of the subscription begins. \\* \\`plan_activation\\` - same as subscription activation, but also includes the case when the plan-item of the subscription is changed. \\* \\`subscription_activation\\` - the moment a subscription enters an `active` or `non-renewing` state. Also includes reactivations of canceled subscriptions. \\* \\`contract_termination\\` - when a contract term is [terminated](./subscriptions?prod_cat_ver=2#cancel_subscription_for_items_contract_term_cancel_option). \\* \\`on_demand\\` - Item can be charged on demand\n",
+      "enum": [
+        "subscription_creation",
+        "subscription_trial_start",
+        "plan_activation",
+        "subscription_activation",
+        "contract_termination",
+        "on_demand"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`subscription_creation\\` - the time of creation of the subscription. \\* \\`subscription_trial_start\\` - the time when the trial period of the subscription begins. \\* \\`plan_activation\\` - same as subscription activation, but also includes the case when the plan-item of the subscription is changed. \\* \\`subscription_activation\\` - the moment a subscription enters an `active` or `non-renewing` state. Also includes reactivations of canceled subscriptions. \\* \\`contract_termination\\` - when a contract term is [terminated](./subscriptions?prod_cat_ver=2#cancel_subscription_for_items_contract_term_cancel_option). \\* \\`on_demand\\` - Item can be charged on demand\n",
+      "enum": [
+        "subscription_creation",
+        "subscription_trial_start",
+        "plan_activation",
+        "subscription_activation",
+        "contract_termination",
+        "on_demand"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(subscription_creation|subscription_trial_start|plan_activation|subscription_activation|contract_termination|on_demand)(,(subscription_creation|subscription_trial_start|plan_activation|subscription_activation|contract_termination|on_demand))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(subscription_creation|subscription_trial_start|plan_activation|subscription_activation|contract_termination|on_demand)(,(subscription_creation|subscription_trial_start|plan_activation|subscription_activation|contract_termination|on_demand))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "subscription_creation",
+  "deprecated": false
+}

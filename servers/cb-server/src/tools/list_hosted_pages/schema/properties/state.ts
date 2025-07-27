@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["created","requested","succeeded","cancelled","acknowledged"]).describe("\\* \\`created\\` - Indicates the hosted page is just created. \\* \\`requested\\` - Indicates the hosted page is requested by the website \\* \\`succeeded\\` - Indicates the hosted page is successfully submitted by the user and response is sent to the return url. \\* \\`cancelled\\` - Indicates the page is cancelled by the end user after requesting it. \\* \\`failed\\` - \\*\\*(Deprecated)\\*\\* Indicates the page submition is failed and response is sent to the return url. \\* \\`acknowledged\\` - Indicates the succeeded hosted page is acknowledged.\n").optional(),
+  "is_not": z.enum(["created","requested","succeeded","cancelled","acknowledged"]).describe("\\* \\`created\\` - Indicates the hosted page is just created. \\* \\`requested\\` - Indicates the hosted page is requested by the website \\* \\`succeeded\\` - Indicates the hosted page is successfully submitted by the user and response is sent to the return url. \\* \\`cancelled\\` - Indicates the page is cancelled by the end user after requesting it. \\* \\`failed\\` - \\*\\*(Deprecated)\\*\\* Indicates the page submition is failed and response is sent to the return url. \\* \\`acknowledged\\` - Indicates the succeeded hosted page is acknowledged.\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(created|requested|succeeded|cancelled|failed|acknowledged)(,(created|requested|succeeded|cancelled|failed|acknowledged))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(created|requested|succeeded|cancelled|failed|acknowledged)(,(created|requested|succeeded|cancelled|failed|acknowledged))*\\]$")).optional()
+}

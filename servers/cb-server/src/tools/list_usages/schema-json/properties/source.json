@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The source from which the usage record was created. Possible values are : <dfn>admin_console, api, bulk_operation.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>source[is] = \"api\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`admin_console\\` - Operation made through the Chargebee admin UI \\* \\`api\\` - Operation made through the API \\* \\`bulk_operation\\` - Operation that are triggerd through bulk operation.\n",
+      "enum": [
+        "admin_console",
+        "api",
+        "bulk_operation"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`admin_console\\` - Operation made through the Chargebee admin UI \\* \\`api\\` - Operation made through the API \\* \\`bulk_operation\\` - Operation that are triggerd through bulk operation.\n",
+      "enum": [
+        "admin_console",
+        "api",
+        "bulk_operation"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(admin_console|api|bulk_operation)(,(admin_console|api|bulk_operation))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(admin_console|api|bulk_operation)(,(admin_console|api|bulk_operation))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "api",
+  "deprecated": false
+}

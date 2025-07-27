@@ -1,0 +1,44 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current dunning status of the invoice. Possible values are : <dfn>in_progress, exhausted, stopped, success.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>dunning_status[is] = \"in_progress\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`in_progress\\` - Dunning is still in progress. \\* \\`exhausted\\` - Maximum number of attempts have been made. \\* \\`stopped\\` - Dunning has stopped for this invoice. \\* \\`success\\` - Payment successfully collected during dunning process.\n",
+      "enum": [
+        "in_progress",
+        "exhausted",
+        "stopped",
+        "success"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`in_progress\\` - Dunning is still in progress. \\* \\`exhausted\\` - Maximum number of attempts have been made. \\* \\`stopped\\` - Dunning has stopped for this invoice. \\* \\`success\\` - Payment successfully collected during dunning process.\n",
+      "enum": [
+        "in_progress",
+        "exhausted",
+        "stopped",
+        "success"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(in_progress|exhausted|stopped|success)(,(in_progress|exhausted|stopped|success))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(in_progress|exhausted|stopped|success)(,(in_progress|exhausted|stopped|success))*\\]$",
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "in_progress",
+  "deprecated": false
+}

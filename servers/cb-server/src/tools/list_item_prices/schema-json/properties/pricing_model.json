@@ -1,0 +1,38 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter item prices based on their <code>pricing_model</code>. Possible values are : <dfn>flat_fee, per_unit, tiered, volume, stairstep.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>pricing_model[is] = \"flat_fee\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`flat_fee\\` - A fixed price that is not quantity-based. \\* \\`per_unit\\` - A fixed price per unit quantity. \\* \\`tiered\\` - The per unit price is based on the tier that the total quantity falls in. \\* \\`volume\\` - There are quantity tiers for which per unit prices are set. Quantities are purchased from successive tiers. \\* \\`stairstep\\` - A quantity-based pricing scheme. The item is charged a fixed price based on the tier that the total quantity falls in.\n",
+      "enum": [
+        "flat_fee",
+        "per_unit",
+        "tiered",
+        "volume",
+        "stairstep"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`flat_fee\\` - A fixed price that is not quantity-based. \\* \\`per_unit\\` - A fixed price per unit quantity. \\* \\`tiered\\` - The per unit price is based on the tier that the total quantity falls in. \\* \\`volume\\` - There are quantity tiers for which per unit prices are set. Quantities are purchased from successive tiers. \\* \\`stairstep\\` - A quantity-based pricing scheme. The item is charged a fixed price based on the tier that the total quantity falls in.\n",
+      "enum": [
+        "flat_fee",
+        "per_unit",
+        "tiered",
+        "volume",
+        "stairstep"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(flat_fee|per_unit|tiered|volume|stairstep)(,(flat_fee|per_unit|tiered|volume|stairstep))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(flat_fee|per_unit|tiered|volume|stairstep)(,(flat_fee|per_unit|tiered|volume|stairstep))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "flat_fee",
+  "deprecated": false
+}

@@ -1,0 +1,27 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Timestamp indicating when this virtual bank account resource is created.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>created_at[after] = \"1435054328\"</i>",
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1435054328",
+  "deprecated": false
+}

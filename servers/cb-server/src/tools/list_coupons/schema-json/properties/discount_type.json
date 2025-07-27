@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The type of deduction. Possible values are : <dfn>fixed_amount, percentage.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>discount_type[is] = \"fixed_amount\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`fixed_amount\\` - The specified amount will be deducted. \\* \\`percentage\\` - The specified percentage will be deducted. \\* \\`offer_quantity\\` - The specified units will be offered without any deduction.\n",
+      "enum": [
+        "fixed_amount",
+        "percentage",
+        "offer_quantity"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`fixed_amount\\` - The specified amount will be deducted. \\* \\`percentage\\` - The specified percentage will be deducted. \\* \\`offer_quantity\\` - The specified units will be offered without any deduction.\n",
+      "enum": [
+        "fixed_amount",
+        "percentage",
+        "offer_quantity"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(fixed_amount|percentage|offer_quantity)(,(fixed_amount|percentage|offer_quantity))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(fixed_amount|percentage|offer_quantity)(,(fixed_amount|percentage|offer_quantity))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "fixed_amount",
+  "deprecated": false
+}

@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter item prices based on their <code>period_unit</code>. Possible values are : <dfn>day, week, month, year.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>period_unit[is] = \"month\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`day\\` - A period of 24 hours. \\* \\`week\\` - A period of 7 days. \\* \\`month\\` - A period of 1 calendar month. \\* \\`year\\` - A period of 1 calendar year.\n",
+      "enum": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`day\\` - A period of 24 hours. \\* \\`week\\` - A period of 7 days. \\* \\`month\\` - A period of 1 calendar month. \\* \\`year\\` - A period of 1 calendar year.\n",
+      "enum": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(day|week|month|year)(,(day|week|month|year))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(day|week|month|year)(,(day|week|month|year))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "month",
+  "deprecated": false
+}

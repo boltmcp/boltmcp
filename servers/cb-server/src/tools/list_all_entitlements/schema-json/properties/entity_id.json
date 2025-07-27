@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The <code>id</code> of the <code>entity</code> to which this entitlement belongs. .<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>entity_id[in] = \"usd-professional-monthly\"</i>",
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "usd-professional-monthly",
+  "deprecated": false
+}

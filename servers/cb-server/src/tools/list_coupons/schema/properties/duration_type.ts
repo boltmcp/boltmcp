@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["one_time","forever","limited_period"]).describe("\\* \\`one_time\\` - The coupon stays attached to the subscription till it is applied on an invoice **once** . It is removed after that from the subscription. \\* \\`forever\\` - The coupon is attached to the subscription and applied on the invoices until explicitly removed. \\* \\`limited_period\\` - The discount is attached to the subscription and applied on the invoices for a limited duration. This duration starts from the point it is applied to an invoice for the first time and expires after a period specified by `period` and `period_unit`.\n").optional(),
+  "is_not": z.enum(["one_time","forever","limited_period"]).describe("\\* \\`one_time\\` - The coupon stays attached to the subscription till it is applied on an invoice **once** . It is removed after that from the subscription. \\* \\`forever\\` - The coupon is attached to the subscription and applied on the invoices until explicitly removed. \\* \\`limited_period\\` - The discount is attached to the subscription and applied on the invoices for a limited duration. This duration starts from the point it is applied to an invoice for the first time and expires after a period specified by `period` and `period_unit`.\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(one_time|forever|limited_period)(,(one_time|forever|limited_period))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(one_time|forever|limited_period)(,(one_time|forever|limited_period))*\\]$")).optional()
+}

@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, boolean filter</dfn><br>Allow customers to change their subscription to this plan via the <a href=\"https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html\" target=\"_blank\">Self-Serve Portal</a>. Applies only for plan-items. This requires the Portal configuration to <a target=\"_blank\" href=\"https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html#allow-change-subscription\" target=\"_blank\"> allow changing subscriptions</a>. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>enabled_in_portal[is] = \"null\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "deprecated": false,
+  "example": null
+}

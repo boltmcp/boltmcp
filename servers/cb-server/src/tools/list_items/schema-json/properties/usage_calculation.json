@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>How the quantity is calculated from usage data for the item prices belonging to this item. Only applicable when the item is <code>metered</code>. This value overrides the one <a href=\"https://www.chargebee.com/docs/2.0/metered_billing.html#configuring-metered-billing\" rel=\"noopener noreferrer\" target=\"_blank\">set at the site level</a>. . Possible values are : <dfn>sum_of_usages, last_usage, max_usage.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>usage_calculation[is_not] = \"SUM_OF_USAGES\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`sum_of_usages\\` - the net quantity is the sum of the `quantity` of all usages for the current term. \\* \\`last_usage\\` - from among the usage records for the [item price](/docs/api/subscriptions?prod_cat_ver=2#subscription_subscription_items_item_price_id) with `usage_date` within the relevant billing period, the `quantity` of the usage record with the most recent `usage_date` is taken as the net quantity consumed. \\* \\`max_usage\\` - from among the usage records for the [item price](/docs/api/subscriptions?prod_cat_ver=2#subscription_subscription_items_item_price_id) with `usage_date` within the relevant billing period, the `quantity` of the usage record with the maximum value is taken as the net quantity consumed.\n",
+      "enum": [
+        "sum_of_usages",
+        "last_usage",
+        "max_usage"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`sum_of_usages\\` - the net quantity is the sum of the `quantity` of all usages for the current term. \\* \\`last_usage\\` - from among the usage records for the [item price](/docs/api/subscriptions?prod_cat_ver=2#subscription_subscription_items_item_price_id) with `usage_date` within the relevant billing period, the `quantity` of the usage record with the most recent `usage_date` is taken as the net quantity consumed. \\* \\`max_usage\\` - from among the usage records for the [item price](/docs/api/subscriptions?prod_cat_ver=2#subscription_subscription_items_item_price_id) with `usage_date` within the relevant billing period, the `quantity` of the usage record with the maximum value is taken as the net quantity consumed.\n",
+      "enum": [
+        "sum_of_usages",
+        "last_usage",
+        "max_usage"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(sum_of_usages|last_usage|max_usage)(,(sum_of_usages|last_usage|max_usage))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(sum_of_usages|last_usage|max_usage)(,(sum_of_usages|last_usage|max_usage))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "SUM_OF_USAGES",
+  "deprecated": false
+}

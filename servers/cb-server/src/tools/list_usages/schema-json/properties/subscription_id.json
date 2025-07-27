@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The id of the <a href=\"/docs/api/subscriptions?prod_cat_ver=2\">subscription</a> to which this usage record belongs.<br><b>Supported operators : </b>is, is_not, starts_with<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>subscription_id[is] = \"active2\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "active2",
+  "deprecated": false
+}

@@ -1,0 +1,50 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The reason for canceling the subscription. Set by Chargebee automatically. Possible values are : <dfn>not_paid, no_card, fraud_review_failed, non_compliant_eu_customer, tax_calculation_failed, currency_incompatible_with_gateway, non_compliant_customer.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>cancel_reason[is] = \"not_paid\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`not_paid\\` - Not Paid \\* \\`no_card\\` - No Card \\* \\`fraud_review_failed\\` - Fraud Review Failed \\* \\`non_compliant_eu_customer\\` - Non Compliant EU Customer \\* \\`tax_calculation_failed\\` - Tax Calculation Failed \\* \\`currency_incompatible_with_gateway\\` - Currency incompatible with Gateway \\* \\`non_compliant_customer\\` - Non Compliant Customer\n",
+      "enum": [
+        "not_paid",
+        "no_card",
+        "fraud_review_failed",
+        "non_compliant_eu_customer",
+        "tax_calculation_failed",
+        "currency_incompatible_with_gateway",
+        "non_compliant_customer"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`not_paid\\` - Not Paid \\* \\`no_card\\` - No Card \\* \\`fraud_review_failed\\` - Fraud Review Failed \\* \\`non_compliant_eu_customer\\` - Non Compliant EU Customer \\* \\`tax_calculation_failed\\` - Tax Calculation Failed \\* \\`currency_incompatible_with_gateway\\` - Currency incompatible with Gateway \\* \\`non_compliant_customer\\` - Non Compliant Customer\n",
+      "enum": [
+        "not_paid",
+        "no_card",
+        "fraud_review_failed",
+        "non_compliant_eu_customer",
+        "tax_calculation_failed",
+        "currency_incompatible_with_gateway",
+        "non_compliant_customer"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(not_paid|no_card|fraud_review_failed|non_compliant_eu_customer|tax_calculation_failed|currency_incompatible_with_gateway|non_compliant_customer)(,(not_paid|no_card|fraud_review_failed|non_compliant_eu_customer|tax_calculation_failed|currency_incompatible_with_gateway|non_compliant_customer))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(not_paid|no_card|fraud_review_failed|non_compliant_eu_customer|tax_calculation_failed|currency_incompatible_with_gateway|non_compliant_customer)(,(not_paid|no_card|fraud_review_failed|non_compliant_eu_customer|tax_calculation_failed|currency_incompatible_with_gateway|non_compliant_customer))*\\]$",
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "not_paid",
+  "deprecated": false
+}

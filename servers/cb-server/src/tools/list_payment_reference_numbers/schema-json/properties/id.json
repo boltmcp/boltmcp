@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>An unique identifier for the invoice serves that links the invoice to the corresponding payment reference number (PRN).<br/><b>Note</b>: To retrieve the PRN, the API requires either the invoice ID or the payment reference number to be provided by the user. If both values are missing, an error will be returned by the API.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"old_inv_001\"</i>",
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "old_inv_001",
+  "deprecated": false
+}

@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "customer-id": {
+      "type": "string"
+    },
+    "limit": {
+      "description": "The number of resources to be returned.",
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer",
+      "format": "int32",
+      "default": 10
+    },
+    "offset": {
+      "description": "Used for pagination. Set this to the <code>next_offset</code> value from the previous API response to fetch the next page.",
+      "maxLength": 1000,
+      "type": "string"
+    },
+    "hierarchy_operation_type": {
+      "description": "Specifies which part of the hierarchy to fetch. Choose from the available operation types.\n* complete_hierarchy - Fetches all nodes in the full hierarchy that the customer belongs to.\n* subordinates - Fetches all nodes in the sub-hierarchy rooted at the customer, including the customer and its subordinates.\n* subordinates_with_unbilled_charges_payable_by_parent - Fetches subordinate nodes with <a href='customers#customer_unbilled_charges'>unbilled charges</a> for which the customer is the payment owner.\n* path_to_root - Fetches a list of nodes along the path from the customer to the root of the hierarchy.",
+      "type": "string",
+      "deprecated": false,
+      "enum": [
+        "complete_hierarchy",
+        "subordinates",
+        "path_to_root"
+      ]
+    },
+    "chargebee-request-origin-device": {
+      "description": "The device from which the customer has made the request\n",
+      "type": "string",
+      "example": "Android"
+    },
+    "chargebee-request-origin-user": {
+      "description": "The email address of your customer/user. Use this when the email address has only ASCII characters.\n",
+      "type": "string",
+      "format": "email",
+      "example": "user@example.com"
+    },
+    "chargebee-request-origin-user-encoded": {
+      "description": "The Base64-encoded email address of your customer/user. Use this if the email address has UTF-8 characters. When this header is provided, the header \\`chargebee-request-origin-user\\` is ignored.\n",
+      "type": "string",
+      "format": "email",
+      "example": "dXNlci7QutCy0ZbRgtC+0YfQutCwQGV4YW1wbGUuY29t"
+    },
+    "chargebee-request-origin-ip": {
+      "description": "The IP address of the customer where the request originated\n",
+      "pattern": "^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-fA-F]|[a-fA-F][a-fA-F0-9\\-]*[a-fA-F0-9])\\.)*([A-Fa-f]|[A-Fa-f][A-Fa-f0-9\\-]*[A-Fa-f0-9])$|^(?:(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){6})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:::(?:(?:(?:[0-9a-fA-F]{1,4})):){5})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){4})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,1}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){3})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,2}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){2})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,3}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:[0-9a-fA-F]{1,4})):)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,4}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,5}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,6}(?:(?:[0-9a-fA-F]{1,4})))?::)))))$",
+      "type": "string",
+      "example": "192.168.1.2"
+    },
+    "chargebee-business-entity-id": {
+      "description": "If the site has multiple business entities, you can use this custom HTTP header to specify the business entity for which Chargebee should perform the operation.\n",
+      "maxLength": 50,
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer-id",
+    "hierarchy_operation_type"
+  ]
+}

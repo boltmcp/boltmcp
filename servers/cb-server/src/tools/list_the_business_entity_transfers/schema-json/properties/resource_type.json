@@ -1,0 +1,12 @@
+{
+  "description": "<p>Filter <code><a href='business_entity_transfers?prod_cat_ver=2'>business_entity_transfer</a></code> resources based on <code><a href='business_entity_transfers?prod_cat_ver=2#business_entity_transfer_resource_type'>resource_type</a></code>.</p>\n<div class='alert alert-info'> <p><strong>Tip</strong></p> <p> Use this filter along with <code><a href='business_entities?prod_cat_ver=2#list_the_business_entity_transfers_active_resource_id'>active_resource_id[is]</a></code> to retrieve the history of all the business entity transfers for a resource. </p> </div>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "customer",
+  "deprecated": false
+}

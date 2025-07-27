@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The id of the <a href=\"/docs/api/item_prices?prod_cat_ver=2\">item price</a> to which this usage belongs. The item price must be a part of the subscription or should have been part of it historically.<br><b>Supported operators : </b>is, is_not, starts_with<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>item_price_id[is] = \"sprout\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "sprout",
+  "deprecated": false
+}

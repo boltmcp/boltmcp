@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>A unique and immutable id for the differential price. It is auto-generated when the differential price is created.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"defcc4f1-f21f-47f4-8019-beddb9beab5f\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "defcc4f1-f21f-47f4-8019-beddb9beab5f",
+  "deprecated": false
+}

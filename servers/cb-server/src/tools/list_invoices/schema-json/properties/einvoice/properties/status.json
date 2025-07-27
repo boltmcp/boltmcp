@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`scheduled\\` - Sending the e-invoice to the customer has been scheduled. \\* \\`skipped\\` - The e-invoice was not sent. This could be due to missing information or because the `entity_identifier` is not registered on the e-invoicing network. \\* \\`in_progress\\` - The e-invoice has been sent and Chargebee is waiting for confirmation from the receiving entity. \\* \\`success\\` - The e-invoice has been successfully delivered to the customer. \\* \\`failed\\` - The e-invoice was sent and there was an error due to which it was not delivered. \\* \\`registered\\` - The e-invoice was sent and there was an error due to which it was not delivered but got cleared in the IRP.\n",
+      "enum": [
+        "scheduled",
+        "skipped",
+        "in_progress",
+        "success",
+        "failed",
+        "registered"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`scheduled\\` - Sending the e-invoice to the customer has been scheduled. \\* \\`skipped\\` - The e-invoice was not sent. This could be due to missing information or because the `entity_identifier` is not registered on the e-invoicing network. \\* \\`in_progress\\` - The e-invoice has been sent and Chargebee is waiting for confirmation from the receiving entity. \\* \\`success\\` - The e-invoice has been successfully delivered to the customer. \\* \\`failed\\` - The e-invoice was sent and there was an error due to which it was not delivered. \\* \\`registered\\` - The e-invoice was sent and there was an error due to which it was not delivered but got cleared in the IRP.\n",
+      "enum": [
+        "scheduled",
+        "skipped",
+        "in_progress",
+        "success",
+        "failed",
+        "registered"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(scheduled|skipped|in_progress|success|failed|registered)(,(scheduled|skipped|in_progress|success|failed|registered))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(scheduled|skipped|in_progress|success|failed|registered)(,(scheduled|skipped|in_progress|success|failed|registered))*\\]$",
+      "type": "string"
+    }
+  },
+  "description": "The status of processing the e-invoice. To obtain detailed information about the current \\`status\\`, see \\`message\\`.\n",
+  "example": "failed",
+  "deprecated": false
+}

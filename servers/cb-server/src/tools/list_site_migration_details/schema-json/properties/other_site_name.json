@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>Site name to which the record is moved in/out.<br><b>Supported operators : </b>is, is_not, starts_with<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>other_site_name[is] = \"acme-test\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "acme-test",
+  "deprecated": false
+}

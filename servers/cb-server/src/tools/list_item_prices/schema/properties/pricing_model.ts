@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["flat_fee","per_unit","tiered","volume","stairstep"]).describe("\\* \\`flat_fee\\` - A fixed price that is not quantity-based. \\* \\`per_unit\\` - A fixed price per unit quantity. \\* \\`tiered\\` - The per unit price is based on the tier that the total quantity falls in. \\* \\`volume\\` - There are quantity tiers for which per unit prices are set. Quantities are purchased from successive tiers. \\* \\`stairstep\\` - A quantity-based pricing scheme. The item is charged a fixed price based on the tier that the total quantity falls in.\n").optional(),
+  "is_not": z.enum(["flat_fee","per_unit","tiered","volume","stairstep"]).describe("\\* \\`flat_fee\\` - A fixed price that is not quantity-based. \\* \\`per_unit\\` - A fixed price per unit quantity. \\* \\`tiered\\` - The per unit price is based on the tier that the total quantity falls in. \\* \\`volume\\` - There are quantity tiers for which per unit prices are set. Quantities are purchased from successive tiers. \\* \\`stairstep\\` - A quantity-based pricing scheme. The item is charged a fixed price based on the tier that the total quantity falls in.\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(flat_fee|per_unit|tiered|volume|stairstep)(,(flat_fee|per_unit|tiered|volume|stairstep))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(flat_fee|per_unit|tiered|volume|stairstep)(,(flat_fee|per_unit|tiered|volume|stairstep))*\\]$")).optional()
+}

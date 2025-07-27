@@ -1,0 +1,50 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, integer filter</dfn><br><ul><li>When the subscription is not on a contract term: this value is the number of billing cycles remaining after the current cycle, at the end of which, the subscription cancels.</li><li>When the subscription is on a <a href=\"contract_terms\">contract term</a>: this value is the number of billing cycles remaining in the contract term after the current billing cycle.</li></ul>.<br><b>Supported operators : </b>is, is_not, lt, lte, gt, gte, between, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>remaining_billing_cycles[is_not] = \"3\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "is_not": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "between": {
+      "pattern": "^\\[-?\\d+,-?\\d+\\]$",
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "3",
+  "deprecated": false
+}

@@ -1,0 +1,32 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The amount on the invoice to which the coupon is applied. Possible values are : <dfn>invoice_amount, each_specified_item.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>apply_on[is] = \"invoice_amount\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`invoice_amount\\` - The coupon is applied to the invoice `sub_total`. \\* \\`specified_items_total\\` - \\*\\*(Deprecated)\\*\\* Discount will be applied to the total of plan and addon items specified. \\* \\`each_specified_item\\` -  \nThe coupon is applied to the `invoice.line_item.amount` that corresponds to the item price specified by `item_price_id`.  \nThe coupon is applied to the `invoice.line_item.amount` that corresponds to the plan or addon specified by `plan_ids` and `addon_ids`. \\* \\`each_unit_of_specified_items\\` - \\*\\*(Deprecated)\\*\\* Discount will be applied to each unit of plan and addon items specified.\n",
+      "enum": [
+        "invoice_amount",
+        "each_specified_item"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`invoice_amount\\` - The coupon is applied to the invoice `sub_total`. \\* \\`specified_items_total\\` - \\*\\*(Deprecated)\\*\\* Discount will be applied to the total of plan and addon items specified. \\* \\`each_specified_item\\` -  \nThe coupon is applied to the `invoice.line_item.amount` that corresponds to the item price specified by `item_price_id`.  \nThe coupon is applied to the `invoice.line_item.amount` that corresponds to the plan or addon specified by `plan_ids` and `addon_ids`. \\* \\`each_unit_of_specified_items\\` - \\*\\*(Deprecated)\\*\\* Discount will be applied to each unit of plan and addon items specified.\n",
+      "enum": [
+        "invoice_amount",
+        "each_specified_item"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(invoice_amount|specified_items_total|each_specified_item|each_unit_of_specified_items)(,(invoice_amount|specified_items_total|each_specified_item|each_unit_of_specified_items))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(invoice_amount|specified_items_total|each_specified_item|each_unit_of_specified_items)(,(invoice_amount|specified_items_total|each_specified_item|each_unit_of_specified_items))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "invoice_amount",
+  "deprecated": false
+}

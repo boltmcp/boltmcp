@@ -1,0 +1,38 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current status of the payment source. Possible values are : <dfn>valid, expiring, expired, invalid, pending_verification.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"valid\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`valid\\` - A payment source that is valid and active. \\* \\`expiring\\` - A payment source that is expiring (like card's status based on its expiry date). \\* \\`expired\\` - A payment source that has expired \\* \\`invalid\\` - The billing agreement cannot be used. It might become valid again either automatically or due to customer action. \\* \\`pending_verification\\` - The payment source needs to be verified\n",
+      "enum": [
+        "valid",
+        "expiring",
+        "expired",
+        "invalid",
+        "pending_verification"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`valid\\` - A payment source that is valid and active. \\* \\`expiring\\` - A payment source that is expiring (like card's status based on its expiry date). \\* \\`expired\\` - A payment source that has expired \\* \\`invalid\\` - The billing agreement cannot be used. It might become valid again either automatically or due to customer action. \\* \\`pending_verification\\` - The payment source needs to be verified\n",
+      "enum": [
+        "valid",
+        "expiring",
+        "expired",
+        "invalid",
+        "pending_verification"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(valid|expiring|expired|invalid|pending_verification)(,(valid|expiring|expired|invalid|pending_verification))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(valid|expiring|expired|invalid|pending_verification)(,(valid|expiring|expired|invalid|pending_verification))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "valid",
+  "deprecated": false
+}

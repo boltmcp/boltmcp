@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>Sorts based on the specified attribute. <br><b>Supported attributes :</b> <dfn>occurred_at</dfn><br><b>Supported sort-orders : </b><dfn>asc, desc</dfn><br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>sort_by[asc] = \"occurred_at\"</i><br>This will sort the result based on the 'occurred_at' attribute in ascending(earliest first) order.",
+  "minProperties": 1,
+  "type": "object",
+  "properties": {
+    "asc": {
+      "type": "string",
+      "enum": [
+        "occurred_at"
+      ]
+    },
+    "desc": {
+      "type": "string",
+      "enum": [
+        "occurred_at"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

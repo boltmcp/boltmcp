@@ -1,0 +1,44 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Returns the events (occurred in the past 6 days) which has this status in any of the events' webhooks.<br/> <b> Note </b>: To retrieve events which have occurred before the 6 day period, use the occurred_at(start_time/end_time) attribute. Possible values are : <dfn>not_configured, scheduled, succeeded, re_scheduled, failed, skipped, not_applicable.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>webhook_status[is] = \"succeeded\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`not_configured\\` - Webhook was not configured when this event occurred \\* \\`scheduled\\` - Webhook call has been scheduled. \\* \\`succeeded\\` - Webhook call was successful. \\* \\`re_scheduled\\` - Webhook call has been rescheduled due failure(s) in previous call(s) \\* \\`failed\\` - Webhook call has been suspended after the all retries have resulted in failure. \\* \\`skipped\\` - Skipped as specified in request \\* \\`not_applicable\\` - Webhook call is not applicable for this event. \\* \\`disabled\\` - Disabled as no longer used\n",
+      "enum": [
+        "not_configured",
+        "scheduled",
+        "succeeded",
+        "re_scheduled",
+        "failed",
+        "skipped",
+        "not_applicable",
+        "disabled"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`not_configured\\` - Webhook was not configured when this event occurred \\* \\`scheduled\\` - Webhook call has been scheduled. \\* \\`succeeded\\` - Webhook call was successful. \\* \\`re_scheduled\\` - Webhook call has been rescheduled due failure(s) in previous call(s) \\* \\`failed\\` - Webhook call has been suspended after the all retries have resulted in failure. \\* \\`skipped\\` - Skipped as specified in request \\* \\`not_applicable\\` - Webhook call is not applicable for this event. \\* \\`disabled\\` - Disabled as no longer used\n",
+      "enum": [
+        "not_configured",
+        "scheduled",
+        "succeeded",
+        "re_scheduled",
+        "failed",
+        "skipped",
+        "not_applicable",
+        "disabled"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(not_configured|scheduled|succeeded|re_scheduled|failed|skipped|not_applicable|disabled)(,(not_configured|scheduled|succeeded|re_scheduled|failed|skipped|not_applicable|disabled))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(not_configured|scheduled|succeeded|re_scheduled|failed|skipped|not_applicable|disabled)(,(not_configured|scheduled|succeeded|re_scheduled|failed|skipped|not_applicable|disabled))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "succeeded",
+  "deprecated": false
+}

@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>A unique identifier for the subscription this charge belongs to.<br><b>Supported operators : </b>is, is_not, starts_with, is_present, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>subscription_id[is] = \"5hjdk8nOpd0b12\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "5hjdk8nOpd0b12",
+  "deprecated": false
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Filter <code><a href='business_entity_transfers?prod_cat_ver=2'>business_entity_transfer</a></code> resources based on <code><a href='business_entity_transfers?prod_cat_ver=2#business_entity_transfer_resource_id'>resource_id</a></code>.",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "9bsvnHgsvmsI",
+  "deprecated": false
+}

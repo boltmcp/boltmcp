@@ -1,0 +1,32 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on <code>item_applicability</code>. Possible values are : <dfn>all, restricted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>item_applicability[is_not] = \"all\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`all\\` - all addon-items and charge-items are applicable to this plan-item. \\* \\`restricted\\` - only the addon-items or charge-items provided in `applicable_items` can be applied to this plan-item.\n",
+      "enum": [
+        "all",
+        "restricted"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`all\\` - all addon-items and charge-items are applicable to this plan-item. \\* \\`restricted\\` - only the addon-items or charge-items provided in `applicable_items` can be applied to this plan-item.\n",
+      "enum": [
+        "all",
+        "restricted"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(all|restricted)(,(all|restricted))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(all|restricted)(,(all|restricted))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "all",
+  "deprecated": false
+}

@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1601220958",
+  "deprecated": false
+}

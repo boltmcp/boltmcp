@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["plan","addon","charge"]).describe("\\* \\`plan\\` - An essential component of a subscription. Every subscription has exactly one plan. It has a recurring charge and its period defines the billing period of the subscription. \\* \\`addon\\` - A recurring component that can be added to a subscription in addition to its plan. \\* \\`charge\\` - A non-recurring component that can be added to a subscription in addition to its plan. An charge can also be applied to a customer [directly](./invoices?prod_cat_ver=2#create_invoice_for_a_charge-item) without being applied to a subscription.\n").optional(),
+  "is_not": z.enum(["plan","addon","charge"]).describe("\\* \\`plan\\` - An essential component of a subscription. Every subscription has exactly one plan. It has a recurring charge and its period defines the billing period of the subscription. \\* \\`addon\\` - A recurring component that can be added to a subscription in addition to its plan. \\* \\`charge\\` - A non-recurring component that can be added to a subscription in addition to its plan. An charge can also be applied to a customer [directly](./invoices?prod_cat_ver=2#create_invoice_for_a_charge-item) without being applied to a subscription.\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(plan|addon|charge)(,(plan|addon|charge))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(plan|addon|charge)(,(plan|addon|charge))*\\]$")).optional()
+}

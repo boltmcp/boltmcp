@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Status of the coupon code. Possible values are : <dfn>not_redeemed, redeemed, archived.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"redeemed\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`not_redeemed\\` - Can be applied to a subscription. \\* \\`redeemed\\` - Cannot be applied to a subscription as the coupon code has been already used. \\* \\`archived\\` - Cannot be applied to a subscription as it has been made inactive.\n",
+      "enum": [
+        "not_redeemed",
+        "redeemed",
+        "archived"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`not_redeemed\\` - Can be applied to a subscription. \\* \\`redeemed\\` - Cannot be applied to a subscription as the coupon code has been already used. \\* \\`archived\\` - Cannot be applied to a subscription as it has been made inactive.\n",
+      "enum": [
+        "not_redeemed",
+        "redeemed",
+        "archived"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(not_redeemed|redeemed|archived)(,(not_redeemed|redeemed|archived))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(not_redeemed|redeemed|archived)(,(not_redeemed|redeemed|archived))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "redeemed",
+  "deprecated": false
+}

@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, boolean filter</dfn><br>Order is resent order or not. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>is_resent[is] = \"false\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "false",
+  "deprecated": false
+}

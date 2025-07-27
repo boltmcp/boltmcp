@@ -1,0 +1,22 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>Sorts based on the specified attribute. <br><b>Supported attributes :</b> <dfn>effective_from, created_at, updated_at</dfn><br><b>Supported sort-orders : </b><dfn>asc, desc</dfn><br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>sort_by[asc] = \"effective_from\"</i><br>This will sort the result based on the 'effective_from' attribute in ascending(earliest first) order.",
+  "minProperties": 1,
+  "type": "object",
+  "properties": {
+    "asc": {
+      "type": "string",
+      "enum": [
+        "effective_from",
+        "updated_at"
+      ]
+    },
+    "desc": {
+      "type": "string",
+      "enum": [
+        "effective_from",
+        "updated_at"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

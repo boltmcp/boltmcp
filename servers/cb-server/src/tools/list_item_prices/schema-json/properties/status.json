@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter item prices based on their <code>status</code>. Possible values are : <dfn>active, archived, deleted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"active\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`active\\` - The item price can be used in subscriptions. \\* \\`archived\\` - The item price is no longer active and cannot be used in new subscriptions or added to existing ones. Existing subscriptions that already have this item price will continue to renew with the item price. \\* \\`deleted\\` - Indicates that the item price has been deleted. The `id` and `name` can be reused.\n",
+      "enum": [
+        "active",
+        "archived",
+        "deleted"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`active\\` - The item price can be used in subscriptions. \\* \\`archived\\` - The item price is no longer active and cannot be used in new subscriptions or added to existing ones. Existing subscriptions that already have this item price will continue to renew with the item price. \\* \\`deleted\\` - Indicates that the item price has been deleted. The `id` and `name` can be reused.\n",
+      "enum": [
+        "active",
+        "archived",
+        "deleted"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(active|archived|deleted)(,(active|archived|deleted))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(active|archived|deleted)(,(active|archived|deleted))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "active",
+  "deprecated": false
+}

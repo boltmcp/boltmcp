@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Specifies the time duration for which this coupon is attached to the subscription. Possible values are : <dfn>one_time, forever, limited_period.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>duration_type[is] = \"forever\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`one_time\\` - The coupon stays attached to the subscription till it is applied on an invoice **once** . It is removed after that from the subscription. \\* \\`forever\\` - The coupon is attached to the subscription and applied on the invoices until explicitly removed. \\* \\`limited_period\\` - The discount is attached to the subscription and applied on the invoices for a limited duration. This duration starts from the point it is applied to an invoice for the first time and expires after a period specified by `period` and `period_unit`.\n",
+      "enum": [
+        "one_time",
+        "forever",
+        "limited_period"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`one_time\\` - The coupon stays attached to the subscription till it is applied on an invoice **once** . It is removed after that from the subscription. \\* \\`forever\\` - The coupon is attached to the subscription and applied on the invoices until explicitly removed. \\* \\`limited_period\\` - The discount is attached to the subscription and applied on the invoices for a limited duration. This duration starts from the point it is applied to an invoice for the first time and expires after a period specified by `period` and `period_unit`.\n",
+      "enum": [
+        "one_time",
+        "forever",
+        "limited_period"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(one_time|forever|limited_period)(,(one_time|forever|limited_period))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(one_time|forever|limited_period)(,(one_time|forever|limited_period))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "forever",
+  "deprecated": false
+}

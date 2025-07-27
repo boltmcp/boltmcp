@@ -1,0 +1,27 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>The time at which this usage occurred. Chargebee bills only those usages whose\n<code>usage_date</code> falls within a time when the subscription <code>status</code> was <code>active</code> or <code>non_renewing</code>. However, the remaining usage records are still stored and are\n<a href=\"/docs/api/usages?prod_cat_ver=2#retrieve_a_usage\">retrievable</a>. <br> <b>Note:</b> If <code>usage_date</code> corresponds to a time already invoiced, then it is stored but never invoiced unless the <a href=\"/docs/api/subscriptions?prod_cat_ver=2#regenerate_an_invoice\">invoice is regenerated</a>.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>usage_date[after] = \"1601220958\"</i>",
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1601220958",
+  "deprecated": false
+}

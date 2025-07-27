@@ -1,0 +1,16 @@
+{
+  "description": "check if pc1 autocorrection required\n",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "deprecated": false,
+  "example": null
+}

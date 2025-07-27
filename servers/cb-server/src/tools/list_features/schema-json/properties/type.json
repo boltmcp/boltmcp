@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The type of feature. Possible values are : <dfn>switch, custom, quantity, range.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is] = \"boolean\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`switch\\` - A switch or toggle is a feature that an item or subscription can be either fully entitled to or not entitled to at all. \\* \\`custom\\` - The entitlement levels available for this feature are defined as a set of custom values. For example, a feature `Email Support` can have entitlement levels as `24×7` and `24×5`. \\* \\`quantity\\` - The feature is quantity-based and entitlement levels available for it are a set of predefined number of quantity units. For example, a feature with `name` such as `number of users` can have entitlement levels of say, `5`, `20`, `50`, and `100`. `levels[is_unlimited]` is used for specifying the \"unlimited\" entitlement level. \\* \\`range\\` - The feature is quantity-based and the entitlement levels available for it are the set of whole numbers within a range. The range is defined by a minimum and a maximum value. For example, a feature such as `number of users` can have entitlement levels starting at `5` users and go up to `50000`. `levels[is_unlimited]` is used for specifying the \"unlimited\" entitlement level.\n",
+      "enum": [
+        "switch",
+        "custom",
+        "quantity",
+        "range"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`switch\\` - A switch or toggle is a feature that an item or subscription can be either fully entitled to or not entitled to at all. \\* \\`custom\\` - The entitlement levels available for this feature are defined as a set of custom values. For example, a feature `Email Support` can have entitlement levels as `24×7` and `24×5`. \\* \\`quantity\\` - The feature is quantity-based and entitlement levels available for it are a set of predefined number of quantity units. For example, a feature with `name` such as `number of users` can have entitlement levels of say, `5`, `20`, `50`, and `100`. `levels[is_unlimited]` is used for specifying the \"unlimited\" entitlement level. \\* \\`range\\` - The feature is quantity-based and the entitlement levels available for it are the set of whole numbers within a range. The range is defined by a minimum and a maximum value. For example, a feature such as `number of users` can have entitlement levels starting at `5` users and go up to `50000`. `levels[is_unlimited]` is used for specifying the \"unlimited\" entitlement level.\n",
+      "enum": [
+        "switch",
+        "custom",
+        "quantity",
+        "range"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(switch|custom|quantity|range)(,(switch|custom|quantity|range))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(switch|custom|quantity|range)(,(switch|custom|quantity|range))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "boolean",
+  "deprecated": false
+}

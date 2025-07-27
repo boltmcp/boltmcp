@@ -1,0 +1,42 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, in cents filter</dfn><br>The amount allocated to the invoices.<br><b>Supported operators : </b>is, is_not, lt, lte, gt, gte, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>amount_allocated[is] = \"1200\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "is_not": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "between": {
+      "pattern": "^\\[-?\\d+,-?\\d+\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1200",
+  "deprecated": false
+}

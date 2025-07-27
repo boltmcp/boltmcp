@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>First name of the customer.<br><b>Supported operators : </b>is, is_not, starts_with, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>first_name[is] = \"John\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "John",
+  "deprecated": false
+}

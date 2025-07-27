@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "description": "Email of the receiver. All gift related emails are sent to this email.\n",
+  "example": "john@test.com",
+  "deprecated": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "deprecated": false,
+  "example": null
+}

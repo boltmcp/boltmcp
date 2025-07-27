@@ -1,0 +1,54 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The preferred offline payment method for the customer. Possible values are : <dfn>no_preference, cash, check, bank_transfer, ach_credit, sepa_credit.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>offline_payment_method[is] = \"cash\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`no_preference\\` - No Preference \\* \\`cash\\` - Cash \\* \\`check\\` - Check \\* \\`bank_transfer\\` - Bank Transfer \\* \\`ach_credit\\` - ACH Credit \\* \\`sepa_credit\\` - SEPA Credit \\* \\`boleto\\` - Boleto \\* \\`us_automated_bank_transfer\\` - US Automated Bank Transfer \\* \\`eu_automated_bank_transfer\\` - EU Automated Bank Transfer \\* \\`uk_automated_bank_transfer\\` - UK Automated Bank Transfer \\* \\`jp_automated_bank_transfer\\` - JP Automated Bank Transfer \\* \\`mx_automated_bank_transfer\\` - MX Automated Bank Transfer \\* \\`custom\\` - Custom\n",
+      "enum": [
+        "no_preference",
+        "cash",
+        "check",
+        "bank_transfer",
+        "ach_credit",
+        "sepa_credit",
+        "boleto",
+        "us_automated_bank_transfer",
+        "eu_automated_bank_transfer",
+        "uk_automated_bank_transfer",
+        "jp_automated_bank_transfer",
+        "mx_automated_bank_transfer",
+        "custom"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`no_preference\\` - No Preference \\* \\`cash\\` - Cash \\* \\`check\\` - Check \\* \\`bank_transfer\\` - Bank Transfer \\* \\`ach_credit\\` - ACH Credit \\* \\`sepa_credit\\` - SEPA Credit \\* \\`boleto\\` - Boleto \\* \\`us_automated_bank_transfer\\` - US Automated Bank Transfer \\* \\`eu_automated_bank_transfer\\` - EU Automated Bank Transfer \\* \\`uk_automated_bank_transfer\\` - UK Automated Bank Transfer \\* \\`jp_automated_bank_transfer\\` - JP Automated Bank Transfer \\* \\`mx_automated_bank_transfer\\` - MX Automated Bank Transfer \\* \\`custom\\` - Custom\n",
+      "enum": [
+        "no_preference",
+        "cash",
+        "check",
+        "bank_transfer",
+        "ach_credit",
+        "sepa_credit",
+        "boleto",
+        "us_automated_bank_transfer",
+        "eu_automated_bank_transfer",
+        "uk_automated_bank_transfer",
+        "jp_automated_bank_transfer",
+        "mx_automated_bank_transfer",
+        "custom"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(no_preference|cash|check|bank_transfer|ach_credit|sepa_credit|boleto|us_automated_bank_transfer|eu_automated_bank_transfer|uk_automated_bank_transfer|jp_automated_bank_transfer|mx_automated_bank_transfer|custom)(,(no_preference|cash|check|bank_transfer|ach_credit|sepa_credit|boleto|us_automated_bank_transfer|eu_automated_bank_transfer|uk_automated_bank_transfer|jp_automated_bank_transfer|mx_automated_bank_transfer|custom))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(no_preference|cash|check|bank_transfer|ach_credit|sepa_credit|boleto|us_automated_bank_transfer|eu_automated_bank_transfer|uk_automated_bank_transfer|jp_automated_bank_transfer|mx_automated_bank_transfer|custom)(,(no_preference|cash|check|bank_transfer|ach_credit|sepa_credit|boleto|us_automated_bank_transfer|eu_automated_bank_transfer|uk_automated_bank_transfer|jp_automated_bank_transfer|mx_automated_bank_transfer|custom))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "cash",
+  "deprecated": false
+}

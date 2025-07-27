@@ -1,0 +1,48 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current status of this quote. Possible values are : <dfn>open, accepted, declined, invoiced, closed.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"open\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`open\\` - Open \\* \\`accepted\\` - Accepted. \\* \\`declined\\` - Declined. \\* \\`invoiced\\` - Invoiced \\* \\`closed\\` - Closed \\* \\`pending_approval\\` - Pending Approval \\* \\`approval_rejected\\` - Approval Rejected \\* \\`proposed\\` - Proposed. \\* \\`voided\\` - Voided. \\* \\`expired\\` - Expired\n",
+      "enum": [
+        "open",
+        "accepted",
+        "declined",
+        "invoiced",
+        "closed",
+        "pending_approval",
+        "approval_rejected",
+        "proposed",
+        "voided",
+        "expired"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`open\\` - Open \\* \\`accepted\\` - Accepted. \\* \\`declined\\` - Declined. \\* \\`invoiced\\` - Invoiced \\* \\`closed\\` - Closed \\* \\`pending_approval\\` - Pending Approval \\* \\`approval_rejected\\` - Approval Rejected \\* \\`proposed\\` - Proposed. \\* \\`voided\\` - Voided. \\* \\`expired\\` - Expired\n",
+      "enum": [
+        "open",
+        "accepted",
+        "declined",
+        "invoiced",
+        "closed",
+        "pending_approval",
+        "approval_rejected",
+        "proposed",
+        "voided",
+        "expired"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired)(,(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired)(,(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "open",
+  "deprecated": false
+}

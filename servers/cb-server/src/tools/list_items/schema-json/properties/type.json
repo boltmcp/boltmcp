@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on item <code>type</code>. Possible values are : <dfn>plan, addon, charge.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is] = \"plan\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`plan\\` - An essential component of a subscription. Every subscription has exactly one plan. It has a recurring charge and its period defines the billing period of the subscription. \\* \\`addon\\` - A recurring component that can be added to a subscription in addition to its plan. \\* \\`charge\\` - A non-recurring component that can be added to a subscription in addition to its plan. An charge can also be applied to a customer [directly](./invoices?prod_cat_ver=2#create_invoice_for_a_charge-item) without being applied to a subscription.\n",
+      "enum": [
+        "plan",
+        "addon",
+        "charge"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`plan\\` - An essential component of a subscription. Every subscription has exactly one plan. It has a recurring charge and its period defines the billing period of the subscription. \\* \\`addon\\` - A recurring component that can be added to a subscription in addition to its plan. \\* \\`charge\\` - A non-recurring component that can be added to a subscription in addition to its plan. An charge can also be applied to a customer [directly](./invoices?prod_cat_ver=2#create_invoice_for_a_charge-item) without being applied to a subscription.\n",
+      "enum": [
+        "plan",
+        "addon",
+        "charge"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(plan|addon|charge)(,(plan|addon|charge))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(plan|addon|charge)(,(plan|addon|charge))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "plan",
+  "deprecated": false
+}

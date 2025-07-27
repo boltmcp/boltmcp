@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The unique ID of the \n<a href='/docs/api/business_entities'>business entity</a> of this <code>item</code>. <a href='using_business_entity_filters_in_product_catalog_list_apis'>Learn more</a> about all the scenarios before using this filter. \n<span ismicro=\"true\" featureid=\"cb-mbe\"></span><br><b>Supported operators : </b>is, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>business_entity_id[is_present] = \"true\"</i>",
+  "type": "object",
+  "properties": {
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "business_entity_id",
+  "deprecated": false
+}

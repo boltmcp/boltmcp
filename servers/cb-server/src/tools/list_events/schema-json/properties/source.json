@@ -1,0 +1,50 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Source of the event. Possible values are : <dfn>admin_console, api, scheduled_job, hosted_page, portal, system, none, js_api, migration, bulk_operation, external_service.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>source[is_not] = \"hosted_page\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`admin_console\\` - Operation made through the Chargebee admin UI \\* \\`api\\` - Operation made through the API \\* \\`scheduled_job\\` - Operation made through the Scheduled Jobs \\* \\`hosted_page\\` - Operation made through the Hosted Pages \\* \\`portal\\` - Operation made through [Self-Serve Portal](https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html) \\* \\`system\\` - Operation that are triggered by ChargeBee System \\* \\`none\\` - If no source can be identified for an operation \\* \\`js_api\\` - Operation made through the JS API \\* \\`migration\\` - Operation that was triggered triggered by the migration of customer data into Chargebee Billing, either from an external system or from another [Chargebee Billing site](https://www.chargebee.com/docs/billing/2.0/getting-started/sites-intro.html) (such as test, live, or sandbox). \\* \\`bulk_operation\\` - Operation that are triggerd through bulk operation. \\* \\`external_service\\` - Operation that are triggered via webhook\n",
+      "enum": [
+        "admin_console",
+        "api",
+        "scheduled_job",
+        "hosted_page",
+        "portal",
+        "system",
+        "none",
+        "js_api",
+        "migration",
+        "bulk_operation",
+        "external_service"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`admin_console\\` - Operation made through the Chargebee admin UI \\* \\`api\\` - Operation made through the API \\* \\`scheduled_job\\` - Operation made through the Scheduled Jobs \\* \\`hosted_page\\` - Operation made through the Hosted Pages \\* \\`portal\\` - Operation made through [Self-Serve Portal](https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html) \\* \\`system\\` - Operation that are triggered by ChargeBee System \\* \\`none\\` - If no source can be identified for an operation \\* \\`js_api\\` - Operation made through the JS API \\* \\`migration\\` - Operation that was triggered triggered by the migration of customer data into Chargebee Billing, either from an external system or from another [Chargebee Billing site](https://www.chargebee.com/docs/billing/2.0/getting-started/sites-intro.html) (such as test, live, or sandbox). \\* \\`bulk_operation\\` - Operation that are triggerd through bulk operation. \\* \\`external_service\\` - Operation that are triggered via webhook\n",
+      "enum": [
+        "admin_console",
+        "api",
+        "scheduled_job",
+        "hosted_page",
+        "portal",
+        "system",
+        "none",
+        "js_api",
+        "migration",
+        "bulk_operation",
+        "external_service"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(admin_console|api|scheduled_job|hosted_page|portal|system|none|js_api|migration|bulk_operation|external_service)(,(admin_console|api|scheduled_job|hosted_page|portal|system|none|js_api|migration|bulk_operation|external_service))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(admin_console|api|scheduled_job|hosted_page|portal|system|none|js_api|migration|bulk_operation|external_service)(,(admin_console|api|scheduled_job|hosted_page|portal|system|none|js_api|migration|bulk_operation|external_service))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "hosted_page",
+  "deprecated": false
+}

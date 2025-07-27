@@ -1,0 +1,5 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "number": z.record(z.any()).describe("<llm-instruction>This part of the input schema is truncated. If you want to pass the property `number` to the tool, first call the tool `expandSchema` with \"/properties/payment_reference_number/properties/number\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>This parameter is used to identify the PRN in the system and retrieve its corresponding payment information. \\*\\*Note\\*\\*: To retrieve the PRN, the API requires either the invoice ID or the payment reference number to be provided by the user. If both values are missing, an error will be returned by the API.\n</property-description>").optional()
+}

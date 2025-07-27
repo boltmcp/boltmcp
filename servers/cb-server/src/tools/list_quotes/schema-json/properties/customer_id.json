@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The identifier of the customer this quote belongs to.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>customer_id[is_not] = \"4gmiXbsjdm\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "4gmiXbsjdm",
+  "deprecated": false
+}

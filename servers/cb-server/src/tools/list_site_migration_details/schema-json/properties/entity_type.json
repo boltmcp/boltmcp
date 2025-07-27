@@ -1,0 +1,40 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Entity Type of the record. Possible values are : <dfn>customer, subscription, invoice, credit_note, transaction, order.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>entity_type[is] = \"customer\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`customer\\` - Entity that represents a customer \\* \\`subscription\\` - Entity that represents a subscription of a customer \\* \\`invoice\\` - Invoice description \\* \\`credit_note\\` - Credit note description \\* \\`transaction\\` - Entity that represents a transaction. \\* \\`order\\` - Entity that represents an order\n",
+      "enum": [
+        "customer",
+        "subscription",
+        "invoice",
+        "credit_note",
+        "transaction",
+        "order"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`customer\\` - Entity that represents a customer \\* \\`subscription\\` - Entity that represents a subscription of a customer \\* \\`invoice\\` - Invoice description \\* \\`credit_note\\` - Credit note description \\* \\`transaction\\` - Entity that represents a transaction. \\* \\`order\\` - Entity that represents an order\n",
+      "enum": [
+        "customer",
+        "subscription",
+        "invoice",
+        "credit_note",
+        "transaction",
+        "order"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(customer|subscription|invoice|credit_note|transaction|order)(,(customer|subscription|invoice|credit_note|transaction|order))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(customer|subscription|invoice|credit_note|transaction|order)(,(customer|subscription|invoice|credit_note|transaction|order))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "customer",
+  "deprecated": false
+}

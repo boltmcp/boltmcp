@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["open","accepted","declined","invoiced","closed","pending_approval","approval_rejected","proposed","voided","expired"]).describe("\\* \\`open\\` - Open \\* \\`accepted\\` - Accepted. \\* \\`declined\\` - Declined. \\* \\`invoiced\\` - Invoiced \\* \\`closed\\` - Closed \\* \\`pending_approval\\` - Pending Approval \\* \\`approval_rejected\\` - Approval Rejected \\* \\`proposed\\` - Proposed. \\* \\`voided\\` - Voided. \\* \\`expired\\` - Expired\n").optional(),
+  "is_not": z.enum(["open","accepted","declined","invoiced","closed","pending_approval","approval_rejected","proposed","voided","expired"]).describe("\\* \\`open\\` - Open \\* \\`accepted\\` - Accepted. \\* \\`declined\\` - Declined. \\* \\`invoiced\\` - Invoiced \\* \\`closed\\` - Closed \\* \\`pending_approval\\` - Pending Approval \\* \\`approval_rejected\\` - Approval Rejected \\* \\`proposed\\` - Proposed. \\* \\`voided\\` - Voided. \\* \\`expired\\` - Expired\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired)(,(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired)(,(open|accepted|declined|invoiced|closed|pending_approval|approval_rejected|proposed|voided|expired))*\\]$")).optional()
+}

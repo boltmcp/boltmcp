@@ -1,0 +1,32 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Whether payments needs to be collected automatically for this customer. Possible values are : <dfn>on, off.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>auto_collection[is] = \"on\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`on\\` - Whenever an invoice is created, an automatic attempt to charge the customer's payment method is made. \\* \\`off\\` - Automatic collection of charges will not be made. All payments must be recorded offline.\n",
+      "enum": [
+        "on",
+        "off"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`on\\` - Whenever an invoice is created, an automatic attempt to charge the customer's payment method is made. \\* \\`off\\` - Automatic collection of charges will not be made. All payments must be recorded offline.\n",
+      "enum": [
+        "on",
+        "off"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(on|off)(,(on|off))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(on|off)(,(on|off))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "on",
+  "deprecated": false
+}

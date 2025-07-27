@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The credit note status. Possible values are : <dfn>adjusted, refunded, refund_due, voided.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"adjusted\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`adjusted\\` - When the Credit Note has been adjusted against an invoice. \\* \\`refunded\\` - When the entire credits (Credit Note amount) have been used (i.e either allocated to invoices or refunded). \\* \\`refund_due\\` - When the credits are yet to be used, or have been partially used. \\* \\`voided\\` - When the Credit Note has been cancelled.\n",
+      "enum": [
+        "adjusted",
+        "refunded",
+        "refund_due",
+        "voided"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`adjusted\\` - When the Credit Note has been adjusted against an invoice. \\* \\`refunded\\` - When the entire credits (Credit Note amount) have been used (i.e either allocated to invoices or refunded). \\* \\`refund_due\\` - When the credits are yet to be used, or have been partially used. \\* \\`voided\\` - When the Credit Note has been cancelled.\n",
+      "enum": [
+        "adjusted",
+        "refunded",
+        "refund_due",
+        "voided"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(adjusted|refunded|refund_due|voided)(,(adjusted|refunded|refund_due|voided))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(adjusted|refunded|refund_due|voided)(,(adjusted|refunded|refund_due|voided))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "adjusted",
+  "deprecated": false
+}

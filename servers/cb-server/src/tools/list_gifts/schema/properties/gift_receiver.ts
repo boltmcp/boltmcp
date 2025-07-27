@@ -1,0 +1,6 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "email": z.record(z.any()).describe("<llm-instruction>This part of the input schema is truncated. If you want to pass the property `email` to the tool, first call the tool `expandSchema` with \"/properties/gift_receiver/properties/email\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Email of the receiver. All gift related emails are sent to this email.\n</property-description>").optional(),
+  "customer_id": z.record(z.any()).describe("<llm-instruction>This part of the input schema is truncated. If you want to pass the property `customer_id` to the tool, first call the tool `expandSchema` with \"/properties/gift_receiver/properties/customer_id\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Receiver customer id.\n</property-description>").optional()
+}

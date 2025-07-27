@@ -1,0 +1,27 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Filter subscription ramps based on <code>updated_at</code>.<div class=\"alert alert-info\"> <strong>Tip</strong> <p>Specify <code>sort_by</code> = <code>updated_at</code> (whether <code>asc</code> oor <code>desc</code>) for a faster response when using this filter.</p> </div><br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>updated_at[after] = \"1435052328\"</i>",
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1435052328",
+  "deprecated": false
+}

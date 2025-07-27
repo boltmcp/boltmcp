@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of resources to be returned.",
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer",
+      "format": "int32",
+      "default": 10
+    },
+    "offset": {
+      "description": "Determines your position in the list for pagination. To ensure that the next page is retrieved correctly, always set <code>offset</code> to the value of <code>next_offset</code> obtained in the previous iteration of the API call.",
+      "maxLength": 1000,
+      "type": "string"
+    },
+    "id": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `id` to the tool, first call the tool `expandSchema` with \"/properties/id\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br><p>Used to uniquely identify the coupon in your website/application and to integrate with Chargebee.</p>\n<div class=\"alert alert-info\">\n    <p><strong>Note:</strong></p>\n    <p>\n         When the coupon ID contains a special character; for example: <code>#</code>, the API returns an error.\n         Make sure that you <a href=\"https://www.urlencoder.org/\">encode</a> the coupon ID in the path parameter before making an API call.\n    </p>\n</div>.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"OFF2008\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "name": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `name` to the tool, first call the tool `expandSchema` with \"/properties/name\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br><p>The display name used in web interface for identifying the coupon.</p>\n<div class=\"alert alert-info\">\n    <p><strong>Note:</strong></p>\n    <p>\n         When the name of the coupon set contains a special character; for example: <code>#</code>, the API returns an error.\n         Make sure that you <a href=\"https://www.urlencoder.org/\">encode</a> the name of the coupon set in the path parameter before making an API call.\n    </p>\n</div>.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>name[is_not] = \"Offer 10\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "discount_type": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `discount_type` to the tool, first call the tool `expandSchema` with \"/properties/discount_type\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The type of deduction. Possible values are : <dfn>fixed_amount, percentage.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>discount_type[is] = \"fixed_amount\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "duration_type": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `duration_type` to the tool, first call the tool `expandSchema` with \"/properties/duration_type\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Specifies the time duration for which this coupon is attached to the subscription. Possible values are : <dfn>one_time, forever, limited_period.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>duration_type[is] = \"forever\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `status` to the tool, first call the tool `expandSchema` with \"/properties/status\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Status of the coupon. Possible values are : <dfn>active, expired, archived, deleted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is_not] = \"active\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "apply_on": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `apply_on` to the tool, first call the tool `expandSchema` with \"/properties/apply_on\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The amount on the invoice to which the coupon is applied. Possible values are : <dfn>invoice_amount, each_specified_item.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>apply_on[is] = \"invoice_amount\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `created_at` to the tool, first call the tool `expandSchema` with \"/properties/created_at\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Timestamp indicating when this coupon is created.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>created_at[before] = \"145222875\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `updated_at` to the tool, first call the tool `expandSchema` with \"/properties/updated_at\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>To filter based on updated at. This attribute will be present only if the resource has been updated after 2016-11-09.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>updated_at[on] = \"1243545465\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "sort_by": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `sort_by` to the tool, first call the tool `expandSchema` with \"/properties/sort_by\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>Sorts based on the specified attribute. <br><b>Supported attributes :</b> <dfn>created_at</dfn><br><b>Supported sort-orders : </b><dfn>asc, desc</dfn><br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>sort_by[asc] = \"created_at\"</i><br>This will sort the result based on the 'created_at' attribute in ascending(earliest first) order.</property-description>",
+      "additionalProperties": true
+    },
+    "currency_code": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `currency_code` to the tool, first call the tool `expandSchema` with \"/properties/currency_code\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>The currency code (<a href=\"https://www.chargebee.com/docs/supported-currencies.html\" target=\"_blank\">ISO 4217 format</a>) of the coupon. Applicable for <i>fixed_amount</i> coupons alone.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>currency_code[is] = \"USD\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "chargebee-request-origin-device": {
+      "description": "The device from which the customer has made the request\n",
+      "type": "string",
+      "example": "Android"
+    },
+    "chargebee-request-origin-user": {
+      "description": "The email address of your customer/user. Use this when the email address has only ASCII characters.\n",
+      "type": "string",
+      "format": "email",
+      "example": "user@example.com"
+    },
+    "chargebee-request-origin-user-encoded": {
+      "description": "The Base64-encoded email address of your customer/user. Use this if the email address has UTF-8 characters. When this header is provided, the header \\`chargebee-request-origin-user\\` is ignored.\n",
+      "type": "string",
+      "format": "email",
+      "example": "dXNlci7QutCy0ZbRgtC+0YfQutCwQGV4YW1wbGUuY29t"
+    },
+    "chargebee-request-origin-ip": {
+      "description": "The IP address of the customer where the request originated\n",
+      "pattern": "^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-fA-F]|[a-fA-F][a-fA-F0-9\\-]*[a-fA-F0-9])\\.)*([A-Fa-f]|[A-Fa-f][A-Fa-f0-9\\-]*[A-Fa-f0-9])$|^(?:(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){6})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:::(?:(?:(?:[0-9a-fA-F]{1,4})):){5})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){4})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,1}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){3})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,2}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){2})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,3}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:[0-9a-fA-F]{1,4})):)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,4}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,5}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,6}(?:(?:[0-9a-fA-F]{1,4})))?::)))))$",
+      "type": "string",
+      "example": "192.168.1.2"
+    },
+    "chargebee-business-entity-id": {
+      "description": "If the site has multiple business entities, you can use this custom HTTP header to specify the business entity for which Chargebee should perform the operation.\n",
+      "maxLength": 50,
+      "type": "string"
+    }
+  },
+  "required": []
+}

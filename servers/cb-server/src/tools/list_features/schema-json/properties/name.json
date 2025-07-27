@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>A case-sensitive unique name for the feature. For example: <code>user license</code>, <code>data storage</code>, <code>Salesforce Integration</code>, <code>devices</code>, <code>UHD Streaming</code>, and so on. <br>\n\n<b>Note:</b> This name is not displayed on any customer-facing documents or pages such as <a href=\"invoices#retrieve_invoice_as_pdf\">invoice PDFs</a> or <a href=\"hosted_pages\">hosted pages</a>. However, in the future, it is likely to be introduced on the <a href=\"portal_sessions\">Self-Serve Portal</a>.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>name[is] = \"User licenses\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "User licenses",
+  "deprecated": false
+}

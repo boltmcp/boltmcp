@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "description": "Parent who is going to pay\n",
+  "example": "active1",
+  "deprecated": false
+}

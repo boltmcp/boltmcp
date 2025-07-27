@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The quote number. Acts as a identifier for quote and typically generated sequentially.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"123\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "123",
+  "deprecated": false
+}

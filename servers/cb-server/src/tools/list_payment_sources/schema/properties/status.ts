@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["valid","expiring","expired","invalid","pending_verification"]).describe("\\* \\`valid\\` - A payment source that is valid and active. \\* \\`expiring\\` - A payment source that is expiring (like card's status based on its expiry date). \\* \\`expired\\` - A payment source that has expired \\* \\`invalid\\` - The billing agreement cannot be used. It might become valid again either automatically or due to customer action. \\* \\`pending_verification\\` - The payment source needs to be verified\n").optional(),
+  "is_not": z.enum(["valid","expiring","expired","invalid","pending_verification"]).describe("\\* \\`valid\\` - A payment source that is valid and active. \\* \\`expiring\\` - A payment source that is expiring (like card's status based on its expiry date). \\* \\`expired\\` - A payment source that has expired \\* \\`invalid\\` - The billing agreement cannot be used. It might become valid again either automatically or due to customer action. \\* \\`pending_verification\\` - The payment source needs to be verified\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(valid|expiring|expired|invalid|pending_verification)(,(valid|expiring|expired|invalid|pending_verification))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(valid|expiring|expired|invalid|pending_verification)(,(valid|expiring|expired|invalid|pending_verification))*\\]$")).optional()
+}

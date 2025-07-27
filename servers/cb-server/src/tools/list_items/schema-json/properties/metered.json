@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, boolean filter</dfn><br>Specifies whether the item undergoes metered billing. When <code>true</code>, the quantity is calculated from <a href=\"/docs/api/usages?prod_cat_ver=2\">usage records</a>. When <code>false</code>, the <code>quantity</code> is as determined while adding an item price to the subscription. Applicable only for items of <code>type</code> <code>plan</code> or <code>addon</code> and when <a href=\"https://www.chargebee.com/docs/2.0/metered_billing.html\" rel=\"noopener noreferrer\" target=\"_blank\">Metered Billing</a> is enabled. The value of this attribute cannot be changed. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>metered[is] = \"true\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "true",
+  "deprecated": false
+}

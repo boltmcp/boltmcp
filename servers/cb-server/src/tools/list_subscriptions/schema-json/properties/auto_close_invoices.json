@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, boolean filter</dfn><br>Set to <code>false</code> to override for this subscription, the <a href=\"https://www.chargebee.com/docs/2.0/metered_billing.html#configuring-metered-billing\" rel=\"noopener noreferrer\" target=\"_blank\">site-level setting</a> for auto-closing invoices. Only applicable when auto-closing invoices has been enabled for the site. This attribute has a higher precedence than the same attribute at the <a href=\"/docs/api/customers?prod_cat_ver=2#customer_auto_close_invoices\">customer level</a>. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>auto_close_invoices[is] = \"true\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "true",
+  "deprecated": false
+}

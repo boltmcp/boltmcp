@@ -1,0 +1,78 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Type of payment source. Possible values are : <dfn>card, paypal_express_checkout, amazon_payments, direct_debit, generic, alipay, unionpay, apple_pay, wechat_pay, ideal, google_pay, sofort, bancontact, giropay, dotpay, upi, netbanking_emandates.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is] = \"card\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`card\\` - Card based payment including credit cards and debit cards. Details about the card can be obtained from the card resource. \\* \\`paypal_express_checkout\\` - Payments made via PayPal Express Checkout. \\* \\`amazon_payments\\` - Payments made via Amazon Payments. \\* \\`direct_debit\\` - Represents bank account for which the direct debit or ACH agreement/mandate is created. \\* \\`generic\\` - Payments made via Generic Payment Method. \\* \\`alipay\\` - Payments made via Alipay. \\* \\`unionpay\\` - Payments made via UnionPay. \\* \\`apple_pay\\` - Payments made via Apple Pay. \\* \\`wechat_pay\\` - Payments made via WeChat Pay. \\* \\`ideal\\` - Payments made via iDEAL. \\* \\`google_pay\\` - Payments made via Google Pay. \\* \\`sofort\\` - Payments made via Sofort. \\* \\`bancontact\\` - Payments made via Bancontact Card. \\* \\`giropay\\` - Payments made via giropay. \\* \\`dotpay\\` - Payments made via Dotpay. \\* \\`upi\\` - UPI Payments. \\* \\`netbanking_emandates\\` - Netbanking (eMandates) Payments. \\* \\`venmo\\` - Payments made via Venmo \\* \\`pay_to\\` - Payments made via PayTo \\* \\`faster_payments\\` - Payments made via Faster Payments \\* \\`sepa_instant_transfer\\` - Payments made via Sepa Instant Transfer \\* \\`automated_bank_transfer\\` - Represents virtual bank account using which the payment will be done. \\* \\`klarna_pay_now\\` - Payments made via Klarna Pay Now \\* \\`online_banking_poland\\` - Payments made via Online Banking Poland \\* \\`payconiq_by_bancontact\\` - Payments made via Payconiq by Bancontact\n",
+      "enum": [
+        "card",
+        "paypal_express_checkout",
+        "amazon_payments",
+        "direct_debit",
+        "generic",
+        "alipay",
+        "unionpay",
+        "apple_pay",
+        "wechat_pay",
+        "ideal",
+        "google_pay",
+        "sofort",
+        "bancontact",
+        "giropay",
+        "dotpay",
+        "upi",
+        "netbanking_emandates",
+        "venmo",
+        "pay_to",
+        "faster_payments",
+        "sepa_instant_transfer",
+        "automated_bank_transfer",
+        "klarna_pay_now",
+        "online_banking_poland",
+        "payconiq_by_bancontact"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`card\\` - Card based payment including credit cards and debit cards. Details about the card can be obtained from the card resource. \\* \\`paypal_express_checkout\\` - Payments made via PayPal Express Checkout. \\* \\`amazon_payments\\` - Payments made via Amazon Payments. \\* \\`direct_debit\\` - Represents bank account for which the direct debit or ACH agreement/mandate is created. \\* \\`generic\\` - Payments made via Generic Payment Method. \\* \\`alipay\\` - Payments made via Alipay. \\* \\`unionpay\\` - Payments made via UnionPay. \\* \\`apple_pay\\` - Payments made via Apple Pay. \\* \\`wechat_pay\\` - Payments made via WeChat Pay. \\* \\`ideal\\` - Payments made via iDEAL. \\* \\`google_pay\\` - Payments made via Google Pay. \\* \\`sofort\\` - Payments made via Sofort. \\* \\`bancontact\\` - Payments made via Bancontact Card. \\* \\`giropay\\` - Payments made via giropay. \\* \\`dotpay\\` - Payments made via Dotpay. \\* \\`upi\\` - UPI Payments. \\* \\`netbanking_emandates\\` - Netbanking (eMandates) Payments. \\* \\`venmo\\` - Payments made via Venmo \\* \\`pay_to\\` - Payments made via PayTo \\* \\`faster_payments\\` - Payments made via Faster Payments \\* \\`sepa_instant_transfer\\` - Payments made via Sepa Instant Transfer \\* \\`automated_bank_transfer\\` - Represents virtual bank account using which the payment will be done. \\* \\`klarna_pay_now\\` - Payments made via Klarna Pay Now \\* \\`online_banking_poland\\` - Payments made via Online Banking Poland \\* \\`payconiq_by_bancontact\\` - Payments made via Payconiq by Bancontact\n",
+      "enum": [
+        "card",
+        "paypal_express_checkout",
+        "amazon_payments",
+        "direct_debit",
+        "generic",
+        "alipay",
+        "unionpay",
+        "apple_pay",
+        "wechat_pay",
+        "ideal",
+        "google_pay",
+        "sofort",
+        "bancontact",
+        "giropay",
+        "dotpay",
+        "upi",
+        "netbanking_emandates",
+        "venmo",
+        "pay_to",
+        "faster_payments",
+        "sepa_instant_transfer",
+        "automated_bank_transfer",
+        "klarna_pay_now",
+        "online_banking_poland",
+        "payconiq_by_bancontact"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(card|paypal_express_checkout|amazon_payments|direct_debit|generic|alipay|unionpay|apple_pay|wechat_pay|ideal|google_pay|sofort|bancontact|giropay|dotpay|upi|netbanking_emandates|venmo|pay_to|faster_payments|sepa_instant_transfer|automated_bank_transfer|klarna_pay_now|online_banking_poland|payconiq_by_bancontact)(,(card|paypal_express_checkout|amazon_payments|direct_debit|generic|alipay|unionpay|apple_pay|wechat_pay|ideal|google_pay|sofort|bancontact|giropay|dotpay|upi|netbanking_emandates|venmo|pay_to|faster_payments|sepa_instant_transfer|automated_bank_transfer|klarna_pay_now|online_banking_poland|payconiq_by_bancontact))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(card|paypal_express_checkout|amazon_payments|direct_debit|generic|alipay|unionpay|apple_pay|wechat_pay|ideal|google_pay|sofort|bancontact|giropay|dotpay|upi|netbanking_emandates|venmo|pay_to|faster_payments|sepa_instant_transfer|automated_bank_transfer|klarna_pay_now|online_banking_poland|payconiq_by_bancontact)(,(card|paypal_express_checkout|amazon_payments|direct_debit|generic|alipay|unionpay|apple_pay|wechat_pay|ideal|google_pay|sofort|bancontact|giropay|dotpay|upi|netbanking_emandates|venmo|pay_to|faster_payments|sepa_instant_transfer|automated_bank_transfer|klarna_pay_now|online_banking_poland|payconiq_by_bancontact))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "card",
+  "deprecated": false
+}

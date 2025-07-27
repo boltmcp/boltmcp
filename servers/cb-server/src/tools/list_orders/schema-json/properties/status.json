@@ -1,0 +1,52 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The status of this order. Possible values are : <dfn>new, processing, complete, cancelled, voided, queued, awaiting_shipment, on_hold, delivered, shipped, partially_delivered, returned.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"queued\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`new\\` - Order has been created. Applicable only if you are using Chargebee's legacy order management system. \\* \\`processing\\` - Order is being processed. Applicable only if you are using Chargebee's legacy order management system \\* \\`complete\\` - Order has been processed successfully. Applicable only if you are using Chargebee's legacy order management system \\* \\`cancelled\\` - Order has been cancelled. Applicable only if you are using Chargebee's legacy order management system \\* \\`voided\\` - Order has been voided. Applicable only if you are using Chargebee's legacy order management system \\* \\`queued\\` - Order is yet to be processed by any system, these are scheduled orders created by Chargebee \\* \\`awaiting_shipment\\` - The order has been picked up by an integration system, and synced to a shipping management platform \\* \\`on_hold\\` - The order is paused from being processed. \\* \\`delivered\\` - The order has been delivered to the customer. \\* \\`shipped\\` - The order has moved from order management system to a shipping system. \\* \\`partially_delivered\\` - The order has been partially delivered to the customer. \\* \\`returned\\` - The order has been returned after delivery.\n",
+      "enum": [
+        "new",
+        "processing",
+        "complete",
+        "cancelled",
+        "voided",
+        "queued",
+        "awaiting_shipment",
+        "on_hold",
+        "delivered",
+        "shipped",
+        "partially_delivered",
+        "returned"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`new\\` - Order has been created. Applicable only if you are using Chargebee's legacy order management system. \\* \\`processing\\` - Order is being processed. Applicable only if you are using Chargebee's legacy order management system \\* \\`complete\\` - Order has been processed successfully. Applicable only if you are using Chargebee's legacy order management system \\* \\`cancelled\\` - Order has been cancelled. Applicable only if you are using Chargebee's legacy order management system \\* \\`voided\\` - Order has been voided. Applicable only if you are using Chargebee's legacy order management system \\* \\`queued\\` - Order is yet to be processed by any system, these are scheduled orders created by Chargebee \\* \\`awaiting_shipment\\` - The order has been picked up by an integration system, and synced to a shipping management platform \\* \\`on_hold\\` - The order is paused from being processed. \\* \\`delivered\\` - The order has been delivered to the customer. \\* \\`shipped\\` - The order has moved from order management system to a shipping system. \\* \\`partially_delivered\\` - The order has been partially delivered to the customer. \\* \\`returned\\` - The order has been returned after delivery.\n",
+      "enum": [
+        "new",
+        "processing",
+        "complete",
+        "cancelled",
+        "voided",
+        "queued",
+        "awaiting_shipment",
+        "on_hold",
+        "delivered",
+        "shipped",
+        "partially_delivered",
+        "returned"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(new|processing|complete|cancelled|voided|queued|awaiting_shipment|on_hold|delivered|shipped|partially_delivered|returned)(,(new|processing|complete|cancelled|voided|queued|awaiting_shipment|on_hold|delivered|shipped|partially_delivered|returned))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(new|processing|complete|cancelled|voided|queued|awaiting_shipment|on_hold|delivered|shipped|partially_delivered|returned)(,(new|processing|complete|cancelled|voided|queued|awaiting_shipment|on_hold|delivered|shipped|partially_delivered|returned))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "queued",
+  "deprecated": false
+}

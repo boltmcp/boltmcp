@@ -1,0 +1,42 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current state of the subscription. Possible values are : <dfn>future, in_trial, active, non_renewing, paused, cancelled.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is_not] = \"active\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`future\\` - The subscription is scheduled to start at a future date. \\* \\`in_trial\\` - The subscription is in trial. \\* \\`active\\` - The subscription is active and will be charged for automatically based on the items in it. \\* \\`non_renewing\\` - The subscription will be canceled at the end of the current term. \\* \\`paused\\` - The subscription is [paused](https://www.chargebee.com/docs/2.0/pause-subscription.html). The subscription will not renew while in this state. \\* \\`cancelled\\` - The subscription has been canceled and is no longer in service. \\* \\`transferred\\` - The subscription has been transferred to another business entity within the organization.\n",
+      "enum": [
+        "future",
+        "in_trial",
+        "active",
+        "non_renewing",
+        "paused",
+        "cancelled",
+        "transferred"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`future\\` - The subscription is scheduled to start at a future date. \\* \\`in_trial\\` - The subscription is in trial. \\* \\`active\\` - The subscription is active and will be charged for automatically based on the items in it. \\* \\`non_renewing\\` - The subscription will be canceled at the end of the current term. \\* \\`paused\\` - The subscription is [paused](https://www.chargebee.com/docs/2.0/pause-subscription.html). The subscription will not renew while in this state. \\* \\`cancelled\\` - The subscription has been canceled and is no longer in service. \\* \\`transferred\\` - The subscription has been transferred to another business entity within the organization.\n",
+      "enum": [
+        "future",
+        "in_trial",
+        "active",
+        "non_renewing",
+        "paused",
+        "cancelled",
+        "transferred"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(future|in_trial|active|non_renewing|paused|cancelled|transferred)(,(future|in_trial|active|non_renewing|paused|cancelled|transferred))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(future|in_trial|active|non_renewing|paused|cancelled|transferred)(,(future|in_trial|active|non_renewing|paused|cancelled|transferred))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "active",
+  "deprecated": false
+}

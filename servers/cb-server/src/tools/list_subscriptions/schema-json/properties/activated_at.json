@@ -1,0 +1,35 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Time at which the subscription <code>status</code> last changed to \n<code>active</code>. For example, this value is updated when an <code>in_trial</code> or \n<code>cancelled</code> subscription activates.<br><b>Supported operators : </b>after, before, on, between, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>activated_at[after] = \"1435054328\"</i>",
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    },
+    "is_present": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "1435054328",
+  "deprecated": false
+}

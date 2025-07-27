@@ -1,0 +1,38 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Indicating the current state of the hosted page resource. Possible values are : <dfn>created, requested, succeeded, cancelled, acknowledged.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>state[is] = \"succeeded\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`created\\` - Indicates the hosted page is just created. \\* \\`requested\\` - Indicates the hosted page is requested by the website \\* \\`succeeded\\` - Indicates the hosted page is successfully submitted by the user and response is sent to the return url. \\* \\`cancelled\\` - Indicates the page is cancelled by the end user after requesting it. \\* \\`failed\\` - \\*\\*(Deprecated)\\*\\* Indicates the page submition is failed and response is sent to the return url. \\* \\`acknowledged\\` - Indicates the succeeded hosted page is acknowledged.\n",
+      "enum": [
+        "created",
+        "requested",
+        "succeeded",
+        "cancelled",
+        "acknowledged"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`created\\` - Indicates the hosted page is just created. \\* \\`requested\\` - Indicates the hosted page is requested by the website \\* \\`succeeded\\` - Indicates the hosted page is successfully submitted by the user and response is sent to the return url. \\* \\`cancelled\\` - Indicates the page is cancelled by the end user after requesting it. \\* \\`failed\\` - \\*\\*(Deprecated)\\*\\* Indicates the page submition is failed and response is sent to the return url. \\* \\`acknowledged\\` - Indicates the succeeded hosted page is acknowledged.\n",
+      "enum": [
+        "created",
+        "requested",
+        "succeeded",
+        "cancelled",
+        "acknowledged"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(created|requested|succeeded|cancelled|failed|acknowledged)(,(created|requested|succeeded|cancelled|failed|acknowledged))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(created|requested|succeeded|cancelled|failed|acknowledged)(,(created|requested|succeeded|cancelled|failed|acknowledged))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "succeeded",
+  "deprecated": false
+}

@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current status of Payment Voucher. Possible values are : <dfn>active, consumed, expired, failure.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is_not] = \"active, consumed, expired\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`active\\` - Active and ready to be consumed \\* \\`consumed\\` - Consumed for a transaction and cannot be used again \\* \\`expired\\` - Expired before consumed and cannot be used again \\* \\`failure\\` - Failed to create the voucher due to gateway rejection\n",
+      "enum": [
+        "active",
+        "consumed",
+        "expired",
+        "failure"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`active\\` - Active and ready to be consumed \\* \\`consumed\\` - Consumed for a transaction and cannot be used again \\* \\`expired\\` - Expired before consumed and cannot be used again \\* \\`failure\\` - Failed to create the voucher due to gateway rejection\n",
+      "enum": [
+        "active",
+        "consumed",
+        "expired",
+        "failure"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(active|consumed|expired|failure)(,(active|consumed|expired|failure))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(active|consumed|expired|failure)(,(active|consumed|expired|failure))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "active, consumed, expired",
+  "deprecated": false
+}

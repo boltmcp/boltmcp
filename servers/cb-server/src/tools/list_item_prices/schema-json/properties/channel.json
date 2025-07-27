@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The subscription channel this object originated from and is maintained in. Possible values are : <dfn>web, app_store, play_store.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>channel[is] = \"APP STORE\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`web\\` - The object was created (and is maintained) for the web channel directly in Chargebee via API or UI. \\* \\`app_store\\` - The object data is synchronized with data from [in-app subscription(s)](https://apidocs.chargebee.com/docs/api/in_app_subscriptions) created in Apple App Store. Direct manipulation of this object via UI or API is disallowed. \\* \\`play_store\\` - The object data is synchronized with data from [in-app subscription(s)](https://apidocs.chargebee.com/docs/api/in_app_subscriptions) created in Google Play Store. Direct manipulation of this object via UI or API is disallowed.  \n\nIn-App Subscriptions is currently in early access. Contact [eap@chargebee.com](mailto:eap@chargebee.com) for more information.\n",
+      "enum": [
+        "web",
+        "app_store",
+        "play_store"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`web\\` - The object was created (and is maintained) for the web channel directly in Chargebee via API or UI. \\* \\`app_store\\` - The object data is synchronized with data from [in-app subscription(s)](https://apidocs.chargebee.com/docs/api/in_app_subscriptions) created in Apple App Store. Direct manipulation of this object via UI or API is disallowed. \\* \\`play_store\\` - The object data is synchronized with data from [in-app subscription(s)](https://apidocs.chargebee.com/docs/api/in_app_subscriptions) created in Google Play Store. Direct manipulation of this object via UI or API is disallowed.  \n\nIn-App Subscriptions is currently in early access. Contact [eap@chargebee.com](mailto:eap@chargebee.com) for more information.\n",
+      "enum": [
+        "web",
+        "app_store",
+        "play_store"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(web|app_store|play_store)(,(web|app_store|play_store))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(web|app_store|play_store)(,(web|app_store|play_store))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "APP STORE",
+  "deprecated": false
+}

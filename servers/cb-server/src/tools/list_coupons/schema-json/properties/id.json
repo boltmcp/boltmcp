@@ -1,0 +1,28 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br><p>Used to uniquely identify the coupon in your website/application and to integrate with Chargebee.</p>\n<div class=\"alert alert-info\">\n    <p><strong>Note:</strong></p>\n    <p>\n         When the coupon ID contains a special character; for example: <code>#</code>, the API returns an error.\n         Make sure that you <a href=\"https://www.urlencoder.org/\">encode</a> the coupon ID in the path parameter before making an API call.\n    </p>\n</div>.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"OFF2008\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "OFF2008",
+  "deprecated": false
+}

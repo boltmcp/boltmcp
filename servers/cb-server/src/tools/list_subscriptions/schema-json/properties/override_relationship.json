@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, boolean filter</dfn><br>If <code>true</code>, ignores the <a href=\"./customers?prod_cat_ver=2#customer_relationship\">hierarchy relationship</a> and uses customer as payment and invoice owner. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>override_relationship[is] = \"false\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "format": "boolean",
+      "enum": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "example": "false",
+  "deprecated": false
+}

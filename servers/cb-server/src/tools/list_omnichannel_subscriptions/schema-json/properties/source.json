@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`apple_app_store\\` - Source of the app is apple app store \\* \\`google_play_store\\` - Source of the app is google play store\n",
+      "enum": [
+        "apple_app_store",
+        "google_play_store"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`apple_app_store\\` - Source of the app is apple app store \\* \\`google_play_store\\` - Source of the app is google play store\n",
+      "enum": [
+        "apple_app_store",
+        "google_play_store"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(apple_app_store|google_play_store)(,(apple_app_store|google_play_store))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(apple_app_store|google_play_store)(,(apple_app_store|google_play_store))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "apple_app_store",
+  "deprecated": false
+}

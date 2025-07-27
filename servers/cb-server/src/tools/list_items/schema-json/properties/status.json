@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on item <code>status</code>. Possible values are : <dfn>active, archived, deleted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"active\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`active\\` - The item can be used to create new item prices. \\* \\`archived\\` - The item is no longer active and no new item prices can be created \\* \\`deleted\\` - Indicates that the item has been [deleted](./items?prod_cat_ver=2#delete_an_item). The `id` and `name` can be reused. Deleted items can be retrieved using [List items](./items?prod_cat_ver=2#list_items).\n",
+      "enum": [
+        "active",
+        "archived",
+        "deleted"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`active\\` - The item can be used to create new item prices. \\* \\`archived\\` - The item is no longer active and no new item prices can be created \\* \\`deleted\\` - Indicates that the item has been [deleted](./items?prod_cat_ver=2#delete_an_item). The `id` and `name` can be reused. Deleted items can be retrieved using [List items](./items?prod_cat_ver=2#list_items).\n",
+      "enum": [
+        "active",
+        "archived",
+        "deleted"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(active|archived|deleted)(,(active|archived|deleted))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(active|archived|deleted)(,(active|archived|deleted))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "active",
+  "deprecated": false
+}

@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of resources to be returned.",
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer",
+      "format": "int32",
+      "default": 10
+    },
+    "offset": {
+      "description": "Determines your position in the list for pagination. To ensure that the next page is retrieved correctly, always set <code>offset</code> to the value of <code>next_offset</code> obtained in the previous iteration of the API call.",
+      "maxLength": 1000,
+      "type": "string"
+    },
+    "id": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `id` to the tool, first call the tool `expandSchema` with \"/properties/id\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>Filter items based on item id.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>id[is] = \"basic\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "item_family_id": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `item_family_id` to the tool, first call the tool `expandSchema` with \"/properties/item_family_id\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>Filter items based on <code>item_family_id</code>.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>item_family_id[is] = \"acme\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "type": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `type` to the tool, first call the tool `expandSchema` with \"/properties/type\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on item <code>type</code>. Possible values are : <dfn>plan, addon, charge.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is] = \"plan\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "name": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `name` to the tool, first call the tool `expandSchema` with \"/properties/name\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>Filter items based on item <code>name</code>.<br><b>Supported operators : </b>is, is_not, starts_with<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>name[is_not] = \"basic\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "item_applicability": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `item_applicability` to the tool, first call the tool `expandSchema` with \"/properties/item_applicability\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on <code>item_applicability</code>. Possible values are : <dfn>all, restricted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>item_applicability[is_not] = \"all\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `status` to the tool, first call the tool `expandSchema` with \"/properties/status\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter items based on item <code>status</code>. Possible values are : <dfn>active, archived, deleted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"active\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "is_giftable": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `is_giftable` to the tool, first call the tool `expandSchema` with \"/properties/is_giftable\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, boolean filter</dfn><br>Specifies if gift subscriptions can be created for this item. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>is_giftable[is] = \"true\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `updated_at` to the tool, first call the tool `expandSchema` with \"/properties/updated_at\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Filter items based on when the items were last updated.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>updated_at[after] = \"1243545465\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "enabled_for_checkout": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `enabled_for_checkout` to the tool, first call the tool `expandSchema` with \"/properties/enabled_for_checkout\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, boolean filter</dfn><br>Allow the plan to subscribed to via Checkout. Applies only for plan-items. <br><strong>Note:</strong> Only the in-app version of Checkout is supported for Product Catalog v2. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>enabled_for_checkout[is] = \"null\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "enabled_in_portal": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `enabled_in_portal` to the tool, first call the tool `expandSchema` with \"/properties/enabled_in_portal\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, boolean filter</dfn><br>Allow customers to change their subscription to this plan via the <a href=\"https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html\" target=\"_blank\">Self-Serve Portal</a>. Applies only for plan-items. This requires the Portal configuration to <a target=\"_blank\" href=\"https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html#allow-change-subscription\" target=\"_blank\"> allow changing subscriptions</a>. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>enabled_in_portal[is] = \"null\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "metered": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `metered` to the tool, first call the tool `expandSchema` with \"/properties/metered\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, boolean filter</dfn><br>Specifies whether the item undergoes metered billing. When <code>true</code>, the quantity is calculated from <a href=\"/docs/api/usages?prod_cat_ver=2\">usage records</a>. When <code>false</code>, the <code>quantity</code> is as determined while adding an item price to the subscription. Applicable only for items of <code>type</code> <code>plan</code> or <code>addon</code> and when <a href=\"https://www.chargebee.com/docs/2.0/metered_billing.html\" rel=\"noopener noreferrer\" target=\"_blank\">Metered Billing</a> is enabled. The value of this attribute cannot be changed. Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>metered[is] = \"true\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "usage_calculation": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `usage_calculation` to the tool, first call the tool `expandSchema` with \"/properties/usage_calculation\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>How the quantity is calculated from usage data for the item prices belonging to this item. Only applicable when the item is <code>metered</code>. This value overrides the one <a href=\"https://www.chargebee.com/docs/2.0/metered_billing.html#configuring-metered-billing\" rel=\"noopener noreferrer\" target=\"_blank\">set at the site level</a>. . Possible values are : <dfn>sum_of_usages, last_usage, max_usage.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>usage_calculation[is_not] = \"SUM_OF_USAGES\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "channel": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `channel` to the tool, first call the tool `expandSchema` with \"/properties/channel\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The subscription channel this object originated from and is maintained in. Possible values are : <dfn>web, app_store, play_store.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>channel[is] = \"APP STORE\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "business_entity_id": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `business_entity_id` to the tool, first call the tool `expandSchema` with \"/properties/business_entity_id\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>The unique ID of the \n<a href='/docs/api/business_entities'>business entity</a> of this <code>item</code>. <a href='using_business_entity_filters_in_product_catalog_list_apis'>Learn more</a> about all the scenarios before using this filter. \n<span ismicro=\"true\" featureid=\"cb-mbe\"></span><br><b>Supported operators : </b>is, is_present<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>business_entity_id[is_present] = \"true\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "include_site_level_resources": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `include_site_level_resources` to the tool, first call the tool `expandSchema` with \"/properties/include_site_level_resources\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, boolean filter</dfn><p>Default value is <code>true</code> . To exclude site-level resources in <a target='_blank' href='' >specific cases</a>, set this parameter to <code>false</code>.</p> Possible values are : <i>true, false</i><br><b>Supported operators : </b>is<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>include_site_level_resources[is] = \"null\"</i></property-description>",
+      "additionalProperties": true
+    },
+    "sort_by": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `sort_by` to the tool, first call the tool `expandSchema` with \"/properties/sort_by\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description><dfn class=\"text-muted\">optional, string filter</dfn><br>Sorts based on the specified attribute. <br><b>Supported attributes :</b> <dfn>name, id, updated_at</dfn><br><b>Supported sort-orders : </b><dfn>asc, desc</dfn><br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>sort_by[asc] = \"name\"</i><br>This will sort the result based on the 'name' attribute in ascending(earliest first) order.</property-description>",
+      "additionalProperties": true
+    },
+    "bundle_configuration": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `bundle_configuration` to the tool, first call the tool `expandSchema` with \"/properties/bundle_configuration\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Parameters of <code>bundle_configuration</code></property-description>",
+      "additionalProperties": true
+    },
+    "chargebee-request-origin-device": {
+      "description": "The device from which the customer has made the request\n",
+      "type": "string",
+      "example": "Android"
+    },
+    "chargebee-request-origin-user": {
+      "description": "The email address of your customer/user. Use this when the email address has only ASCII characters.\n",
+      "type": "string",
+      "format": "email",
+      "example": "user@example.com"
+    },
+    "chargebee-request-origin-user-encoded": {
+      "description": "The Base64-encoded email address of your customer/user. Use this if the email address has UTF-8 characters. When this header is provided, the header \\`chargebee-request-origin-user\\` is ignored.\n",
+      "type": "string",
+      "format": "email",
+      "example": "dXNlci7QutCy0ZbRgtC+0YfQutCwQGV4YW1wbGUuY29t"
+    },
+    "chargebee-request-origin-ip": {
+      "description": "The IP address of the customer where the request originated\n",
+      "pattern": "^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-fA-F]|[a-fA-F][a-fA-F0-9\\-]*[a-fA-F0-9])\\.)*([A-Fa-f]|[A-Fa-f][A-Fa-f0-9\\-]*[A-Fa-f0-9])$|^(?:(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){6})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:::(?:(?:(?:[0-9a-fA-F]{1,4})):){5})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){4})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,1}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){3})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,2}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:(?:[0-9a-fA-F]{1,4})):){2})(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,3}(?:(?:[0-9a-fA-F]{1,4})))?::(?:(?:[0-9a-fA-F]{1,4})):)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,4}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9]))\\.){3}(?:(?:25[0-5]|(?:[1-9]|1[0-9]|2[0-4])?[0-9])))))))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,5}(?:(?:[0-9a-fA-F]{1,4})))?::)(?:(?:[0-9a-fA-F]{1,4})))|(?:(?:(?:(?:(?:(?:[0-9a-fA-F]{1,4})):){0,6}(?:(?:[0-9a-fA-F]{1,4})))?::)))))$",
+      "type": "string",
+      "example": "192.168.1.2"
+    },
+    "chargebee-business-entity-id": {
+      "description": "If the site has multiple business entities, you can use this custom HTTP header to specify the business entity for which Chargebee should perform the operation.\n",
+      "maxLength": 50,
+      "type": "string"
+    }
+  },
+  "required": []
+}

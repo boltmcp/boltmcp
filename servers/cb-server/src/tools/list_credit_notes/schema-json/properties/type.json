@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The credit note type. Possible values are : <dfn>adjustment, refundable.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is_not] = \"adjustment\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`adjustment\\` - Adjustment Credit Note \\* \\`refundable\\` - Refundable Credit Note \\* \\`store\\` - Store Credit Note\n",
+      "enum": [
+        "adjustment",
+        "refundable",
+        "store"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`adjustment\\` - Adjustment Credit Note \\* \\`refundable\\` - Refundable Credit Note \\* \\`store\\` - Store Credit Note\n",
+      "enum": [
+        "adjustment",
+        "refundable",
+        "store"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(adjustment|refundable|store)(,(adjustment|refundable|store))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(adjustment|refundable|store)(,(adjustment|refundable|store))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "adjustment",
+  "deprecated": false
+}

@@ -1,0 +1,42 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, in cents filter</dfn><br>The unpaid amount that is due on the invoice. This is calculated as: <code><a href=\"invoices#invoice_total\">total</a></code> - <code><a href=\"invoices#invoice_amount_paid\">amount_paid</a></code> - sum of <code><a href=\"invoices#invoice_applied_credits\">applied_credits</a>.applied_amount</code> - sum of <code><a href=\"invoices#invoice_adjustment_credit_notes\">adjustment_credit_notes</a>.cn_total</code> - sum of <code><a href=\"invoices#invoice_linked_taxes_withheld\">linked_taxes_withheld</a>.amount</code>.<br><b>Supported operators : </b>is, is_not, lt, lte, gt, gte, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>amount_due[lt] = \"200\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "is_not": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "lte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gt": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "gte": {
+      "pattern": "^-?\\d+$",
+      "type": "string",
+      "format": "number"
+    },
+    "between": {
+      "pattern": "^\\[-?\\d+,-?\\d+\\]$",
+      "type": "string"
+    }
+  },
+  "example": "200",
+  "deprecated": false
+}

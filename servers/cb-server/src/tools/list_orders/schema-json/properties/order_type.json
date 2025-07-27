@@ -1,0 +1,32 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Order type. Possible values are : <dfn>manual, system_generated.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>order_type[is_not] = \"system_generated\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`manual\\` - The order has been created by the the user using Chargebee's legacy order management system. \\* \\`system_generated\\` - The order has been created by Chargebee automatically based on the preferences set by the user.\n",
+      "enum": [
+        "manual",
+        "system_generated"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`manual\\` - The order has been created by the the user using Chargebee's legacy order management system. \\* \\`system_generated\\` - The order has been created by Chargebee automatically based on the preferences set by the user.\n",
+      "enum": [
+        "manual",
+        "system_generated"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(manual|system_generated)(,(manual|system_generated))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(manual|system_generated)(,(manual|system_generated))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "system_generated",
+  "deprecated": false
+}

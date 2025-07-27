@@ -1,0 +1,23 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The <code>type</code> of the <code>entity</code> to which this entitlement belongs. Possible values are : <dfn>plan, addon, charge, plan_price, addon_price.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>entity_type[in] = \"plan_price\"</i>",
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(plan|addon|charge|plan_price|addon_price)(,(plan|addon|charge|plan_price|addon_price))*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "type": "string",
+      "description": "\\* \\`plan\\` - Plan \\* \\`addon\\` - Addon \\* \\`charge\\` - Charge \\* \\`plan_price\\` - Plan Price \\* \\`addon_price\\` - Addon Price\n",
+      "enum": [
+        "plan",
+        "addon",
+        "charge",
+        "plan_price",
+        "addon_price"
+      ]
+    }
+  },
+  "example": "plan_price",
+  "deprecated": false
+}

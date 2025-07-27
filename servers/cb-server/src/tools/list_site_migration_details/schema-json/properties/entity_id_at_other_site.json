@@ -1,0 +1,20 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>Entity Id of the record in the other site.<br><b>Supported operators : </b>is, is_not, starts_with<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>entity_id_at_other_site[is] = \"null\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "is_not": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "starts_with": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "deprecated": false,
+  "example": null
+}

@@ -1,0 +1,40 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Current status of this invoice. Possible values are : <dfn>paid, posted, payment_due, not_paid, voided, pending.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"paid\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`paid\\` - Indicates a paid invoice. \\* \\`posted\\` - Indicates the payment is not yet collected and will be in this state till the due date to indicate the due period \\* \\`payment_due\\` - Indicates the payment is not yet collected and is being retried as per retry settings. \\* \\`not_paid\\` - Indicates the payment is not made and all attempts to collect is failed. \\* \\`voided\\` - Indicates a voided invoice. \\* \\`pending\\` -  \nThe [invoice](/docs/api/invoices?prod_cat_ver=2#invoice_status) is yet to be closed (sent for payment collection). An invoice is generated with this `status` when it has line items that belong to items that are `metered` or when the `subscription.create_pending_invoices`attribute is set to `true`.  \nThe [invoice](/docs/api/invoices?prod_cat_ver=1#invoice_status) is yet to be closed (sent for payment collection). All invoices are generated with this `status` when [Metered Billing](https://www.chargebee.com/docs/1.0/metered_billing.html) is enabled for the site.\n",
+      "enum": [
+        "paid",
+        "posted",
+        "payment_due",
+        "not_paid",
+        "voided",
+        "pending"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`paid\\` - Indicates a paid invoice. \\* \\`posted\\` - Indicates the payment is not yet collected and will be in this state till the due date to indicate the due period \\* \\`payment_due\\` - Indicates the payment is not yet collected and is being retried as per retry settings. \\* \\`not_paid\\` - Indicates the payment is not made and all attempts to collect is failed. \\* \\`voided\\` - Indicates a voided invoice. \\* \\`pending\\` -  \nThe [invoice](/docs/api/invoices?prod_cat_ver=2#invoice_status) is yet to be closed (sent for payment collection). An invoice is generated with this `status` when it has line items that belong to items that are `metered` or when the `subscription.create_pending_invoices`attribute is set to `true`.  \nThe [invoice](/docs/api/invoices?prod_cat_ver=1#invoice_status) is yet to be closed (sent for payment collection). All invoices are generated with this `status` when [Metered Billing](https://www.chargebee.com/docs/1.0/metered_billing.html) is enabled for the site.\n",
+      "enum": [
+        "paid",
+        "posted",
+        "payment_due",
+        "not_paid",
+        "voided",
+        "pending"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(paid|posted|payment_due|not_paid|voided|pending)(,(paid|posted|payment_due|not_paid|voided|pending))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(paid|posted|payment_due|not_paid|voided|pending)(,(paid|posted|payment_due|not_paid|voided|pending))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "paid",
+  "deprecated": false
+}

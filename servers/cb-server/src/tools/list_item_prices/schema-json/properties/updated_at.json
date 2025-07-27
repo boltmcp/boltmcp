@@ -1,0 +1,27 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, timestamp(UTC) in seconds filter</dfn><br>Filter item prices based on their <code>updated_at</code>.<br><b>Supported operators : </b>after, before, on, between<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>updated_at[after] = \"1243545465\"</i>",
+  "type": "object",
+  "properties": {
+    "after": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "before": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "on": {
+      "pattern": "^\\d{10}$",
+      "type": "string",
+      "format": "unix-time"
+    },
+    "between": {
+      "pattern": "^\\[\\d{10},\\d{10}\\]$",
+      "type": "string"
+    }
+  },
+  "example": "1243545465",
+  "deprecated": false
+}

@@ -1,0 +1,32 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter product based on their <code>status</code>. Possible values are : <dfn>active, inactive.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is] = \"basic\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`active\\` - active \\* \\`inactive\\` - inactive\n",
+      "enum": [
+        "active",
+        "inactive"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`active\\` - active \\* \\`inactive\\` - inactive\n",
+      "enum": [
+        "active",
+        "inactive"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(active|inactive)(,(active|inactive))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(active|inactive)(,(active|inactive))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "basic",
+  "deprecated": false
+}

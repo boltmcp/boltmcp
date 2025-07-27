@@ -1,0 +1,34 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Filter attached items based on the <code>type</code> of attached item. Possible values are : <code>recommended</code>, <code>mandatory</code>, <code>optional</code>. Possible values are : <dfn>recommended, mandatory, optional.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is] = \"mandatory\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`recommended\\` - The addon is recommended to go with the plan-item when using [Checkout](https://www.chargebee.com/docs/2.0/configure-inapp.html#fundamental-settings_recommending-addons-in-checkout) or [Portal](https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html#allow-change-subscription). \\* \\`mandatory\\` - The addon is attached automatically to the subscription for the plan-item unless [explicitly removed](./subscriptions?prod_cat_ver=2) via API. \\* \\`optional\\` - The addon is neither mandatory, nor recommended. This allows you to attach an addon so you can specify a `quantity` and `billing_cycles` for the addon, for when it is applied to subscriptions with the plan.\n",
+      "enum": [
+        "recommended",
+        "mandatory",
+        "optional"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`recommended\\` - The addon is recommended to go with the plan-item when using [Checkout](https://www.chargebee.com/docs/2.0/configure-inapp.html#fundamental-settings_recommending-addons-in-checkout) or [Portal](https://www.chargebee.com/docs/2.0/inapp-self-serve-portal.html#allow-change-subscription). \\* \\`mandatory\\` - The addon is attached automatically to the subscription for the plan-item unless [explicitly removed](./subscriptions?prod_cat_ver=2) via API. \\* \\`optional\\` - The addon is neither mandatory, nor recommended. This allows you to attach an addon so you can specify a `quantity` and `billing_cycles` for the addon, for when it is applied to subscriptions with the plan.\n",
+      "enum": [
+        "recommended",
+        "mandatory",
+        "optional"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(recommended|mandatory|optional)(,(recommended|mandatory|optional))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(recommended|mandatory|optional)(,(recommended|mandatory|optional))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "mandatory",
+  "deprecated": false
+}

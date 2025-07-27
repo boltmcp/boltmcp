@@ -1,0 +1,52 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>The reason for issuing this Credit Note. The following reason codes are supported now[Deprecated; use the <a href=\"/docs/api/credit_notes#credit_note_create_reason_code\">create_reason_code</a> parameter instead]. Possible values are : <dfn>write_off, subscription_change, subscription_cancellation, subscription_pause, chargeback, product_unsatisfactory, service_unsatisfactory, order_change, order_cancellation, waiver, other, fraudulent.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>reason_code[is] = \"waiver\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`write_off\\` - This reason will be set automatically for the Credit Notes created during invoice [Write Off](https://www.chargebee.com/docs/invoice-operations.html#write-off) operation. \\* \\`subscription_change\\` - This reason will be set automatically for Credit Notes created during Change Subscription operation when [proration](https://www.chargebee.com/docs/proration.html) is enabled \\* \\`subscription_cancellation\\` - This reason will be set automatically for Credit Notes created during cancel subscription operation \\* \\`subscription_pause\\` - This reason will be automatically set to credit notes created during pause/resume subscription operation. \\* \\`chargeback\\` - Can be set when you are recording your customer Chargebacks \\* \\`product_unsatisfactory\\` - Product Unsatisfactory \\* \\`service_unsatisfactory\\` - Service Unsatisfactory \\* \\`order_change\\` - Order Change \\* \\`order_cancellation\\` - Order Cancellation \\* \\`waiver\\` - Waiver \\* \\`other\\` - Can be set when none of the above reason codes are applicable \\* \\`fraudulent\\` - FRAUDULENT\n",
+      "enum": [
+        "write_off",
+        "subscription_change",
+        "subscription_cancellation",
+        "subscription_pause",
+        "chargeback",
+        "product_unsatisfactory",
+        "service_unsatisfactory",
+        "order_change",
+        "order_cancellation",
+        "waiver",
+        "other",
+        "fraudulent"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`write_off\\` - This reason will be set automatically for the Credit Notes created during invoice [Write Off](https://www.chargebee.com/docs/invoice-operations.html#write-off) operation. \\* \\`subscription_change\\` - This reason will be set automatically for Credit Notes created during Change Subscription operation when [proration](https://www.chargebee.com/docs/proration.html) is enabled \\* \\`subscription_cancellation\\` - This reason will be set automatically for Credit Notes created during cancel subscription operation \\* \\`subscription_pause\\` - This reason will be automatically set to credit notes created during pause/resume subscription operation. \\* \\`chargeback\\` - Can be set when you are recording your customer Chargebacks \\* \\`product_unsatisfactory\\` - Product Unsatisfactory \\* \\`service_unsatisfactory\\` - Service Unsatisfactory \\* \\`order_change\\` - Order Change \\* \\`order_cancellation\\` - Order Cancellation \\* \\`waiver\\` - Waiver \\* \\`other\\` - Can be set when none of the above reason codes are applicable \\* \\`fraudulent\\` - FRAUDULENT\n",
+      "enum": [
+        "write_off",
+        "subscription_change",
+        "subscription_cancellation",
+        "subscription_pause",
+        "chargeback",
+        "product_unsatisfactory",
+        "service_unsatisfactory",
+        "order_change",
+        "order_cancellation",
+        "waiver",
+        "other",
+        "fraudulent"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(write_off|subscription_change|subscription_cancellation|subscription_pause|chargeback|product_unsatisfactory|service_unsatisfactory|order_change|order_cancellation|waiver|other|fraudulent)(,(write_off|subscription_change|subscription_cancellation|subscription_pause|chargeback|product_unsatisfactory|service_unsatisfactory|order_change|order_cancellation|waiver|other|fraudulent))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(write_off|subscription_change|subscription_cancellation|subscription_pause|chargeback|product_unsatisfactory|service_unsatisfactory|order_change|order_cancellation|waiver|other|fraudulent)(,(write_off|subscription_change|subscription_cancellation|subscription_pause|chargeback|product_unsatisfactory|service_unsatisfactory|order_change|order_cancellation|waiver|other|fraudulent))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "waiver",
+  "deprecated": false
+}

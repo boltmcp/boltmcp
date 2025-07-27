@@ -1,0 +1,36 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Type of the transaction. Possible values are : <dfn>authorization, payment, refund, payment_reversal.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is_not] = \"payment\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`authorization\\` - The transaction represents an authorization for capturing the [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`payment\\` - The transaction represents capture of [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`refund\\` - The transaction represents a refund of [amount](transactions#transaction_amount) to the customer's [payment_source](payment_sources). \\* \\`payment_reversal\\` - Indicates a reversal transaction.\n",
+      "enum": [
+        "authorization",
+        "payment",
+        "refund",
+        "payment_reversal"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`authorization\\` - The transaction represents an authorization for capturing the [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`payment\\` - The transaction represents capture of [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`refund\\` - The transaction represents a refund of [amount](transactions#transaction_amount) to the customer's [payment_source](payment_sources). \\* \\`payment_reversal\\` - Indicates a reversal transaction.\n",
+      "enum": [
+        "authorization",
+        "payment",
+        "refund",
+        "payment_reversal"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(authorization|payment|refund|payment_reversal)(,(authorization|payment|refund|payment_reversal))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(authorization|payment|refund|payment_reversal)(,(authorization|payment|refund|payment_reversal))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "payment",
+  "deprecated": false
+}

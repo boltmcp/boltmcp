@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "is": z.enum(["authorization","payment","refund","payment_reversal"]).describe("\\* \\`authorization\\` - The transaction represents an authorization for capturing the [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`payment\\` - The transaction represents capture of [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`refund\\` - The transaction represents a refund of [amount](transactions#transaction_amount) to the customer's [payment_source](payment_sources). \\* \\`payment_reversal\\` - Indicates a reversal transaction.\n").optional(),
+  "is_not": z.enum(["authorization","payment","refund","payment_reversal"]).describe("\\* \\`authorization\\` - The transaction represents an authorization for capturing the [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`payment\\` - The transaction represents capture of [amount](transactions#transaction_amount) from the customer's [payment_source](payment_sources). \\* \\`refund\\` - The transaction represents a refund of [amount](transactions#transaction_amount) to the customer's [payment_source](payment_sources). \\* \\`payment_reversal\\` - Indicates a reversal transaction.\n").optional(),
+  "in": z.string().regex(new RegExp("^\\[(authorization|payment|refund|payment_reversal)(,(authorization|payment|refund|payment_reversal))*\\]$")).optional(),
+  "not_in": z.string().regex(new RegExp("^\\[(authorization|payment|refund|payment_reversal)(,(authorization|payment|refund|payment_reversal))*\\]$")).optional()
+}

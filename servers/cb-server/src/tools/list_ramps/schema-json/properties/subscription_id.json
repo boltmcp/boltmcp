@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>Filter subscription ramps based on <code>subscription_id</code>.<div class=\"alert alert-warning\"> <strong>Caution</strong> <p>This filter is mandatory when filtering by <code>status</code> or <code>effective_from</code>.</p> </div><br><b>Supported operators : </b>is, in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>subscription_id[is] = \"8gsnbYfsMLds\"</i>",
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "8gsnbYfsMLds",
+  "deprecated": false
+}

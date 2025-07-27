@@ -1,0 +1,39 @@
+import { inputParamsSchema } from "./schema/root.js"
+import type { OpenMCPServerTool } from "@open-mcp/core"
+
+const tool: OpenMCPServerTool = {
+  "toolName": "list_vouchers_for_a_customer",
+  "toolDescription": "List vouchers for a customer",
+  "baseUrl": "https://medimitra-test.chargebee.com/api/v2/",
+  "path": "/customers/{customer-id}/payment_vouchers",
+  "method": "get",
+  "security": [
+    {
+      "key": "Authorization",
+      "value": "Basic <mcp-env-var>USERNAME_PASSWORD_BASE64</mcp-env-var>",
+      "in": "header",
+      "envVarName": "USERNAME_PASSWORD_BASE64"
+    }
+  ],
+  "paramsMap": {
+    "path": {
+      "customer-id": "customer-id"
+    },
+    "query": {
+      "limit": "limit",
+      "offset": "offset",
+      "status": "status",
+      "sort_by": "sort_by"
+    },
+    "header": {
+      "chargebee-request-origin-device": "chargebee-request-origin-device",
+      "chargebee-request-origin-user": "chargebee-request-origin-user",
+      "chargebee-request-origin-user-encoded": "chargebee-request-origin-user-encoded",
+      "chargebee-request-origin-ip": "chargebee-request-origin-ip",
+      "chargebee-business-entity-id": "chargebee-business-entity-id"
+    }
+  },
+  inputParamsSchema
+}
+
+export default tool

@@ -1,0 +1,38 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Status of the coupon. Possible values are : <dfn>active, expired, archived, deleted.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>status[is_not] = \"active\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`active\\` - Can be applied to a subscription. \\* \\`expired\\` - Cannot be applied to a subscription. A coupon may expire due to exceeding [max_redemptions](/docs/api/coupons?#coupon_max_redemptions) or [valid_till](/docs/api/coupons?#coupon_valid_till) date is past. Existing associations remain unaffected. \\* \\`archived\\` - Cannot be applied to a subscription. Existing associations remain unaffected. \\* \\`deleted\\` - Indicates the coupon has been deleted. \\* \\`future\\` - The coupon is scheduled to start at a future date and cannot be applied to a subscription. From the valid_from date, the status changes to active.\n",
+      "enum": [
+        "active",
+        "expired",
+        "archived",
+        "deleted",
+        "future"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`active\\` - Can be applied to a subscription. \\* \\`expired\\` - Cannot be applied to a subscription. A coupon may expire due to exceeding [max_redemptions](/docs/api/coupons?#coupon_max_redemptions) or [valid_till](/docs/api/coupons?#coupon_valid_till) date is past. Existing associations remain unaffected. \\* \\`archived\\` - Cannot be applied to a subscription. Existing associations remain unaffected. \\* \\`deleted\\` - Indicates the coupon has been deleted. \\* \\`future\\` - The coupon is scheduled to start at a future date and cannot be applied to a subscription. From the valid_from date, the status changes to active.\n",
+      "enum": [
+        "active",
+        "expired",
+        "archived",
+        "deleted",
+        "future"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(active|expired|archived|deleted|future)(,(active|expired|archived|deleted|future))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(active|expired|archived|deleted|future)(,(active|expired|archived|deleted|future))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "active",
+  "deprecated": false
+}

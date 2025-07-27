@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`fixed\\` - Fixed `bundle_configurations.type` appears when you create a bundle plan that cannot be updated during checkout or subscription creation.\n",
+      "enum": [
+        "fixed"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`fixed\\` - Fixed `bundle_configurations.type` appears when you create a bundle plan that cannot be updated during checkout or subscription creation.\n",
+      "enum": [
+        "fixed"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(fixed)(,(fixed))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(fixed)(,(fixed))*\\]$",
+      "type": "string"
+    }
+  },
+  "description": "Type of the bundle\n",
+  "example": "fixed",
+  "deprecated": false
+}

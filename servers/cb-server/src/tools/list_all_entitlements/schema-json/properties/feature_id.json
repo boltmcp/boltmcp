@@ -1,0 +1,16 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, string filter</dfn><br>The <code>id</code> of the feature associated with this entitlement.<br><b>Supported operators : </b>is, is_not, starts_with, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>feature_id[is] = \"user-licenses\"</i>",
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "example": "user-licenses",
+  "deprecated": false
+}

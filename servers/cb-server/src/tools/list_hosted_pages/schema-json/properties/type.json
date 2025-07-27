@@ -1,0 +1,46 @@
+{
+  "description": "<dfn class=\"text-muted\">optional, enumerated string filter</dfn><br>Type of the requested hosted page. Possible values are : <dfn>checkout_new, checkout_existing, update_payment_method, manage_payment_sources, collect_now, extend_subscription, checkout_one_time, pre_cancel.</dfn><br><b>Supported operators : </b>is, is_not, in, not_in<br><br><b>Example <span class=\"cb-char-arrow\">→</span> </b><i>type[is_not] = \"checkout_new\"</i>",
+  "type": "object",
+  "properties": {
+    "is": {
+      "type": "string",
+      "description": "\\* \\`checkout_new\\` - Checkout new Subscription \\* \\`checkout_existing\\` - Checkout existing Subscription \\* \\`update_card\\` - \\*\\*(Deprecated)\\*\\* Update Card for a Customer \\* \\`update_payment_method\\` - Update Payment Method for a Customer \\* \\`manage_payment_sources\\` - Manage Payments for a customer \\* \\`collect_now\\` - Collect Unpaid Invoices for a Customer \\* \\`extend_subscription\\` - To extend a Subscription period \\* \\`checkout_one_time\\` - Checkout one time \\* \\`pre_cancel\\` - This hosted page is used to help retain customers when they attempt to cancel their account or subscription. \\* \\`view_voucher\\` - View Details of a voucher\n",
+      "enum": [
+        "checkout_new",
+        "checkout_existing",
+        "update_payment_method",
+        "manage_payment_sources",
+        "collect_now",
+        "extend_subscription",
+        "checkout_one_time",
+        "pre_cancel",
+        "view_voucher"
+      ]
+    },
+    "is_not": {
+      "type": "string",
+      "description": "\\* \\`checkout_new\\` - Checkout new Subscription \\* \\`checkout_existing\\` - Checkout existing Subscription \\* \\`update_card\\` - \\*\\*(Deprecated)\\*\\* Update Card for a Customer \\* \\`update_payment_method\\` - Update Payment Method for a Customer \\* \\`manage_payment_sources\\` - Manage Payments for a customer \\* \\`collect_now\\` - Collect Unpaid Invoices for a Customer \\* \\`extend_subscription\\` - To extend a Subscription period \\* \\`checkout_one_time\\` - Checkout one time \\* \\`pre_cancel\\` - This hosted page is used to help retain customers when they attempt to cancel their account or subscription. \\* \\`view_voucher\\` - View Details of a voucher\n",
+      "enum": [
+        "checkout_new",
+        "checkout_existing",
+        "update_payment_method",
+        "manage_payment_sources",
+        "collect_now",
+        "extend_subscription",
+        "checkout_one_time",
+        "pre_cancel",
+        "view_voucher"
+      ]
+    },
+    "in": {
+      "pattern": "^\\[(checkout_new|checkout_existing|update_card|update_payment_method|manage_payment_sources|collect_now|extend_subscription|checkout_one_time|pre_cancel|view_voucher)(,(checkout_new|checkout_existing|update_card|update_payment_method|manage_payment_sources|collect_now|extend_subscription|checkout_one_time|pre_cancel|view_voucher))*\\]$",
+      "type": "string"
+    },
+    "not_in": {
+      "pattern": "^\\[(checkout_new|checkout_existing|update_card|update_payment_method|manage_payment_sources|collect_now|extend_subscription|checkout_one_time|pre_cancel|view_voucher)(,(checkout_new|checkout_existing|update_card|update_payment_method|manage_payment_sources|collect_now|extend_subscription|checkout_one_time|pre_cancel|view_voucher))*\\]$",
+      "type": "string"
+    }
+  },
+  "example": "checkout_new",
+  "deprecated": false
+}

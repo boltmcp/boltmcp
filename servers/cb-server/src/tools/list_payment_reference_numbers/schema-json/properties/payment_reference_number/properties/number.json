@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "in": {
+      "pattern": "^\\[(.*)(,.*)*\\]$",
+      "type": "string"
+    },
+    "is": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "description": "This parameter is used to identify the PRN in the system and retrieve its corresponding payment information. \\*\\*Note\\*\\*: To retrieve the PRN, the API requires either the invoice ID or the payment reference number to be provided by the user. If both values are missing, an error will be returned by the API.\n",
+  "example": "001234",
+  "deprecated": false
+}
