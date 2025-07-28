@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "2- followed by zipcode, ex. 2-32246",
+      "type": "string",
+      "example": "2-10001"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "mosad-id": {
+      "description": "the center's mosad id, it can be found using other api requests.",
+      "type": "string",
+      "example": "118653"
+    }
+  },
+  "required": []
+}
