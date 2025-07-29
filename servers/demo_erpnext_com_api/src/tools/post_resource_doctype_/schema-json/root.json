@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "DocType": {
+      "description": "The DocType you'd like to receive. For example, Customer.\n",
+      "type": "string",
+      "example": "Customer"
+    }
+  },
+  "required": [
+    "DocType"
+  ]
+}

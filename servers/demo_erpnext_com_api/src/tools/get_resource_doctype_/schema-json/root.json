@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "DocType": {
+      "description": "The DocType you'd like to receive. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n",
+      "type": "string"
+    },
+    "fields": {
+      "description": "By default, only the \"name\" field is included in the listing, to add more fields, \nyou can pass the fields param to GET request. For example, fields=[\"name\",\"country\"]\n",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "name"
+      ]
+    },
+    "filters": {
+      "description": "You can filter the listing using sql conditions by passing them as the filters GET param.\nEach condition is an array of the format, [{doctype}, {field}, {operator}, {value}].\nFor example, filters=[[\"Customer\", \"country\", \"=\", \"India\"]]\n",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "limit_page_length": {
+      "description": "By default, all listings are returned paginated. With this parameter you can change the \npage size (how many items are teturned at once).\n",
+      "type": "integer",
+      "default": 20
+    },
+    "limit_start": {
+      "description": "To request successive pages, pass a multiple of your limit_page_length as limit_start. \nFor Example, to request the second page, pass limit_start as 20.\n",
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "required": [
+    "DocType"
+  ]
+}

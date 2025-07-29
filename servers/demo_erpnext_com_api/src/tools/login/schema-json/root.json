@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "usr": {
+      "description": "Your username",
+      "type": "string",
+      "example": "Administrator"
+    },
+    "pwd": {
+      "description": "Your password",
+      "type": "string",
+      "example": "admin"
+    },
+    "b_usr": {
+      "type": "string",
+      "example": "Administrator"
+    },
+    "b_pwd": {
+      "type": "string",
+      "example": "admin"
+    }
+  },
+  "required": []
+}

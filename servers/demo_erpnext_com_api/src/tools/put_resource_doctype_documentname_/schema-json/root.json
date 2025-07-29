@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "DocType": {
+      "description": "The DocType you'd like to update. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n",
+      "type": "string"
+    },
+    "DocumentName": {
+      "description": "The name (ID) of the document you'd like to update. For example EMP001 (of type Employee).\n",
+      "type": "string"
+    }
+  },
+  "required": [
+    "DocType",
+    "DocumentName"
+  ]
+}
