@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "properties": {
+    "destination": {
+      "description": "destination solar system ID",
+      "format": "int64",
+      "type": "integer"
+    },
+    "origin": {
+      "description": "origin solar system ID",
+      "format": "int64",
+      "type": "integer"
+    },
+    "avoid": {
+      "description": "avoid solar system ID(s)",
+      "items": {
+        "format": "int64",
+        "type": "integer"
+      },
+      "maxItems": 100,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "connections": {
+      "description": "connected solar system pairs",
+      "items": {
+        "items": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "maxItems": 2,
+        "minItems": 2,
+        "type": "array"
+      },
+      "maxItems": 100,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "flag": {
+      "description": "route security preference",
+      "default": "shortest",
+      "enum": [
+        "shortest",
+        "secure",
+        "insecure"
+      ],
+      "type": "string"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "destination",
+    "origin",
+    "X-Compatibility-Date"
+  ]
+}

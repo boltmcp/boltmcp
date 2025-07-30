@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "character_id": {
+      "description": "The ID of the character",
+      "example": 90000001,
+      "format": "int64",
+      "type": "integer",
+      "x-common-model": "true"
+    },
+    "mail_id": {
+      "description": "An EVE mail ID",
+      "format": "int64",
+      "type": "integer"
+    },
+    "labels": {
+      "description": "Labels to assign to the mail. Pre-existing labels are unassigned.",
+      "items": {
+        "description": "label integer",
+        "format": "int64",
+        "type": "integer"
+      },
+      "maxItems": 25,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "read": {
+      "description": "Whether the mail is flagged as read",
+      "type": "boolean"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "character_id",
+    "mail_id",
+    "X-Compatibility-Date"
+  ]
+}

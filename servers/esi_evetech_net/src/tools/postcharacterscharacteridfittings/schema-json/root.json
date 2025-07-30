@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "properties": {
+    "character_id": {
+      "description": "The ID of the character",
+      "example": 90000001,
+      "format": "int64",
+      "type": "integer",
+      "x-common-model": "true"
+    },
+    "description": {
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "description": "item object",
+        "properties": {
+          "flag": {
+            "description": "Fitting location for the item. Entries placed in 'Invalid' will be discarded. If this leaves the fitting with nothing, it will cause an error.",
+            "enum": [
+              "Cargo",
+              "DroneBay",
+              "FighterBay",
+              "HiSlot0",
+              "HiSlot1",
+              "HiSlot2",
+              "HiSlot3",
+              "HiSlot4",
+              "HiSlot5",
+              "HiSlot6",
+              "HiSlot7",
+              "Invalid",
+              "LoSlot0",
+              "LoSlot1",
+              "LoSlot2",
+              "LoSlot3",
+              "LoSlot4",
+              "LoSlot5",
+              "LoSlot6",
+              "LoSlot7",
+              "MedSlot0",
+              "MedSlot1",
+              "MedSlot2",
+              "MedSlot3",
+              "MedSlot4",
+              "MedSlot5",
+              "MedSlot6",
+              "MedSlot7",
+              "RigSlot0",
+              "RigSlot1",
+              "RigSlot2",
+              "ServiceSlot0",
+              "ServiceSlot1",
+              "ServiceSlot2",
+              "ServiceSlot3",
+              "ServiceSlot4",
+              "ServiceSlot5",
+              "ServiceSlot6",
+              "ServiceSlot7",
+              "SubSystemSlot0",
+              "SubSystemSlot1",
+              "SubSystemSlot2",
+              "SubSystemSlot3"
+            ],
+            "type": "string"
+          },
+          "quantity": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type_id": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "type_id",
+          "flag",
+          "quantity"
+        ],
+        "type": "object"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "ship_type_id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "character_id",
+    "description",
+    "items",
+    "name",
+    "ship_type_id",
+    "X-Compatibility-Date"
+  ]
+}

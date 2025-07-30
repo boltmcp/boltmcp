@@ -1,0 +1,32 @@
+import { inputParamsSchema } from "./schema/root.js"
+import type { OpenMCPServerTool } from "@open-mcp/core"
+
+const tool: OpenMCPServerTool = {
+  "toolName": "postfleetsfleetidwings",
+  "toolDescription": "Create fleet wing",
+  "baseUrl": "https://esi.evetech.net",
+  "path": "/fleets/{fleet_id}/wings",
+  "method": "post",
+  "security": [
+    {
+      "key": "Authorization",
+      "value": "Bearer <mcp-env-var>OAUTH2_TOKEN</mcp-env-var>",
+      "in": "header",
+      "envVarName": "OAUTH2_TOKEN"
+    }
+  ],
+  "paramsMap": {
+    "path": {
+      "fleet_id": "fleet_id"
+    },
+    "header": {
+      "Accept-Language": "Accept-Language",
+      "If-None-Match": "If-None-Match",
+      "X-Compatibility-Date": "X-Compatibility-Date",
+      "X-Tenant": "X-Tenant"
+    }
+  },
+  inputParamsSchema
+}
+
+export default tool

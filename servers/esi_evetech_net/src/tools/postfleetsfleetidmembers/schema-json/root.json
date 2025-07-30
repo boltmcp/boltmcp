@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "fleet_id": {
+      "description": "ID for a fleet",
+      "format": "int64",
+      "type": "integer"
+    },
+    "character_id": {
+      "description": "The character you want to invite",
+      "format": "int64",
+      "type": "integer"
+    },
+    "role": {
+      "description": "If a character is invited with the `fleet_commander` role, neither `wing_id` or `squad_id` should be specified. If a character is invited with the `wing_commander` role, only `wing_id` should be specified. If a character is invited with the `squad_commander` role, both `wing_id` and `squad_id` should be specified. If a character is invited with the `squad_member` role, `wing_id` and `squad_id` should either both be specified or not specified at all. If they aren’t specified, the invited character will join any squad with available positions.",
+      "enum": [
+        "fleet_commander",
+        "wing_commander",
+        "squad_commander",
+        "squad_member"
+      ],
+      "type": "string"
+    },
+    "squad_id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "wing_id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fleet_id",
+    "character_id",
+    "role",
+    "X-Compatibility-Date"
+  ]
+}

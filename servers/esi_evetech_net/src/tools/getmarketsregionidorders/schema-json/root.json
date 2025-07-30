@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "region_id": {
+      "description": "Return orders in this region",
+      "format": "int64",
+      "type": "integer"
+    },
+    "order_type": {
+      "description": "Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders",
+      "default": "all",
+      "enum": [
+        "buy",
+        "sell",
+        "all"
+      ],
+      "type": "string"
+    },
+    "page": {
+      "description": "Which page of results to return.",
+      "format": "int32",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "type_id": {
+      "description": "Return orders only for this type",
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "region_id",
+    "order_type",
+    "X-Compatibility-Date"
+  ]
+}

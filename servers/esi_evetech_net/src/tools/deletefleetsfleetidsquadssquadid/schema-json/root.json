@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "fleet_id": {
+      "description": "ID for a fleet",
+      "format": "int64",
+      "type": "integer"
+    },
+    "squad_id": {
+      "description": "The squad to delete",
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fleet_id",
+    "squad_id",
+    "X-Compatibility-Date"
+  ]
+}

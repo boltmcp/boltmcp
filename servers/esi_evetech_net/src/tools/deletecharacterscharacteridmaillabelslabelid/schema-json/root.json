@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "character_id": {
+      "description": "The ID of the character",
+      "example": 90000001,
+      "format": "int64",
+      "type": "integer",
+      "x-common-model": "true"
+    },
+    "label_id": {
+      "description": "An EVE label id",
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "character_id",
+    "label_id",
+    "X-Compatibility-Date"
+  ]
+}

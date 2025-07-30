@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "character_id": {
+      "description": "The ID of the character",
+      "example": 90000001,
+      "format": "int64",
+      "type": "integer",
+      "x-common-model": "true"
+    },
+    "approved_cost": {
+      "default": 0,
+      "format": "int64",
+      "type": "integer"
+    },
+    "body": {
+      "type": "string"
+    },
+    "recipients": {
+      "items": {
+        "description": "recipient object",
+        "properties": {
+          "recipient_id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "recipient_type": {
+            "enum": [
+              "alliance",
+              "character",
+              "corporation",
+              "mailing_list"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "recipient_type",
+          "recipient_id"
+        ],
+        "type": "object"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "type": "array"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "character_id",
+    "body",
+    "recipients",
+    "subject",
+    "X-Compatibility-Date"
+  ]
+}

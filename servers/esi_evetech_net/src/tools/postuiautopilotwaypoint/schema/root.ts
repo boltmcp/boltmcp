@@ -1,0 +1,11 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "add_to_beginning": z.boolean().describe("Whether this solar system should be added to the beginning of all waypoints"),
+  "clear_other_waypoints": z.boolean().describe("Whether clean other waypoints beforing adding this one"),
+  "destination_id": z.number().int().describe("The destination to travel to, can be solar system, station or structure's id"),
+  "Accept-Language": z.enum(["en","de","fr","ja","ru","zh","ko","es"]).describe("The language to use for the response. Defaults to 'en'.").optional(),
+  "If-None-Match": z.string().describe("The ETag of the previous request. A 304 will be returned if this matches the current ETag.").optional(),
+  "X-Compatibility-Date": z.string().date().describe("The compatibility date for the request."),
+  "X-Tenant": z.string().describe("The tenant ID for the request. Defaults to 'tranquility'.").optional()
+}

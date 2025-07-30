@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "contract_id": {
+      "description": "ID of a contract",
+      "format": "int64",
+      "type": "integer"
+    },
+    "corporation_id": {
+      "description": "The ID of the corporation",
+      "example": 98777771,
+      "format": "int64",
+      "type": "integer",
+      "x-common-model": "true"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "contract_id",
+    "corporation_id",
+    "X-Compatibility-Date"
+  ]
+}

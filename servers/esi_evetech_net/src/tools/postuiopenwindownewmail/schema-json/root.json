@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string"
+    },
+    "recipients": {
+      "items": {
+        "description": "recipient integer",
+        "format": "int64",
+        "type": "integer"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "type": "array"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "to_corp_or_alliance_id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "to_mailing_list_id": {
+      "description": "Corporations, alliances and mailing lists are all types of mailing groups. You may only send to one mailing group, at a time, so you may fill out either this field or the to_corp_or_alliance_ids field",
+      "format": "int64",
+      "type": "integer"
+    },
+    "Accept-Language": {
+      "description": "The language to use for the response. Defaults to 'en'.",
+      "enum": [
+        "en",
+        "de",
+        "fr",
+        "ja",
+        "ru",
+        "zh",
+        "ko",
+        "es"
+      ],
+      "type": "string"
+    },
+    "If-None-Match": {
+      "description": "The ETag of the previous request. A 304 will be returned if this matches the current ETag.",
+      "type": "string"
+    },
+    "X-Compatibility-Date": {
+      "description": "The compatibility date for the request.",
+      "format": "date",
+      "type": "string"
+    },
+    "X-Tenant": {
+      "description": "The tenant ID for the request. Defaults to 'tranquility'.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "body",
+    "recipients",
+    "subject",
+    "X-Compatibility-Date"
+  ]
+}
