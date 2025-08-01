@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

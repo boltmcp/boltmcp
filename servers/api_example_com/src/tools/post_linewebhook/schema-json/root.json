@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "number"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "userId": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "userId"
+            ]
+          },
+          "webhookEventId": {
+            "type": "string"
+          },
+          "deliveryContext": {
+            "type": "object",
+            "properties": {
+              "isRedelivery": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "isRedelivery"
+            ]
+          },
+          "message": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "image"
+                ]
+              },
+              "quoteToken": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "contentProvider": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "originalContentUrl": {
+                    "type": "string"
+                  },
+                  "previewImageUrl": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type"
+            ]
+          },
+          "replyToken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "timestamp",
+          "source",
+          "webhookEventId",
+          "deliveryContext",
+          "replyToken"
+        ]
+      }
+    },
+    "x-line-signature": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "destination",
+    "events",
+    "x-line-signature"
+  ]
+}

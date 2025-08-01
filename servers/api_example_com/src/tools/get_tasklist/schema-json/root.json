@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "search": {
+      "type": "string"
+    },
+    "page": {
+      "type": "string",
+      "default": "1"
+    },
+    "limit": {
+      "type": "string",
+      "default": "10"
+    }
+  },
+  "required": []
+}
