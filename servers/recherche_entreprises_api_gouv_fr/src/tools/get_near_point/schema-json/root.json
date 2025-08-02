@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "lat": {
+      "description": "Latitude de l'établissement (source : la majorité des siret utilisent le géocodage provenant de la base SIRENE géocodée par data.gouv, à l'exception de ceux modifiés après le début du mois en cours, pour lesquels la géolocalisation est directement extraite de la base SIRENE).",
+      "type": "number",
+      "format": "float"
+    },
+    "long": {
+      "description": "Longitude de l'établissement (source : la majorité des siret utilisent le géocodage provenant de la base SIRENE géocodée par data.gouv, à l'exception de ceux modifiés après le début du mois en cours, pour lesquels la géolocalisation est directement extraite de la base SIRENE).",
+      "type": "number",
+      "format": "float"
+    },
+    "radius": {
+      "description": "Radius de recherche, inférieur ou égal à 50km.",
+      "type": "number",
+      "format": "float",
+      "default": 5
+    },
+    "activite_principale": {
+      "description": "<a href=https://www.sirene.fr/sirene/public/variable/apet700-rev2>Le code NAF ou code APE, un code d'activité suivant la nomenclature de l'INSEE</a>. Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "section_activite_principale": {
+      "description": "<a href=https://www.insee.fr/fr/information/2120875>Section de\nl'activité principale :</a>\n\n  * `A` - Agriculture, sylviculture et pêche\n  * `B` - Industries extractives\n  * `C` - Industrie manufacturière\n  * `D` - Production et distribution d'électricité, de gaz, de vapeur et\nd'air conditionné\n  * `E` - Production et distribution d'eau ; assainissement, gestion des\ndéchets et dépollution\n  * `F` -  Construction\n  * `G` -  Commerce ; réparation d'automobiles et de motocycles\n  * `H` -  Transports et entreposage\n  * `I` -  Hébergement et restauration\n  * `J` -  Information et communication\n  * `K` -  Activités financières et d'assurance\n  * `L` -  Activités immobilières\n  * `M` -  Activités spécialisées, scientifiques et techniques\n  * `N` -  Activités de services administratifs et de soutien\n  * `O` -  Administration publique\n  * `P` -  Enseignement\n  * `Q` -  Santé humaine et action sociale\n  * `R` -  Arts, spectacles et activités récréatives\n  * `S` -  Autres activités de services\n  * `T` -  Activités des ménages en tant qu'employeurs ; activités\nindifférenciées des ménages en tant que producteurs de biens et services pour usage propre\n  * `U` -  Activités extra-territoriales\n\nCe paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.\n",
+      "type": "string"
+    },
+    "limite_matching_etablissements": {
+      "description": "Nombre d'établissements connexes inclus dans la réponse (matching_etablissements). Valeur entre 1 et 100.",
+      "type": "integer",
+      "default": 10
+    },
+    "minimal": {
+      "description": "Permet de retourner une réponse minmale, qui exclut les champs secondaires. Voir \"include\" pour en savoir plus.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "include": {
+      "description": "ATTENTION : Ce paramètre ne peut être appelé qu'avec le champ \"minimal=True\".\n\nPermet de ne demander que certains des champs secondaires.\n\nValeurs possibles :\n\n  * complements\n  * dirigeants\n  * finances\n  * matching_etablissements\n  * siege\n  * score\n\n\nPar défaut tous les champs sont inclus sauf le score.\n\nCe paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "page": {
+      "description": "Le numéro de la page à retourner",
+      "type": "integer",
+      "default": 1
+    },
+    "per_page": {
+      "description": "Le nombre de résultats par page, limité à 25",
+      "type": "integer",
+      "default": 10
+    }
+  },
+  "required": [
+    "lat",
+    "long"
+  ]
+}

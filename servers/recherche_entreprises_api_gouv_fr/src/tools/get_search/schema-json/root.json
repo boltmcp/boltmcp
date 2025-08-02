@@ -1,0 +1,313 @@
+{
+  "type": "object",
+  "properties": {
+    "q": {
+      "description": "Termes de la recherche (dénomination et/ou adresse, dirigeants, élus)",
+      "type": "string"
+    },
+    "activite_principale": {
+      "description": "<a href=https://www.sirene.fr/static-resources/documentation/v_sommaire_311.htm#2>Le code NAF ou code APE, un code d'activité suivant la nomenclature de l'INSEE</a>. Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules. Il ne s'applique qu'à l'unité légale, et non à ses établissements.",
+      "type": "string"
+    },
+    "categorie_entreprise": {
+      "description": "Catégorie d'entreprise de l'unité légale. Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string",
+      "enum": [
+        "PME",
+        "ETI",
+        "GE"
+      ]
+    },
+    "code_collectivite_territoriale": {
+      "description": "Code affilié à une collectivité territoriale (Commune - code INSEE, EPCI - n° SIREN, Département - Code INSEE + \"D\" (sauf cas particulier), Région - Code INSEE)",
+      "type": "string"
+    },
+    "convention_collective_renseignee": {
+      "description": "Entreprises ayant au moins un établissement dont la convention collective est renseignée.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "code_postal": {
+      "description": "<a href=https://www.sirene.fr/static-resources/documentation/v_sommaire_311.htm#43>Code postal en 5 chiffres</a>. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "code_commune": {
+      "description": "<a href=https://www.sirene.fr/static-resources/documentation/v_sommaire_311.htm#39>Code commune (INSEE) en 5 caractères</a>. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "departement": {
+      "description": "<a href=https://www.insee.fr/fr/information/6051727> Code de département en deux ou trois chiffres</a>. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string",
+      "pattern": "\\b([013-8]\\d?|2[aAbB1-9]?|9[0-59]?|97[12346])\\b"
+    },
+    "region": {
+      "description": "<a href=https://www.insee.fr/fr/information/6051727> Code de région en deux chiffres</a>. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "epci": {
+      "description": "<a href=https://www.insee.fr/fr/information/2510634> Liste des epci valides</a>. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "egapro_renseignee": {
+      "description": "Uniquement les entreprises ayant un index égapro renseigné",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_achats_responsables": {
+      "description": "Uniquemement les entreprises ayant le label Relations Fournisseurs et Achats Responsables (RFAR).",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_alim_confiance": {
+      "description": "Uniquement les entreprises ayant au moins un établissement avec un résultat de contrôle sanitaire Alim'Confiance.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_association": {
+      "description": "Uniquement les entreprises ayant un identifiant d'association ou une nature juridique avec mention \"association\" (5195, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260).",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_bio": {
+      "description": "Uniquement les entreprises ayant un établissement certifié par l'agence bio",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_collectivite_territoriale": {
+      "description": "Uniquement les collectivités territoriales.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_entrepreneur_individuel": {
+      "description": "Uniquement les entreprises individuelles.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_entrepreneur_spectacle": {
+      "description": "Uniquement les entreprises ayant une licence d'entrepreneur du spectacle.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_ess": {
+      "description": "Uniquement les entreprises appartenant au champ de l'économie sociale et solidaire.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_finess": {
+      "description": "Uniquement les entreprises ayant un établissement du domaine du sanitaire et social (FINESS)",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_organisme_formation": {
+      "description": "Uniquement les entreprises ayant un établissement organisme de formation",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_patrimoine_vivant": {
+      "description": "Uniquement les entreprises ayant le label Entreprise du Patrimoine Vivant (EPV)",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_qualiopi": {
+      "description": "Uniquement les entreprises ayant ayant une certification de la marque « Qualiopi »",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_rge": {
+      "description": "Uniquement les entreprises reconnues garantes de l'Environnement (RGE).",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_siae": {
+      "description": "Uniquement les structures d'insertion par l'activité économique (SIAE).",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_service_public": {
+      "description": "Uniquement les structures reconnues comme administration.\nAttention : Ce filtre se base sur cette liste <a href=https://www.data.gouv.fr/fr/datasets/liste-des-administrations-francaises/>ici</a>.\nCe filtre n'est pas exhaustif et peut retourner des faux positifs.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_l100_3": {
+      "description": "Uniquement les administrations au sens de l'article L. 100-3 du code des relations entre le public et l'administration (CRPA)\nAttention : Ce filtre se base sur cette liste <a href=https://www.data.gouv.fr/fr/datasets/liste-des-administrations-francaises/>ici</a>.\nCe filtre n'est pas exhaustif et peut retourner des faux positifs.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_societe_mission": {
+      "description": "Uniquement les sociétés qui appartiennent au champ des sociétés à mission.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "est_uai": {
+      "description": "Uniquement les entreprises ayant un établissement UAI (Unité Administrative Immatriculée).",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "etat_administratif": {
+      "description": "État administratif de l'unité légale. \"A\" pour Active, \"C\" pour Cessée.",
+      "type": "string",
+      "enum": [
+        "A",
+        "C"
+      ]
+    },
+    "id_convention_collective": {
+      "description": "Identifiant de Convention Collective d'un établissement d'une entreprise.",
+      "type": "string"
+    },
+    "id_finess": {
+      "description": "Identifiant FINESS d'un établissement d'une entreprise.",
+      "type": "string"
+    },
+    "id_rge": {
+      "description": "Identifiant RGE (reconnues garantes de l'Environnement) d'un établissement d'une entreprise.",
+      "type": "string"
+    },
+    "id_uai": {
+      "description": "Identifiant UAI d'un établissement d'une entreprise.",
+      "type": "string"
+    },
+    "nature_juridique": {
+      "description": "<a href=https://www.insee.fr/fr/information/2028129> Catégorie juridique de l'unité légale.</a> Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "section_activite_principale": {
+      "description": "<a href=https://www.insee.fr/fr/information/2120875>Section de\nl'activité principale :</a>\n\n  * `A` - Agriculture, sylviculture et pêche\n  * `B` - Industries extractives\n  * `C` - Industrie manufacturière\n  * `D` - Production et distribution d'électricité, de gaz, de vapeur et\nd'air conditionné\n  * `E` - Production et distribution d'eau ; assainissement, gestion des\ndéchets et dépollution\n  * `F` -  Construction\n  * `G` -  Commerce ; réparation d'automobiles et de motocycles\n  * `H` -  Transports et entreposage\n  * `I` -  Hébergement et restauration\n  * `J` -  Information et communication\n  * `K` -  Activités financières et d'assurance\n  * `L` -  Activités immobilières\n  * `M` -  Activités spécialisées, scientifiques et techniques\n  * `N` -  Activités de services administratifs et de soutien\n  * `O` -  Administration publique\n  * `P` -  Enseignement\n  * `Q` -  Santé humaine et action sociale\n  * `R` -  Arts, spectacles et activités récréatives\n  * `S` -  Autres activités de services\n  * `T` -  Activités des ménages en tant qu'employeurs ; activités\nindifférenciées des ménages en tant que producteurs de biens et services pour usage propre\n  * `U` -  Activités extra-territoriales\n\nCe paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.\n",
+      "type": "string"
+    },
+    "tranche_effectif_salarie": {
+      "description": "<a href=https://sirene.fr/static-resources/htm/v_sommaire_311.htm#27>Tranche d'effectif salarié de l'entreprise</a>. Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "nom_personne": {
+      "description": "Nom d'une personne partie prenante de l'entreprise (dirigeant ou élu).",
+      "type": "string"
+    },
+    "prenoms_personne": {
+      "description": "Prenom(s) d'une personne partie prenante de l'entreprise (dirigeant ou élu).",
+      "type": "string"
+    },
+    "date_naissance_personne_min": {
+      "description": "Valeur minimale de la date de naissance d'une personne partie prenante de l'entreprise (dirigeant ou élu).",
+      "type": "string",
+      "format": "date"
+    },
+    "date_naissance_personne_max": {
+      "description": "Valeur maximale de la date de naissance d'une personne partie prenante de l'entreprise (dirigeant ou élu).",
+      "type": "string",
+      "format": "date"
+    },
+    "type_personne": {
+      "description": "Type de la partie prenante de l'entreprise, dirigeant ou élu.",
+      "type": "string",
+      "enum": [
+        "dirigeant",
+        "elu"
+      ]
+    },
+    "ca_min": {
+      "description": "Valeur minimale du chiffre d'affaire de l'entreprise",
+      "type": "integer"
+    },
+    "ca_max": {
+      "description": "Valeur maximale du chiffre d'affaire de l'entreprise",
+      "type": "integer"
+    },
+    "resultat_net_min": {
+      "description": "Valeur minimale du résultat net de l'entreprise",
+      "type": "integer"
+    },
+    "resultat_net_max": {
+      "description": "Valeur maximale du résultat net de l'entreprise",
+      "type": "integer"
+    },
+    "limite_matching_etablissements": {
+      "description": "Nombre d'établissements connexes inclus dans la réponse (matching_etablissements). Valeur entre 1 et 100.",
+      "type": "integer",
+      "default": 10
+    },
+    "minimal": {
+      "description": "Permet de retourner une réponse minmale, qui exclut les champs secondaires. Voir \"include\" pour en savoir plus.",
+      "type": "boolean",
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "include": {
+      "description": "ATTENTION : Ce paramètre ne peut être appelé qu'avec le champ \"minimal=True\".\n\nPermet de ne demander que certains des champs secondaires.\n\nValeurs possibles :\n\n  * complements\n  * dirigeants\n  * finances\n  * matching_etablissements\n  * siege\n  * score\n\n\nPar défaut tous les champs sont inclus sauf le score.\n\nCe paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.",
+      "type": "string"
+    },
+    "page": {
+      "description": "Le numéro de la page à retourner.",
+      "type": "integer",
+      "default": 1
+    },
+    "per_page": {
+      "description": "Le nombre de résultats par page, limité à 25.",
+      "type": "integer",
+      "default": 10
+    }
+  },
+  "required": []
+}
