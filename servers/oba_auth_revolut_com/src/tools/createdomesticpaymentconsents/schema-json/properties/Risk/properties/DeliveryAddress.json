@@ -1,0 +1,61 @@
+{
+  "required": [
+    "Country",
+    "TownName"
+  ],
+  "type": "object",
+  "properties": {
+    "AddressLine": {
+      "maxItems": 2,
+      "minItems": 0,
+      "type": "array",
+      "description": "The information that locates and identifies the delivery address, as defined by postal services, that is presented in free format text.",
+      "items": {
+        "maxLength": 70,
+        "minLength": 1,
+        "type": "string"
+      }
+    },
+    "StreetName": {
+      "maxLength": 70,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the street."
+    },
+    "BuildingNumber": {
+      "maxLength": 16,
+      "minLength": 1,
+      "type": "string",
+      "description": "The number of the building."
+    },
+    "PostCode": {
+      "maxLength": 16,
+      "minLength": 1,
+      "type": "string",
+      "description": "The post code of the delivery address."
+    },
+    "TownName": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the town."
+    },
+    "CountrySubDivision": {
+      "maxItems": 2,
+      "minItems": 0,
+      "type": "array",
+      "description": "The subdivision of the country, for example, state, region or county.",
+      "items": {
+        "maxLength": 35,
+        "minLength": 1,
+        "type": "string"
+      }
+    },
+    "Country": {
+      "pattern": "^[A-Z]{2,2}$",
+      "type": "string",
+      "description": "The name of the country."
+    }
+  },
+  "description": "The information that locates and identifies the delivery address, as defined by postal services or in free format text."
+}

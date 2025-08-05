@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "PaymentContextCode": {
+      "type": "string",
+      "description": "The payment context.",
+      "enum": [
+        "BillPayment",
+        "EcommerceGoods",
+        "EcommerceServices",
+        "Other",
+        "PartyToParty"
+      ]
+    },
+    "MerchantCategoryCode": {
+      "type": "string",
+      "description": "The merchant category code."
+    },
+    "MerchantCustomerIdentification": {
+      "type": "string",
+      "description": "The merchant customer identification."
+    },
+    "DeliveryAddress": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `DeliveryAddress` to the tool, first call the tool `expandSchema` with \"/properties/Risk/properties/DeliveryAddress\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The information that locates and identifies the delivery address, as defined by postal services or in free format text.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "description": "The Risk section contains the risk indicators that the initiating party sends to the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary), which can be used to specify additional details for risk scoring for account information."
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "ClientId": {
+      "description": "The Client ID of the application.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "ClientId"
+  ]
+}

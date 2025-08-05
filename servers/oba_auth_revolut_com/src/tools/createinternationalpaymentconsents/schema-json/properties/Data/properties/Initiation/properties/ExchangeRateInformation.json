@@ -1,0 +1,34 @@
+{
+  "required": [
+    "RateType",
+    "UnitCurrency"
+  ],
+  "type": "object",
+  "properties": {
+    "UnitCurrency": {
+      "pattern": "^[A-Z]{3,3}$",
+      "type": "string",
+      "description": "The currency that the exchange rate is expressed in.\nFor example, for 1 GBP = xxx EUR, the `UnitCurrency` value is GBP."
+    },
+    "ExchangeRate": {
+      "type": "number",
+      "description": "The exchange rate used to convert an amount from one currency into another.\nThis reflects the price that one currency was bought at with another currency.\n"
+    },
+    "RateType": {
+      "type": "string",
+      "description": "The type used to complete the currency exchange.",
+      "enum": [
+        "Actual",
+        "Agreed",
+        "Indicative"
+      ]
+    },
+    "ContractIdentification": {
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string",
+      "description": "The unique reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent."
+    }
+  },
+  "description": "The details on the currency exchange rate and contract."
+}

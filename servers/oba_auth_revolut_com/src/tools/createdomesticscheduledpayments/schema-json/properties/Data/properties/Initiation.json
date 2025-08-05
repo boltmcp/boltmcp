@@ -1,0 +1,54 @@
+{
+  "required": [
+    "CreditorAccount",
+    "InstructedAmount",
+    "InstructionIdentification",
+    "RequestedExecutionDateTime"
+  ],
+  "type": "object",
+  "properties": {
+    "InstructionIdentification": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The unique ID that an instructing party assigns for an instructed party to unambiguously identify the instruction.\n\nThis ID is used between the instructing party and the instructed party to refer to an individual instruction.\nIt can be included in the messages related to the instruction."
+    },
+    "EndToEndIdentification": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The unique and immutable ID that the initiating party assigns to unambiguously identify the transaction.\n\nThis ID is used for reconciliation or to link tasks related to the transaction.\nIt can be included in the messages related to the transaction.\n\n:::note\nFaster Payments Scheme can access only 31 characters for the `EndToEndIdentification` field.\n:::"
+    },
+    "RequestedExecutionDateTime": {
+      "type": "string",
+      "description": "The date and time when the initiating party requests the clearing agent to process the payment.\n\nThis is the date the debtor's account is to be debited.\n\nAll dates in the JSON payloads are represented in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time format.\nAll date-time fields in responses must include the timezone.\n\nFor example: `2017-04-05T10:43:07+00:00`.",
+      "format": "date-time"
+    },
+    "InstructedAmount": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `InstructedAmount` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/InstructedAmount\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency that the initiating party instructs.\n\nThis amount has to be transported unchanged through the transaction chain.</property-description>",
+      "additionalProperties": true
+    },
+    "DebtorAccount": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `DebtorAccount` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/DebtorAccount\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The details to identify the account.</property-description>",
+      "additionalProperties": true
+    },
+    "CreditorAccount": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `CreditorAccount` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/CreditorAccount\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The details to identify the account.</property-description>",
+      "additionalProperties": true
+    },
+    "CreditorPostalAddress": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `CreditorPostalAddress` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/CreditorPostalAddress\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The postal address of the creditor, as defined by postal services.</property-description>",
+      "additionalProperties": true
+    },
+    "RemittanceInformation": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `RemittanceInformation` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/RemittanceInformation\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The information used for matching an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "description": "The Initiation payload that the initiating party sends to the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary), which is used to request movement of funds from the debtor account to the creditor for a single scheduled domestic payment."
+}

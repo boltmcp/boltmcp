@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "DraftPaymentId": {
+      "description": "The id of the draft payment",
+      "type": "string",
+      "format": "UUID"
+    },
+    "DraftPaymentTransferId": {
+      "description": "The id of the draft payment transfer",
+      "type": "string",
+      "format": "UUID"
+    }
+  },
+  "required": [
+    "DraftPaymentId",
+    "DraftPaymentTransferId"
+  ]
+}

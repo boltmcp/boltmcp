@@ -1,0 +1,6 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "Unstructured": z.string().min(1).max(140).describe("The information used for matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.").optional(),
+  "Reference": z.string().min(1).max(35).describe("The unique reference that the creditor assigns to unambiguously identify the payment transaction.\n\nIf available, the initiating party should provide this reference in the structured remittance information to enable reconciliation by the creditor upon receipt of the amount of money.\n\nIf the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.\n\n:::note\nFaster Payments Scheme can accept only 18 characters for the `Reference` field.\n:::\n\n:::caution\nOnly one reference should be provided, if both `Reference` and `Unstructured` parameters are provided, then the `Unstructured` parameter will be ignored.\n:::").optional()
+}

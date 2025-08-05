@@ -1,0 +1,6 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "ConsentId": z.string().min(1).max(128).describe("The unique ID that the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary) assigns to identify the consent resource."),
+  "Initiation": z.record(z.any()).describe("<llm-instruction>This part of the input schema is truncated. If you want to pass the property `Initiation` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The initiation payload that the initiating party sends to the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary), which is used to request movement of funds from the debtor account to the creditor for an international standing order.</property-description>")
+}

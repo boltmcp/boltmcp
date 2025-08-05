@@ -1,0 +1,42 @@
+{
+  "required": [
+    "Identification",
+    "SchemeName"
+  ],
+  "type": "object",
+  "properties": {
+    "SchemeName": {
+      "type": "string",
+      "description": "The name of the identification scheme.",
+      "enum": [
+        "UK.OBIE.IBAN",
+        "UK.OBIE.SortCodeAccountNumber",
+        "US.RoutingNumberAccountNumber",
+        "US.BranchCodeAccountNumber"
+      ],
+      "example": [
+        "UK.OBIE.IBAN",
+        "UK.OBIE.SortCodeAccountNumber"
+      ]
+    },
+    "Identification": {
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string",
+      "description": "The account ID that an institution assigns to identify the account, which is known by the account owner."
+    },
+    "Name": {
+      "maxLength": 70,
+      "minLength": 1,
+      "type": "string",
+      "description": "The account name that the account servicing institution assigns.\n\nThe account name is the name or names of the account owner(s) represented at an account level.\n\nThe account name is not the product name or the nickname of the account."
+    },
+    "SecondaryIdentification": {
+      "maxLength": 34,
+      "minLength": 1,
+      "type": "string",
+      "description": "The secondary account ID that the account servicing institution assigns.\n\nBuilding societies can use this ID to identify accounts with a roll number in addition to a sort code and account number combination."
+    }
+  },
+  "description": "The details to identify the account."
+}

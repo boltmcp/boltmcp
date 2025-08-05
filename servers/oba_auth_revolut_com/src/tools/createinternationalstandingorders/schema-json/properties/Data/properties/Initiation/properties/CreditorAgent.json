@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "SchemeName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The name of the identification scheme, which is published in an external list.",
+      "example": [
+        "UK.OBIE.IBAN"
+      ]
+    },
+    "Identification": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The unique ID of the servicing institution."
+    },
+    "Name": {
+      "maxLength": 140,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of a known agent used to identify the agent."
+    },
+    "PostalAddress": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `PostalAddress` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/CreditorAgent/properties/PostalAddress\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The postal address of the creditor, as defined by postal services.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "description": "The party that manages the account on behalf of the account owner by:\n- Managing the registration and booking of entries on the account.\n- Calculating balances on the account.\n- Providing information about the account.\n\nThis is the servicer of the beneficiary account."
+}

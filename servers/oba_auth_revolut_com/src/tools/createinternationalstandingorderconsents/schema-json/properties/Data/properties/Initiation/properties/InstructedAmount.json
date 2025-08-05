@@ -1,0 +1,20 @@
+{
+  "required": [
+    "Amount",
+    "Currency"
+  ],
+  "type": "object",
+  "properties": {
+    "Amount": {
+      "pattern": "^\\d{1,13}\\.\\d{1,5}$",
+      "type": "string",
+      "description": "The amount of money where the unit of currency is explicit and compliant with [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)."
+    },
+    "Currency": {
+      "pattern": "^[A-Z]{3,3}$",
+      "type": "string",
+      "description": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code in upper case."
+    }
+  },
+  "description": "The amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency that the initiating party instructs.\n\nThis amount has to be transported unchanged through the transaction chain."
+}

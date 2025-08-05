@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "Department": {
+      "maxLength": 70,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the department."
+    },
+    "SubDepartment": {
+      "maxLength": 70,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the sub-department."
+    },
+    "StreetName": {
+      "maxLength": 70,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the street."
+    },
+    "BuildingNumber": {
+      "maxLength": 16,
+      "minLength": 1,
+      "type": "string",
+      "description": "The number of the building."
+    },
+    "PostCode": {
+      "maxLength": 16,
+      "minLength": 1,
+      "type": "string",
+      "description": "The post code of the address."
+    },
+    "TownName": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The name of the town."
+    },
+    "CountrySubDivision": {
+      "maxLength": 35,
+      "minLength": 1,
+      "type": "string",
+      "description": "The subdivision of the country, such as state, region, or county."
+    },
+    "Country": {
+      "pattern": "^[A-Z]{2,2}$",
+      "type": "string",
+      "description": "The name of the country."
+    },
+    "AddressLine": {
+      "maxItems": 7,
+      "minItems": 0,
+      "type": "array",
+      "description": "The information that locates and identifies the address of the creditor, presented in free format text.",
+      "items": {
+        "maxLength": 70,
+        "minLength": 1,
+        "type": "string"
+      }
+    }
+  },
+  "description": "The postal address of the creditor, as defined by postal services."
+}

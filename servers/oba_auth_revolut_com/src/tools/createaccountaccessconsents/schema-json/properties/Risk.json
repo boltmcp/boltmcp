@@ -1,0 +1,5 @@
+{
+  "type": "object",
+  "description": "The Risk section contains the risk indicators that the initiating party sends to the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary), which can be used to specify additional details for risk scoring for account information.",
+  "properties": {}
+}

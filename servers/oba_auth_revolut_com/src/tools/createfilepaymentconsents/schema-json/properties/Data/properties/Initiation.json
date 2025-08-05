@@ -1,0 +1,48 @@
+{
+  "required": [
+    "FileHash",
+    "FileType"
+  ],
+  "type": "object",
+  "properties": {
+    "FileType": {
+      "type": "string",
+      "description": "The payment file type.",
+      "example": "text/csv"
+    },
+    "FileHash": {
+      "maxLength": 44,
+      "minLength": 1,
+      "type": "string",
+      "description": "A base64 encoding of a SHA256 hash of the file to be uploaded."
+    },
+    "FileReference": {
+      "maxLength": 40,
+      "minLength": 1,
+      "type": "string",
+      "description": "Reference for the file."
+    },
+    "RequestedExecutionDateTime": {
+      "type": "string",
+      "description": "The date and time when the initiating party requests the clearing agent to process the payment.\nThis is the date the debtor's account is to be debited.\n\nAll dates in the JSON payloads are represented in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time format.\nAll date-time fields in responses must include the timezone.\n\nFor example: `2017-04-05T10:43:07+00:00`.",
+      "format": "date-time"
+    },
+    "LocalInstrument": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "User community specific instrument.\n\nUse this element to specify a local instrument, local clearing option and/or further qualify the service or service level."
+    },
+    "DebtorAccount": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `DebtorAccount` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/DebtorAccount\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The details to identify the account.</property-description>",
+      "additionalProperties": true
+    },
+    "RemittanceInformation": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `RemittanceInformation` to the tool, first call the tool `expandSchema` with \"/properties/Data/properties/Initiation/properties/RemittanceInformation\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>The information used for matching an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "description": "The initiation payload that the initiating party sends to the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary), which is used to request movement of funds using a payment file."
+}

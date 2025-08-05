@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "Data": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `Data` to the tool, first call the tool `expandSchema` with \"/properties/Data\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "x-fapi-financial-id": {
+      "description": "The unique ID of the [ASPSP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary) that the request is issued to.\nThe ID of Revolut is `001580000103UAvAAM`.",
+      "type": "string"
+    },
+    "x-fapi-customer-last-logged-time": {
+      "description": "The date and time when the [PSU](https://developer.revolut.com/docs/guides/build-banking-apps/glossary) last logged in with the [TPP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary).\n\nAll dates in the HTTP headers are represented as [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1) Full Dates.\nFor example: <nobr>`Sun, 10 Sep 2017 19:43:31 UTC`</nobr>.",
+      "pattern": "^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \\d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{4} \\d{2}:\\d{2}:\\d{2} (GMT|UTC)$",
+      "type": "string"
+    },
+    "x-fapi-customer-ip-address": {
+      "description": "The IP address of the [PSU](https://developer.revolut.com/docs/guides/build-banking-apps/glossary) if the PSU is logged in with the [TPP](https://developer.revolut.com/docs/guides/build-banking-apps/glossary).",
+      "type": "string"
+    },
+    "x-fapi-interaction-id": {
+      "description": "An [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122) UUID used as a correlation ID.",
+      "type": "string"
+    },
+    "Authorization": {
+      "description": "The access token that you've generated.\nFor more information, see [Generate an access token](https://developer.revolut.com/docs/guides/build-banking-apps/get-started/get-access-token).",
+      "type": "string"
+    },
+    "x-idempotency-key": {
+      "description": "Each request is processed only once per `x-idempotency-key`.\nThe idempotency key is valid for 24 hours.",
+      "maxLength": 40,
+      "pattern": "^(?!\\s)(.*)(\\S)$",
+      "type": "string"
+    },
+    "x-jws-signature": {
+      "description": "A [detached JWS signature](https://developer.revolut.com/docs/guides/build-banking-apps/tutorials/work-with-json-web-signatures) of the body of the payload.",
+      "type": "string"
+    },
+    "x-customer-user-agent": {
+      "description": "The user agent that the [PSU](https://developer.revolut.com/docs/guides/build-banking-apps/glossary) is using.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Data",
+    "x-fapi-financial-id",
+    "Authorization",
+    "x-idempotency-key",
+    "x-jws-signature"
+  ]
+}

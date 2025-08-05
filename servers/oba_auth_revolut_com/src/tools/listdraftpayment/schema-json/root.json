@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "from": {
+      "description": "Creation time inclusive lower bound in UTC [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Date Time format YYYY-MM-DDThh:mm:ssZ",
+      "type": "string",
+      "format": "date-time"
+    },
+    "to": {
+      "description": "Creation time exclusive upper bound in UTC [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Date Time format YYYY-MM-DDThh:mm:ssZ",
+      "type": "string",
+      "format": "date-time"
+    },
+    "limit": {
+      "description": "Maximum number of items",
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

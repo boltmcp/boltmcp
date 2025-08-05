@@ -1,0 +1,10 @@
+{
+  "maxLength": 40,
+  "minLength": 1,
+  "type": "object",
+  "additionalProperties": {
+    "type": "string"
+  },
+  "description": "The additional information that can not be captured in the structured fields and/or any other specific block.",
+  "properties": {}
+}
