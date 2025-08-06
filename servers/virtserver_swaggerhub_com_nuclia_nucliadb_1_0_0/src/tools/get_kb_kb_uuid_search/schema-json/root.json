@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "kb_uuid": {
+      "description": "UUID of the knowledgebox",
+      "type": "string"
+    },
+    "q": {
+      "description": "Text query. It can be with quotes to force keyword search on that elements.",
+      "type": "string"
+    },
+    "filter": {
+      "description": "Filter query. It should be a list of tags to filter. It can be a range query.",
+      "type": "string"
+    },
+    "order": {
+      "description": "Order query",
+      "type": "string"
+    },
+    "v": {
+      "description": "BASE64 vector encoding",
+      "type": "string"
+    },
+    "rid": {
+      "description": "Resource search",
+      "type": "string"
+    },
+    "disable": {
+      "description": "Disable paragraph, semantic, document, relations",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "paragraph",
+          "semantic",
+          "document",
+          "relations"
+        ]
+      }
+    },
+    "enable": {
+      "description": "Disable paragraph, semantic, document, relations",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ask"
+        ]
+      }
+    }
+  },
+  "required": [
+    "kb_uuid"
+  ]
+}
