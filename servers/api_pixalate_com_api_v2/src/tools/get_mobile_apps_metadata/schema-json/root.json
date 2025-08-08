@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "pretty": {
+      "description": "If true, return pretty JSON. Default is false.",
+      "type": "boolean"
+    }
+  },
+  "required": []
+}
