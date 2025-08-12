@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "policyid": {
+      "type": "integer"
+    },
+    "vdom": {
+      "description": "Target VDOM (defaults to 'root')",
+      "type": "string",
+      "default": "root"
+    }
+  },
+  "required": [
+    "policyid"
+  ]
+}

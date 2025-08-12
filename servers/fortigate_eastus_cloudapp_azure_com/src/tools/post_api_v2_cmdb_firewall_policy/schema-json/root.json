@@ -1,0 +1,1257 @@
+{
+  "type": "object",
+  "properties": {
+    "vdom": {
+      "description": "Target VDOM (defaults to 'root')",
+      "type": "string",
+      "default": "root"
+    },
+    "policyid": {
+      "type": "integer",
+      "description": "Policy ID (0 - 4294967294).",
+      "minimum": 0,
+      "maximum": 4294967294,
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "description": "Enable or disable this policy.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Policy name.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+      "default": "00000000-0000-0000-0000-000000000000"
+    },
+    "srcintf": {
+      "type": "string",
+      "description": "Incoming (ingress) interface."
+    },
+    "dstintf": {
+      "type": "string",
+      "description": "Outgoing (egress) interface."
+    },
+    "action": {
+      "type": "string",
+      "description": "Policy action (accept/deny/ipsec).",
+      "default": "deny",
+      "enum": [
+        "accept",
+        "deny",
+        "ipsec"
+      ]
+    },
+    "nat64": {
+      "type": "string",
+      "description": "Enable/disable NAT64.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "nat46": {
+      "type": "string",
+      "description": "Enable/disable NAT46.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ztna-status": {
+      "type": "string",
+      "description": "Enable/disable zero trust access.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ztna-device-ownership": {
+      "type": "string",
+      "description": "Enable/disable zero trust device ownership.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "srcaddr": {
+      "type": "string",
+      "description": "Source IPv4 address and address group names."
+    },
+    "dstaddr": {
+      "type": "string",
+      "description": "Destination IPv4 address and address group names."
+    },
+    "srcaddr6": {
+      "type": "string",
+      "description": "Source IPv6 address name and address group names."
+    },
+    "dstaddr6": {
+      "type": "string",
+      "description": "Destination IPv6 address name and address group names."
+    },
+    "ztna-ems-tag": {
+      "type": "string",
+      "description": "Source ztna-ems-tag names."
+    },
+    "ztna-ems-tag-secondary": {
+      "type": "string",
+      "description": "Source ztna-ems-tag-secondary names."
+    },
+    "ztna-tags-match-logic": {
+      "type": "string",
+      "description": "ZTNA tag matching logic.",
+      "default": "or",
+      "enum": [
+        "or",
+        "and"
+      ]
+    },
+    "ztna-geo-tag": {
+      "type": "string",
+      "description": "Source ztna-geo-tag names."
+    },
+    "internet-service": {
+      "type": "string",
+      "description": "Enable/disable use of Internet Services for this policy. If enabled, destination address and service are not used.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service-name": {
+      "type": "string",
+      "description": "Internet Service name."
+    },
+    "internet-service-group": {
+      "type": "string",
+      "description": "Internet Service group name."
+    },
+    "internet-service-custom": {
+      "type": "string",
+      "description": "Custom Internet Service name."
+    },
+    "network-service-dynamic": {
+      "type": "string",
+      "description": "Dynamic Network Service name."
+    },
+    "internet-service-custom-group": {
+      "type": "string",
+      "description": "Custom Internet Service group name."
+    },
+    "internet-service-src": {
+      "type": "string",
+      "description": "Enable/disable use of Internet Services in source for this policy. If enabled, source address is not used.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service-src-name": {
+      "type": "string",
+      "description": "Internet Service source name."
+    },
+    "internet-service-src-group": {
+      "type": "string",
+      "description": "Internet Service source group name."
+    },
+    "internet-service-src-custom": {
+      "type": "string",
+      "description": "Custom Internet Service source name."
+    },
+    "network-service-src-dynamic": {
+      "type": "string",
+      "description": "Dynamic Network Service source name."
+    },
+    "internet-service-src-custom-group": {
+      "type": "string",
+      "description": "Custom Internet Service source group name."
+    },
+    "reputation-minimum": {
+      "type": "integer",
+      "description": "Minimum Reputation to take action.",
+      "minimum": 0,
+      "maximum": 4294967295,
+      "default": 0
+    },
+    "reputation-direction": {
+      "type": "string",
+      "description": "Direction of the initial traffic for reputation to take effect.",
+      "default": "destination",
+      "enum": [
+        "source",
+        "destination"
+      ]
+    },
+    "src-vendor-mac": {
+      "type": "string",
+      "description": "Vendor MAC source ID."
+    },
+    "internet-service6": {
+      "type": "string",
+      "description": "Enable/disable use of IPv6 Internet Services for this policy. If enabled, destination address and service are not used.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service6-name": {
+      "type": "string",
+      "description": "IPv6 Internet Service name."
+    },
+    "internet-service6-group": {
+      "type": "string",
+      "description": "Internet Service group name."
+    },
+    "internet-service6-custom": {
+      "type": "string",
+      "description": "Custom IPv6 Internet Service name."
+    },
+    "internet-service6-custom-group": {
+      "type": "string",
+      "description": "Custom Internet Service6 group name."
+    },
+    "internet-service6-src": {
+      "type": "string",
+      "description": "Enable/disable use of IPv6 Internet Services in source for this policy. If enabled, source address is not used.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service6-src-name": {
+      "type": "string",
+      "description": "IPv6 Internet Service source name."
+    },
+    "internet-service6-src-group": {
+      "type": "string",
+      "description": "Internet Service6 source group name."
+    },
+    "internet-service6-src-custom": {
+      "type": "string",
+      "description": "Custom IPv6 Internet Service source name."
+    },
+    "internet-service6-src-custom-group": {
+      "type": "string",
+      "description": "Custom Internet Service6 source group name."
+    },
+    "reputation-minimum6": {
+      "type": "integer",
+      "description": "IPv6 Minimum Reputation to take action.",
+      "minimum": 0,
+      "maximum": 4294967295,
+      "default": 0
+    },
+    "reputation-direction6": {
+      "type": "string",
+      "description": "Direction of the initial traffic for IPv6 reputation to take effect.",
+      "default": "destination",
+      "enum": [
+        "source",
+        "destination"
+      ]
+    },
+    "rtp-nat": {
+      "type": "string",
+      "description": "Enable Real Time Protocol (RTP) NAT.",
+      "default": "disable",
+      "enum": [
+        "disable",
+        "enable"
+      ]
+    },
+    "rtp-addr": {
+      "type": "string",
+      "description": "Address names if this is an RTP NAT policy."
+    },
+    "send-deny-packet": {
+      "type": "string",
+      "description": "Enable to send a reply when a session is denied or blocked by a firewall policy.",
+      "default": "disable",
+      "enum": [
+        "disable",
+        "enable"
+      ]
+    },
+    "firewall-session-dirty": {
+      "type": "string",
+      "description": "How to handle sessions if the configuration of this firewall policy changes.",
+      "default": "check-all",
+      "enum": [
+        "check-all",
+        "check-new"
+      ]
+    },
+    "schedule": {
+      "type": "string",
+      "description": "Schedule name.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "schedule-timeout": {
+      "type": "string",
+      "description": "Enable to force current sessions to end when the schedule object times out. Disable allows them to end from inactivity.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "policy-expiry": {
+      "type": "string",
+      "description": "Enable/disable policy expiry.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "policy-expiry-date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Policy expiry date (YYYY-MM-DD HH:MM:SS).",
+      "default": "0000-00-00 00:00:00"
+    },
+    "policy-expiry-date-utc": {
+      "type": "string",
+      "description": "Policy expiry date and time, in epoch format.",
+      "default": ""
+    },
+    "service": {
+      "type": "string",
+      "description": "Service and service group names."
+    },
+    "tos-mask": {
+      "type": "string",
+      "description": "Non-zero bit positions are used for comparison while zero bit positions are ignored.",
+      "default": ""
+    },
+    "tos": {
+      "type": "string",
+      "description": "ToS (Type of Service) value used for comparison.",
+      "default": ""
+    },
+    "tos-negate": {
+      "type": "string",
+      "description": "Enable negated TOS match.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "anti-replay": {
+      "type": "string",
+      "description": "Enable/disable anti-replay check.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "tcp-session-without-syn": {
+      "type": "string",
+      "description": "Enable/disable creation of TCP session without SYN flag.",
+      "default": "disable",
+      "enum": [
+        "all",
+        "data-only",
+        "disable"
+      ]
+    },
+    "geoip-anycast": {
+      "type": "string",
+      "description": "Enable/disable recognition of anycast IP addresses using the geography IP database.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "geoip-match": {
+      "type": "string",
+      "description": "Match geography address based either on its physical location or registered location.",
+      "default": "physical-location",
+      "enum": [
+        "physical-location",
+        "registered-location"
+      ]
+    },
+    "dynamic-shaping": {
+      "type": "string",
+      "description": "Enable/disable dynamic RADIUS defined traffic shaping.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "passive-wan-health-measurement": {
+      "type": "string",
+      "description": "Enable/disable passive WAN health measurement. When enabled, auto-asic-offload is disabled.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "utm-status": {
+      "type": "string",
+      "description": "Enable to add one or more security profiles (AV, IPS, etc.) to the firewall policy.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "inspection-mode": {
+      "type": "string",
+      "description": "Policy inspection mode (Flow/proxy). Default is Flow mode.",
+      "default": "flow",
+      "enum": [
+        "proxy",
+        "flow"
+      ]
+    },
+    "http-policy-redirect": {
+      "type": "string",
+      "description": "Redirect HTTP(S) traffic to matching transparent web proxy policy.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ssh-policy-redirect": {
+      "type": "string",
+      "description": "Redirect SSH traffic to matching transparent proxy policy.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ztna-policy-redirect": {
+      "type": "string",
+      "description": "Redirect ZTNA traffic to matching Access-Proxy proxy-policy.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "webproxy-profile": {
+      "type": "string",
+      "description": "Webproxy profile name.",
+      "maxLength": 63,
+      "default": ""
+    },
+    "profile-type": {
+      "type": "string",
+      "description": "Determine whether the firewall policy allows security profile groups or single profiles only.",
+      "default": "single",
+      "enum": [
+        "single",
+        "group"
+      ]
+    },
+    "profile-group": {
+      "type": "string",
+      "description": "Name of profile group.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "profile-protocol-options": {
+      "type": "string",
+      "description": "Name of an existing Protocol options profile.",
+      "maxLength": 35,
+      "default": "default"
+    },
+    "ssl-ssh-profile": {
+      "type": "string",
+      "description": "Name of an existing SSL SSH profile.",
+      "maxLength": 35,
+      "default": "no-inspection"
+    },
+    "av-profile": {
+      "type": "string",
+      "description": "Name of an existing Antivirus profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "webfilter-profile": {
+      "type": "string",
+      "description": "Name of an existing Web filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "dnsfilter-profile": {
+      "type": "string",
+      "description": "Name of an existing DNS filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "emailfilter-profile": {
+      "type": "string",
+      "description": "Name of an existing email filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "dlp-profile": {
+      "type": "string",
+      "description": "Name of an existing DLP profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "file-filter-profile": {
+      "type": "string",
+      "description": "Name of an existing file-filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "ips-sensor": {
+      "type": "string",
+      "description": "Name of an existing IPS sensor.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "application-list": {
+      "type": "string",
+      "description": "Name of an existing Application list.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "voip-profile": {
+      "type": "string",
+      "description": "Name of an existing VoIP (voipd) profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "ips-voip-filter": {
+      "type": "string",
+      "description": "Name of an existing VoIP (ips) profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "sctp-filter-profile": {
+      "type": "string",
+      "description": "Name of an existing SCTP filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "diameter-filter-profile": {
+      "type": "string",
+      "description": "Name of an existing Diameter filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "virtual-patch-profile": {
+      "type": "string",
+      "description": "Name of an existing virtual-patch profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "icap-profile": {
+      "type": "string",
+      "description": "Name of an existing ICAP profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "cifs-profile": {
+      "type": "string",
+      "description": "Name of an existing CIFS profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "videofilter-profile": {
+      "type": "string",
+      "description": "Name of an existing VideoFilter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "waf-profile": {
+      "type": "string",
+      "description": "Name of an existing Web application firewall profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "ssh-filter-profile": {
+      "type": "string",
+      "description": "Name of an existing SSH filter profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "casb-profile": {
+      "type": "string",
+      "description": "Name of an existing CASB profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "logtraffic": {
+      "type": "string",
+      "description": "Enable or disable logging. Log all sessions or security profile sessions.",
+      "default": "utm",
+      "enum": [
+        "all",
+        "utm",
+        "disable"
+      ]
+    },
+    "logtraffic-start": {
+      "type": "string",
+      "description": "Record logs when a session starts.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "log-http-transaction": {
+      "type": "string",
+      "description": "Enable/disable HTTP transaction log.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "capture-packet": {
+      "type": "string",
+      "description": "Enable/disable capture packets.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "auto-asic-offload": {
+      "type": "string",
+      "description": "Enable/disable policy traffic ASIC offloading.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "wanopt": {
+      "type": "string",
+      "description": "Enable/disable WAN optimization.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "wanopt-detection": {
+      "type": "string",
+      "description": "WAN optimization auto-detection mode.",
+      "default": "active",
+      "enum": [
+        "active",
+        "passive",
+        "off"
+      ]
+    },
+    "wanopt-passive-opt": {
+      "type": "string",
+      "description": "WAN optimization passive mode options. This option decides what IP address will be used to connect server.",
+      "default": "default",
+      "enum": [
+        "default",
+        "transparent",
+        "non-transparent"
+      ]
+    },
+    "wanopt-profile": {
+      "type": "string",
+      "description": "WAN optimization profile.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "wanopt-peer": {
+      "type": "string",
+      "description": "WAN optimization peer.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "webcache": {
+      "type": "string",
+      "description": "Enable/disable web cache.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "webcache-https": {
+      "type": "string",
+      "description": "Enable/disable web cache for HTTPS.",
+      "default": "disable",
+      "enum": [
+        "disable",
+        "enable"
+      ]
+    },
+    "webproxy-forward-server": {
+      "type": "string",
+      "description": "Webproxy forward server name.",
+      "maxLength": 63,
+      "default": ""
+    },
+    "traffic-shaper": {
+      "type": "string",
+      "description": "Traffic shaper.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "traffic-shaper-reverse": {
+      "type": "string",
+      "description": "Reverse traffic shaper.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "per-ip-shaper": {
+      "type": "string",
+      "description": "Per-IP traffic shaper.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "nat": {
+      "type": "string",
+      "description": "Enable/disable source NAT.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "pcp-outbound": {
+      "type": "string",
+      "description": "Enable/disable PCP outbound SNAT.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "pcp-inbound": {
+      "type": "string",
+      "description": "Enable/disable PCP inbound DNAT.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "pcp-poolname": {
+      "type": "string",
+      "description": "PCP pool names."
+    },
+    "permit-any-host": {
+      "type": "string",
+      "description": "Accept UDP packets from any host.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "permit-stun-host": {
+      "type": "string",
+      "description": "Accept UDP packets from any Session Traversal Utilities for NAT (STUN) host.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "fixedport": {
+      "type": "string",
+      "description": "Enable to prevent source NAT from changing a session's source port.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "port-preserve": {
+      "type": "string",
+      "description": "Enable/disable preservation of the original source port from source NAT if it has not been used.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ippool": {
+      "type": "string",
+      "description": "Enable to use IP Pools for source NAT.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "poolname": {
+      "type": "string",
+      "description": "IP Pool names."
+    },
+    "poolname6": {
+      "type": "string",
+      "description": "IPv6 pool names."
+    },
+    "session-ttl": {
+      "type": "string",
+      "description": "TTL in seconds for sessions accepted by this policy (0 means use the system default session TTL).",
+      "default": ""
+    },
+    "vlan-cos-fwd": {
+      "type": "integer",
+      "description": "VLAN forward direction user priority: 255 passthrough, 0 lowest, 7 highest.",
+      "minimum": 0,
+      "maximum": 7,
+      "default": 255
+    },
+    "vlan-cos-rev": {
+      "type": "integer",
+      "description": "VLAN reverse direction user priority: 255 passthrough, 0 lowest, 7 highest.",
+      "minimum": 0,
+      "maximum": 7,
+      "default": 255
+    },
+    "inbound": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: only traffic from the remote network can initiate a VPN.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "outbound": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: only traffic from the internal network can initiate a VPN.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "natinbound": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: apply destination NAT to inbound traffic.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "natoutbound": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: apply source NAT to outbound traffic.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "fec": {
+      "type": "string",
+      "description": "Enable/disable Forward Error Correction on traffic matching this policy on a FEC device.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "wccp": {
+      "type": "string",
+      "description": "Enable/disable forwarding traffic matching this policy to a configured WCCP server.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ntlm": {
+      "type": "string",
+      "description": "Enable/disable NTLM authentication.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ntlm-guest": {
+      "type": "string",
+      "description": "Enable/disable NTLM guest user access.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ntlm-enabled-browsers": {
+      "type": "string",
+      "description": "HTTP-User-Agent value of supported browsers."
+    },
+    "fsso-agent-for-ntlm": {
+      "type": "string",
+      "description": "FSSO agent to use for NTLM authentication.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "groups": {
+      "type": "string",
+      "description": "Names of user groups that can authenticate with this policy."
+    },
+    "users": {
+      "type": "string",
+      "description": "Names of individual users that can authenticate with this policy."
+    },
+    "fsso-groups": {
+      "type": "string",
+      "description": "Names of FSSO groups."
+    },
+    "auth-path": {
+      "type": "string",
+      "description": "Enable/disable authentication-based routing.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "disclaimer": {
+      "type": "string",
+      "description": "Enable/disable user authentication disclaimer.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "email-collect": {
+      "type": "string",
+      "description": "Enable/disable email collection.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "vpntunnel": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: name of the IPsec VPN Phase 1.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "natip": {
+      "type": "string",
+      "description": "Policy-based IPsec VPN: source NAT IP address for outgoing traffic.",
+      "default": "0.0.0.0 0.0.0.0"
+    },
+    "match-vip": {
+      "type": "string",
+      "description": "Enable to match packets that have had their destination addresses changed by a VIP.",
+      "default": "enable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "match-vip-only": {
+      "type": "string",
+      "description": "Enable/disable matching of only those packets that have had their destination addresses changed by a VIP.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "diffserv-copy": {
+      "type": "string",
+      "description": "Enable to copy packet's DiffServ values from session's original direction to its reply direction.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "diffserv-forward": {
+      "type": "string",
+      "description": "Enable to change packet's DiffServ values to the specified diffservcode-forward value.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "diffserv-reverse": {
+      "type": "string",
+      "description": "Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "diffservcode-forward": {
+      "type": "string",
+      "description": "Change packet's DiffServ to this value.",
+      "default": ""
+    },
+    "diffservcode-rev": {
+      "type": "string",
+      "description": "Change packet's reverse (reply) DiffServ to this value.",
+      "default": ""
+    },
+    "tcp-mss-sender": {
+      "type": "integer",
+      "description": "Sender TCP maximum segment size (MSS).",
+      "minimum": 0,
+      "maximum": 65535,
+      "default": 0
+    },
+    "tcp-mss-receiver": {
+      "type": "integer",
+      "description": "Receiver TCP maximum segment size (MSS).",
+      "minimum": 0,
+      "maximum": 65535,
+      "default": 0
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comment.",
+      "maxLength": 1023
+    },
+    "auth-cert": {
+      "type": "string",
+      "description": "HTTPS server certificate for policy authentication.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "auth-redirect-addr": {
+      "type": "string",
+      "description": "HTTP-to-HTTPS redirect address for firewall authentication.",
+      "maxLength": 63,
+      "default": ""
+    },
+    "redirect-url": {
+      "type": "string",
+      "description": "URL users are directed to after seeing and accepting the disclaimer or authenticating.",
+      "maxLength": 1023
+    },
+    "identity-based-route": {
+      "type": "string",
+      "description": "Name of identity-based routing rule.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "block-notification": {
+      "type": "string",
+      "description": "Enable/disable block notification.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "custom-log-fields": {
+      "type": "string",
+      "description": "Custom fields to append to log messages for this policy."
+    },
+    "replacemsg-override-group": {
+      "type": "string",
+      "description": "Override the default replacement message group for this policy.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "srcaddr-negate": {
+      "type": "string",
+      "description": "When enabled srcaddr specifies what the source address must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "srcaddr6-negate": {
+      "type": "string",
+      "description": "When enabled srcaddr6 specifies what the source address must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "dstaddr-negate": {
+      "type": "string",
+      "description": "When enabled dstaddr specifies what the destination address must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "dstaddr6-negate": {
+      "type": "string",
+      "description": "When enabled dstaddr6 specifies what the destination address must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "service-negate": {
+      "type": "string",
+      "description": "When enabled service specifies what the service must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service-negate": {
+      "type": "string",
+      "description": "When enabled internet-service specifies what the service must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service-src-negate": {
+      "type": "string",
+      "description": "When enabled internet-service-src specifies what the service must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service6-negate": {
+      "type": "string",
+      "description": "When enabled internet-service6 specifies what the service must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "internet-service6-src-negate": {
+      "type": "string",
+      "description": "When enabled internet-service6-src specifies what the service must NOT be.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "timeout-send-rst": {
+      "type": "string",
+      "description": "Enable/disable sending RST packets when TCP sessions expire.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "captive-portal-exempt": {
+      "type": "string",
+      "description": "Enable to exempt some users from the captive portal.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "decrypted-traffic-mirror": {
+      "type": "string",
+      "description": "Decrypted traffic mirror.",
+      "maxLength": 35,
+      "default": ""
+    },
+    "dsri": {
+      "type": "string",
+      "description": "Enable DSRI to ignore HTTP server responses.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "radius-mac-auth-bypass": {
+      "type": "string",
+      "description": "Enable MAC authentication bypass. The bypassed MAC address must be received from RADIUS server.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "radius-ip-auth-bypass": {
+      "type": "string",
+      "description": "Enable IP authentication bypass. The bypassed IP address must be received from RADIUS server.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "delay-tcp-npu-session": {
+      "type": "string",
+      "description": "Enable TCP NPU session delay to guarantee packet order of 3-way handshake.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "vlan-filter": {
+      "type": "string",
+      "description": "VLAN ranges to allow",
+      "default": ""
+    },
+    "sgt-check": {
+      "type": "string",
+      "description": "Enable/disable security group tags (SGT) check.",
+      "default": "disable",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "sgt": {
+      "type": "string",
+      "description": "Security group tags."
+    }
+  },
+  "required": [
+    "srcintf",
+    "dstintf",
+    "rtp-addr",
+    "schedule",
+    "wanopt-profile",
+    "wanopt-peer",
+    "vpntunnel"
+  ]
+}

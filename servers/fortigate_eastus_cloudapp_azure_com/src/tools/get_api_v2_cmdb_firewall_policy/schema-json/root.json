@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "vdom": {
+      "description": "Target VDOM (defaults to 'root')",
+      "type": "string",
+      "default": "root"
+    }
+  },
+  "required": []
+}
