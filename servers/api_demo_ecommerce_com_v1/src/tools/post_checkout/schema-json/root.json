@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "address_id": {
+      "type": "string"
+    },
+    "payment_method_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address_id",
+    "payment_method_id"
+  ]
+}

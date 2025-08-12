@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "search": {
+      "type": "string"
+    },
+    "min_price": {
+      "type": "number"
+    },
+    "max_price": {
+      "type": "number"
+    }
+  },
+  "required": []
+}

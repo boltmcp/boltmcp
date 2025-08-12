@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "product_id",
+    "quantity"
+  ]
+}
