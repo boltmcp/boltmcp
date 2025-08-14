@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "title": "Provider"
+    },
+    "input": {
+      "type": "string",
+      "title": "Input"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Model"
+    },
+    "b_provider": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Provider"
+    },
+    "voice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Voice"
+    },
+    "instrcutions": {
+      "type": "string",
+      "title": "Instrcutions",
+      "default": "Speech this text in a natural way."
+    },
+    "response_format": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Response Format"
+    },
+    "language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Language"
+    },
+    "download_media": {
+      "type": "boolean",
+      "title": "Download Media",
+      "default": true
+    }
+  },
+  "required": [
+    "provider",
+    "input"
+  ]
+}

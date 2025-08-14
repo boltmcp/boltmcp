@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "path_provider": {
+      "type": "string",
+      "title": "Path Provider"
+    }
+  },
+  "required": [
+    "path_provider"
+  ]
+}

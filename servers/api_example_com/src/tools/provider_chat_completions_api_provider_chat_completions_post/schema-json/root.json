@@ -1,0 +1,420 @@
+{
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "title": "Provider"
+    },
+    "model": {
+      "type": "string",
+      "title": "Model",
+      "default": ""
+    },
+    "b_provider": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Provider"
+    },
+    "media": {
+      "anyOf": [
+        {
+          "items": {
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Media"
+    },
+    "modalities": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Modalities"
+    },
+    "temperature": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Temperature"
+    },
+    "presence_penalty": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Presence Penalty"
+    },
+    "frequency_penalty": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Frequency Penalty"
+    },
+    "top_p": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Top P"
+    },
+    "max_tokens": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Max Tokens"
+    },
+    "stop": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Stop"
+    },
+    "api_key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Api Key"
+    },
+    "api_base": {
+      "type": "string",
+      "title": "Api Base"
+    },
+    "web_search": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Web Search"
+    },
+    "proxy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Proxy"
+    },
+    "conversation": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Conversation"
+    },
+    "timeout": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Timeout"
+    },
+    "tool_calls": {
+      "items": {},
+      "type": "array",
+      "title": "Tool Calls",
+      "default": [],
+      "examples": [
+        [
+          {
+            "function": {
+              "arguments": {
+                "add_text": true,
+                "backend": "auto",
+                "max_results": 5,
+                "max_words": 2500,
+                "query": "search query",
+                "timeout": 5
+              },
+              "name": "search_tool"
+            },
+            "type": "function"
+          }
+        ]
+      ]
+    },
+    "reasoning_effort": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reasoning Effort"
+    },
+    "logit_bias": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Logit Bias"
+    },
+    "audio": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Audio"
+    },
+    "response_format": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Response Format"
+    },
+    "download_media": {
+      "type": "boolean",
+      "title": "Download Media",
+      "default": true
+    },
+    "extra_body": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Extra Body"
+    },
+    "messages": {
+      "items": {
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "type": "object"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          ]
+        },
+        "type": "object"
+      },
+      "type": "array",
+      "title": "Messages",
+      "examples": [
+        [
+          {
+            "content": "",
+            "role": "system"
+          },
+          {
+            "content": "",
+            "role": "user"
+          }
+        ]
+      ]
+    },
+    "stream": {
+      "type": "boolean",
+      "title": "Stream",
+      "default": false
+    },
+    "image": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Image"
+    },
+    "image_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Image Name"
+    },
+    "images": {
+      "anyOf": [
+        {
+          "items": {
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Images"
+    },
+    "tools": {
+      "items": {},
+      "type": "array",
+      "title": "Tools"
+    },
+    "parallel_tool_calls": {
+      "type": "boolean",
+      "title": "Parallel Tool Calls"
+    },
+    "tool_choice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tool Choice"
+    },
+    "conversation_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Conversation Id"
+    }
+  },
+  "required": [
+    "provider",
+    "messages"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "title": "Filename"
+    },
+    "thumbnail": {
+      "type": "boolean",
+      "default": false,
+      "title": "Thumbnail"
+    }
+  },
+  "required": [
+    "filename"
+  ]
+}

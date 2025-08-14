@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "title": "Filename"
+    }
+  },
+  "required": [
+    "filename"
+  ]
+}
