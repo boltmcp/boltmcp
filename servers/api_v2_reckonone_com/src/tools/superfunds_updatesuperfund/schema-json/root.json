@@ -1,0 +1,446 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superfundId": {
+      "description": "The super fund's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ExternalResourceId": {
+      "description": "The external resource's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "134"
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    },
+    "name": {
+      "type": "string",
+      "description": "The organisation's display name.",
+      "maxLength": 100,
+      "minLength": 1,
+      "example": "John Doe"
+    },
+    "organisationName": {
+      "type": "string",
+      "description": "The organisation's name.",
+      "default": "null",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Reckon Co."
+    },
+    "branch": {
+      "type": "string",
+      "description": "The organisation's branch.",
+      "default": "null",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "1234"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes for the organisation.",
+      "default": "null",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "The person to call."
+    },
+    "businessNumber1": {
+      "type": "string",
+      "description": "The organisation's business number 1.",
+      "default": "null",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber2": {
+      "type": "string",
+      "description": "The organisation's business number 2.",
+      "default": "null",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber": {
+      "type": "string",
+      "description": "This applies to NZBN number.",
+      "default": "null",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234123"
+    },
+    "status": {
+      "description": "The status of the organisation. (Active/Inactive)",
+      "default": "Active",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an organisation.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    "addresses": {
+      "type": "array",
+      "description": "List of addresses.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of an address to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "line1": {
+            "type": "string",
+            "description": "Line 1 of the address.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "Level 2"
+          },
+          "line2": {
+            "type": "string",
+            "description": "Line 2 of the address.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "100 Pacific Highway"
+          },
+          "line3": {
+            "type": "string",
+            "description": "Line 3 of the address.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "Line 3"
+          },
+          "suburb": {
+            "type": "string",
+            "description": "The suburb.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "North Sydney"
+          },
+          "town": {
+            "type": "string",
+            "description": "The town.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "Sydney"
+          },
+          "state": {
+            "type": "string",
+            "description": "The state.",
+            "default": "null",
+            "maxLength": 80,
+            "nullable": true,
+            "example": "NSW"
+          },
+          "postcode": {
+            "type": "string",
+            "description": "The post code.",
+            "default": "null",
+            "maxLength": 30,
+            "nullable": true,
+            "example": "2060"
+          },
+          "country": {
+            "type": "string",
+            "description": "The country.",
+            "default": "null",
+            "maxLength": 30,
+            "nullable": true,
+            "example": "Australia"
+          },
+          "type": {
+            "type": "string",
+            "description": "The id or name of the address type.",
+            "minLength": 1,
+            "example": "Billing"
+          }
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "description": "List of phone numbers.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a phone number to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "countryCode": {
+            "type": "string",
+            "description": "The country code.",
+            "default": "null",
+            "maxLength": 10,
+            "nullable": true,
+            "example": "61"
+          },
+          "areaCode": {
+            "type": "string",
+            "description": "The area code.",
+            "default": "null",
+            "maxLength": 10,
+            "nullable": true,
+            "example": "02"
+          },
+          "number": {
+            "type": "string",
+            "description": "The number.",
+            "default": "null",
+            "maxLength": 30,
+            "nullable": true,
+            "example": "90101234"
+          },
+          "extension": {
+            "type": "string",
+            "description": "The extension.",
+            "default": "null",
+            "maxLength": 10,
+            "nullable": true,
+            "example": "4321"
+          },
+          "type": {
+            "type": "string",
+            "description": "The id or name of the phone number type.",
+            "minLength": 1,
+            "example": "Work"
+          }
+        }
+      }
+    },
+    "electronicAddresses": {
+      "type": "array",
+      "description": "List of electronic addresses.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of an electronic address to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The id or name of the electronic address type.",
+            "minLength": 1,
+            "example": "Email"
+          },
+          "address": {
+            "type": "string",
+            "description": "The electronic address.",
+            "default": "null",
+            "maxLength": 100,
+            "nullable": true,
+            "example": "x@y.com"
+          }
+        }
+      }
+    },
+    "entityTypes": {
+      "description": "The organisation's entity types.",
+      "nullable": true,
+      "example": {
+        "IsCustomer": false,
+        "IsSupplier": true,
+        "IsEmployee": false,
+        "IsSuperfund": false
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Contact's entity types.",
+          "additionalProperties": false,
+          "properties": {
+            "isCustomer": {
+              "type": "boolean",
+              "description": "Is the entity a customer.",
+              "default": false,
+              "nullable": true,
+              "example": false
+            },
+            "isSupplier": {
+              "type": "boolean",
+              "description": "Is the entity a suppleir.",
+              "default": false,
+              "nullable": true,
+              "example": false
+            },
+            "isEmployee": {
+              "type": "boolean",
+              "description": "Is the entity an employee.",
+              "default": false,
+              "nullable": true,
+              "example": false
+            },
+            "isSuperfund": {
+              "type": "boolean",
+              "description": "Is the entity a superfund.",
+              "default": false,
+              "nullable": true,
+              "example": false
+            }
+          }
+        }
+      ]
+    },
+    "bankDetails": {
+      "description": "The superfund's bank account details.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of a superfund's bank account to create or update.",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The bank account's name.",
+              "default": "null",
+              "maxLength": 50,
+              "nullable": true,
+              "example": "My bank account"
+            },
+            "bankBranchNumber": {
+              "type": "string",
+              "description": "The bank account's branch number.",
+              "default": "null",
+              "maxLength": 10,
+              "pattern": "^[0-9]*$",
+              "nullable": true,
+              "example": "123456"
+            },
+            "bankAccountNumber": {
+              "type": "string",
+              "description": "The bank account's number.",
+              "default": "null",
+              "maxLength": 50,
+              "pattern": "^[0-9]*$",
+              "nullable": true,
+              "example": "444555"
+            }
+          }
+        }
+      ]
+    },
+    "superFundDetails": {
+      "description": "The superfund's details.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of a superfund to create or update.",
+          "additionalProperties": false,
+          "properties": {
+            "superfundProvider": {
+              "description": "The superfundProvider details",
+              "default": "null",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Superfund’s details to create or update",
+                  "additionalProperties": false,
+                  "required": [
+                    "fund"
+                  ],
+                  "properties": {
+                    "fund": {
+                      "type": "string",
+                      "description": "The superfund provider id",
+                      "minLength": 1,
+                      "example": "8B395C9B-1EFE-4703-8F50-00AD238A755A"
+                    },
+                    "employerNumber": {
+                      "type": "string",
+                      "description": "APRA type employee number",
+                      "maxLength": 100,
+                      "nullable": true,
+                      "example": "E123456"
+                    }
+                  }
+                }
+              ]
+            },
+            "smsf": {
+              "description": "The SMSF provider details",
+              "default": "null",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Superfund’s details to create or update.",
+                  "additionalProperties": false,
+                  "required": [
+                    "fundName"
+                  ],
+                  "properties": {
+                    "fundName": {
+                      "type": "string",
+                      "description": "The SelfManagedSuperfund (SMSF) Name",
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "example": "iAccess Personal Superannuation"
+                    },
+                    "electronicServiceAddress": {
+                      "type": "string",
+                      "description": "The electronic address for service",
+                      "default": "null",
+                      "maxLength": 100,
+                      "nullable": true,
+                      "example": "x@y.com"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "superfundId",
+    "name"
+  ]
+}

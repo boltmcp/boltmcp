@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "approvalEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether expense claim approval is enabled.",
+      "nullable": true,
+      "example": true
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The expense claim prefix.",
+      "nullable": true,
+      "example": "EXP"
+    },
+    "transferBillableExpense": {
+      "description": "The transfer billable expense settings.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Represents a patch for transferring billable expenses.",
+          "additionalProperties": false,
+          "properties": {
+            "taxRate": {
+              "type": "string",
+              "description": "The tax rate.",
+              "nullable": true
+            },
+            "incomeAccount": {
+              "type": "string",
+              "description": "The income account id or name.",
+              "nullable": true
+            },
+            "markupAccount": {
+              "type": "string",
+              "description": "The markup account id or name.",
+              "nullable": true
+            },
+            "accountOption": {
+              "description": "The account option for billable expenses.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "Enum representing options for billable expense accounts.",
+                  "x-enumNames": [
+                    "UseExpenseClaimAccount",
+                    "UseIncomeAccount"
+                  ],
+                  "enum": [
+                    "UseExpenseClaimAccount",
+                    "UseIncomeAccount"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

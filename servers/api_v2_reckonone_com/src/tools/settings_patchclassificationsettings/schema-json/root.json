@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "classificationsEnabled": {
+      "type": "boolean",
+      "description": "Indiciates whether classifications is enabled.",
+      "nullable": true,
+      "example": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

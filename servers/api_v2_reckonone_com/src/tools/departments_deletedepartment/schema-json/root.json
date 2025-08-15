@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "departmentId": {
+      "description": "The department's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "departmentId"
+  ]
+}

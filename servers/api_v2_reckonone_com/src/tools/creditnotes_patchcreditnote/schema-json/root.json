@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "creditNoteId": {
+      "description": "The credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that the credit note will be issued to.",
+      "nullable": true,
+      "example": "Company Ltd"
+    },
+    "creditNoteDate": {
+      "type": "string",
+      "description": "The date of the credit note.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06"
+    },
+    "status": {
+      "description": "The status of the credit note.\n_Note:_ This cannot be set via the POST or PUT endpoints. Please use the PATCH endpoint instead.",
+      "nullable": true,
+      "example": "Approved",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a credit note.",
+          "x-enumNames": [
+            "Draft",
+            "Approved",
+            "Closed"
+          ],
+          "enum": [
+            "Draft",
+            "Approved",
+            "Closed"
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "description": "The credit note reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "accountsReceivableLedgerAccount": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The accounts receivable ledger account.\n_Note:_ It is not currently possible to create multiple Accounts Receivable accounts so this field is read-only and will be ignored.",
+      "nullable": true,
+      "example": "Accounts Receivable"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The template used to print or email the credit note.",
+      "nullable": true,
+      "example": "Professional Customer Adjustment Note"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the credit note.",
+      "nullable": true,
+      "example": "This is a note."
+    }
+  },
+  "required": [
+    "bookId",
+    "creditNoteId"
+  ]
+}

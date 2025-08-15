@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "employee": {
+      "type": "string",
+      "description": "The employee who lodged the expense claim.",
+      "nullable": true,
+      "example": "Joe Bloggs"
+    },
+    "claimDate": {
+      "type": "string",
+      "description": "The date of the expense claim.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06T00:00:00Z"
+    },
+    "reference": {
+      "type": "string",
+      "description": "The reference entered by the employee.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "project": {
+      "type": "string",
+      "description": "The project that the expense claim relates to.",
+      "nullable": true,
+      "example": "Project A"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that the expense claim relates to.",
+      "nullable": true,
+      "example": "Customer A"
+    },
+    "status": {
+      "description": "The status of the expense claim.",
+      "nullable": true,
+      "example": "Approved",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an expense claim.",
+          "x-enumNames": [
+            "Draft",
+            "Approved",
+            "Paid",
+            "Submitted",
+            "Declined"
+          ],
+          "enum": [
+            "Draft",
+            "Approved",
+            "Paid",
+            "Submitted",
+            "Declined"
+          ]
+        }
+      ]
+    },
+    "declineReason": {
+      "type": "string",
+      "description": "The decline reason when the status is set to Declined.\nThis cannot be used with any other status.",
+      "nullable": true,
+      "example": "Please attach receipts."
+    },
+    "notes": {
+      "type": "string",
+      "description": "The notes entered by the employee.",
+      "nullable": true,
+      "example": "This is a note."
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId"
+  ]
+}

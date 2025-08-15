@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "payrunId": {
+      "description": "The payrun id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ignoreWarnings": {
+      "type": "boolean",
+      "description": "When true, warning validations will be skipped.",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "payrunId"
+  ]
+}

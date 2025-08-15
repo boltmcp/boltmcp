@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "reportBasis": {
+      "description": "The tax reporting basis type.",
+      "example": "Accrual",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The sales figures type of tax. Hybrid is for NZ books only.",
+          "x-enumNames": [
+            "Accrual",
+            "Cash",
+            "Hybrid"
+          ],
+          "enum": [
+            "Accrual",
+            "Cash",
+            "Hybrid"
+          ]
+        }
+      ]
+    },
+    "reportAgeingBasis": {
+      "description": "The ageing report type.",
+      "example": "TransactionDate",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The ageing report type.",
+          "x-enumNames": [
+            "TransactionDate",
+            "DueDate"
+          ],
+          "enum": [
+            "TransactionDate",
+            "DueDate"
+          ]
+        }
+      ]
+    },
+    "pdfSetup": {
+      "description": "A book's report user settings.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "A book's report user settings.",
+          "additionalProperties": false,
+          "properties": {
+            "headerText": {
+              "type": "string",
+              "description": "The header text for pdf setup.",
+              "nullable": true,
+              "example": "This is an example of header text"
+            },
+            "printDateTimeStamp": {
+              "type": "boolean",
+              "description": "Indicates whether date time stamp is included in print.",
+              "example": true
+            },
+            "printPageNumbers": {
+              "type": "boolean",
+              "description": "Indicates whether page numbers is included in print.",
+              "example": true
+            },
+            "footerText": {
+              "type": "string",
+              "description": "The footer text for pdf setup.",
+              "nullable": true,
+              "example": "This is an example of footer text"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

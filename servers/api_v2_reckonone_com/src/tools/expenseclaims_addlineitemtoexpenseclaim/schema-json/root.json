@@ -1,0 +1,200 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineNumber": {
+      "type": "integer",
+      "description": "The line number.",
+      "format": "int32",
+      "example": 2
+    },
+    "date": {
+      "type": "string",
+      "description": "The date of the line item.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-02-01"
+    },
+    "project": {
+      "type": "string",
+      "description": "The id or full name of the project that the line item relates to.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+      "default": "The project from the expense claim header",
+      "nullable": true,
+      "example": "Project A:Project B:Project C"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "The supplier that the line item relates to.",
+      "default": "null",
+      "nullable": true,
+      "example": "Supplier A"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that the line item relates to.",
+      "default": "The customer from the expense claim header",
+      "nullable": true,
+      "example": "Customer B"
+    },
+    "isBillable": {
+      "type": "boolean",
+      "description": "Whether the line item is billable to the customer or project.",
+      "default": false,
+      "nullable": true,
+      "example": false
+    },
+    "billableStatus": {
+      "description": "The billable status of the line item.",
+      "default": "Unbillable",
+      "nullable": true,
+      "example": "Unbillable",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The billable status.",
+          "x-enumNames": [
+            "Unbillable",
+            "Billable",
+            "Invoiced",
+            "Billed"
+          ],
+          "enum": [
+            "Unbillable",
+            "Billable",
+            "Invoiced",
+            "Billed"
+          ]
+        }
+      ]
+    },
+    "itemDetails": {
+      "description": "Details of an item used on an expense claim line item.\nThis must be omitted if `accountDetails` have been provided.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of an item used on an expense claim line item.",
+          "additionalProperties": false,
+          "required": [
+            "item"
+          ],
+          "properties": {
+            "item": {
+              "type": "string",
+              "description": "The id or full name of the item that the expense claim line relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons.",
+              "minLength": 1,
+              "example": "Parent item:Child item"
+            },
+            "price": {
+              "type": "number",
+              "description": "The price of each item.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 5.5
+            },
+            "quantity": {
+              "type": "number",
+              "description": "The quantity sold.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 1
+            }
+          }
+        }
+      ]
+    },
+    "accountDetails": {
+      "description": "Details of an account used on an expense claim line item.\nThis must be omitted if `itemDetails` have been provided.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of an account used on an expense claim line item.",
+          "additionalProperties": false,
+          "required": [
+            "ledgerAccount"
+          ],
+          "properties": {
+            "ledgerAccount": {
+              "type": "string",
+              "description": "The id or full name of the ledger account that the expense claim line relates to.\nNote that the full name includes the name(s) of any parent account(s) separated by colons.",
+              "minLength": 1,
+              "example": "Income:Sub income"
+            },
+            "quantity": {
+              "type": "number",
+              "description": "The quantity purchased.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 1
+            },
+            "amount": {
+              "type": "number",
+              "description": "The amount including or excluding tax (depending on the expense claim's `amountTaxStatus`).",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 110
+            }
+          }
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the expense.",
+      "default": "null",
+      "nullable": true,
+      "example": "This is my new line"
+    },
+    "taxAmount": {
+      "type": "number",
+      "description": "The tax amount.",
+      "format": "decimal",
+      "default": "null",
+      "nullable": true,
+      "example": 10
+    },
+    "taxRate": {
+      "type": "string",
+      "description": "The tax rate.",
+      "default": "null",
+      "nullable": true,
+      "example": "NCG"
+    },
+    "taxIsModified": {
+      "type": "boolean",
+      "description": "Whether the tax amount has been modified.",
+      "default": false,
+      "nullable": true,
+      "example": false
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes relating to the expense.",
+      "default": "null",
+      "nullable": true,
+      "example": "Notes about this line."
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId",
+    "lineNumber",
+    "date"
+  ]
+}

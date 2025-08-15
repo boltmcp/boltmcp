@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "fromDate": {
+      "type": "string",
+      "description": "The date range start. ",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-07-01"
+    },
+    "toDate": {
+      "type": "string",
+      "description": "The date range end. ",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-07-31"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Super payments July 01 - July 31"
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "The individual items that make up the superstream.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "A superstream line item.",
+        "additionalProperties": false,
+        "properties": {
+          "payrunSuperLineId": {
+            "type": "string",
+            "description": "The id of the payrun that the line item relates to.",
+            "format": "guid",
+            "default": "null",
+            "nullable": true,
+            "example": "07d9bd4c-393a-4cc6-869d-d9d95c7bb0f4"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "fromDate",
+    "toDate"
+  ]
+}

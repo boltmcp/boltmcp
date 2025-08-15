@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": []
+}

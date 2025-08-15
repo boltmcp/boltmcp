@@ -1,0 +1,191 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "journalId": {
+      "description": "The journal's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Summary of the journal.",
+      "minLength": 1,
+      "example": "Created on 20 Jan 2022"
+    },
+    "journalDate": {
+      "type": "string",
+      "description": "The date of the journal.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2022-01-20"
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the journal.",
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the journal.",
+      "default": "null",
+      "nullable": true,
+      "example": "System generated bank account opening balance journal."
+    },
+    "adjustingJournal": {
+      "type": "boolean",
+      "description": "Whether this is an adjusting journal.",
+      "default": false,
+      "nullable": true,
+      "example": false
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "The individual items that make up the journal.",
+      "items": {
+        "type": "object",
+        "description": "Details of an journal line item to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "ledgerAccount"
+        ],
+        "properties": {
+          "reconciliationStatus": {
+            "description": "The reconciliation status.\nNote that this can only be changed between Cleared and Uncleared.",
+            "default": "Uncleared",
+            "nullable": true,
+            "example": "Cleared",
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Reconciliation status.",
+                "x-enumNames": [
+                  "Uncleared",
+                  "Cleared",
+                  "Reconciled"
+                ],
+                "enum": [
+                  "Uncleared",
+                  "Cleared",
+                  "Reconciled"
+                ]
+              }
+            ]
+          },
+          "transactionType": {
+            "description": "The type of transaction.",
+            "default": "null",
+            "nullable": true,
+            "example": "Sale",
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "The type of transaction (for creating or modifying a journal entry)",
+                "x-enumNames": [
+                  "Sale",
+                  "Purchase"
+                ],
+                "enum": [
+                  "Sale",
+                  "Purchase"
+                ]
+              }
+            ]
+          },
+          "ledgerAccount": {
+            "type": "string",
+            "description": "The id or full name of the ledger account.\nNote that the full name includes the name(s) of any parent ledger account(s) separated by colons.",
+            "minLength": 1,
+            "example": "Sales"
+          },
+          "debit": {
+            "type": "number",
+            "description": "The debit amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 200
+          },
+          "credit": {
+            "type": "number",
+            "description": "The credit amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": null
+          },
+          "taxRate": {
+            "type": "string",
+            "description": "The id or name of the tax rate.",
+            "default": "null",
+            "nullable": true,
+            "example": "GST"
+          },
+          "taxAmount": {
+            "type": "number",
+            "description": "The tax amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 20
+          },
+          "notes": {
+            "type": "string",
+            "description": "Notes.",
+            "default": "null",
+            "nullable": true,
+            "example": "Notes about the line."
+          },
+          "entity": {
+            "type": "string",
+            "description": "The entity (customer/supplier/superfund/employee).",
+            "default": "null",
+            "nullable": true,
+            "example": "Customer"
+          },
+          "project": {
+            "type": "string",
+            "description": "The id or full name of the project.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+            "default": "null",
+            "nullable": true,
+            "example": "Project A:Project B:Project C"
+          },
+          "classification": {
+            "type": "string",
+            "description": "The id or name of the classification.",
+            "default": "null",
+            "nullable": true,
+            "example": "My classification"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "journalId",
+    "summary",
+    "journalDate",
+    "amountTaxStatus",
+    "lineItems"
+  ]
+}

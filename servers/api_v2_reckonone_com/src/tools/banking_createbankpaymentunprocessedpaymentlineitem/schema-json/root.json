@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "bankPaymentId": {
+      "description": "The bank payment's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paymentId": {
+      "type": "string",
+      "description": "Id of payment to include in bank payment.",
+      "format": "guid",
+      "example": "1b5a4807-dc8e-49d7-8c81-4cb3a73b22ca"
+    }
+  },
+  "required": [
+    "bookId",
+    "bankPaymentId"
+  ]
+}

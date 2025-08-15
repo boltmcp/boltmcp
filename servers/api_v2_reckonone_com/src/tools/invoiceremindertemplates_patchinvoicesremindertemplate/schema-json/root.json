@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "templateId": {
+      "description": "The invoice reminder template id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "daysToRemindAfter": {
+      "type": "integer",
+      "description": "The days to reminder",
+      "format": "int32",
+      "example": 7
+    },
+    "invoiceEmail": {
+      "description": "The contents of the invoice email",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of an invoice reminder email.",
+          "additionalProperties": false,
+          "properties": {
+            "subject": {
+              "type": "string",
+              "description": "The subject of the invoice email.",
+              "nullable": true,
+              "example": "Invoice <invoice number>, due on <invoice due date> is now overdue."
+            },
+            "body": {
+              "type": "string",
+              "description": "The body of the invoice email.",
+              "nullable": true,
+              "example": "Your invoice <invoice number> for $<invoice total> was due on <invoice date>."
+            },
+            "includeCc": {
+              "type": "boolean",
+              "description": "Indicates whether includes CC by default when emailing.",
+              "default": false,
+              "example": true
+            },
+            "ccAddress": {
+              "type": "string",
+              "description": "Default CC email address.",
+              "maxLength": 100,
+              "nullable": true,
+              "example": "ccemail@email.com"
+            },
+            "includeBcc": {
+              "type": "boolean",
+              "description": "Indicates whether includes BCC by default when emailing.",
+              "default": false,
+              "example": true
+            },
+            "bccAddress": {
+              "type": "string",
+              "description": "Default BCC email address.",
+              "maxLength": 100,
+              "nullable": true,
+              "example": "bccemail@email.com"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "templateId"
+  ]
+}

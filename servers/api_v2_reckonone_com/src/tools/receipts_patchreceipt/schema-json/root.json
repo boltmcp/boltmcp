@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "receiptId": {
+      "description": "The receipt's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that is being invoiced.",
+      "nullable": true,
+      "example": "Company Ltd"
+    },
+    "receiptDate": {
+      "type": "string",
+      "description": "The date of the receipt.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06"
+    },
+    "ledgerAccount": {
+      "type": "string",
+      "description": "The id or name of the bank/cash/credit account where the money was received.",
+      "nullable": true,
+      "example": "My bank account"
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "The id or name of the payment method used.",
+      "nullable": true,
+      "example": "Mastercard"
+    },
+    "reference": {
+      "type": "string",
+      "description": "The receipt reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the receipt.",
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "totalAmount": {
+      "type": "number",
+      "description": "The total amount of the receipt.",
+      "format": "decimal",
+      "example": 110
+    },
+    "reconciliationStatus": {
+      "description": "The receipt's reconciliation status.\nNote that this can only be initially set to Cleared or Uncleared and that it can only be updated via a bank reconciliation.",
+      "nullable": true,
+      "example": "Cleared",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Reconciliation status.",
+          "x-enumNames": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ],
+          "enum": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ]
+        }
+      ]
+    },
+    "internalNotes": {
+      "type": "string",
+      "description": "Internal Notes related to the receipt.",
+      "nullable": true,
+      "example": "This is an internal note."
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "nullable": true,
+      "example": "My classification"
+    }
+  },
+  "required": [
+    "bookId",
+    "receiptId"
+  ]
+}

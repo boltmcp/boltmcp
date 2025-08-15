@@ -1,0 +1,212 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "projectId": {
+      "description": "The project's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of project.",
+      "maxLength": 300,
+      "minLength": 1,
+      "example": "Granny flat"
+    },
+    "status": {
+      "description": "Status of project.",
+      "default": "Active",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a project.",
+          "x-enumNames": [
+            "Active",
+            "Inactive",
+            "Cancelled",
+            "Completed"
+          ],
+          "enum": [
+            "Active",
+            "Inactive",
+            "Cancelled",
+            "Completed"
+          ]
+        }
+      ]
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the project.\nIf this field is omitted, the value from the book's tax settings will be used.",
+      "default": "Current value in Settings",
+      "nullable": true,
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an item's amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "parentProject": {
+      "type": "string",
+      "description": "The parent project.",
+      "default": "null",
+      "nullable": true,
+      "example": "The parent project"
+    },
+    "startDate": {
+      "type": "string",
+      "description": "The date the project starts.",
+      "format": "date-time",
+      "default": "null",
+      "nullable": true,
+      "example": "2020-09-02"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "The date the project ends.",
+      "format": "date-time",
+      "default": "null",
+      "nullable": true,
+      "example": "2020-09-09"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the project.",
+      "default": "null",
+      "nullable": true,
+      "example": "This is a description of the project."
+    },
+    "billingMethod": {
+      "description": "The billing method for the project.",
+      "default": "null",
+      "example": "ProjectItemRate",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Enum representing the billing methods for a project.",
+          "x-enumNames": [
+            "ProjectItemRate",
+            "SubProjectBilling"
+          ],
+          "enum": [
+            "ProjectItemRate",
+            "SubProjectBilling"
+          ]
+        }
+      ]
+    },
+    "items": {
+      "type": "array",
+      "description": "Items used in the project.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a project item to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "item"
+        ],
+        "properties": {
+          "item": {
+            "type": "string",
+            "description": "The id or name of the item.",
+            "minLength": 1,
+            "example": "Lumber"
+          },
+          "projectRate": {
+            "type": "number",
+            "description": "Rate at which item is charged for this project.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 199.99
+          }
+        }
+      }
+    },
+    "customers": {
+      "type": "array",
+      "description": "Customers linked to the project.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a project customer to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "customer"
+        ],
+        "properties": {
+          "weighting": {
+            "type": "number",
+            "description": "Weighting assigned to contact.",
+            "format": "decimal",
+            "default": 100,
+            "nullable": true,
+            "example": 75
+          },
+          "customer": {
+            "type": "string",
+            "description": "The id or name of the customer.",
+            "minLength": 1,
+            "example": "Customer A"
+          }
+        }
+      }
+    },
+    "suppliers": {
+      "type": "array",
+      "description": "Suppliers linked to the project.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a project supplier to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "supplier"
+        ],
+        "properties": {
+          "weighting": {
+            "type": "number",
+            "description": "Weighting assigned to contact.",
+            "format": "decimal",
+            "default": 100,
+            "nullable": true,
+            "example": 75
+          },
+          "supplier": {
+            "type": "string",
+            "description": "The id or name of the supplier.",
+            "minLength": 1,
+            "example": "Supplier A"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "projectId",
+    "name"
+  ]
+}

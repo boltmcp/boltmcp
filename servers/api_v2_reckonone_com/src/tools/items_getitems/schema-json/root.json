@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "baseDate": {
+      "description": "The date to use when calculating the net or gross price.",
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "page": {
+      "description": "The page to retrieve.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of items per page.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

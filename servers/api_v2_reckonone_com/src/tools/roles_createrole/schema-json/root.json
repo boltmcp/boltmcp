@@ -1,0 +1,3124 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The role's unique name.",
+      "nullable": true,
+      "example": "Administrator"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the role.",
+      "nullable": true,
+      "example": "These users have full access to the book. Owners of a book are automatically assigned to this role."
+    },
+    "permissions": {
+      "description": "The role's detailed permissions.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Role permissions.",
+          "additionalProperties": false,
+          "properties": {
+            "accountEnquiryReport": {
+              "description": "Permissions for the Account Enquiry report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "accountListReport": {
+              "description": "Permissions for the Account List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "accounts": {
+              "description": "Permissions for the Chart of Accounts.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "activityStatements": {
+              "description": "Permissions for Activity Statements.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email and lodge actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "lodge": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to lodge.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "agedCreditorsSummaryReport": {
+              "description": "Permissions for the Aged Creditors summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "agedCreditorsTransactionsReport": {
+              "description": "Permissions for the Aged Creditors transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "agedDebtorsSummaryReport": {
+              "description": "Permissions for the Aged Debtors summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "agedDebtorsTransactionsReport": {
+              "description": "Permissions for the Aged Debtors transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "balanceSheetReport": {
+              "description": "Permissions for the Balance Sheet report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bankAccounts": {
+              "description": "Permissions for bank accounts.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for bank accounts.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "import": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to import bank data.",
+                      "example": true
+                    },
+                    "reconcile": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to reconcile a bank account.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bankPayments": {
+              "description": "Permissions for bank payments.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bankReconciliationReport": {
+              "description": "Permissions for the Bank Reconciliation report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bankStatementReport": {
+              "description": "Permissions for the Bank Statement report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bankTransfers": {
+              "description": "Permissions for bank transfers.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "billListReport": {
+              "description": "Permissions for the Bill List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bills": {
+              "description": "Permissions for bills.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email and approve actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "bookSettings": {
+              "description": "Permissions for book settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "budgets": {
+              "description": "Permissions for budgets.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "budgetsReport": {
+              "description": "Permissions for the Budgets report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "classifications": {
+              "description": "Permissions for classifications.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "contactDetailTypes": {
+              "description": "Permissions for contact detail types.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "contacts": {
+              "description": "Permissions for contacts.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "creditNotes": {
+              "description": "Permissions for credit notes.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email and approve actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "customerListReport": {
+              "description": "Permissions for the Customer List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "customers": {
+              "description": "Permissions for customers.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "customerStatements": {
+              "description": "Permissions for customer statements.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for customer statements.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "customerTransactionsReport": {
+              "description": "Permssions for the Customer Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "departments": {
+              "description": "Permissions for departments.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "documentStorage": {
+              "description": "Permissions for document storage.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for document storage.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "upload": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to upload.",
+                      "example": false
+                    },
+                    "download": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to download.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "emails": {
+              "description": "Permissions for emails.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for emails.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "viewHistory": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view history.",
+                      "example": false
+                    },
+                    "resend": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to resend.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "emailSettings": {
+              "description": "Permissions for email settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "employees": {
+              "description": "Permissions for employees.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for employees.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "managePayrollEmployeeDetails": {
+                      "type": "boolean",
+                      "description": "Whether the role can manage payroll employee's details.",
+                      "example": false
+                    },
+                    "viewOwnDetails": {
+                      "type": "boolean",
+                      "description": "Whether the role can view own employee details.",
+                      "example": true
+                    },
+                    "editOwnDetails": {
+                      "type": "boolean",
+                      "description": "Whether the role can edit own employee details.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "employeeListReport": {
+              "description": "Permissions for the Employee List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "estimateListReport": {
+              "description": "Permissions for the Estimate List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "estimates": {
+              "description": "Permissions for estimates.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print and email actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "expenseClaimListReport": {
+              "description": "Permissions for the Expense Claim List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "expenseClaims": {
+              "description": "Permissions for expense claims.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email, approve and manage actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    },
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "manage": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to manage.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "expenseClaimSettings": {
+              "description": "Permissions for expense claim settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "expenseClaimTransactionsReport": {
+              "description": "Permissions for the Expense Claim Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "gstSummaryReport": {
+              "description": "Permissions for the GST Summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "invoiceListReport": {
+              "description": "Permissions for the Invoice List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "invoices": {
+              "description": "Permissions for invoices.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email and approve actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "itemListReport": {
+              "description": "Permissions for the Item List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "items": {
+              "description": "Permissions for items.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "journalListReport": {
+              "description": "Permissions for the Journal List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "journals": {
+              "description": "Permissions for journals.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print and approve actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "ledgerTransactionsReport": {
+              "description": "Permissions for the Ledger Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "moneyInSettings": {
+              "description": "Settings for money in settings (invoices, receipts, credit notes etc.).",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "moneyOutSettings": {
+              "description": "Permissions for money out settings (bills, payments, supplier credit notes etc.).",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "paymentListReport": {
+              "description": "Permissions for the Payment List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payments": {
+              "description": "Permissions for payments.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print and email actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollAdjustments": {
+              "description": "Permissions for payroll adjustments.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollDetailReport": {
+              "description": "Permissions for the Payroll Detail report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollEmployeeListReport": {
+              "description": "Permissions for the Payroll Employee List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollEmployeeEarningsSummaryReport": {
+              "description": "Permissions for the Payroll Employee Earnings Summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollEmployeeLeaveTakenReport": {
+              "description": "Permissions for the Payroll Employee Leave Taken report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollItems": {
+              "description": "Permissions for payroll pay items.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollLeaveBalancesReport": {
+              "description": "Permissions for the Payroll Leave Balances report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollPayments": {
+              "description": "Permissions for payroll payments.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollPaymentScheduleReport": {
+              "description": "Permissions for the Payroll Payment Schedule report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollSettings": {
+              "description": "Permissions for payroll settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollSummaryReport": {
+              "description": "Permissions for the Payroll Summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollTransactionSummaryReport": {
+              "description": "Permissions for the Payroll Transaction Summary report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payrollPaymentSummaries": {
+              "description": "Permissions for payroll payment summaries.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "payruns": {
+              "description": "Permissions for pay runs.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus approve and manage actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    },
+                    "manage": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to manage.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "paySlips": {
+              "description": "Permissions for pay slips.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for pay slips.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "manage": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to manage.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "profitAndLossReport": {
+              "description": "Permissions for the Profit And Loss report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "projectListReport": {
+              "description": "Permissions for the Project List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "projects": {
+              "description": "Permissions for projects.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "receiptListReport": {
+              "description": "Permissions for the Receipts List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "receipts": {
+              "description": "Permissons for receipts.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print and email actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "recurringTransactions": {
+              "description": "Permissions for recurring transactions.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "reportSettings": {
+              "description": "Permissions for settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "restHooks": {
+              "description": "Permissions for REST hooks.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for REST hooks.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "modify": {
+                      "type": "boolean",
+                      "description": "Whether the role can modify REST hooks.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "roles": {
+              "description": "Permissions for roles.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "salesByItemReport": {
+              "description": "Permissions for the Sales By Item report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "singleTouchPayroll": {
+              "description": "Permissions for Single Touch Payroll.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for Single Touch Payroll.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "send": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to send.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "statementSettings": {
+              "description": "Permissions for statements.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "superContributionsByEmployeeReport": {
+              "description": "Permissions for the Super Contributions By Employee report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "superFunds": {
+              "description": "Permissions for super funds.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "superStream": {
+              "description": "Permissions for SuperStream",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for SuperStream.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "canLodge": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to lodge SuperStream.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "superTransactionsReport": {
+              "description": "Permissions for the Super Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "supplierCreditNotes": {
+              "description": "Permissions for supplier credit notes.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print and approve actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "supplierListReport": {
+              "description": "Permissions for the Supplier List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "suppliers": {
+              "description": "Permissions for suppliers.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "supplierTransactionsReport": {
+              "description": "Permissions for the Supplier Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "taxCodeExceptionReport": {
+              "description": "Permissions for the Tax Code Exception report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "taxCodeListReport": {
+              "description": "Permissions for the Tax Code List report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "taxCodeTransactionsReport": {
+              "description": "Permissions for the Tax Code Transactions report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "taxSettings": {
+              "description": "Permissions for tax settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for tax settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "canDeleteCodeGroup": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete tax codes and tax groups.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "terms": {
+              "description": "Permissions for payment terms.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "timeEntries": {
+              "description": "Permissions for time entries.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for time entries.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "approve": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to approve.",
+                      "example": false
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "manage": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to manage.",
+                      "example": false
+                    },
+                    "assignPayItem": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to assign a payroll pay item to a time entry.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "timeEntriesReport": {
+              "description": "Permissions for the Time Entries report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "timeSettings": {
+              "description": "Permissions for time settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for settings.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "topCustomersReport": {
+              "description": "Permissions for the Top 10 Customers report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "topExpenseAccountsReport": {
+              "description": "Permissions for the Top 10 Expense Accounts report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "topIncomeAccountsReport": {
+              "description": "Permissions for the Top 10 Income Accounts report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "topSuppliersReport": {
+              "description": "Permissions for the Top 10 Suppliers report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "tpar": {
+              "description": "Permissions for TPAR.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Common role permissions plus print, email and lodge actions.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to email.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "lodge": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to lodge.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "transactionLineItemsReport": {
+              "description": "Permissions for the Transaction Line Items report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "trialBalanceReport": {
+              "description": "Permissions for the Trial Balance report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "uninvoicedAmountsByCustomerReport": {
+              "description": "Permissions for the Uninvoiced Amounts By Customer report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "uninvoicedAmountsByProjectReport": {
+              "description": "Permissions for the Uninvoiced Amounts By Project report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "uninvoicedTransactionsByCustomerReport": {
+              "description": "Permissions for the Uninvoiced Amounts By Customer report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "uninvoicedTransactionsByProjectReport": {
+              "description": "Permissions for the Uninvoiced Amounts By Project report.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for a report.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view the report.",
+                      "example": true
+                    },
+                    "export": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to export the report.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            },
+            "users": {
+              "description": "Permissions for users.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for users.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": true
+                    },
+                    "create": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to create.",
+                      "example": true
+                    },
+                    "edit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit/update/modify.",
+                      "example": true
+                    },
+                    "delete": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to delete.",
+                      "example": false
+                    },
+                    "editOtherUser": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to edit another user's details.",
+                      "example": false
+                    },
+                    "invite": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to invite a user.",
+                      "example": true
+                    }
+                  }
+                }
+              ]
+            },
+            "vat": {
+              "description": "Permissions for UK VAT.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "Role permissions for UK VAT.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "authorise": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to authorise.",
+                      "example": true
+                    },
+                    "print": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to print.",
+                      "example": true
+                    },
+                    "submit": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to submit.",
+                      "example": true
+                    },
+                    "view": {
+                      "type": "boolean",
+                      "description": "Whether the role has permission to view.",
+                      "example": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

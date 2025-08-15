@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "creditNoteId": {
+      "description": "The credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The id of the line item to delete.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "creditNoteId",
+    "lineItemId"
+  ]
+}

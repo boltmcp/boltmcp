@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "approvalEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether time entry approval is enabled.",
+      "nullable": true,
+      "example": true
+    },
+    "firstDayOfWeek": {
+      "description": "The start time of a week. ",
+      "nullable": true,
+      "example": "Monday",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "",
+          "x-enumNames": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "enum": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ]
+        }
+      ]
+    },
+    "transferBillableTimeAs": {
+      "description": "The transfer billable time settings.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Transfer billable time settings to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "combineItemAndRate": {
+              "type": "boolean",
+              "description": "Indicates whether to combine the item and the rate when transferring billable time.",
+              "nullable": true,
+              "example": false
+            },
+            "transferNotes": {
+              "type": "boolean",
+              "description": "Indicates whether to use time sheet entry notes as line item descriptions when transferring billable time separately.",
+              "nullable": true,
+              "example": true
+            },
+            "transferDescriptions": {
+              "type": "boolean",
+              "description": "Indicates whether to use chargeable item descriptions as line item descriptions when transferring billable time separately.",
+              "nullable": true,
+              "example": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

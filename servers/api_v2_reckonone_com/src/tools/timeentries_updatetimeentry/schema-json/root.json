@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "timeEntryId": {
+      "description": "The time entry's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "employee": {
+      "type": "string",
+      "description": "The id or name of the employee that spent the time.",
+      "minLength": 1,
+      "example": "John Smith"
+    },
+    "timeEntryDate": {
+      "type": "string",
+      "description": "Date of the time entry.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2021-11-30"
+    },
+    "project": {
+      "type": "string",
+      "description": "The id or full name of the project on which the time was spent on.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+      "default": "null",
+      "nullable": true,
+      "example": "John's new garage"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The id or name of the customer for whom the time was spent on.",
+      "default": "null",
+      "nullable": true,
+      "example": "John Smith"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The id or name of the classification.",
+      "default": "null",
+      "nullable": true,
+      "example": "Classification A"
+    },
+    "billable": {
+      "type": "boolean",
+      "description": "Whether the time can be billed to a customer.",
+      "default": "null",
+      "nullable": true,
+      "example": true
+    },
+    "item": {
+      "type": "string",
+      "description": "The id or full name of the item that the time entry relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons.",
+      "default": "null",
+      "nullable": true,
+      "example": "Parent item:Child item"
+    },
+    "payrollItem": {
+      "type": "string",
+      "description": "The id or full name of the payroll pay item that the time entry relates to.",
+      "default": "null",
+      "nullable": true,
+      "example": "Standard hours"
+    },
+    "time": {
+      "description": "Details of the time spent.",
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Time details for a time entry being created or updated.",
+          "additionalProperties": false,
+          "properties": {
+            "startTime": {
+              "type": "string",
+              "description": "The start time. Required if duration is not specified.",
+              "format": "duration",
+              "nullable": true,
+              "example": "08:00"
+            },
+            "endTime": {
+              "type": "string",
+              "description": "The end time. Required if duration is not specified.",
+              "format": "duration",
+              "nullable": true,
+              "example": "12:00"
+            },
+            "duration": {
+              "type": "integer",
+              "description": "The duration in minutes. Used if specified, otherwise calculated from startTime and endTime.",
+              "format": "int32",
+              "nullable": true,
+              "example": 240
+            }
+          }
+        }
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the time entry.",
+      "default": "null",
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "declineReason": {
+      "type": "string",
+      "description": "Reason why time entry approval was declined.\nNote that this cannot be set via POST.",
+      "default": "null",
+      "nullable": true,
+      "example": "I don't approve of this."
+    }
+  },
+  "required": [
+    "bookId",
+    "timeEntryId",
+    "employee",
+    "timeEntryDate",
+    "time"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "billId": {
+      "description": "The bill's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "The supplier on the bill",
+      "nullable": true,
+      "example": "Widgets Pty Ltd"
+    },
+    "billDate": {
+      "type": "string",
+      "description": "The date of the bill.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06"
+    },
+    "dueDate": {
+      "type": "string",
+      "description": "The date bill is due by.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-03-06"
+    },
+    "billDiscountAmount": {
+      "type": "number",
+      "description": "The bill discount amount.",
+      "format": "decimal",
+      "example": 10
+    },
+    "billDiscountPercent": {
+      "type": "number",
+      "description": "The bill discount percentage.",
+      "format": "decimal",
+      "example": 7.5
+    },
+    "amountTaxStatus": {
+      "type": "string",
+      "description": "The bill tax status.",
+      "nullable": true,
+      "example": "Inclusive"
+    },
+    "status": {
+      "description": "The status of the bill.",
+      "nullable": true,
+      "example": "Approved",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an bill.",
+          "x-enumNames": [
+            "Unpaid",
+            "Draft",
+            "Approved",
+            "Paid"
+          ],
+          "enum": [
+            "Unpaid",
+            "Draft",
+            "Approved",
+            "Paid"
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "description": "The bill reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The template used to print or email the bill.",
+      "nullable": true,
+      "example": "Standard bill"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the bill.",
+      "nullable": true,
+      "example": "This is a note."
+    }
+  },
+  "required": [
+    "bookId",
+    "billId"
+  ]
+}

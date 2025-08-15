@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The type of electronic address. This can either be `email` or the email type id.",
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "description": "The electronic address.",
+      "nullable": true,
+      "example": "x@y.com"
+    }
+  },
+  "required": [
+    "bookId",
+    "type"
+  ]
+}

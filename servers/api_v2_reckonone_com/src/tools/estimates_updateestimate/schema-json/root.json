@@ -1,0 +1,210 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "estimateId": {
+      "description": "The estimate's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The id or name of the customer that is being quoted.",
+      "minLength": 1,
+      "example": "Company Ltd"
+    },
+    "estimateDate": {
+      "type": "string",
+      "description": "The date of the estimate.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-02-06"
+    },
+    "estimateExpiryDate": {
+      "type": "string",
+      "description": "The date the estimate expires on.",
+      "format": "date-time",
+      "default": "null",
+      "nullable": true,
+      "example": "2020-03-06"
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the estimate.",
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "description": "The estimate reference.",
+      "maxLength": 50,
+      "nullable": true,
+      "example": "My reference"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The id or name of the classification.",
+      "default": "null",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The id or name of the template used to print or email the estimate.",
+      "minLength": 1,
+      "example": "Standard estimate"
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "The individual items that make up the estimate.",
+      "items": {
+        "type": "object",
+        "description": "An estimate line item.",
+        "additionalProperties": false,
+        "required": [
+          "lineNumber",
+          "itemDetails"
+        ],
+        "properties": {
+          "lineNumber": {
+            "type": "integer",
+            "description": "The line number.",
+            "format": "int32",
+            "example": 1
+          },
+          "project": {
+            "type": "string",
+            "description": "The id or full name of the project that the line item relates to.",
+            "default": "null",
+            "nullable": true,
+            "example": "Project A:Project B"
+          },
+          "itemDetails": {
+            "description": "Details of an item used on an estimate line item.",
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Details of an account used on an estimate line item.",
+                "additionalProperties": false,
+                "required": [
+                  "item"
+                ],
+                "properties": {
+                  "item": {
+                    "type": "string",
+                    "description": "The id or full name of the item that the line relates to.",
+                    "minLength": 1,
+                    "example": "Parent item:Child item"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of line item.",
+                    "maxLength": 1000,
+                    "nullable": true,
+                    "example": "Children's toy"
+                  },
+                  "price": {
+                    "type": "number",
+                    "description": "The price of each item.",
+                    "format": "decimal",
+                    "nullable": true,
+                    "example": 5.5
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "description": "The quantity sold.",
+                    "format": "decimal",
+                    "nullable": true,
+                    "example": 1
+                  }
+                }
+              }
+            ]
+          },
+          "markupAmount": {
+            "type": "number",
+            "description": "The value of any markup as an amount. MarkupAmount and MarkupPercent are mutually exclusive.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 5
+          },
+          "markupPercent": {
+            "type": "number",
+            "description": "The value of any markup as a percentage. MarkupAmount and MarkupPercent are mutually exclusive.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 15.5
+          },
+          "taxRate": {
+            "type": "string",
+            "description": "The id or name of the applicate tax.",
+            "default": "null",
+            "nullable": true,
+            "example": "GST"
+          },
+          "taxAmount": {
+            "type": "number",
+            "description": "The tax amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 10
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the estimate.",
+      "default": "null",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "termsAndConditions": {
+      "type": "string",
+      "description": "Terms and conditions.",
+      "default": "null",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "These are the terms and conditions."
+    },
+    "paymentNotes": {
+      "type": "string",
+      "description": "Payment notes.",
+      "default": "null",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "This is how you pay us."
+    }
+  },
+  "required": [
+    "bookId",
+    "estimateId",
+    "customer",
+    "estimateDate",
+    "amountTaxStatus",
+    "template",
+    "lineItems"
+  ]
+}

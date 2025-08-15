@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "contactId": {
+      "description": "The contact's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The phone number's type by name or id.",
+      "type": "string"
+    },
+    "countryCode": {
+      "type": "string",
+      "description": "The country code.",
+      "default": "null",
+      "maxLength": 10,
+      "nullable": true,
+      "example": "61"
+    },
+    "areaCode": {
+      "type": "string",
+      "description": "The area code.",
+      "default": "null",
+      "maxLength": 10,
+      "nullable": true,
+      "example": "02"
+    },
+    "number": {
+      "type": "string",
+      "description": "The number.",
+      "default": "null",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "90101234"
+    },
+    "extension": {
+      "type": "string",
+      "description": "The extension.",
+      "default": "null",
+      "maxLength": 10,
+      "nullable": true,
+      "example": "4321"
+    }
+  },
+  "required": [
+    "bookId",
+    "contactId",
+    "type"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "billId": {
+      "description": "The bill's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "linkId": {
+      "description": "The id of the transaction link to delete.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "bookId",
+    "billId",
+    "linkId"
+  ]
+}

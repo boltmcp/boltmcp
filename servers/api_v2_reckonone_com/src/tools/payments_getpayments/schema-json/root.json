@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "page": {
+      "description": "The page to retrieve.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of payments per page.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

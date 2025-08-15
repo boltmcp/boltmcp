@@ -1,0 +1,144 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "parameters": {
+      "description": "The report parameters.",
+      "oneOf": [
+        {
+          "nullable": true,
+          "oneOf": [
+            {
+              "type": "object",
+              "description": "The parameters for the Payroll Leave Balances And Accrual Value report.",
+              "additionalProperties": false,
+              "required": [
+                "asAtDate"
+              ],
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "description": "An authentication token. Note that this is not required if it is supplied via the HTTP `Authorize` header.",
+                  "nullable": true,
+                  "example": "asdkfasdfkjasdgfgarekjhgfu2g8378rffcbwdhjbjdhk3cfoch3c3"
+                },
+                "period": {
+                  "description": "The period.",
+                  "default": "AsAtDate",
+                  "nullable": true,
+                  "example": "AsAtDate",
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "description": "Periods that can be used for the Payroll Leave Balances And Accrual Value report.",
+                      "x-enumNames": [
+                        "AsAtDate"
+                      ],
+                      "enum": [
+                        "AsAtDate"
+                      ]
+                    }
+                  ]
+                },
+                "asAtDate": {
+                  "type": "string",
+                  "description": "When using AsAtDate, the date to use.",
+                  "format": "date-time",
+                  "minLength": 1,
+                  "example": "2021-01-31"
+                },
+                "leaveItems": {
+                  "type": "array",
+                  "description": "A list of leave item IDs to include in the report.\nIf omitted, all leave items will be included.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "a16010b7-43a0-40cc-a3de-151420659df7"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "format": "guid"
+                  }
+                },
+                "employees": {
+                  "type": "array",
+                  "description": "A list of employee IDs to include in the report.\nIf omitted, all employees will be included.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "3e3b17cc-9071-4822-893e-9ef67dbf572c"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "format": "guid"
+                  }
+                },
+                "orientation": {
+                  "description": "The report's orientation.\nIgnored for JSON report format.",
+                  "default": "Portrait",
+                  "nullable": true,
+                  "example": "Portrait",
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "description": "The report orientation.",
+                      "x-enumNames": [
+                        "Portrait",
+                        "Landscape"
+                      ],
+                      "enum": [
+                        "Portrait",
+                        "Landscape"
+                      ]
+                    }
+                  ]
+                },
+                "columns": {
+                  "type": "array",
+                  "description": "A list of report columns to include in the report.\nIf omitted, all columns will be returned.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "OteValue",
+                    "LeaveLoadingValue"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "description": "Leave Balances and Accrual Value Report columns.",
+                    "x-enumNames": [
+                      "OteValue",
+                      "LeaveLoadingValue",
+                      "TotalValue"
+                    ],
+                    "enum": [
+                      "OteValue",
+                      "LeaveLoadingValue",
+                      "TotalValue"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "format": {
+      "description": "The format to use, e.g. pdf.",
+      "type": "string",
+      "nullable": true
+    },
+    "download": {
+      "description": "Whether the result is for download. If true, a ContentDisposition header will be added.",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

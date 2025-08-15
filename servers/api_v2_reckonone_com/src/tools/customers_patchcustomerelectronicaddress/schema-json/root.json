@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customerId": {
+      "description": "The customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The electronic address type by name or id.",
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "description": "The electronic address.",
+      "nullable": true,
+      "example": "x@y.com"
+    }
+  },
+  "required": [
+    "bookId",
+    "customerId",
+    "type"
+  ]
+}

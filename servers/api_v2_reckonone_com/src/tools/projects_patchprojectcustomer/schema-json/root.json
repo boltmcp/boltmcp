@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "projectId": {
+      "description": "The project's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineId": {
+      "description": "The project customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The id or name of the customer.",
+      "nullable": true,
+      "example": "Customer A"
+    }
+  },
+  "required": [
+    "bookId",
+    "projectId",
+    "lineId"
+  ]
+}

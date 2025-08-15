@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paymentId": {
+      "description": "The payments id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "format": {
+      "description": "The format to use, e.g. pdf.",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "paymentId"
+  ]
+}

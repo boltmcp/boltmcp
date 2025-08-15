@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The receipt prefix.",
+      "nullable": true,
+      "example": "RCPT"
+    },
+    "defaultBankAccount": {
+      "type": "string",
+      "description": "The default bank account.",
+      "nullable": true,
+      "example": "Main bank account"
+    },
+    "emailSettings": {
+      "description": "Email settings.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The email template to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "includeCc": {
+              "type": "boolean",
+              "description": "Indicates whether includes CC by default when emailing.",
+              "nullable": true,
+              "example": true
+            },
+            "ccAddress": {
+              "type": "string",
+              "description": "Default CC email address.",
+              "nullable": true,
+              "example": "ccemail@email.com"
+            },
+            "includeBcc": {
+              "type": "boolean",
+              "description": "Indicates whether includes BCC by default when emailing.",
+              "nullable": true,
+              "example": true
+            },
+            "bccAddress": {
+              "type": "string",
+              "description": "Default BCC email address.",
+              "nullable": true,
+              "example": "bccemail@email.com"
+            },
+            "emailSubject": {
+              "type": "string",
+              "description": "Default email subject.",
+              "nullable": true,
+              "example": "Activity Statement"
+            },
+            "emailContent": {
+              "type": "string",
+              "description": "Default email content.",
+              "nullable": true,
+              "example": "Please review the attached Activity Statement. Feel free to contact us if you have any questions."
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

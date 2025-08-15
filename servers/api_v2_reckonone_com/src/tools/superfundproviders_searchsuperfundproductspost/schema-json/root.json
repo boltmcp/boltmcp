@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "searchText": {
+      "type": "string",
+      "description": "The text to search for.",
+      "default": "null",
+      "nullable": true,
+      "example": "AMG0"
+    },
+    "first": {
+      "type": "integer",
+      "description": "The number of super fund providers to return.",
+      "format": "int32",
+      "default": 5,
+      "nullable": true,
+      "example": 5
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

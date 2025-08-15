@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "industryId": {
+      "description": "The industry's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "page": {
+      "description": "The page to retrieve.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of industry categories per page.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": [
+    "industryId"
+  ]
+}

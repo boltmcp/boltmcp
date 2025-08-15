@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The type of address. This can either be `legal`, `physical` or the address type id.",
+      "type": "string"
+    },
+    "line1": {
+      "type": "string",
+      "description": "First line of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Floor 1"
+    },
+    "line2": {
+      "type": "string",
+      "description": "Second line of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Apartment 44"
+    },
+    "line3": {
+      "type": "string",
+      "description": "Third line of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "1 Tudor Lane"
+    },
+    "town": {
+      "type": "string",
+      "description": "Town of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "London"
+    },
+    "suburb": {
+      "type": "string",
+      "description": "Suburb of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Collingwood"
+    },
+    "state": {
+      "type": "string",
+      "description": "State of address.",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Victoria"
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Postcode of address.",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "3000"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country of address.",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "Australia"
+    }
+  },
+  "required": [
+    "bookId",
+    "type"
+  ]
+}

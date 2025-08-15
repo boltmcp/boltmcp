@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The department's unique name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "example": "Finance"
+    },
+    "code": {
+      "type": "string",
+      "description": "The department's unique code.",
+      "default": "null",
+      "maxLength": 50,
+      "nullable": true,
+      "example": "1234"
+    },
+    "status": {
+      "description": "The department's status.",
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a department.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about the department.",
+      "default": "null",
+      "maxLength": 500,
+      "nullable": true,
+      "example": "This is the finance department."
+    },
+    "managers": {
+      "type": "array",
+      "description": "A list of managers assigned to the department.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Manager belonging to department.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "A manager's Id.",
+            "format": "guid"
+          }
+        }
+      }
+    },
+    "employees": {
+      "type": "array",
+      "description": "A list of employees assigned to the department.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Employee belonging to department.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "An employee's Id.",
+            "format": "guid"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "name"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

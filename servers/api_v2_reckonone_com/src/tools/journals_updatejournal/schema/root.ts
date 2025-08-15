@@ -1,0 +1,12 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "bookId": z.string().describe("The book's id."),
+  "journalId": z.string().describe("The journal's id."),
+  "summary": z.string().min(1).describe("Summary of the journal."),
+  "journalDate": z.string().datetime({ offset: true }).min(1).describe("The date of the journal."),
+  "amountTaxStatus": z.enum(["NonTaxed","Inclusive","Exclusive"]).describe("The tax status of an amount.").describe("The amount tax status of the amounts in the journal."),
+  "description": z.string().nullable().describe("Description of the journal.").optional(),
+  "adjustingJournal": z.boolean().nullable().describe("Whether this is an adjusting journal.").optional(),
+  "lineItems": z.array(z.object({ "reconciliationStatus": z.enum(["Uncleared","Cleared","Reconciled"]).describe("Reconciliation status.").nullable().describe("The reconciliation status.\nNote that this can only be changed between Cleared and Uncleared."), "transactionType": z.enum(["Sale","Purchase"]).describe("The type of transaction (for creating or modifying a journal entry)").nullable().describe("The type of transaction."), "ledgerAccount": z.string().min(1).describe("The id or full name of the ledger account.\nNote that the full name includes the name(s) of any parent ledger account(s) separated by colons."), "debit": z.number().nullable().describe("The debit amount."), "credit": z.number().nullable().describe("The credit amount."), "taxRate": z.string().nullable().describe("The id or name of the tax rate."), "taxAmount": z.number().nullable().describe("The tax amount."), "notes": z.string().nullable().describe("Notes."), "entity": z.string().nullable().describe("The entity (customer/supplier/superfund/employee)."), "project": z.string().nullable().describe("The id or full name of the project.\nNote that the full name includes the name(s) of any parent project(s) separated by colons."), "classification": z.string().nullable().describe("The id or name of the classification.") }).strict().describe("Details of an journal line item to create or update.")).describe("The individual items that make up the journal.")
+}

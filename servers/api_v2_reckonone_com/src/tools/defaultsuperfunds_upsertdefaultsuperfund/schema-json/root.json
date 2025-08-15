@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "fund": {
+      "type": "string",
+      "description": "The id or name of the super fund.",
+      "minLength": 1,
+      "example": "Superfund A"
+    },
+    "fundProduct": {
+      "type": "string",
+      "description": "The id or name of the super fund product.",
+      "nullable": true,
+      "example": "Superfund Product A"
+    }
+  },
+  "required": [
+    "bookId",
+    "fund"
+  ]
+}

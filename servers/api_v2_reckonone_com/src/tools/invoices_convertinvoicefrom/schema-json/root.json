@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ignoreWarnings": {
+      "description": "Ignore warnings",
+      "type": "boolean"
+    },
+    "id": {
+      "type": "string",
+      "description": "The Id of the object that needs to be converted into an invoice.",
+      "format": "guid",
+      "minLength": 1,
+      "example": "02eef473-5ebc-4d4d-aab6-0e5bfc1b3bad"
+    },
+    "type": {
+      "description": "The types of the object that needs to be converted into an invoice, the object can be an estimate, sales order and etc.",
+      "example": "Estimate",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Types of an invoice to create from, which can be an estimate, sales order and etc.",
+          "x-enumNames": [
+            "Estimate"
+          ],
+          "enum": [
+            "Estimate"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "id",
+    "type"
+  ]
+}

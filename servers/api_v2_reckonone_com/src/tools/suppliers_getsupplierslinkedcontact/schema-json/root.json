@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierId": {
+      "description": "The supplier's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "contactId": {
+      "description": "The supplier's linked contact id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierId",
+    "contactId"
+  ]
+}

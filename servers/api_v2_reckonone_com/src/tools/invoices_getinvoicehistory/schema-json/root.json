@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "page": {
+      "description": "The page to retrieve.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of entries per page.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superstreamId": {
+      "description": "The superstream's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "payrunSuperLineId": {
+      "description": "The id of the payrun superstream line item to delete.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "superstreamId",
+    "payrunSuperLineId"
+  ]
+}

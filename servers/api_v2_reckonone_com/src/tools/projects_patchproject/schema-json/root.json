@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "projectId": {
+      "description": "The project's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of project.",
+      "maxLength": 300,
+      "nullable": true,
+      "example": "Granny flat"
+    },
+    "status": {
+      "description": "Status of project.",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a project.",
+          "x-enumNames": [
+            "Active",
+            "Inactive",
+            "Cancelled",
+            "Completed"
+          ],
+          "enum": [
+            "Active",
+            "Inactive",
+            "Cancelled",
+            "Completed"
+          ]
+        }
+      ]
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the project.",
+      "nullable": true,
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an item's amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "parentProject": {
+      "type": "string",
+      "description": "The parent project.",
+      "nullable": true,
+      "example": "The parent project"
+    },
+    "startDate": {
+      "type": "string",
+      "description": "The date the project starts.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-09-02"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "The date the project ends.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-09-09"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the project.",
+      "nullable": true,
+      "example": "This is a description of the project."
+    },
+    "billingMethod": {
+      "description": "The billing method for the project.",
+      "nullable": true,
+      "example": "ProjectItemRate",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Enum representing the billing methods for a project.",
+          "x-enumNames": [
+            "ProjectItemRate",
+            "SubProjectBilling"
+          ],
+          "enum": [
+            "ProjectItemRate",
+            "SubProjectBilling"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "projectId"
+  ]
+}

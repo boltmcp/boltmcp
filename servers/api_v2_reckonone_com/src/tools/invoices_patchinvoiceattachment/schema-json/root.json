@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "attachmentId": {
+      "description": "The attachment's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "isShareable": {
+      "type": "boolean",
+      "description": "Whether the attachment is shareable",
+      "nullable": true,
+      "example": false
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId",
+    "attachmentId"
+  ]
+}

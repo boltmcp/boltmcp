@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "billId": {
+      "description": "The bill's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The line item's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineNumber": {
+      "type": "integer",
+      "description": "The line number.",
+      "format": "int32",
+      "example": 2
+    },
+    "project": {
+      "type": "string",
+      "description": "The id or full name of the project that the line item relates to.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+      "default": "null",
+      "nullable": true,
+      "example": "Project A:Project B:Project C"
+    },
+    "itemDetails": {
+      "description": "Details of an item used on an bill line item.\nThis must be omitted if `accountDetails` have been provided.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of an item used on an bill line item.",
+          "additionalProperties": false,
+          "required": [
+            "item"
+          ],
+          "properties": {
+            "item": {
+              "type": "string",
+              "description": "The id or full name of the item that the line relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons.",
+              "minLength": 1,
+              "example": "Parent item:Child item"
+            },
+            "price": {
+              "type": "number",
+              "description": "The price of each item including or excluding tax (depending on the `amountTaxStatus`).",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 5.5
+            },
+            "quantity": {
+              "type": "number",
+              "description": "The quantity purchased.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 1
+            },
+            "discountAmount": {
+              "type": "number",
+              "description": "The total discount for the line item.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 10
+            },
+            "discountPercent": {
+              "type": "number",
+              "description": "The discount percentage for the line item.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 25
+            }
+          }
+        }
+      ]
+    },
+    "accountDetails": {
+      "description": "Details of an account used on an bill line item.\nThis must be omitted if `itemDetails` have been provided.",
+      "default": "null",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of an account used on an bill line item.",
+          "additionalProperties": false,
+          "required": [
+            "ledgerAccount"
+          ],
+          "properties": {
+            "ledgerAccount": {
+              "type": "string",
+              "description": "The id or full name of the ledger account that the line relates to.\nNote that the full name includes the name(s) of any parent account(s) separated by colons.",
+              "minLength": 1,
+              "example": "Income:Sub income"
+            },
+            "quantity": {
+              "type": "number",
+              "description": "The quantity purchased.",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 1
+            },
+            "amount": {
+              "type": "number",
+              "description": "The amount including or excluding tax (depending on the `amountTaxStatus`).",
+              "format": "decimal",
+              "default": 0,
+              "nullable": true,
+              "example": 110
+            }
+          }
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the line.",
+      "default": "null",
+      "nullable": true,
+      "example": "This is my new line"
+    },
+    "taxRate": {
+      "type": "string",
+      "description": "The tax rate.",
+      "default": "null",
+      "nullable": true,
+      "example": "GST"
+    },
+    "taxAmount": {
+      "type": "number",
+      "description": "The tax amount.",
+      "format": "decimal",
+      "default": "null",
+      "nullable": true,
+      "example": 10
+    }
+  },
+  "required": [
+    "bookId",
+    "billId",
+    "lineItemId",
+    "lineNumber"
+  ]
+}

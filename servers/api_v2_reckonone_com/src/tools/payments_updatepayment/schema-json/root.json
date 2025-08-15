@@ -1,0 +1,345 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paymentId": {
+      "description": "The payment's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "The supplier that is being paid.",
+      "minLength": 1,
+      "example": "Company Ltd"
+    },
+    "paymentDate": {
+      "type": "string",
+      "description": "The date of the payment",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-02-06"
+    },
+    "ledgerAccount": {
+      "type": "string",
+      "description": "The id or name of the bank/cash/credit account where the money was received.",
+      "default": "The default bank account.",
+      "nullable": true,
+      "example": "My bank account"
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "The id or name of the payment method used.",
+      "default": "null",
+      "nullable": true,
+      "example": "Mastercard"
+    },
+    "reference": {
+      "type": "string",
+      "description": "The payment reference.",
+      "default": "null",
+      "maxLength": 200,
+      "nullable": true,
+      "example": "My reference"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the payment",
+      "default": "null",
+      "maxLength": 255,
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "reconciliationStatus": {
+      "description": "The payments's reconciliation status.\nNote that this can only be initially set to Cleared or Uncleared and that it can only be updated via a bank reconciliation.",
+      "default": "Uncleared",
+      "nullable": true,
+      "example": "Cleared",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Reconciliation status.",
+          "x-enumNames": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ],
+          "enum": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ]
+        }
+      ]
+    },
+    "internalNotes": {
+      "type": "string",
+      "description": "Internal Notes related to the payment",
+      "default": "null",
+      "maxLength": 400,
+      "nullable": true,
+      "example": "This is an internal note."
+    },
+    "accountsPayableLedgerAccount": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The accounts payable ledger account.\n_Note:_ It is not currently possible to create multiple Accounts Payable accounts so this field is read-only and will be ignored.",
+      "default": "The default Accounts Payable account",
+      "nullable": true,
+      "example": "Accounts Payable"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "default": "null",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "transactionLinks": {
+      "type": "array",
+      "description": "Details of transactions that the payment should be allocated to.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a transaction to link to a payment",
+        "additionalProperties": false,
+        "required": [
+          "transactionType",
+          "transactionId",
+          "transactionAmount"
+        ],
+        "properties": {
+          "transactionType": {
+            "description": "The type of linked transaction.",
+            "example": "Bill",
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Type of transaction linked to an invoice or bill.",
+                "x-enumNames": [
+                  "Estimate",
+                  "Expense",
+                  "Timesheet",
+                  "Receipt",
+                  "CreditNote",
+                  "Payment",
+                  "Invoice",
+                  "Journal",
+                  "Bill",
+                  "PayRun",
+                  "ReversedJournal",
+                  "ReversalJournal",
+                  "BankPayment",
+                  "SupplierCreditNote",
+                  "ExpenseLineItem",
+                  "JournalLineItem"
+                ],
+                "enum": [
+                  "Estimate",
+                  "Expense",
+                  "Timesheet",
+                  "Receipt",
+                  "CreditNote",
+                  "Payment",
+                  "Invoice",
+                  "Journal",
+                  "Bill",
+                  "PayRun",
+                  "ReversedJournal",
+                  "ReversalJournal",
+                  "BankPayment",
+                  "SupplierCreditNote",
+                  "ExpenseLineItem",
+                  "JournalLineItem"
+                ]
+              }
+            ]
+          },
+          "transactionId": {
+            "type": "string",
+            "description": "The unique id of the linked transaction.",
+            "format": "guid",
+            "minLength": 1,
+            "example": "8cc23593-4790-4f56-b2a1-92396b3f2aaf"
+          },
+          "transactionAmount": {
+            "type": "number",
+            "description": "The transaction's amount.",
+            "format": "decimal",
+            "example": 1000
+          }
+        }
+      }
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "The individual items that make up the payment",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a payment line item to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "lineNumber"
+        ],
+        "properties": {
+          "lineNumber": {
+            "type": "integer",
+            "description": "The line number.",
+            "format": "int32",
+            "example": 1
+          },
+          "project": {
+            "type": "string",
+            "description": "The id or full name of the project that the line item relates to.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+            "default": "null",
+            "nullable": true,
+            "example": "Project A:Project B:Project C"
+          },
+          "itemDetails": {
+            "description": "Details of an item used on an invoice line item.\nThis must be omitted if `accountDetails` have been provided.",
+            "default": "null",
+            "nullable": true,
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Details of an item used on an payment line item.",
+                "additionalProperties": false,
+                "required": [
+                  "item"
+                ],
+                "properties": {
+                  "item": {
+                    "type": "string",
+                    "description": "The id or full name of the item that the line relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons.",
+                    "minLength": 1,
+                    "example": "Parent item:Child item"
+                  },
+                  "price": {
+                    "type": "number",
+                    "description": "The price of each item including or excluding tax (depending on the `amountTaxStatus`).",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 5.5
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "description": "The quantity purchased.",
+                    "format": "decimal",
+                    "default": "nulll",
+                    "nullable": true,
+                    "example": 1
+                  },
+                  "discountAmount": {
+                    "type": "number",
+                    "description": "The total discount for the line item.",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 10
+                  },
+                  "discountPercent": {
+                    "type": "number",
+                    "description": "The discount percentage for the line item.",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 25
+                  },
+                  "billableId": {
+                    "type": "string",
+                    "description": "The id related to a billable line item.",
+                    "format": "guid",
+                    "nullable": true,
+                    "example": "511650E7-A0C6-46ED-A2EE-EEAE711E167C"
+                  }
+                }
+              }
+            ]
+          },
+          "accountDetails": {
+            "description": "Details of an account used on an invoice line item.\nThis must be omitted if `itemDetails` have been provided.",
+            "default": "null",
+            "nullable": true,
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Details of an account used on an payment line item.",
+                "additionalProperties": false,
+                "required": [
+                  "ledgerAccount"
+                ],
+                "properties": {
+                  "ledgerAccount": {
+                    "type": "string",
+                    "description": "The id or full name of the ledger account that the line relates to.\nNote that the full name includes the name(s) of any parent account(s) separated by colons.",
+                    "minLength": 1,
+                    "example": "Income:Sub income"
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "description": "The quantity purchased.",
+                    "format": "decimal",
+                    "default": "nulll",
+                    "nullable": true,
+                    "example": 1
+                  },
+                  "amount": {
+                    "type": "number",
+                    "description": "The amount including or excluding tax (depending on the `amountTaxStatus`).",
+                    "format": "decimal",
+                    "default": 0,
+                    "nullable": true,
+                    "example": 110
+                  }
+                }
+              }
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the line.",
+            "default": "null",
+            "maxLength": 1000,
+            "nullable": true,
+            "example": "This is my new line"
+          },
+          "taxRate": {
+            "type": "string",
+            "description": "The tax rate.",
+            "default": "null",
+            "nullable": true,
+            "example": "GST"
+          },
+          "taxAmount": {
+            "type": "number",
+            "description": "The tax amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 10
+          }
+        }
+      }
+    },
+    "totalAmount": {
+      "type": "number",
+      "description": "The total amount of the payment applied",
+      "format": "decimal"
+    }
+  },
+  "required": [
+    "bookId",
+    "paymentId",
+    "supplier",
+    "paymentDate",
+    "totalAmount"
+  ]
+}

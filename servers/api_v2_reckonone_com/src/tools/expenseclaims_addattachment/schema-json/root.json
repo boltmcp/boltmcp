@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The id of the line item to attach the document(s) to.",
+      "type": "string",
+      "format": "guid"
+    },
+    "fileName": {
+      "description": "The name of the file when passing a single document in the body of the request.",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId",
+    "lineItemId"
+  ]
+}

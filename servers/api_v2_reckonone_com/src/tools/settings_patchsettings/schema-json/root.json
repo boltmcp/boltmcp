@@ -1,0 +1,154 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "startDate": {
+      "type": "string",
+      "description": "The first day of records for the book.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2018-07-01"
+    },
+    "lockOffDate": {
+      "type": "string",
+      "description": "Transactions on or before this date cannot be changed.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2019-06-30"
+    },
+    "entity": {
+      "type": "string",
+      "description": "The id or name of the entity type of business.",
+      "nullable": true,
+      "example": "Company"
+    },
+    "industry": {
+      "type": "string",
+      "description": "The id or name of the industry of business.",
+      "nullable": true,
+      "example": "Accommodation and food services"
+    },
+    "category": {
+      "type": "string",
+      "description": "The id or name of the industry's category of business.",
+      "nullable": true,
+      "example": "Cafes, restaurants and takeaway food services"
+    },
+    "businessType": {
+      "type": "string",
+      "description": "The id or name of the industry category's business type.",
+      "nullable": true,
+      "example": "Fast food retailing"
+    },
+    "replyToEmailAddress": {
+      "type": "string",
+      "description": "The email address used by clients when replying to emails sent from Reckon One.",
+      "nullable": true,
+      "example": "john.doe@acme.com"
+    },
+    "showEmailSentFrom": {
+      "type": "string",
+      "description": "The displayed name of sender in emails.",
+      "nullable": true,
+      "example": "John Smith"
+    },
+    "bankDataRetrievalDays": {
+      "type": "integer",
+      "description": "The number of most recent days bank data is retrieved for.",
+      "format": "int32",
+      "nullable": true,
+      "example": 30
+    },
+    "generalDetails": {
+      "description": "General company details",
+      "nullable": true,
+      "example": {
+        "companyName": "Joe's Hot Potatoes",
+        "legalName": "Joe Sanders Food Service Pty Ltd",
+        "taxNumber": "123456782",
+        "isRegisteredEmployerOfWHM": true,
+        "branchNumber": "002",
+        "businessNumber": "9429037829131"
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Basic business details to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "companyName": {
+              "type": "string",
+              "description": "The company's business/trading name.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe's Hot Potatoes"
+            },
+            "legalName": {
+              "type": "string",
+              "description": "The name of the company that appears on legal documents.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe Sanders Food Services Pty Ltd"
+            },
+            "taxNumber": {
+              "type": "string",
+              "description": "The tax number of the company, for example, 'ABN/WPN' for AU and 'GST/IRD number' for NZ.",
+              "maxLength": 50,
+              "nullable": true,
+              "example": "123456782"
+            },
+            "branchNumber": {
+              "type": "string",
+              "description": "The branch number associated with the tax number.",
+              "maxLength": 10,
+              "nullable": true,
+              "example": "002"
+            },
+            "businessNumber": {
+              "type": "string",
+              "description": "The business number of the company, for example, New Zealand Business Number (NZBN).",
+              "maxLength": 13,
+              "nullable": true,
+              "example": "9429037829131"
+            },
+            "isRegisteredEmployerOfWHM": {
+              "type": "boolean",
+              "description": "Whether the company is a registered WHM employer.",
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "contactDetails": {
+      "description": "Business's contact details.",
+      "nullable": true,
+      "example": {
+        "contactName": "Joe Sanders"
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details on how to contact the business to be patched.",
+          "additionalProperties": false,
+          "properties": {
+            "contactName": {
+              "type": "string",
+              "description": "Name of person who is primary contact within the business.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe Sanders"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

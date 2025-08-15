@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The unique identifier of the book.",
+      "type": "string",
+      "format": "guid"
+    },
+    "page": {
+      "description": "The page number to retrieve. Defaults to 1.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of items per page. Defaults to 0, which uses the default page size.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

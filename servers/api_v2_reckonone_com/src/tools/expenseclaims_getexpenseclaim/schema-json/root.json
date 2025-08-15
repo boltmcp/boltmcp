@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "format": {
+      "description": "The format to use, e.g. pdf.",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId"
+  ]
+}

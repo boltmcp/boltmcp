@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "enterpriseAgreementId": {
+      "description": "The enterprise agreement id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the enterprise agreement.",
+      "nullable": true,
+      "example": "Agreement A"
+    },
+    "classifications": {
+      "type": "array",
+      "description": "List of classifications.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a classification within an enterprise agreement.",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the classification within an enterprise agreement.",
+            "nullable": true,
+            "example": "Classification 1"
+          },
+          "id": {
+            "type": "string",
+            "description": "The classification id.",
+            "format": "guid",
+            "nullable": true,
+            "example": "c73fd70e-0b9e-4e33-a661-5ba7c7ced801"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "enterpriseAgreementId"
+  ]
+}

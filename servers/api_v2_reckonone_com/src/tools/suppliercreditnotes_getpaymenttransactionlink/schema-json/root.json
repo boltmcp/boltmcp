@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierCreditNoteId": {
+      "description": "The supplier credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "linkId": {
+      "description": "The linked transaction's id.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierCreditNoteId",
+    "linkId"
+  ]
+}

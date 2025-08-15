@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "countryId": {
+      "description": "The country's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "countryId"
+  ]
+}

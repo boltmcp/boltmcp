@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "projectId": {
+      "description": "The project's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineId": {
+      "description": "The project suppliers's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "The id or name of the suplier.",
+      "nullable": true,
+      "example": "Supplier A"
+    }
+  },
+  "required": [
+    "bookId",
+    "projectId",
+    "lineId"
+  ]
+}

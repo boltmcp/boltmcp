@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "estimateId": {
+      "description": "The estimate's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The id or name of the customer that is being quoted.",
+      "nullable": true,
+      "example": "Company Ltd"
+    },
+    "estimateDate": {
+      "type": "string",
+      "description": "The date of the estimate.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06"
+    },
+    "estimateExpiryDate": {
+      "type": "string",
+      "description": "The date the estimate expires on.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-03-06"
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the estimate.",
+      "nullable": true,
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "status": {
+      "description": "The status of the estimate.",
+      "nullable": true,
+      "example": "Draft",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an estimate.",
+          "x-enumNames": [
+            "Draft",
+            "Pending",
+            "Accepted",
+            "Declined",
+            "ClosedDeclined",
+            "ClosedInvoiced"
+          ],
+          "enum": [
+            "Draft",
+            "Pending",
+            "Accepted",
+            "Declined",
+            "ClosedDeclined",
+            "ClosedInvoiced"
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "description": "The estimate reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The id or name of the classification.",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The id or name of the template used to print or email the estimate.",
+      "nullable": true,
+      "example": "Standard estimate"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the estimate.",
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "termsAndConditions": {
+      "type": "string",
+      "description": "Terms and conditions.",
+      "nullable": true,
+      "example": "These are the terms and conditions."
+    },
+    "paymentNotes": {
+      "type": "string",
+      "description": "Payment notes.",
+      "nullable": true,
+      "example": "This is how you pay us."
+    }
+  },
+  "required": [
+    "bookId",
+    "estimateId"
+  ]
+}

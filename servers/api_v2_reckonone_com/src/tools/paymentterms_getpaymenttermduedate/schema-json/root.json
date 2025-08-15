@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "termId": {
+      "description": "The term's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "baseDate": {
+      "description": "A base date",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "bookId",
+    "termId",
+    "baseDate"
+  ]
+}

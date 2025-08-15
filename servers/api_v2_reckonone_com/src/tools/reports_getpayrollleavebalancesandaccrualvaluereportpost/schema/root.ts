@@ -1,0 +1,8 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "bookId": z.string().describe("The book's id."),
+  "parameters": z.object({ "token": z.string().nullable().describe("An authentication token. Note that this is not required if it is supplied via the HTTP `Authorize` header.").optional(), "period": z.literal("AsAtDate").describe("Periods that can be used for the Payroll Leave Balances And Accrual Value report.").nullable().describe("The period."), "asAtDate": z.string().datetime({ offset: true }).min(1).describe("When using AsAtDate, the date to use."), "leaveItems": z.array(z.string()).nullable().describe("A list of leave item IDs to include in the report.\nIf omitted, all leave items will be included."), "employees": z.array(z.string()).nullable().describe("A list of employee IDs to include in the report.\nIf omitted, all employees will be included."), "orientation": z.enum(["Portrait","Landscape"]).describe("The report orientation.").nullable().describe("The report's orientation.\nIgnored for JSON report format."), "columns": z.array(z.enum(["OteValue","LeaveLoadingValue","TotalValue"]).describe("Leave Balances and Accrual Value Report columns.")).nullable().describe("A list of report columns to include in the report.\nIf omitted, all columns will be returned.") }).strict().describe("The parameters for the Payroll Leave Balances And Accrual Value report.").nullable().describe("The report parameters.").optional(),
+  "format": z.string().nullable().describe("The format to use, e.g. pdf.").optional(),
+  "download": z.boolean().describe("Whether the result is for download. If true, a ContentDisposition header will be added.").optional()
+}

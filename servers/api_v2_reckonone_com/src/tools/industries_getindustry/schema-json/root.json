@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "industryId": {
+      "description": "The industry's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "industryId"
+  ]
+}

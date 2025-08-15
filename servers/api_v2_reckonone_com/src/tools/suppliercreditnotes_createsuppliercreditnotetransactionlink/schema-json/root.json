@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierCreditNoteId": {
+      "description": "The supplier credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "transactionType": {
+      "description": "The type of linked transaction.",
+      "example": "Bill",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Type of transaction linked to an invoice or bill.",
+          "x-enumNames": [
+            "Estimate",
+            "Expense",
+            "Timesheet",
+            "Receipt",
+            "CreditNote",
+            "Payment",
+            "Invoice",
+            "Journal",
+            "Bill",
+            "PayRun",
+            "ReversedJournal",
+            "ReversalJournal",
+            "BankPayment",
+            "SupplierCreditNote",
+            "ExpenseLineItem",
+            "JournalLineItem"
+          ],
+          "enum": [
+            "Estimate",
+            "Expense",
+            "Timesheet",
+            "Receipt",
+            "CreditNote",
+            "Payment",
+            "Invoice",
+            "Journal",
+            "Bill",
+            "PayRun",
+            "ReversedJournal",
+            "ReversalJournal",
+            "BankPayment",
+            "SupplierCreditNote",
+            "ExpenseLineItem",
+            "JournalLineItem"
+          ]
+        }
+      ]
+    },
+    "transactionId": {
+      "type": "string",
+      "description": "The unique id of the linked transaction.",
+      "format": "guid",
+      "minLength": 1,
+      "example": "8cc23593-4790-4f56-b2a1-92396b3f2aaf"
+    },
+    "transactionAmount": {
+      "type": "number",
+      "description": "The total amount of the transaction. ",
+      "format": "decimal",
+      "example": 1000
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierCreditNoteId",
+    "transactionType",
+    "transactionId",
+    "transactionAmount"
+  ]
+}

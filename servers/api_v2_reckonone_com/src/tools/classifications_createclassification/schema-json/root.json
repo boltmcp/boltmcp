@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ExternalResourceId": {
+      "description": "The external resource's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "134"
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    },
+    "name": {
+      "type": "string",
+      "description": "The classification's name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "example": "Small business sales classification"
+    },
+    "description": {
+      "type": "string",
+      "description": "The classification's description.",
+      "default": "null",
+      "maxLength": 500,
+      "nullable": true,
+      "example": "Small business sales classification."
+    },
+    "status": {
+      "description": "Active/Inactive status of the classification.",
+      "default": "Active",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Classification status",
+          "x-enumNames": [
+            "Inactive",
+            "Active"
+          ],
+          "enum": [
+            "Inactive",
+            "Active"
+          ]
+        }
+      ]
+    },
+    "isDefault": {
+      "type": "boolean",
+      "description": "Whether the classification is the default for the transaction.",
+      "default": false,
+      "nullable": true,
+      "example": false
+    },
+    "parentClassification": {
+      "type": "string",
+      "description": "The parent classification if there is one.",
+      "default": "null",
+      "nullable": true,
+      "example": "Parent classification name"
+    }
+  },
+  "required": [
+    "bookId",
+    "name"
+  ]
+}

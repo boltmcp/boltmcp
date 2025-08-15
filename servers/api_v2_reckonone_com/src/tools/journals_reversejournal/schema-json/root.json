@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "journalId": {
+      "description": "The journal's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Summary of the journal.",
+      "default": "null",
+      "nullable": true,
+      "example": "Reversal of journal Created on 20 Jan 2022"
+    },
+    "journalDate": {
+      "type": "string",
+      "description": "The date of the journal reversal.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2022-01-20"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the journal reversal.",
+      "default": "null",
+      "nullable": true,
+      "example": "System generated bank account opening balance journal."
+    }
+  },
+  "required": [
+    "bookId",
+    "journalId",
+    "journalDate"
+  ]
+}

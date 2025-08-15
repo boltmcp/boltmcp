@@ -1,0 +1,179 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customerId": {
+      "description": "The customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ExternalResourceId": {
+      "description": "The external resource's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "134"
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    },
+    "name": {
+      "type": "string",
+      "description": "The organisation's display name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "John Doe"
+    },
+    "organisationName": {
+      "type": "string",
+      "description": "The organisation's name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Reckon Co."
+    },
+    "branch": {
+      "type": "string",
+      "description": "The organisation's branch.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "1234"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes for the organisation.",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "The person to call."
+    },
+    "businessNumber1": {
+      "type": "string",
+      "description": "The organisation's business number 1.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber2": {
+      "type": "string",
+      "description": "The organisation's business number 2.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber": {
+      "type": "string",
+      "description": "This applies to NZBN number.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234123"
+    },
+    "status": {
+      "type": "string",
+      "description": "The status of the organisation. (Active/Inactive)",
+      "nullable": true,
+      "example": "Active"
+    },
+    "entityTypes": {
+      "description": "If the entity has other entity types.",
+      "nullable": true,
+      "example": {
+        "IsCustomer": false,
+        "IsSupplier": true
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Contact's entity types.",
+          "additionalProperties": false,
+          "properties": {
+            "isCustomer": {
+              "type": "boolean",
+              "description": "Is the entity a customer.",
+              "nullable": true,
+              "example": false
+            },
+            "isSupplier": {
+              "type": "boolean",
+              "description": "Is the entity a supplier.",
+              "nullable": true,
+              "example": false
+            },
+            "isEmployee": {
+              "type": "boolean",
+              "description": "Is the entity an employee.",
+              "nullable": true,
+              "example": false
+            },
+            "isSuperfund": {
+              "type": "boolean",
+              "description": "Is the entity a superfund.",
+              "nullable": true,
+              "example": false
+            }
+          }
+        }
+      ]
+    },
+    "creditLimit": {
+      "type": "number",
+      "description": "The customer's credit limit.",
+      "format": "decimal",
+      "nullable": true,
+      "example": 12.5
+    },
+    "paymentTerms": {
+      "type": "string",
+      "description": "The customer's peyment term id.",
+      "nullable": true,
+      "example": "4cafd978-14ae-4dbe-8774-e86c29fabdc4"
+    },
+    "transactionPassword": {
+      "description": "The customer's transaction password details",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of customer transaction password.",
+          "additionalProperties": false,
+          "properties": {
+            "password": {
+              "type": "string",
+              "description": "Password for customer transaction documents.",
+              "nullable": true
+            },
+            "applyToInvoices": {
+              "type": "boolean",
+              "description": "Apply password to invoice documents.",
+              "nullable": true
+            },
+            "applyToStatements": {
+              "type": "boolean",
+              "description": "Apply password to statement documents.",
+              "nullable": true
+            }
+          }
+        }
+      ]
+    },
+    "excludeFromInvoiceReminders": {
+      "type": "boolean",
+      "description": "Indicates that the invoice reminder has been excluded for invoices",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "customerId"
+  ]
+}

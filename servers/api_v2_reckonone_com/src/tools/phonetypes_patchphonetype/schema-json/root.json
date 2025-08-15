@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "phoneTypeId": {
+      "description": "The phone type's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The type's name.",
+      "nullable": true
+    },
+    "description": {
+      "type": "string",
+      "description": "The type's description.",
+      "nullable": true
+    },
+    "status": {
+      "description": "The type's status.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Type status.",
+          "x-enumNames": [
+            "Inactive",
+            "Active"
+          ],
+          "enum": [
+            "Inactive",
+            "Active"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "phoneTypeId"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "roleId": {
+      "description": "The role's id.",
+      "type": "integer",
+      "format": "int32"
+    },
+    "userId": {
+      "description": "The user's id linked to the role.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "roleId",
+    "userId"
+  ]
+}

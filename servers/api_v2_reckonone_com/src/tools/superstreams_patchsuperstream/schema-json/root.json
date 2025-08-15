@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superstreamId": {
+      "description": "The superstream's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "fromDate": {
+      "type": "string",
+      "description": "The date range start",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-07-01"
+    },
+    "toDate": {
+      "type": "string",
+      "description": "The date range end. ",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-07-31"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Super payments July 01 - July 31"
+    },
+    "status": {
+      "description": "The status of the superstream.",
+      "nullable": true,
+      "example": "Draft",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "",
+          "x-enumNames": [
+            "Draft",
+            "Lodged"
+          ],
+          "enum": [
+            "Draft",
+            "Lodged"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "superstreamId"
+  ]
+}

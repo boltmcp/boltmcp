@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "contactId": {
+      "description": "The contact's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The contact's display name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "John Doe"
+    },
+    "salutation": {
+      "type": "string",
+      "description": "The salutation to use in communications.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Hello"
+    },
+    "department": {
+      "type": "string",
+      "description": "The contact's department.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Accounts receivable"
+    },
+    "position": {
+      "type": "string",
+      "description": "The contact's position.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Credit controller"
+    },
+    "organisation": {
+      "type": "string",
+      "description": "The id or name of the organisation that the contact is associated with.",
+      "nullable": true,
+      "example": "Widgets Ltd"
+    },
+    "status": {
+      "description": "The contact's status.",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a contact.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes for the contact.",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "The person to call."
+    }
+  },
+  "required": [
+    "bookId",
+    "contactId"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The line item's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "attachmentId": {
+      "description": "The id of the attachment to download.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId",
+    "lineItemId",
+    "attachmentId"
+  ]
+}

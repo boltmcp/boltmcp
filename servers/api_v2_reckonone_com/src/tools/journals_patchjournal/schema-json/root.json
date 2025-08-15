@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "journalId": {
+      "description": "The journal's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Summary of the journal.",
+      "nullable": true,
+      "example": "Created on 20 Jan 2022"
+    },
+    "journalDate": {
+      "type": "string",
+      "description": "The date of the journal.",
+      "format": "date-time",
+      "example": "2022-01-20"
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the journal.",
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the journal.",
+      "nullable": true,
+      "example": "System generated bank account opening balance journal."
+    },
+    "adjustingJournal": {
+      "type": "boolean",
+      "description": "Whether this is an adjusting journal.",
+      "nullable": true,
+      "example": false
+    }
+  },
+  "required": [
+    "bookId",
+    "journalId"
+  ]
+}

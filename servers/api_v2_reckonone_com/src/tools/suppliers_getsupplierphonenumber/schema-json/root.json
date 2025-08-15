@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierId": {
+      "description": "The supplier's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The phone number's type by name or id.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierId",
+    "type"
+  ]
+}

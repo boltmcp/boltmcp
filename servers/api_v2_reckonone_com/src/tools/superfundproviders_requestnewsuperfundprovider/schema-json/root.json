@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of super fund provider.",
+      "minLength": 1,
+      "example": "Acme Super"
+    },
+    "abn": {
+      "type": "string",
+      "description": "ABN of super fund provider.",
+      "minLength": 1,
+      "example": "64246196398"
+    },
+    "usi": {
+      "type": "string",
+      "description": "The Unique Superfund Identifier (USI) of the super fund provider product.",
+      "nullable": true,
+      "example": "SUP95001"
+    }
+  },
+  "required": [
+    "bookId",
+    "name",
+    "abn"
+  ]
+}

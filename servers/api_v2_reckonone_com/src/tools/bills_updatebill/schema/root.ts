@@ -1,0 +1,17 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "bookId": z.string().describe("The book's id."),
+  "billId": z.string().describe("The bill's id."),
+  "supplier": z.string().min(1).describe("The supplier that is being billed."),
+  "billDate": z.string().datetime({ offset: true }).min(1).describe("The date of the bill."),
+  "dueDate": z.string().datetime({ offset: true }).nullable().describe("The date bill is due by.").optional(),
+  "billDiscountAmount": z.number().nullable().describe("The bill discount amount.").optional(),
+  "billDiscountPercent": z.number().nullable().describe("The bill discount percentage.").optional(),
+  "amountTaxStatus": z.enum(["NonTaxed","Inclusive","Exclusive"]).describe("The tax status of an amount.").describe("The amount tax status of the amounts in the bill."),
+  "reference": z.string().nullable().describe("The bill reference.").optional(),
+  "classification": z.string().nullable().describe("The classification.").optional(),
+  "template": z.string().nullable().describe("The template used to print or email the bill.").optional(),
+  "lineItems": z.array(z.object({ "lineNumber": z.number().int().describe("The line number."), "project": z.string().nullable().describe("The id or full name of the project that the line item relates to.\nNote that the full name includes the name(s) of any parent project(s) separated by colons."), "itemDetails": z.object({ "item": z.string().min(1).describe("The id or full name of the item that the line relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons."), "price": z.number().nullable().describe("The price of each item including or excluding tax (depending on the `amountTaxStatus`)."), "quantity": z.number().nullable().describe("The quantity purchased."), "discountAmount": z.number().nullable().describe("The total discount for the line item."), "discountPercent": z.number().nullable().describe("The discount percentage for the line item.") }).strict().describe("Details of an item used on an bill line item.").nullable().describe("Details of an item used on an bill line item.\nThis must be omitted if `accountDetails` have been provided."), "accountDetails": z.object({ "ledgerAccount": z.string().min(1).describe("The id or full name of the ledger account that the line relates to.\nNote that the full name includes the name(s) of any parent account(s) separated by colons."), "quantity": z.number().nullable().describe("The quantity purchased."), "amount": z.number().nullable().describe("The amount including or excluding tax (depending on the `amountTaxStatus`).") }).strict().describe("Details of an account used on an bill line item.").nullable().describe("Details of an account used on an bill line item.\nThis must be omitted if `itemDetails` have been provided."), "description": z.string().nullable().describe("The description of the line."), "taxRate": z.string().nullable().describe("The tax rate."), "taxAmount": z.number().nullable().describe("The tax amount.") }).strict().describe("Details of an bill line item to create or update.")).describe("The individual items that make up the bill."),
+  "notes": z.string().nullable().describe("Notes related to the bill.").optional()
+}

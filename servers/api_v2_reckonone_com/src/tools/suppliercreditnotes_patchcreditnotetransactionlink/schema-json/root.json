@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierCreditNoteId": {
+      "description": "The supplier credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "linkId": {
+      "description": "The linked transaction id.",
+      "type": "string"
+    },
+    "transactionAmount": {
+      "type": "number",
+      "description": "The total amount of the transaction. ",
+      "format": "decimal",
+      "example": 1000
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierCreditNoteId",
+    "linkId",
+    "transactionAmount"
+  ]
+}

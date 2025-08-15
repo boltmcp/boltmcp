@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "basedate": {
+      "description": "A base date.",
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "required": []
+}

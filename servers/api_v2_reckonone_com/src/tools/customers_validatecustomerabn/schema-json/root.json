@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customerId": {
+      "description": "The customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "abn": {
+      "type": "string",
+      "description": "ABN to validate.",
+      "nullable": true,
+      "example": "51 824 753 556"
+    }
+  },
+  "required": [
+    "bookId",
+    "customerId"
+  ]
+}

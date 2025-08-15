@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The unique identifier of the book.",
+      "type": "string",
+      "format": "guid"
+    },
+    "templateId": {
+      "description": "The unique identifier of the invoice reminder template.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "templateId"
+  ]
+}

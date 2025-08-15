@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customerId": {
+      "description": "The customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The custom field name or id.",
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "description": "Gets or sets the value to assign to the custom field.",
+      "default": "null",
+      "nullable": true,
+      "example": "x@y.com"
+    }
+  },
+  "required": [
+    "bookId",
+    "customerId",
+    "type"
+  ]
+}

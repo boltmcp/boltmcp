@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "bankPaymentId": {
+      "description": "The bank payment's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paymentDate": {
+      "type": "string",
+      "description": "Date of the payment.",
+      "format": "date-time",
+      "example": "2022-04-01T09:00:00Z"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Bank payment reference.",
+      "nullable": true,
+      "example": "A reference"
+    },
+    "status": {
+      "description": "The bank payment status.",
+      "example": "Processed",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Status of bank payment.",
+          "x-enumNames": [
+            "Unprocessed",
+            "Processed"
+          ],
+          "enum": [
+            "Unprocessed",
+            "Processed"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "bankPaymentId"
+  ]
+}

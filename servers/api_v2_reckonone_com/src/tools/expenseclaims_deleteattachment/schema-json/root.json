@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "expenseClaimId": {
+      "description": "The expense claim's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The id of the line item to delete the document from.",
+      "type": "string",
+      "format": "guid"
+    },
+    "attachmentId": {
+      "description": "The attachment's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "expenseClaimId",
+    "lineItemId",
+    "attachmentId"
+  ]
+}

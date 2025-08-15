@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierCreditNoteId": {
+      "description": "The supplier credit note's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "The supplier name.",
+      "nullable": true,
+      "example": "Company Ltd"
+    },
+    "supplierCreditNoteDate": {
+      "type": "string",
+      "description": "The date of the supplier credit note.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-03-06"
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the supplier credit note.",
+      "example": "Inclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an amount.",
+          "x-enumNames": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "NonTaxed",
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "status": {
+      "description": "The status of the supplier credit note.",
+      "example": "Draft",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of supplier credit note.",
+          "x-enumNames": [
+            "Draft",
+            "Approved"
+          ],
+          "enum": [
+            "Draft",
+            "Approved"
+          ]
+        }
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "description": "The supplier credit note reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The template used to print or email the supplier credit note.",
+      "nullable": true,
+      "example": "Professional bill"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the supplier credit note.",
+      "nullable": true,
+      "example": "This is a note."
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierCreditNoteId"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "itemId": {
+      "description": "The item's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "baseDate": {
+      "description": "The date to use when calculating the net or gross price.",
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "itemId"
+  ]
+}

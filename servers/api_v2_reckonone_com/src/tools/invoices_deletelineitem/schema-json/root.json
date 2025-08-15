@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The id of the line item to delete.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ignoreWarnings": {
+      "description": "Ignore warnings",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId",
+    "lineItemId"
+  ]
+}

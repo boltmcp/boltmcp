@@ -1,0 +1,167 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "parameters": {
+      "description": "The report parameters.",
+      "oneOf": [
+        {
+          "nullable": true,
+          "oneOf": [
+            {
+              "type": "object",
+              "description": "The parameters for the Super Transactions report.",
+              "additionalProperties": false,
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "description": "An authentication token. Note that this is not required if it is supplied via the HTTP `Authorize` header.",
+                  "nullable": true,
+                  "example": "asdkfasdfkjasdgfgarekjhgfu2g8378rffcbwdhjbjdhk3cfoch3c3"
+                },
+                "period": {
+                  "description": "The period.",
+                  "default": "AllDates",
+                  "nullable": true,
+                  "example": "AllDates",
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "description": "Periods that can be used for the Super Transactions report.",
+                      "x-enumNames": [
+                        "AllDates",
+                        "SpecifiedDates"
+                      ],
+                      "enum": [
+                        "AllDates",
+                        "SpecifiedDates"
+                      ]
+                    }
+                  ]
+                },
+                "fromDate": {
+                  "type": "string",
+                  "description": "The 'from' date for the report.\nOnly required if `period` is `SpecifiedDates`.",
+                  "format": "date-time",
+                  "default": "null",
+                  "nullable": true,
+                  "example": "2021-01-01"
+                },
+                "toDate": {
+                  "type": "string",
+                  "description": "The 'to' date for the report.\nOnly required if `period` is `SpecifiedDates`.",
+                  "format": "date-time",
+                  "default": "null",
+                  "nullable": true,
+                  "example": "2021-12-31"
+                },
+                "payruns": {
+                  "type": "array",
+                  "description": "A list of pay run IDs to include in the report.\nIf omitted, all pay runs will be included.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "a16010b7-43a0-40cc-a3de-151420659df7"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "format": "guid"
+                  }
+                },
+                "employees": {
+                  "type": "array",
+                  "description": "A list of employee IDs to include in the report.\nIf omitted, all employees will be included.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "3e3b17cc-9071-4822-893e-9ef67dbf572c"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "format": "guid"
+                  }
+                },
+                "superfunds": {
+                  "type": "array",
+                  "description": "A list of superfund IDs to include in the report.\nIf omitted, all superfunds will be included.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "3e3b17cc-9071-4822-893e-9ef67dbf572c"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "format": "guid"
+                  }
+                },
+                "orientation": {
+                  "description": "The report's orientation.",
+                  "default": "Portrait",
+                  "nullable": true,
+                  "example": "Portrait",
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "description": "The report orientation.",
+                      "x-enumNames": [
+                        "Portrait",
+                        "Landscape"
+                      ],
+                      "enum": [
+                        "Portrait",
+                        "Landscape"
+                      ]
+                    }
+                  ]
+                },
+                "columns": {
+                  "type": "array",
+                  "description": "A list of columns to include in the report.\nIf omitted, all columns will be returned.",
+                  "default": "null",
+                  "nullable": true,
+                  "example": [
+                    "PayRunName",
+                    "MemberNumber"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "description": "Payroll Detail Report columns.",
+                    "x-enumNames": [
+                      "PayRunName",
+                      "PayItem",
+                      "Rate",
+                      "MemberNumber"
+                    ],
+                    "enum": [
+                      "PayRunName",
+                      "PayItem",
+                      "Rate",
+                      "MemberNumber"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "format": {
+      "description": "The format to use, e.g. pdf.",
+      "type": "string",
+      "nullable": true
+    },
+    "download": {
+      "description": "Whether the result is for download. If true, a ContentDisposition header will be added.",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

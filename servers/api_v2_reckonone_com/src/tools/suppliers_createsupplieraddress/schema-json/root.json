@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierId": {
+      "description": "The supplier's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "line1": {
+      "type": "string",
+      "description": "Line 1 of the address.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Level 2"
+    },
+    "line2": {
+      "type": "string",
+      "description": "Line 2 of the address.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "100 Pacific Highway"
+    },
+    "line3": {
+      "type": "string",
+      "description": "Line 3 of the address.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Line 3"
+    },
+    "suburb": {
+      "type": "string",
+      "description": "The suburb.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "North Sydney"
+    },
+    "town": {
+      "type": "string",
+      "description": "The town.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "Sydney"
+    },
+    "state": {
+      "type": "string",
+      "description": "The state.",
+      "default": "null",
+      "maxLength": 80,
+      "nullable": true,
+      "example": "NSW"
+    },
+    "postcode": {
+      "type": "string",
+      "description": "The post code.",
+      "default": "null",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "2060"
+    },
+    "country": {
+      "type": "string",
+      "description": "The country.",
+      "default": "null",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "Australia"
+    },
+    "type": {
+      "type": "string",
+      "description": "The id or name of the address type.",
+      "minLength": 1,
+      "example": "Billing"
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierId",
+    "type"
+  ]
+}

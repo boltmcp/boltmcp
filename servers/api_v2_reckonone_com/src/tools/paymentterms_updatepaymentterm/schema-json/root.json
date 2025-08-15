@@ -1,0 +1,119 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "termId": {
+      "description": "The term's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The payment term's name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "example": "Due on receipt"
+    },
+    "description": {
+      "type": "string",
+      "description": "The payment term's description.",
+      "default": "empty string",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Net due 30 days from issue"
+    },
+    "status": {
+      "description": "Active/Inactive status of the payment term.",
+      "default": "Active",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a payment term.",
+          "x-enumNames": [
+            "Inactive",
+            "Active"
+          ],
+          "enum": [
+            "Inactive",
+            "Active"
+          ]
+        }
+      ]
+    },
+    "isDefault": {
+      "type": "boolean",
+      "description": "Whether the payment term is the default for the transaction type.",
+      "default": false,
+      "nullable": true,
+      "example": false
+    },
+    "useForInvoice": {
+      "type": "boolean",
+      "description": "Whether the payment term is used for invoice type transaction.",
+      "default": true,
+      "nullable": true,
+      "example": true
+    },
+    "netDueDay": {
+      "type": "integer",
+      "description": "Net Due day of the payment term.",
+      "format": "int32",
+      "example": 15
+    },
+    "netDueDaySelection": {
+      "description": "The due date criteria.",
+      "example": "DaysAfterIssue",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Net due date options.",
+          "x-enumNames": [
+            "DaysAfterIssue",
+            "DayOfMonth",
+            "DayOfNextMonth"
+          ],
+          "enum": [
+            "DaysAfterIssue",
+            "DayOfMonth",
+            "DayOfNextMonth"
+          ]
+        }
+      ]
+    },
+    "isDueDateWeekend": {
+      "type": "boolean",
+      "description": "Whether the due date falls on weekend. If due date is on a weekend, push due date to the first Monday.",
+      "default": false,
+      "nullable": true,
+      "example": true
+    },
+    "isIssuedWithinDays": {
+      "type": "boolean",
+      "description": "Whether push invoice issue date to following month if invoice issued within x day(s) of the due date.",
+      "default": false,
+      "nullable": true,
+      "example": true
+    },
+    "issuedWithinDays": {
+      "type": "integer",
+      "description": "Invoice issued within x day(s) of the due date",
+      "format": "int32",
+      "default": 0,
+      "nullable": true,
+      "example": 2
+    }
+  },
+  "required": [
+    "bookId",
+    "termId",
+    "name",
+    "netDueDay",
+    "netDueDaySelection"
+  ]
+}

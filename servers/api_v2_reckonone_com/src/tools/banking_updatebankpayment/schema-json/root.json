@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "bankPaymentId": {
+      "description": "The bank payment's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paymentDate": {
+      "type": "string",
+      "description": "Date of the payment.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2022-04-01T09:00:00Z"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Bank payment reference.",
+      "maxLength": 18,
+      "minLength": 1,
+      "example": "A reference"
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "Payments to update in bank payment.",
+      "items": {
+        "type": "object",
+        "description": "Payment to include in bank payment.",
+        "additionalProperties": false,
+        "properties": {
+          "paymentId": {
+            "type": "string",
+            "description": "Id of payment to include in bank payment.",
+            "format": "guid",
+            "example": "1b5a4807-dc8e-49d7-8c81-4cb3a73b22ca"
+          },
+          "lineId": {
+            "type": "string",
+            "description": "Id of bank payment line item.",
+            "format": "guid",
+            "nullable": true,
+            "example": "1b5a4807-dc8e-49d7-8c81-4cb3a73b22ca"
+          }
+        }
+      }
+    },
+    "treatWarningsAsErrors": {
+      "type": "boolean",
+      "description": "When true, validation will return bad request error."
+    }
+  },
+  "required": [
+    "bookId",
+    "bankPaymentId",
+    "paymentDate",
+    "reference",
+    "lineItems"
+  ]
+}

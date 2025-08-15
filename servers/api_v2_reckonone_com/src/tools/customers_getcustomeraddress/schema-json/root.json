@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customerId": {
+      "description": "The customer's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The address's type by name or id.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "bookId",
+    "customerId",
+    "type"
+  ]
+}

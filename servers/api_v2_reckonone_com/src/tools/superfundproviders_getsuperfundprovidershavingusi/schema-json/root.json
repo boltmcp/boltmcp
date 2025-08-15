@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book Id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "usi": {
+      "description": "The USI of a fund product.",
+      "type": "string"
+    },
+    "page": {
+      "description": "The page to retrieve.",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "perPage": {
+      "description": "The number of super fund providers having a product with the provided USI per page.",
+      "type": "integer",
+      "format": "int32",
+      "default": 0,
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "usi"
+  ]
+}

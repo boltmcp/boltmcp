@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "approvalEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether invoice approval is enabled.",
+      "example": true
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The invoice prefix.",
+      "nullable": true,
+      "example": "INV"
+    },
+    "defaultTemplate": {
+      "type": "string",
+      "description": "The default invoice template.",
+      "nullable": true,
+      "example": "Professional Invoice"
+    },
+    "nextInvoiceNumber": {
+      "type": "integer",
+      "description": "The number that will be used for the next invoice.",
+      "format": "int32",
+      "example": 1001
+    },
+    "defaultPaymentDetails": {
+      "type": "string",
+      "description": "The default payment details.",
+      "nullable": true,
+      "example": "Please pay to my bank account."
+    },
+    "serviceDateOnInvoice": {
+      "type": "boolean",
+      "description": "Indicates whether service date can be used on invoices.",
+      "example": true
+    },
+    "emailSettings": {
+      "description": "Email settings.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The email template to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "includeCc": {
+              "type": "boolean",
+              "description": "Indicates whether includes CC by default when emailing.",
+              "nullable": true,
+              "example": true
+            },
+            "ccAddress": {
+              "type": "string",
+              "description": "Default CC email address.",
+              "nullable": true,
+              "example": "ccemail@email.com"
+            },
+            "includeBcc": {
+              "type": "boolean",
+              "description": "Indicates whether includes BCC by default when emailing.",
+              "nullable": true,
+              "example": true
+            },
+            "bccAddress": {
+              "type": "string",
+              "description": "Default BCC email address.",
+              "nullable": true,
+              "example": "bccemail@email.com"
+            },
+            "emailSubject": {
+              "type": "string",
+              "description": "Default email subject.",
+              "nullable": true,
+              "example": "Activity Statement"
+            },
+            "emailContent": {
+              "type": "string",
+              "description": "Default email content.",
+              "nullable": true,
+              "example": "Please review the attached Activity Statement. Feel free to contact us if you have any questions."
+            }
+          }
+        }
+      ]
+    },
+    "defaultLineItemAccount": {
+      "type": "string",
+      "description": "Default account field for line items.",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

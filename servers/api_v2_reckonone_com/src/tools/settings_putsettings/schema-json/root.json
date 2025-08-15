@@ -1,0 +1,302 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "startDate": {
+      "type": "string",
+      "description": "The first day of records for the book.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2018-07-01"
+    },
+    "lockOffDate": {
+      "type": "string",
+      "description": "Transactions on or before this date cannot be changed.",
+      "format": "date-time",
+      "default": "null",
+      "nullable": true,
+      "example": "2019-06-30"
+    },
+    "entity": {
+      "type": "string",
+      "description": "The id or name of the entity type of business.",
+      "default": "null",
+      "nullable": true,
+      "example": "Company"
+    },
+    "industry": {
+      "type": "string",
+      "description": "The id or name of the industry of business.",
+      "default": "null",
+      "nullable": true,
+      "example": "Accommodation and food services"
+    },
+    "category": {
+      "type": "string",
+      "description": "The id or name of the industry's category of business.",
+      "default": "null",
+      "nullable": true,
+      "example": "Cafes, restaurants and takeaway food services"
+    },
+    "businessType": {
+      "type": "string",
+      "description": "The id or name of the industry category's business type.",
+      "default": "null",
+      "nullable": true,
+      "example": "Fast food retailing"
+    },
+    "replyToEmailAddress": {
+      "type": "string",
+      "description": "The email address used by clients when replying to emails sent from Reckon One.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "john.doe@acme.com"
+    },
+    "showEmailSentFrom": {
+      "type": "string",
+      "description": "The displayed name of sender in emails.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "John Smith"
+    },
+    "bankDataRetrievalDays": {
+      "type": "integer",
+      "description": "The number of most recent days bank data is retrieved for.",
+      "format": "int32",
+      "maximum": 365,
+      "minimum": 1,
+      "example": 30
+    },
+    "generalDetails": {
+      "description": "General company details",
+      "nullable": true,
+      "example": {
+        "companyName": "Joe's Hot Potatoes",
+        "legalName": "Joe Sanders Food Service Pty Ltd",
+        "taxNumber": "123456782",
+        "isRegisteredEmployerOfWHM": true,
+        "branchNumber": "002",
+        "businessNumber": "9429037829131"
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Basic business details to update.",
+          "additionalProperties": false,
+          "properties": {
+            "companyName": {
+              "type": "string",
+              "description": "The company's business/trading name.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe's Hot Potatoes"
+            },
+            "legalName": {
+              "type": "string",
+              "description": "The name of the company that appears on legal documents.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe Sanders Food Services Pty Ltd"
+            },
+            "taxNumber": {
+              "type": "string",
+              "description": "The tax number of the company, for example, 'ABN/WPN' for AU and 'GST/IRD number' for NZ.",
+              "maxLength": 50,
+              "nullable": true,
+              "example": "123456782"
+            },
+            "branchNumber": {
+              "type": "string",
+              "description": "The branch number associated with the tax number.",
+              "maxLength": 10,
+              "nullable": true,
+              "example": "002"
+            },
+            "companyReference": {
+              "type": "string",
+              "description": "The company reference.",
+              "nullable": true,
+              "example": "The company reference"
+            },
+            "businessNumber": {
+              "type": "string",
+              "description": "The business number of the company, for example, New Zealand Business Number (NZBN).",
+              "maxLength": 13,
+              "nullable": true,
+              "example": "9429037829131"
+            },
+            "isRegisteredEmployerOfWHM": {
+              "type": "boolean",
+              "description": "Whether the company is a registered WHM employer.",
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "addresses": {
+      "type": "array",
+      "description": "List of addresses.",
+      "items": {
+        "type": "object",
+        "description": "An address to update.",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The name or id of the address type.",
+            "nullable": true,
+            "example": "\"legal\" or \"80945428-DD32-4CB1-A349-26B4F3FCA9C8\""
+          },
+          "line1": {
+            "type": "string",
+            "description": "First line of address.",
+            "nullable": true,
+            "example": "Floor 1"
+          },
+          "line2": {
+            "type": "string",
+            "description": "Second line of address.",
+            "nullable": true,
+            "example": "Apartment 44"
+          },
+          "line3": {
+            "type": "string",
+            "description": "Third line of address.",
+            "nullable": true,
+            "example": "1 Tudor Lane"
+          },
+          "town": {
+            "type": "string",
+            "description": "Town of address.",
+            "nullable": true,
+            "example": "London"
+          },
+          "suburb": {
+            "type": "string",
+            "description": "Suburb of address.",
+            "nullable": true,
+            "example": "Collingwood"
+          },
+          "state": {
+            "type": "string",
+            "description": "State of address.",
+            "nullable": true,
+            "example": "Victoria"
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Postcode of address.",
+            "nullable": true,
+            "example": "3000"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country of address.",
+            "nullable": true,
+            "example": "Australia"
+          },
+          "isInternational": {
+            "type": "string",
+            "description": "Indicates whether address within another country.",
+            "nullable": true,
+            "example": "True"
+          }
+        }
+      }
+    },
+    "contactDetails": {
+      "description": "Business's contact details.",
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details on how to contact the business to update.",
+          "additionalProperties": false,
+          "required": [
+            "phoneNumbers",
+            "electronicAddresses"
+          ],
+          "properties": {
+            "contactName": {
+              "type": "string",
+              "description": "Name of person who is primary contact within the business.",
+              "maxLength": 255,
+              "nullable": true,
+              "example": "Joe Sanders"
+            },
+            "phoneNumbers": {
+              "type": "array",
+              "description": "List of phone numbers.",
+              "items": {
+                "type": "object",
+                "description": "A phone number.",
+                "additionalProperties": false,
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "The name or id of the phone number type.",
+                    "minLength": 1,
+                    "example": "\"work\" or \"302DA12E-3E43-4B97-B2F5-2F37FB450ADC\","
+                  },
+                  "areaCode": {
+                    "type": "string",
+                    "description": "The area code.",
+                    "maxLength": 10,
+                    "pattern": "^(\\+)?([0-9]+)$",
+                    "nullable": true,
+                    "example": "02"
+                  },
+                  "number": {
+                    "type": "string",
+                    "description": "The number.",
+                    "maxLength": 20,
+                    "pattern": "^[0-9 ]*$",
+                    "nullable": true,
+                    "example": "90101234"
+                  }
+                }
+              }
+            },
+            "electronicAddresses": {
+              "type": "array",
+              "description": "List of electronic addresses.",
+              "items": {
+                "type": "object",
+                "description": "An electronic address.",
+                "additionalProperties": false,
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "The name or id of the electronic address type.",
+                    "nullable": true,
+                    "example": "\"email\" or \"302DA12E-3E43-4B97-B2F5-2F37FB450ADC\","
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "The electronic address.",
+                    "nullable": true,
+                    "example": "x@y.com"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "startDate",
+    "bankDataRetrievalDays",
+    "addresses",
+    "contactDetails"
+  ]
+}

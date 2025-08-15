@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the pay template.",
+      "nullable": true,
+      "example": "Pay Template 1"
+    },
+    "enterpriseAgreement": {
+      "type": "string",
+      "description": "The enterprise agreement for the pay template.",
+      "nullable": true,
+      "example": "Enterprise agreement 1"
+    },
+    "award": {
+      "type": "string",
+      "description": "The award for the pay template.",
+      "nullable": true,
+      "example": "Award 1"
+    },
+    "classifications": {
+      "type": "array",
+      "description": "The classifications for the pay template.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Pay template classification input",
+        "additionalProperties": false,
+        "properties": {
+          "agreementClassification": {
+            "type": "string",
+            "description": "Pay template enterprise agreement classification.",
+            "nullable": true,
+            "example": "Agreement classification 1"
+          },
+          "awardClassification": {
+            "type": "string",
+            "description": "Pay template award classification.",
+            "nullable": true,
+            "example": "Award classification 1"
+          },
+          "rateType": {
+            "description": "Rate type.",
+            "example": "Hourly",
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Rate type of pay item.",
+                "x-enumNames": [
+                  "Salary",
+                  "Hourly"
+                ],
+                "enum": [
+                  "Salary",
+                  "Hourly"
+                ]
+              }
+            ]
+          },
+          "fullTimeAmount": {
+            "type": "number",
+            "description": "Fulltime amount.",
+            "format": "decimal",
+            "example": 100
+          },
+          "casualAmount": {
+            "type": "number",
+            "description": "Casual amount.",
+            "format": "decimal",
+            "nullable": true,
+            "example": 100
+          },
+          "casualPercentage": {
+            "type": "number",
+            "description": "Casual percentage.",
+            "format": "decimal",
+            "nullable": true,
+            "example": 100
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

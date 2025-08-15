@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superfundId": {
+      "description": "The super fund's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The type of address by name or id.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "bookId",
+    "superfundId",
+    "type"
+  ]
+}

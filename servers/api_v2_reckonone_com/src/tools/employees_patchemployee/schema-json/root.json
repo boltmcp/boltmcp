@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "employeeId": {
+      "description": "The employee's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The employee's display name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Joe Bloggs"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "The employee's first name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Joe"
+    },
+    "surname": {
+      "type": "string",
+      "description": "The employee's last name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Bloggs"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the employee.",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "Notes about the employee."
+    },
+    "businessNumber1": {
+      "type": "string",
+      "description": "The employee's business number 1.",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "14003348730"
+    },
+    "businessNumber2": {
+      "type": "string",
+      "description": "The employee's business number 2.",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "14003348731"
+    },
+    "status": {
+      "description": "The status of the employee.",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a contact.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "employeeId"
+  ]
+}

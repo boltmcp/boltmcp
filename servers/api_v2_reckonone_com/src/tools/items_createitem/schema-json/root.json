@@ -1,0 +1,234 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ExternalResourceId": {
+      "description": "The external resource's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "134"
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the item.",
+      "maxLength": 100,
+      "minLength": 1,
+      "example": "API Item 1563336628"
+    },
+    "parentItem": {
+      "type": "string",
+      "description": "The parent item if there is one.",
+      "nullable": true,
+      "example": "Product"
+    },
+    "itemType": {
+      "description": "The item type.",
+      "default": "Product",
+      "nullable": true,
+      "example": "Product",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The item type.",
+          "x-enumNames": [
+            "Product",
+            "Service"
+          ],
+          "enum": [
+            "Product",
+            "Service"
+          ]
+        }
+      ]
+    },
+    "itemCode": {
+      "type": "string",
+      "description": "The item code.",
+      "default": "null",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "WID001"
+    },
+    "status": {
+      "description": "The item status.",
+      "default": "Active",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an item.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    "purchase": {
+      "description": "Details for the item when it is purchased.",
+      "default": "null",
+      "nullable": true,
+      "example": {
+        "price": 4.54545455,
+        "priceAccuracy": 8,
+        "ledgerAccount": "expenses",
+        "description": "Purchase item 1",
+        "taxRate": "NCG"
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Item usage details.",
+          "additionalProperties": false,
+          "required": [
+            "ledgerAccount"
+          ],
+          "properties": {
+            "price": {
+              "type": "number",
+              "description": "The item's price.\nIf the item's `amountTaxStatus` is `Inclusive` then the price includes tax (gross).\nIf the item's `amountTaxStatus` is `Exclusive` then the price excludes tax (net).",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 4.54545455
+            },
+            "priceAccuracy": {
+              "type": "integer",
+              "description": "The accuracy (number of decimal places) of the price.",
+              "format": "byte",
+              "default": "null",
+              "nullable": true,
+              "example": 8
+            },
+            "ledgerAccount": {
+              "type": "string",
+              "description": "The ledger account.",
+              "minLength": 1,
+              "example": "expenses"
+            },
+            "description": {
+              "type": "string",
+              "description": "The description.",
+              "default": "null",
+              "maxLength": 1000,
+              "nullable": true,
+              "example": "sell item"
+            },
+            "taxRate": {
+              "type": "string",
+              "description": "The tax rate.",
+              "default": "null",
+              "nullable": true,
+              "example": "GST"
+            }
+          }
+        }
+      ]
+    },
+    "sale": {
+      "description": "Details for the item when it is sold.",
+      "default": "null",
+      "nullable": true,
+      "example": {
+        "price": 4.54545455,
+        "priceAccuracy": 8,
+        "ledgerAccount": "Income",
+        "description": "Sell item 1",
+        "taxRate": "GST"
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Item usage details.",
+          "additionalProperties": false,
+          "required": [
+            "ledgerAccount"
+          ],
+          "properties": {
+            "price": {
+              "type": "number",
+              "description": "The item's price.\nIf the item's `amountTaxStatus` is `Inclusive` then the price includes tax (gross).\nIf the item's `amountTaxStatus` is `Exclusive` then the price excludes tax (net).",
+              "format": "decimal",
+              "default": "null",
+              "nullable": true,
+              "example": 4.54545455
+            },
+            "priceAccuracy": {
+              "type": "integer",
+              "description": "The accuracy (number of decimal places) of the price.",
+              "format": "byte",
+              "default": "null",
+              "nullable": true,
+              "example": 8
+            },
+            "ledgerAccount": {
+              "type": "string",
+              "description": "The ledger account.",
+              "minLength": 1,
+              "example": "expenses"
+            },
+            "description": {
+              "type": "string",
+              "description": "The description.",
+              "default": "null",
+              "maxLength": 1000,
+              "nullable": true,
+              "example": "sell item"
+            },
+            "taxRate": {
+              "type": "string",
+              "description": "The tax rate.",
+              "default": "null",
+              "nullable": true,
+              "example": "GST"
+            }
+          }
+        }
+      ]
+    },
+    "amountTaxStatus": {
+      "description": "The amount tax status of the amounts in the item.\nThis determines whether item prices include or exclude tax (i.e. gross or net).",
+      "example": "Exclusive",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The tax status of an item's amount.",
+          "x-enumNames": [
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "name",
+    "amountTaxStatus"
+  ]
+}

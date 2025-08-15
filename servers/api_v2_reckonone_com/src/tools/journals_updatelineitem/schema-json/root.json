@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "journalId": {
+      "description": "The journal's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineItemId": {
+      "description": "The id of the line item to update.",
+      "type": "string",
+      "format": "guid"
+    },
+    "reconciliationStatus": {
+      "description": "The reconciliation status.\nNote that this can only be changed between Cleared and Uncleared.",
+      "default": "Uncleared",
+      "nullable": true,
+      "example": "Cleared",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Reconciliation status.",
+          "x-enumNames": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ],
+          "enum": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ]
+        }
+      ]
+    },
+    "transactionType": {
+      "description": "The type of transaction.",
+      "default": "null",
+      "nullable": true,
+      "example": "Sale",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The type of transaction (for creating or modifying a journal entry)",
+          "x-enumNames": [
+            "Sale",
+            "Purchase"
+          ],
+          "enum": [
+            "Sale",
+            "Purchase"
+          ]
+        }
+      ]
+    },
+    "ledgerAccount": {
+      "type": "string",
+      "description": "The id or full name of the ledger account.\nNote that the full name includes the name(s) of any parent ledger account(s) separated by colons.",
+      "minLength": 1,
+      "example": "Sales"
+    },
+    "debit": {
+      "type": "number",
+      "description": "The debit amount.",
+      "format": "decimal",
+      "default": "null",
+      "nullable": true,
+      "example": 200
+    },
+    "credit": {
+      "type": "number",
+      "description": "The credit amount.",
+      "format": "decimal",
+      "default": "null",
+      "nullable": true,
+      "example": null
+    },
+    "taxRate": {
+      "type": "string",
+      "description": "The id or name of the tax rate.",
+      "default": "null",
+      "nullable": true,
+      "example": "GST"
+    },
+    "taxAmount": {
+      "type": "number",
+      "description": "The tax amount.",
+      "format": "decimal",
+      "default": "null",
+      "nullable": true,
+      "example": 20
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes.",
+      "default": "null",
+      "nullable": true,
+      "example": "Notes about the line."
+    },
+    "entity": {
+      "type": "string",
+      "description": "The entity (customer/supplier/superfund/employee).",
+      "default": "null",
+      "nullable": true,
+      "example": "Customer"
+    },
+    "project": {
+      "type": "string",
+      "description": "The id or full name of the project.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+      "default": "null",
+      "nullable": true,
+      "example": "Project A:Project B:Project C"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The id or name of the classification.",
+      "default": "null",
+      "nullable": true,
+      "example": "My classification"
+    }
+  },
+  "required": [
+    "bookId",
+    "journalId",
+    "lineItemId",
+    "ledgerAccount"
+  ]
+}

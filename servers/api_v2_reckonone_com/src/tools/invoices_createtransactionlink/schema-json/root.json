@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "transactionType": {
+      "description": "The type of transaction to link.",
+      "example": "Receipt",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Types of transactions that can be allocated.",
+          "x-enumNames": [
+            "Invoice",
+            "Bill",
+            "SupplierCreditNote",
+            "CreditNote",
+            "JournalEntryPayable",
+            "JournalEntryReceivable",
+            "Payment",
+            "Receipt",
+            "Expense"
+          ],
+          "enum": [
+            "Invoice",
+            "Bill",
+            "SupplierCreditNote",
+            "CreditNote",
+            "JournalEntryPayable",
+            "JournalEntryReceivable",
+            "Payment",
+            "Receipt",
+            "Expense"
+          ]
+        }
+      ]
+    },
+    "transactionId": {
+      "type": "string",
+      "description": "The id of the transaction to link.",
+      "format": "guid",
+      "minLength": 1,
+      "example": "f364cc2e-e8b4-4ff5-b815-9886d3d2c0f1"
+    },
+    "amount": {
+      "type": "number",
+      "description": "The amount.",
+      "format": "decimal",
+      "example": 1000
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId",
+    "transactionType",
+    "transactionId",
+    "amount"
+  ]
+}

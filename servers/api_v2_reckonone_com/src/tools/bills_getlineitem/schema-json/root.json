@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "billId": {
+      "description": "The bill's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineId": {
+      "description": "The line item's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "billId",
+    "lineId"
+  ]
+}

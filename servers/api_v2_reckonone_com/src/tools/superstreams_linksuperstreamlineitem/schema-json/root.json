@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superstreamId": {
+      "description": "The superstreams's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "payrunSuperLineId": {
+      "type": "string",
+      "description": "The id of the payrun that the line item relates to.",
+      "format": "guid",
+      "default": "null",
+      "nullable": true,
+      "example": "07d9bd4c-393a-4cc6-869d-d9d95c7bb0f4"
+    }
+  },
+  "required": [
+    "bookId",
+    "superstreamId"
+  ]
+}

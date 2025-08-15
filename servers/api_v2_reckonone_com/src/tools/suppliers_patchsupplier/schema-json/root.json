@@ -1,0 +1,170 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "supplierId": {
+      "description": "The supplier's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ExternalResourceId": {
+      "description": "The external resource's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "134"
+    },
+    "ExternalClientId": {
+      "description": "The external client application's id.",
+      "type": "string",
+      "format": "guid",
+      "example": "2296ba1d-c0c4-44d2-bf12-9681098a9afa"
+    },
+    "ExternalTenancyId": {
+      "description": "The external book/file/tenancy/etc's id.",
+      "type": "string",
+      "nullable": true,
+      "example": "1293848"
+    },
+    "name": {
+      "type": "string",
+      "description": "The organisation's display name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "John Doe"
+    },
+    "organisationName": {
+      "type": "string",
+      "description": "The organisation's name.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "Reckon Co."
+    },
+    "branch": {
+      "type": "string",
+      "description": "The organisation's branch.",
+      "maxLength": 100,
+      "nullable": true,
+      "example": "1234"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes for the organisation.",
+      "maxLength": 1000,
+      "nullable": true,
+      "example": "The person to call."
+    },
+    "businessNumber1": {
+      "type": "string",
+      "description": "The organisation's business number 1.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber2": {
+      "type": "string",
+      "description": "The organisation's business number 2.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234"
+    },
+    "businessNumber": {
+      "type": "string",
+      "description": "This applies to NZBN number.",
+      "maxLength": 20,
+      "nullable": true,
+      "example": "0218001234123"
+    },
+    "status": {
+      "type": "string",
+      "description": "The status of the organisation. (Active/Inactive)",
+      "nullable": true,
+      "example": "Active"
+    },
+    "entityTypes": {
+      "description": "If the entity has other entity types.",
+      "nullable": true,
+      "example": {
+        "IsCustomer": false,
+        "IsSupplier": true
+      },
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Contact's entity types.",
+          "additionalProperties": false,
+          "properties": {
+            "isCustomer": {
+              "type": "boolean",
+              "description": "Is the entity a customer.",
+              "nullable": true,
+              "example": false
+            },
+            "isSupplier": {
+              "type": "boolean",
+              "description": "Is the entity a supplier.",
+              "nullable": true,
+              "example": false
+            },
+            "isEmployee": {
+              "type": "boolean",
+              "description": "Is the entity an employee.",
+              "nullable": true,
+              "example": false
+            },
+            "isSuperfund": {
+              "type": "boolean",
+              "description": "Is the entity a superfund.",
+              "nullable": true,
+              "example": false
+            }
+          }
+        }
+      ]
+    },
+    "isTpar": {
+      "type": "boolean",
+      "description": "If the supplier is Tpar.",
+      "nullable": true,
+      "example": true
+    },
+    "bankDetails": {
+      "description": "The supplier's bank account details.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Details of a supplier's bank account to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The bank account's name.",
+              "nullable": true,
+              "example": "My bank account"
+            },
+            "bankBranchNumber": {
+              "type": "string",
+              "description": "The bank account's branch number.",
+              "nullable": true,
+              "example": "123456"
+            },
+            "bankAccountNumber": {
+              "type": "string",
+              "description": "The bank account's number.",
+              "nullable": true,
+              "example": "444555"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId",
+    "supplierId"
+  ]
+}

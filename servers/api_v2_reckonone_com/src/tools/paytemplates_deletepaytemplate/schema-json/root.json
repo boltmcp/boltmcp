@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "paytemplateId": {
+      "description": "The paytemplate id to be deleted.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "paytemplateId"
+  ]
+}

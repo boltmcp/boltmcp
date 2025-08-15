@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The supplier credit note prefix.",
+      "nullable": true,
+      "example": "SAN"
+    },
+    "defaultTemplate": {
+      "type": "string",
+      "description": "The default supplier credit note template.",
+      "nullable": true,
+      "example": "Standard Supplier Adjustment Note"
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

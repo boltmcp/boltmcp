@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "userId": {
+      "description": "The user's id or portal id.",
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "description": "A list of roles the user is assigned to.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "A user role id",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for role ",
+            "format": "int32"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "userId"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "toAddresses": {
+      "type": "array",
+      "description": "A list of \"To\" addresses.",
+      "nullable": true,
+      "example": [
+        "me@mycompany.com"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "ccAddresses": {
+      "type": "array",
+      "description": "A list of \"CC\" addresses.",
+      "nullable": true,
+      "example": [
+        "other@othercompany.com"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "bccAddresses": {
+      "type": "array",
+      "description": "A list of \"BCC\" addresses.",
+      "nullable": true,
+      "example": [
+        "hidden@hiddencompany.com"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "subject": {
+      "type": "string",
+      "description": "The email subject.",
+      "maxLength": 200,
+      "minLength": 1,
+      "example": "A document for you"
+    },
+    "body": {
+      "type": "string",
+      "description": "The email body.",
+      "minLength": 1,
+      "example": "Here is your document."
+    },
+    "documentNumber": {
+      "type": "string",
+      "description": "The number of the document that the email relates to.",
+      "default": "null",
+      "nullable": true,
+      "example": "DOC1234"
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId",
+    "subject",
+    "body"
+  ]
+}

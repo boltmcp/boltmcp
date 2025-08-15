@@ -1,0 +1,231 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "isStpV2Enabled": {
+      "type": "boolean",
+      "description": "Indicates whether Single Touch Payroll report version 2 is enabled.",
+      "nullable": true
+    },
+    "isPreparingForStpV2": {
+      "type": "boolean",
+      "description": "Indicates whether the book is being prepared for Single Touch Payroll version 2.",
+      "nullable": true
+    },
+    "legalContact": {
+      "description": "The payroll settings' legal contact.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The payroll settings' legal contact details to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "description": "The first name of legal contact.",
+              "nullable": true,
+              "example": "John"
+            },
+            "lastName": {
+              "type": "string",
+              "description": "The last name of legal contact.",
+              "nullable": true,
+              "example": "Smith"
+            },
+            "title": {
+              "type": "string",
+              "description": "The legal contact's title.",
+              "nullable": true,
+              "example": "Mr"
+            }
+          }
+        }
+      ]
+    },
+    "payrollSetup": {
+      "description": "The payroll setup details.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "A book's payroll setup to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "copyPayItemsFromPreviousPay": {
+              "type": "boolean",
+              "description": "Indicates whether the pay run copies pay items from previous pay (overrides default pay items).",
+              "nullable": true,
+              "example": true
+            },
+            "trackProjectCost": {
+              "type": "boolean",
+              "description": "Indicates whether it tracks project cost.\n            ",
+              "nullable": true,
+              "example": true
+            },
+            "allowPayRatesEditInPayRuns": {
+              "type": "boolean",
+              "description": "Indicates whether it allows editing of pay rates on pay runs.",
+              "nullable": true,
+              "example": true
+            },
+            "optionalEmailPasswordProtection": {
+              "type": "boolean",
+              "description": "Indicates whether it enables password protection for emailing pay slips and payment summaries.",
+              "nullable": true,
+              "example": false
+            },
+            "displayYTDOnPayrun": {
+              "type": "boolean",
+              "description": "Indicates whether it displays YTD amounts on pay run.",
+              "nullable": true,
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "defaultAccounts": {
+      "description": "The default payroll accounts.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The payroll settings' default accounts to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "payWitholdingAmountToSupplier": {
+              "type": "boolean",
+              "description": "Indicates whether pays to supplier through accounts payable.",
+              "nullable": true,
+              "example": true
+            },
+            "expenseAccount": {
+              "type": "string",
+              "description": "The expense account.",
+              "nullable": true,
+              "example": "Payroll Expenses:Annual Leave"
+            },
+            "expenseAccountForCompanySuperContributions": {
+              "type": "string",
+              "description": "The expense account for company super contributions.",
+              "nullable": true,
+              "example": "296cde83-f8c3-469f-b474-4892da4dbdb5"
+            },
+            "liabilityAccount": {
+              "type": "string",
+              "description": "The liability account.",
+              "nullable": true,
+              "example": "Payroll Liabilities:ABN Withholding Tax Payable"
+            },
+            "liabilityAccountForWithholdingAmounts": {
+              "type": "string",
+              "description": "The liability account for withholding amount.",
+              "nullable": true,
+              "example": "f08af612-a854-40bc-890d-e3592ea5e167"
+            },
+            "supplierForWithholdingAmounts": {
+              "type": "string",
+              "description": "Supplier for withholding amounts.",
+              "nullable": true,
+              "example": "John Doe"
+            }
+          }
+        }
+      ]
+    },
+    "defaultPayments": {
+      "description": "The default payroll payments.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The details of payroll default payments to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "roundToNearest": {
+              "description": "Rounding settings of payments.",
+              "nullable": true,
+              "example": "TenCents",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "Rounding settings of payments.",
+                  "x-enumNames": [
+                    "NoRounding",
+                    "FiveCents",
+                    "TenCents",
+                    "FiftyCents",
+                    "OneDollar"
+                  ],
+                  "enum": [
+                    "NoRounding",
+                    "FiveCents",
+                    "TenCents",
+                    "FiftyCents",
+                    "OneDollar"
+                  ]
+                }
+              ]
+            },
+            "expenseAccountForRounding": {
+              "type": "string",
+              "description": "Expense account for rounding of cash payments.",
+              "nullable": true,
+              "example": "Payroll Expenses"
+            }
+          }
+        }
+      ]
+    },
+    "automaticPayrollPayments": {
+      "type": "boolean",
+      "description": "Indicates whether makes payroll salary and wages payments when users finish each pay run.",
+      "nullable": true,
+      "example": true
+    },
+    "defaultBankAccounts": {
+      "description": "The default payroll bank accounts.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The details of payroll default bank accounts to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "directCreditPaymentsBankAccount": {
+              "type": "string",
+              "description": "The direct credit payment bank account.",
+              "nullable": true,
+              "example": "My Bank Account"
+            },
+            "cashPaymentsBankAccount": {
+              "type": "string",
+              "description": "The cash payments account.",
+              "nullable": true,
+              "example": "c458dee2-c152-4f5b-b6ed-bf6d7a83051b"
+            },
+            "superPaymentsBankAccount": {
+              "type": "string",
+              "description": "The super payment bank account.",
+              "nullable": true,
+              "example": "My super payment bank account"
+            }
+          }
+        }
+      ]
+    },
+    "isReducingOteHoursEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether reducing ote hours is enabled."
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

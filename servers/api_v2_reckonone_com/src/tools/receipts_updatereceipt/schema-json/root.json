@@ -1,0 +1,354 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "receiptId": {
+      "description": "The receipt's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that is being invoiced.",
+      "minLength": 1,
+      "example": "Company Ltd"
+    },
+    "receiptDate": {
+      "type": "string",
+      "description": "The date of the receipt.",
+      "format": "date-time",
+      "minLength": 1,
+      "example": "2020-02-06"
+    },
+    "ledgerAccount": {
+      "type": "string",
+      "description": "The id or name of the bank/cash/credit account where the money was received.",
+      "default": "The default bank account.",
+      "nullable": true,
+      "example": "My bank account"
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "The id or name of the payment method used.",
+      "default": "null",
+      "nullable": true,
+      "example": "Mastercard"
+    },
+    "reference": {
+      "type": "string",
+      "description": "The receipt reference.",
+      "default": "null",
+      "maxLength": 200,
+      "nullable": true,
+      "example": "My reference"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the receipt.",
+      "default": "null",
+      "maxLength": 255,
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "totalAmount": {
+      "type": "number",
+      "description": "The total amount of the receipt.",
+      "format": "decimal",
+      "example": 110
+    },
+    "reconciliationStatus": {
+      "description": "The receipt's reconciliation status.\nNote that this can only be changed between Cleared and Uncleared.",
+      "default": "Uncleared",
+      "nullable": true,
+      "example": "Cleared",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Reconciliation status.",
+          "x-enumNames": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ],
+          "enum": [
+            "Uncleared",
+            "Cleared",
+            "Reconciled"
+          ]
+        }
+      ]
+    },
+    "internalNotes": {
+      "type": "string",
+      "description": "Internal Notes related to the receipt.",
+      "default": "null",
+      "maxLength": 400,
+      "nullable": true,
+      "example": "This is an internal note."
+    },
+    "accountsReceivableLedgerAccount": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The accounts receivable ledger account.\n_Note:_ It is not currently possible to create multiple Accounts Receivable accounts so this field is read-only and will be ignored.",
+      "default": "The default Accounts Receivable account",
+      "nullable": true,
+      "example": "Accounts Receivable"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "default": "null",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "The individual items that make up the receipt.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a receipt line item to create or update.",
+        "additionalProperties": false,
+        "required": [
+          "lineNumber"
+        ],
+        "properties": {
+          "lineNumber": {
+            "type": "integer",
+            "description": "The line number.",
+            "format": "int32",
+            "example": 2
+          },
+          "project": {
+            "type": "string",
+            "description": "The id or full name of the project that the line item relates to.\nNote that the full name includes the name(s) of any parent project(s) separated by colons.",
+            "default": "null",
+            "nullable": true,
+            "example": "Project A:Project B:Project C"
+          },
+          "itemDetails": {
+            "description": "Details of an item used on an invoice line item.\nThis must be omitted if `accountDetails` have been provided.",
+            "default": "null",
+            "nullable": true,
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Details of an item used on an receipt line item.",
+                "additionalProperties": false,
+                "required": [
+                  "item"
+                ],
+                "properties": {
+                  "item": {
+                    "type": "string",
+                    "description": "The id or full name of the item that the line relates to.\nNote that the full name includes the name(s) of any parent item(s) separated by colons.",
+                    "minLength": 1,
+                    "example": "Parent item:Child item"
+                  },
+                  "price": {
+                    "type": "number",
+                    "description": "The price of each item including or excluding tax (depending on the `amountTaxStatus`).",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 5.5
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "description": "The quantity purchased.",
+                    "format": "decimal",
+                    "default": "nulll",
+                    "nullable": true,
+                    "example": 1
+                  },
+                  "discountAmount": {
+                    "type": "number",
+                    "description": "The total discount for the line item.",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 10
+                  },
+                  "discountPercent": {
+                    "type": "number",
+                    "description": "The discount percentage for the line item.",
+                    "format": "decimal",
+                    "default": "null",
+                    "nullable": true,
+                    "example": 25
+                  },
+                  "billableId": {
+                    "type": "string",
+                    "description": "The id related to a billable line item.",
+                    "format": "guid",
+                    "nullable": true,
+                    "example": "511650E7-A0C6-46ED-A2EE-EEAE711E167C"
+                  }
+                }
+              }
+            ]
+          },
+          "accountDetails": {
+            "description": "Details of an account used on an invoice line item.\nThis must be omitted if `itemDetails` have been provided.",
+            "default": "null",
+            "nullable": true,
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Details of an account used on an receipt line item.",
+                "additionalProperties": false,
+                "required": [
+                  "ledgerAccount"
+                ],
+                "properties": {
+                  "ledgerAccount": {
+                    "type": "string",
+                    "description": "The id or full name of the ledger account that the line relates to.\nNote that the full name includes the name(s) of any parent account(s) separated by colons.",
+                    "minLength": 1,
+                    "example": "Income:Sub income"
+                  },
+                  "quantity": {
+                    "type": "number",
+                    "description": "The quantity purchased.",
+                    "format": "decimal",
+                    "default": "nulll",
+                    "nullable": true,
+                    "example": 1
+                  },
+                  "amount": {
+                    "type": "number",
+                    "description": "The amount including or excluding tax (depending on the `amountTaxStatus`).",
+                    "format": "decimal",
+                    "default": 0,
+                    "nullable": true,
+                    "example": 110
+                  }
+                }
+              }
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the line.",
+            "default": "null",
+            "maxLength": 1000,
+            "nullable": true,
+            "example": "This is my new line"
+          },
+          "taxAmount": {
+            "type": "number",
+            "description": "The tax amount.",
+            "format": "decimal",
+            "default": "null",
+            "nullable": true,
+            "example": 10
+          },
+          "taxRate": {
+            "type": "string",
+            "description": "The tax rate.",
+            "default": "null",
+            "nullable": true,
+            "example": "GST"
+          },
+          "taxIsModified": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "Whether the tax amount has been modified.",
+            "default": "null",
+            "nullable": true,
+            "example": false
+          }
+        }
+      }
+    },
+    "transactionLinks": {
+      "type": "array",
+      "description": "Details of transactions that the receipt should be allocated to.",
+      "default": "null",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Details of a transaction to link to a receipt.",
+        "additionalProperties": false,
+        "required": [
+          "transactionId",
+          "transactionAmount",
+          "transactionType"
+        ],
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "The unique id of the linked transaction.",
+            "format": "guid",
+            "minLength": 1,
+            "example": "8cc23593-4790-4f56-b2a1-92396b3f2aaf"
+          },
+          "transactionAmount": {
+            "type": "number",
+            "description": "The total amount of the transaction.",
+            "format": "decimal",
+            "example": 1000
+          },
+          "transactionType": {
+            "description": "The type of linked transaction.",
+            "example": "Invoice",
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Type of transaction linked to an invoice or bill.",
+                "x-enumNames": [
+                  "Estimate",
+                  "Expense",
+                  "Timesheet",
+                  "Receipt",
+                  "CreditNote",
+                  "Payment",
+                  "Invoice",
+                  "Journal",
+                  "Bill",
+                  "PayRun",
+                  "ReversedJournal",
+                  "ReversalJournal",
+                  "BankPayment",
+                  "SupplierCreditNote",
+                  "ExpenseLineItem",
+                  "JournalLineItem"
+                ],
+                "enum": [
+                  "Estimate",
+                  "Expense",
+                  "Timesheet",
+                  "Receipt",
+                  "CreditNote",
+                  "Payment",
+                  "Invoice",
+                  "Journal",
+                  "Bill",
+                  "PayRun",
+                  "ReversedJournal",
+                  "ReversalJournal",
+                  "BankPayment",
+                  "SupplierCreditNote",
+                  "ExpenseLineItem",
+                  "JournalLineItem"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "receiptId",
+    "customer",
+    "receiptDate",
+    "totalAmount"
+  ]
+}

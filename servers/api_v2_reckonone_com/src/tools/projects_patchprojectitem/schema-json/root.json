@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "projectId": {
+      "description": "The project's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "lineId": {
+      "description": "The project item's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "item": {
+      "type": "string",
+      "description": "The id or name of the item.",
+      "nullable": true,
+      "example": "Lumber"
+    },
+    "projectRate": {
+      "type": "number",
+      "description": "Rate at which item is charged for this project.",
+      "format": "decimal",
+      "nullable": true,
+      "example": 199.99
+    }
+  },
+  "required": [
+    "bookId",
+    "projectId",
+    "lineId"
+  ]
+}

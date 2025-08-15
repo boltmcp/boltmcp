@@ -1,0 +1,415 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "taxRegistered": {
+      "type": "boolean",
+      "description": "Indicates whether you registered for tax.",
+      "nullable": true,
+      "example": true
+    },
+    "reportingBasis": {
+      "description": "The tax reporting basis type.",
+      "nullable": true,
+      "example": "Accrual",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The sales figures type of tax. Hybrid is for NZ books only.",
+          "x-enumNames": [
+            "Accrual",
+            "Cash",
+            "Hybrid"
+          ],
+          "enum": [
+            "Accrual",
+            "Cash",
+            "Hybrid"
+          ]
+        }
+      ]
+    },
+    "amountTaxStatus": {
+      "description": "Indicates whether sales figures are shown in the gross sales or the net sales.",
+      "nullable": true,
+      "example": "Gross (Tax Inclusive)",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The sales figures type of tax.",
+          "x-enumNames": [
+            "Inclusive",
+            "Exclusive"
+          ],
+          "enum": [
+            "Inclusive",
+            "Exclusive"
+          ]
+        }
+      ]
+    },
+    "defaultSalesTaxLedgerAccount": {
+      "type": "string",
+      "description": "Default tax account ledger for sales.",
+      "nullable": true,
+      "example": "GST Payable:GST Collected"
+    },
+    "defaultPurchasesTaxLedgerAccount": {
+      "type": "string",
+      "description": "Default tax account ledger for purchases.",
+      "nullable": true,
+      "example": "GST Payable:GST Paid"
+    },
+    "taxAmountEditable": {
+      "type": "boolean",
+      "description": "Indicates whether allows users to edit tax amounts.",
+      "nullable": true,
+      "example": true
+    },
+    "chooseAmountTaxStatus": {
+      "type": "boolean",
+      "description": "Indicates whether a user can choose if amounts include or exclude tax.",
+      "nullable": true,
+      "example": true
+    },
+    "basSettings": {
+      "description": "The BAS reporting preference details.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "BAS report settings to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "reportingPeriodType": {
+              "description": "The BAS reporting period.",
+              "example": "Monthly",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "The BAS reporting period.",
+                  "x-enumNames": [
+                    "Monthly",
+                    "QuarterlyOption1GstReportQuarterly",
+                    "QuarterlyOption2GstQuarterlyReportAnnually",
+                    "QuarterlyOption3GstInstalmentQuarterly",
+                    "Annually"
+                  ],
+                  "enum": [
+                    "Monthly",
+                    "QuarterlyOption1GstReportQuarterly",
+                    "QuarterlyOption2GstQuarterlyReportAnnually",
+                    "QuarterlyOption3GstInstalmentQuarterly",
+                    "Annually"
+                  ]
+                }
+              ]
+            },
+            "simplerBAS": {
+              "type": "boolean",
+              "description": "Indicates whether its a simpler BAS. Simpler BAS is only applicable for business reporting GST on Monthly, Annual or quarterly basis (option 1: Calculate GST and report quarterly).",
+              "nullable": true,
+              "example": true
+            },
+            "amountTaxStatus": {
+              "description": "Show amounts reported in BAS as inclusive or exclusive.",
+              "nullable": true,
+              "example": "Inclusive",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "The sales figures type of tax.",
+                  "x-enumNames": [
+                    "Inclusive",
+                    "Exclusive"
+                  ],
+                  "enum": [
+                    "Inclusive",
+                    "Exclusive"
+                  ]
+                }
+              ]
+            },
+            "fbt": {
+              "type": "boolean",
+              "description": "Indicates whether Fringe Benefits Tax (FBT) applies to the business.",
+              "nullable": true,
+              "example": true
+            },
+            "ftc": {
+              "type": "boolean",
+              "description": "Indicates whether Fuel Tax Credits (FTC) applies to the business.",
+              "nullable": true,
+              "example": true
+            },
+            "lct": {
+              "type": "boolean",
+              "description": "Indicates whether Luxury Car Tax (LCT) applies to the business.",
+              "nullable": true,
+              "example": true
+            },
+            "paygiPayQuarterly": {
+              "type": "boolean",
+              "description": "Indicates whether Pay As You Go Income Tax Instalment (PAYG I) applies to the business. Pay PAYG instalment quarterly.",
+              "nullable": true,
+              "example": true
+            },
+            "paygiCalculateUsingIncomeTimesRate": {
+              "type": "boolean",
+              "description": "Indicates whether Pay As You Go Income Tax Instalment (PAYG I) applies to the business. Calculate PAYG instalment using income times rate.",
+              "nullable": true,
+              "example": true
+            },
+            "paygw": {
+              "type": "boolean",
+              "description": "Indicates whether Pay As You Go Tax Withheld (PAYG W) applies to the business.",
+              "nullable": true,
+              "example": true
+            },
+            "wet": {
+              "type": "boolean",
+              "description": "Indicates whether Wine Equalisation Tax (WET) applies to the business.",
+              "nullable": true,
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "gstSettings": {
+      "description": "The GST reporting preference details.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "GST report settings to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "filingFrequency": {
+              "description": "The GST filing frequency.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "The GST filing frequency.",
+                  "x-enumNames": [
+                    "Monthly",
+                    "TwoMonthly",
+                    "SixMonthly"
+                  ],
+                  "enum": [
+                    "Monthly",
+                    "TwoMonthly",
+                    "SixMonthly"
+                  ]
+                }
+              ]
+            },
+            "reportingPeriod": {
+              "description": "The GST reporting period.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "The GST reporting period.",
+                  "x-enumNames": [
+                    "StartsFromJan",
+                    "StartsFromFeb",
+                    "StartsFromMar",
+                    "StartsFromApr",
+                    "StartsFromMay",
+                    "StartsFromJun"
+                  ],
+                  "enum": [
+                    "StartsFromJan",
+                    "StartsFromFeb",
+                    "StartsFromMar",
+                    "StartsFromApr",
+                    "StartsFromMay",
+                    "StartsFromJun"
+                  ]
+                }
+              ]
+            },
+            "returnBasis": {
+              "description": "The GST return basis.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "The GST return basis.",
+                  "x-enumNames": [
+                    "CalculateGSTFromGross",
+                    "CalculateGrossFromGST"
+                  ],
+                  "enum": [
+                    "CalculateGSTFromGross",
+                    "CalculateGrossFromGST"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "vatSettings": {
+      "description": "The VAT reporting preference details.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "VAT report settings to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "registrationNumber": {
+              "type": "string",
+              "description": "VAT registration number.",
+              "nullable": true
+            },
+            "scheme": {
+              "description": "HMRC VAT scheme.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "HMRC VAT scheme.",
+                  "x-enumNames": [
+                    "Standard",
+                    "Monthly",
+                    "Annual"
+                  ],
+                  "enum": [
+                    "Standard",
+                    "Monthly",
+                    "Annual"
+                  ]
+                }
+              ]
+            },
+            "periodGroup": {
+              "description": "VAT period ending group.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "VAT period ending group.",
+                  "x-enumNames": [
+                    "MarJunSepDec",
+                    "JulOctJanApr",
+                    "AugNovFebMay"
+                  ],
+                  "enum": [
+                    "MarJunSepDec",
+                    "JulOctJanApr",
+                    "AugNovFebMay"
+                  ]
+                }
+              ]
+            },
+            "flatRateScheme": {
+              "description": "VAT flat rate scheme.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "string",
+                  "description": "VAT flat rate scheme.",
+                  "x-enumNames": [
+                    "Enabled",
+                    "Disabled"
+                  ],
+                  "enum": [
+                    "Enabled",
+                    "Disabled"
+                  ]
+                }
+              ]
+            },
+            "registeredSinceDate": {
+              "type": "string",
+              "description": "VAT Registered since date.",
+              "format": "date-time",
+              "nullable": true
+            },
+            "ecVatEnabled": {
+              "type": "boolean",
+              "description": "Activates EC VAT codes and flag on the VAT return that EC VAT is enabled.",
+              "nullable": true
+            },
+            "usePostponedVatAccounting": {
+              "type": "boolean",
+              "description": "Enables Postponed VAT Accounting codes.",
+              "nullable": true
+            }
+          }
+        }
+      ]
+    },
+    "emailSettings": {
+      "description": "The email settings for tax.",
+      "nullable": true,
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "The book's tax email settings to patch.",
+          "additionalProperties": false,
+          "properties": {
+            "bas": {
+              "description": "BAS default email settings.",
+              "nullable": true,
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "The email template to patch.",
+                  "additionalProperties": false,
+                  "properties": {
+                    "includeCc": {
+                      "type": "boolean",
+                      "description": "Indicates whether includes CC by default when emailing.",
+                      "nullable": true,
+                      "example": true
+                    },
+                    "ccAddress": {
+                      "type": "string",
+                      "description": "Default CC email address.",
+                      "nullable": true,
+                      "example": "ccemail@email.com"
+                    },
+                    "includeBcc": {
+                      "type": "boolean",
+                      "description": "Indicates whether includes BCC by default when emailing.",
+                      "nullable": true,
+                      "example": true
+                    },
+                    "bccAddress": {
+                      "type": "string",
+                      "description": "Default BCC email address.",
+                      "nullable": true,
+                      "example": "bccemail@email.com"
+                    },
+                    "emailSubject": {
+                      "type": "string",
+                      "description": "Default email subject.",
+                      "nullable": true,
+                      "example": "Activity Statement"
+                    },
+                    "emailContent": {
+                      "type": "string",
+                      "description": "Default email content.",
+                      "nullable": true,
+                      "example": "Please review the attached Activity Statement. Feel free to contact us if you have any questions."
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

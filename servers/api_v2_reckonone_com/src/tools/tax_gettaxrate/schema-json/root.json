@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "taxRateId": {
+      "description": "The tax rate's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "effectiveDate": {
+      "description": "The effective date for the tax rate.",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "bookId",
+    "taxRateId",
+    "effectiveDate"
+  ]
+}

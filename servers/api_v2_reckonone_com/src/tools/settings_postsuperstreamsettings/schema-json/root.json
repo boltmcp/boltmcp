@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "selectedProvider": {
+      "description": "Superstream provider.",
+      "example": "Beam",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Superstream providers.",
+          "x-enumNames": [
+            "None",
+            "Beam"
+          ],
+          "enum": [
+            "None",
+            "Beam"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "bookId"
+  ]
+}

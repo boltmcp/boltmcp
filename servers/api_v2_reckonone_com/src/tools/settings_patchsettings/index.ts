@@ -1,0 +1,32 @@
+import { inputParamsSchema } from "./schema/root.js"
+import type { OpenMCPServerTool } from "@open-mcp/core"
+
+const tool: OpenMCPServerTool = {
+  "toolName": "settings_patchsettings",
+  "toolDescription": "Updates selected fields of a book's settings.",
+  "baseUrl": "https://api-v2.reckonone.com",
+  "path": "/{bookId}/settings",
+  "method": "patch",
+  "security": [],
+  "paramsMap": {
+    "path": {
+      "bookId": "bookId"
+    },
+    "body": {
+      "startDate": "startDate",
+      "lockOffDate": "lockOffDate",
+      "entity": "entity",
+      "industry": "industry",
+      "category": "category",
+      "businessType": "businessType",
+      "replyToEmailAddress": "replyToEmailAddress",
+      "showEmailSentFrom": "showEmailSentFrom",
+      "bankDataRetrievalDays": "bankDataRetrievalDays",
+      "generalDetails": "generalDetails",
+      "contactDetails": "contactDetails"
+    }
+  },
+  inputParamsSchema
+}
+
+export default tool

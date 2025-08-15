@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "payTemplateId": {
+      "description": "The pay template's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "processMethod": {
+      "description": "The batch processing method. This must be always All.\n            ",
+      "nullable": true,
+      "example": "All",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "",
+          "x-enumNames": [
+            "All",
+            "Partial"
+          ],
+          "enum": [
+            "All",
+            "Partial"
+          ]
+        }
+      ]
+    },
+    "earningsItems": {
+      "type": "array",
+      "description": "One or more pay template earnings.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Pay template batch update earnings input.\n            ",
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The API caller's arbitrary reference for an earnings input.\nThis is not stored in the database but returned as part of the response for the API caller's purposes.\nIf Id is not passed, then this must have a value, and would indicate a database INSERT.",
+            "nullable": true,
+            "example": "earnings1"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique id for the earnings input.\nFor existing pay template earnings, this field is required in order to indicate a database UPDATE.\nAs such, the Id should be an existing value in the PayTemplateEarnings table.\nIf not passed, then Key is required, and would indicate a database INSERT.\n            ",
+            "format": "guid",
+            "nullable": true,
+            "example": "90811c98-2749-424a-b4af-b1993870f94e"
+          },
+          "earningsItem": {
+            "type": "string",
+            "description": "A GUID or string that maps to a PayItemsEarnings Id.",
+            "nullable": true,
+            "example": "Salary"
+          },
+          "rateFullTime": {
+            "type": "number",
+            "description": "The full time rate for the earnings item. When provided, it must be a positive number.",
+            "format": "decimal",
+            "nullable": true,
+            "example": 12.34
+          },
+          "rateCasual": {
+            "type": "number",
+            "description": "The casual rate for the earnings item. When provided, it must be a positive number.",
+            "format": "decimal",
+            "nullable": true,
+            "example": 12.34
+          },
+          "classifications": {
+            "type": "array",
+            "description": "One or more classification Ids for the pay template earnings.",
+            "nullable": true,
+            "example": [
+              "53431cdc-855a-4e0f-b9ac-e4b96ca6c37d",
+              "bb75aeb4-f9b5-4093-acd1-86651422029e"
+            ],
+            "items": {
+              "type": "string",
+              "format": "guid"
+            }
+          }
+        }
+      }
+    },
+    "allowanceItems": {
+      "type": "array",
+      "description": "One or more pay template allowances.",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "description": "Pay template batch update allowance input.\n            ",
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The API caller's arbitrary reference for an allowance input.\nThis is not stored in the database but returned as part of the response for the API caller's purposes.\nIf Id is not passed, then this must have a value, and would indicate a database INSERT.",
+            "nullable": true,
+            "example": "allowance1"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique id for the allowance input.\nFor existing pay template allowances, this field is required in order to indicate a database UPDATE.\nAs such, the Id should be an existing value in the PayTemplateAllowances table.\nIf not passed, then Key is required, and would indicate a database INSERT.\n            ",
+            "format": "guid",
+            "nullable": true,
+            "example": "4f6554e8-b255-46d9-93d7-0016f56e5ada"
+          },
+          "allowanceItem": {
+            "type": "string",
+            "description": "A GUID or string that maps to a PayItemsAllowances Id.",
+            "nullable": true,
+            "example": "Transport allowance"
+          },
+          "rate": {
+            "type": "number",
+            "description": "The optional rate amount for the allowance item. When provided, it must be a positive number.",
+            "format": "decimal",
+            "nullable": true,
+            "example": 12.34
+          },
+          "classifications": {
+            "type": "array",
+            "description": "One or more classification Ids for the pay template allowance.",
+            "nullable": true,
+            "example": [
+              "53431cdc-855a-4e0f-b9ac-e4b96ca6c37d",
+              "bb75aeb4-f9b5-4093-acd1-86651422029e"
+            ],
+            "items": {
+              "type": "string",
+              "format": "guid"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "bookId",
+    "payTemplateId"
+  ]
+}

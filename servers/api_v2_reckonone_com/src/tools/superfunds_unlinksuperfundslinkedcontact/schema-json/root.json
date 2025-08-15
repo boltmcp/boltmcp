@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "superfundId": {
+      "description": "The super fund's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "contactId": {
+      "description": "The super fund's linked contact's id.",
+      "type": "string",
+      "format": "guid"
+    }
+  },
+  "required": [
+    "bookId",
+    "superfundId",
+    "contactId"
+  ]
+}

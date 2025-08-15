@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The custom field id or name.",
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "description": "The value of custom field.",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId",
+    "type"
+  ]
+}

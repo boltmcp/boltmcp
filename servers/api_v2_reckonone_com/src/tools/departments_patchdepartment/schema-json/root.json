@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "departmentId": {
+      "description": "The departments's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "name": {
+      "type": "string",
+      "description": "The department's unique name.",
+      "maxLength": 50,
+      "nullable": true,
+      "example": "Finance"
+    },
+    "code": {
+      "type": "string",
+      "description": "The department's unique code.",
+      "maxLength": 50,
+      "nullable": true,
+      "example": "1234"
+    },
+    "status": {
+      "description": "The department's status.",
+      "nullable": true,
+      "example": "Active",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of a department.",
+          "x-enumNames": [
+            "Active",
+            "Inactive"
+          ],
+          "enum": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about the department.",
+      "maxLength": 500,
+      "nullable": true,
+      "example": "This is the finance department."
+    }
+  },
+  "required": [
+    "bookId",
+    "departmentId"
+  ]
+}

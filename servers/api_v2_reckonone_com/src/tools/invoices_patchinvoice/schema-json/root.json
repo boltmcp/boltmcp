@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "invoiceId": {
+      "description": "The invoice's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "ignoreWarnings": {
+      "description": "Ignore warnings",
+      "type": "boolean"
+    },
+    "customer": {
+      "type": "string",
+      "description": "The customer that is being invoiced.",
+      "nullable": true,
+      "example": "Company Ltd"
+    },
+    "invoiceDate": {
+      "type": "string",
+      "description": "The date of the invoice.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-02-06"
+    },
+    "dueDate": {
+      "type": "string",
+      "description": "The date payment is due by.",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2020-03-06"
+    },
+    "invoiceDiscountAmount": {
+      "type": "number",
+      "description": "The invoice discount amount.",
+      "format": "decimal",
+      "nullable": true,
+      "example": 10
+    },
+    "invoiceDiscountPercent": {
+      "type": "number",
+      "description": "The invoice discount percentage.",
+      "format": "decimal",
+      "nullable": true,
+      "example": 7.5
+    },
+    "status": {
+      "description": "The status of the invoice.",
+      "nullable": true,
+      "example": "Approved",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The status of an invoice.",
+          "x-enumNames": [
+            "Draft",
+            "Approved",
+            "Paid"
+          ],
+          "enum": [
+            "Draft",
+            "Approved",
+            "Paid"
+          ]
+        }
+      ]
+    },
+    "paymentTerms": {
+      "type": "string",
+      "description": "Payment terms.",
+      "nullable": true,
+      "example": "30 days net"
+    },
+    "reference": {
+      "type": "string",
+      "description": "The invoice reference.",
+      "nullable": true,
+      "example": "My reference"
+    },
+    "purchaseOrderNumber": {
+      "type": "string",
+      "description": "The purchase order number.",
+      "nullable": true,
+      "example": "ABC123"
+    },
+    "accountsReceivableLedgerAccount": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The accounts receivable ledger account.\n_Note:_ It is not currently possible to create multiple Accounts Receivable accounts so this field is read-only and will be ignored.",
+      "nullable": true,
+      "example": "Accounts Receivable"
+    },
+    "classification": {
+      "type": "string",
+      "description": "The classification.",
+      "nullable": true,
+      "example": "My classification"
+    },
+    "template": {
+      "type": "string",
+      "description": "The template used to print or email the invoice.",
+      "nullable": true,
+      "example": "Professional invoice"
+    },
+    "includeInInvoiceReminders": {
+      "type": "boolean",
+      "description": "If true, this invoice should be included in daily reminder checks.",
+      "nullable": true,
+      "example": true
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes related to the invoice.",
+      "nullable": true,
+      "example": "This is a note."
+    },
+    "paymentDetails": {
+      "type": "string",
+      "description": "Details of how to pay the invoice.",
+      "nullable": true,
+      "example": "BSB 134-456, Account 987654"
+    }
+  },
+  "required": [
+    "bookId",
+    "invoiceId"
+  ]
+}

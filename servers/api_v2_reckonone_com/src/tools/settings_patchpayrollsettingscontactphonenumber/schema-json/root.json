@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "type": {
+      "description": "The type of phone number. This can either be `phone` or the phone number type id.",
+      "type": "string"
+    },
+    "areaCode": {
+      "type": "string",
+      "description": "The area code.",
+      "maxLength": 10,
+      "nullable": true,
+      "example": "02"
+    },
+    "number": {
+      "type": "string",
+      "description": "The number.",
+      "maxLength": 30,
+      "nullable": true,
+      "example": "90101234"
+    }
+  },
+  "required": [
+    "bookId",
+    "type"
+  ]
+}

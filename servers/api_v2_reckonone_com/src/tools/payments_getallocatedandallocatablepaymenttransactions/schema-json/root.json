@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "bookId": {
+      "description": "The book's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "entityId": {
+      "description": "The entity's id.",
+      "type": "string",
+      "format": "guid"
+    },
+    "payableType": {
+      "description": "The payable type.",
+      "type": "string"
+    },
+    "paymentId": {
+      "type": "string",
+      "format": "guid",
+      "nullable": true
+    }
+  },
+  "required": [
+    "bookId",
+    "entityId",
+    "payableType",
+    "paymentId"
+  ]
+}
