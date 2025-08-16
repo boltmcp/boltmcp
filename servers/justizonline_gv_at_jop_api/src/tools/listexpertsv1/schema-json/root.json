@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "from": {
+      "description": "Filter to include changes from date",
+      "type": "string",
+      "format": "date"
+    },
+    "until": {
+      "description": "Filter to include changes until date",
+      "type": "string",
+      "format": "date"
+    },
+    "type": {
+      "description": "Filter to include specific types of experts",
+      "type": "string",
+      "enum": [
+        "SV",
+        "DO"
+      ]
+    },
+    "pageNumber": {
+      "description": "Page number",
+      "type": "integer",
+      "format": "int32",
+      "default": 1
+    },
+    "pageSize": {
+      "description": "Page size",
+      "type": "integer",
+      "format": "int32",
+      "default": 25
+    }
+  },
+  "required": []
+}

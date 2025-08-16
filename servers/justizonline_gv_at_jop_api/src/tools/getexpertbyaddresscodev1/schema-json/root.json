@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "addressCode": {
+      "description": "Unique address code of an expert",
+      "type": "string"
+    }
+  },
+  "required": [
+    "addressCode"
+  ]
+}
