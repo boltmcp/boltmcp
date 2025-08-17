@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Is Active",
+      "default": true
+    },
+    "is_superuser": {
+      "type": "boolean",
+      "title": "Is Superuser",
+      "default": false
+    },
+    "theme_preference": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "title": "Theme Preference",
+      "default": "system"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    }
+  },
+  "required": [
+    "email",
+    "full_name",
+    "password"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "tag_id": {
+      "type": "string",
+      "title": "Tag Id"
+    },
+    "start_time": {
+      "description": "Start time for data aggregation (defaults to 24 hours ago)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Time"
+    },
+    "end_time": {
+      "description": "End time for data aggregation (defaults to now)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Time"
+    },
+    "aggregation": {
+      "description": "Aggregation interval (replaces both aggregation and group_by)",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "raw",
+            "1min",
+            "5min",
+            "10min",
+            "15min",
+            "30min",
+            "hourly",
+            "half_daily",
+            "daily",
+            "bi_weekly"
+          ],
+          "title": "AggregationInterval",
+          "description": "Intervalos de agregação unificados\n\nCombina tipos de agregação e intervalos de agrupamento em um único enum\npara simplicidade e consistência da API."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Aggregation"
+    },
+    "limit": {
+      "description": "Maximum number of aggregated points",
+      "type": "integer",
+      "maximum": 10000,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "chart_mode": {
+      "description": "🚀 OTIMIZAÇÃO: Retorna apenas dados essenciais para gráficos",
+      "type": "boolean",
+      "default": false,
+      "title": "Chart Mode"
+    },
+    "require_totalization": {
+      "description": "🔐 VALIDAÇÃO: Requer módulo de totalização (para funcionalidades avançadas)",
+      "type": "boolean",
+      "default": false,
+      "title": "Require Totalization"
+    }
+  },
+  "required": [
+    "tag_id"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "work_order_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Work Order Id"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "comment": {
+      "type": "string",
+      "title": "Comment",
+      "description": "Texto do comentário"
+    },
+    "is_internal": {
+      "type": "boolean",
+      "title": "Is Internal",
+      "description": "Comentário interno",
+      "default": false
+    },
+    "attachments": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array",
+      "title": "Attachments",
+      "description": "Anexos do comentário"
+    },
+    "b_work_order_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Work Order Id",
+      "description": "ID da ordem de serviço"
+    },
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id",
+      "description": "ID do usuário"
+    }
+  },
+  "required": [
+    "work_order_id",
+    "comment",
+    "b_work_order_id",
+    "user_id"
+  ]
+}

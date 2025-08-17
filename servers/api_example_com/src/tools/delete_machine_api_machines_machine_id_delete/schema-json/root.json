@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "machine_id": {
+      "type": "string",
+      "title": "Machine Id"
+    },
+    "permanent": {
+      "description": "Permanent deletion",
+      "type": "boolean",
+      "default": false,
+      "title": "Permanent"
+    }
+  },
+  "required": [
+    "machine_id"
+  ]
+}

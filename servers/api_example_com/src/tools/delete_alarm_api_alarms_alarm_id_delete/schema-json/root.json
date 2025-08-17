@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "alarm_id": {
+      "type": "string",
+      "title": "Alarm Id"
+    }
+  },
+  "required": [
+    "alarm_id"
+  ]
+}

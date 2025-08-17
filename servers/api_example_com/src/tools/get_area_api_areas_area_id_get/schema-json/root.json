@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "area_id": {
+      "type": "string",
+      "title": "Area Id"
+    }
+  },
+  "required": [
+    "area_id"
+  ]
+}

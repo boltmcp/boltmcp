@@ -1,0 +1,211 @@
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "title": "Title",
+      "description": "Título da ordem de serviço"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description",
+      "description": "Descrição detalhada"
+    },
+    "type": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id",
+      "description": "ID da empresa"
+    },
+    "site_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Site Id",
+      "description": "ID do site"
+    },
+    "area_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Area Id",
+      "description": "ID da área"
+    },
+    "machine_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Machine Id",
+      "description": "ID da máquina"
+    },
+    "assigned_to": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned To",
+      "description": "Usuário responsável"
+    },
+    "assigned_team": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Assigned Team",
+      "description": "Equipe responsável"
+    },
+    "estimated_hours": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Estimated Hours",
+      "description": "Horas estimadas"
+    },
+    "estimated_cost": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Estimated Cost",
+      "description": "Custo estimado"
+    },
+    "scheduled_start": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Scheduled Start",
+      "description": "Início programado"
+    },
+    "scheduled_end": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Scheduled End",
+      "description": "Fim programado"
+    },
+    "requires_approval": {
+      "type": "boolean",
+      "title": "Requires Approval",
+      "description": "Requer aprovação",
+      "default": false
+    },
+    "kanban_position": {
+      "type": "integer",
+      "title": "Kanban Position",
+      "description": "Posição no quadro Kanban",
+      "default": 0
+    },
+    "kanban_column": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Kanban Column",
+      "description": "Coluna customizada"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Tags",
+      "description": "Tags da ordem"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `custom_fields` to the tool, first call the tool `expandSchema` with \"/properties/custom_fields\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Campos customizados</property-description>",
+      "additionalProperties": true
+    },
+    "created_by": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Created By",
+      "description": "Usuário que criou a ordem"
+    }
+  },
+  "required": [
+    "title",
+    "company_id",
+    "created_by"
+  ]
+}

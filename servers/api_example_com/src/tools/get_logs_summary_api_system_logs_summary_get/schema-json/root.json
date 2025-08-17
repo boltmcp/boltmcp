@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "days": {
+      "description": "Number of days to analyze",
+      "type": "integer",
+      "maximum": 90,
+      "minimum": 1,
+      "default": 7,
+      "title": "Days"
+    }
+  },
+  "required": []
+}

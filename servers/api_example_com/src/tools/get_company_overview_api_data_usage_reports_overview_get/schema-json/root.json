@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Company ID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    }
+  },
+  "required": []
+}

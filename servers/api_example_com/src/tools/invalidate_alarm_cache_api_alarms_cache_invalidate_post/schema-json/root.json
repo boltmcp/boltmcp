@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "tag_id": {
+      "description": "Tag ID para invalidar cache",
+      "type": "string",
+      "title": "Tag Id"
+    },
+    "alarm_type": {
+      "description": "Tipo de alarme específico",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alarm Type"
+    },
+    "condition": {
+      "description": "Condição específica",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Condition"
+    }
+  },
+  "required": [
+    "tag_id"
+  ]
+}

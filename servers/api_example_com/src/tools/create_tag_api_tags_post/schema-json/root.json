@@ -1,0 +1,215 @@
+{
+  "type": "object",
+  "properties": {
+    "symbolic_name": {
+      "type": "string",
+      "title": "Symbolic Name"
+    },
+    "technical_name": {
+      "type": "string",
+      "title": "Technical Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "data_source": {
+      "type": "string",
+      "title": "Data Source"
+    },
+    "machine_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Machine Id"
+    },
+    "manufacturer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Manufacturer"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Model"
+    },
+    "unit_engineering": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Unit Engineering"
+    },
+    "data_source_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Data Source Id"
+    },
+    "digital_mapping": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Digital Mapping"
+    },
+    "is_digital": {
+      "type": "boolean",
+      "title": "Is Digital",
+      "default": false
+    },
+    "alert_upper_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alert Upper Limit"
+    },
+    "alert_lower_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alert Lower Limit"
+    },
+    "alert_enabled": {
+      "type": "boolean",
+      "title": "Alert Enabled",
+      "default": false
+    },
+    "alarm_upper_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alarm Upper Limit"
+    },
+    "alarm_lower_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alarm Lower Limit"
+    },
+    "alarm_enabled": {
+      "type": "boolean",
+      "title": "Alarm Enabled",
+      "default": false
+    },
+    "emergency_upper_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Emergency Upper Limit"
+    },
+    "emergency_lower_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Emergency Lower Limit"
+    },
+    "emergency_enabled": {
+      "type": "boolean",
+      "title": "Emergency Enabled",
+      "default": false
+    },
+    "alarm_deadband": {
+      "type": "number",
+      "title": "Alarm Deadband",
+      "default": 0.1
+    },
+    "alarm_delay_seconds": {
+      "type": "integer",
+      "title": "Alarm Delay Seconds",
+      "default": 5
+    },
+    "mqtt_topic": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Mqtt Topic"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    }
+  },
+  "required": [
+    "symbolic_name",
+    "technical_name",
+    "description",
+    "data_source"
+  ]
+}

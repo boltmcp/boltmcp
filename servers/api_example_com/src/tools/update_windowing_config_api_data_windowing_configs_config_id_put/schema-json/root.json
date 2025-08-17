@@ -1,0 +1,276 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Config Id"
+    },
+    "active": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active"
+    },
+    "hidden": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hidden"
+    },
+    "marked_for_deletion": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Marked For Deletion"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 200
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "trigger_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "sensor_condition",
+            "time_based",
+            "manual"
+          ],
+          "title": "WindowTriggerType",
+          "description": "Tipos de trigger para janelamento"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "trigger_sensor_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Sensor Id"
+    },
+    "trigger_condition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "equals",
+            "not_equals",
+            "greater_than",
+            "greater_equal",
+            "less_than",
+            "less_equal",
+            "between",
+            "changed"
+          ],
+          "title": "WindowCondition",
+          "description": "Condições de comparação"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "trigger_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value"
+    },
+    "trigger_value_secondary": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value Secondary"
+    },
+    "time_interval_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Interval Minutes"
+    },
+    "time_schedule": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Schedule"
+    },
+    "window_duration_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Window Duration Minutes"
+    },
+    "pre_trigger_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pre Trigger Minutes"
+    },
+    "post_trigger_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Post Trigger Minutes"
+    },
+    "monitored_sensors": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monitored Sensors"
+    },
+    "min_data_quality": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Min Data Quality"
+    },
+    "max_gap_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Max Gap Minutes"
+    },
+    "store_baseline": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Store Baseline"
+    },
+    "baseline_conditions": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Baseline Conditions"
+    },
+    "enabled": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enabled"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

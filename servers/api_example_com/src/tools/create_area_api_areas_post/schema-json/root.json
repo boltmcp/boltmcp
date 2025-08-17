@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "site_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Site Id"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "site_id"
+  ]
+}

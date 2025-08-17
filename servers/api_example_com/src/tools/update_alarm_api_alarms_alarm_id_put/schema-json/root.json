@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "properties": {
+    "alarm_id": {
+      "type": "string",
+      "title": "Alarm Id"
+    },
+    "active": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active"
+    },
+    "hidden": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hidden"
+    },
+    "marked_for_deletion": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Marked For Deletion"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "active",
+            "acknowledged",
+            "cleared",
+            "suppressed"
+          ],
+          "title": "AlarmStatus",
+          "description": "Status do alarme"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "acknowledged_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Acknowledged Time"
+    },
+    "cleared_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cleared Time"
+    },
+    "acknowledged_by": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Acknowledged By"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Message"
+    },
+    "priority": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Priority"
+    }
+  },
+  "required": [
+    "alarm_id"
+  ]
+}

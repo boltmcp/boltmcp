@@ -1,0 +1,199 @@
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 200,
+      "title": "Name",
+      "description": "Nome da configuração"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description",
+      "description": "Descrição da configuração"
+    },
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id",
+      "description": "ID da empresa"
+    },
+    "trigger_type": {
+      "type": "string"
+    },
+    "trigger_sensor_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Sensor Id",
+      "description": "ID do sensor que dispara"
+    },
+    "trigger_condition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "equals",
+            "not_equals",
+            "greater_than",
+            "greater_equal",
+            "less_than",
+            "less_equal",
+            "between",
+            "changed"
+          ],
+          "title": "WindowCondition",
+          "description": "Condições de comparação"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Condição do trigger"
+    },
+    "trigger_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value",
+      "description": "Valor de comparação"
+    },
+    "trigger_value_secondary": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value Secondary",
+      "description": "Valor secundário (para BETWEEN)"
+    },
+    "time_interval_minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Interval Minutes",
+      "description": "Intervalo em minutos"
+    },
+    "time_schedule": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Schedule",
+      "description": "Agendamento de tempo"
+    },
+    "window_duration_minutes": {
+      "type": "integer",
+      "title": "Window Duration Minutes",
+      "description": "Duração da janela em minutos",
+      "default": 60
+    },
+    "pre_trigger_minutes": {
+      "type": "integer",
+      "title": "Pre Trigger Minutes",
+      "description": "Minutos antes do trigger",
+      "default": 0
+    },
+    "post_trigger_minutes": {
+      "type": "integer",
+      "title": "Post Trigger Minutes",
+      "description": "Minutos após o trigger",
+      "default": 0
+    },
+    "monitored_sensors": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Monitored Sensors",
+      "description": "IDs dos sensores monitorados"
+    },
+    "min_data_quality": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Min Data Quality",
+      "description": "% mínima de qualidade dos dados",
+      "default": "80.0"
+    },
+    "max_gap_minutes": {
+      "type": "integer",
+      "title": "Max Gap Minutes",
+      "description": "Máximo gap entre dados em minutos",
+      "default": 5
+    },
+    "store_baseline": {
+      "type": "boolean",
+      "title": "Store Baseline",
+      "description": "Armazenar como baseline",
+      "default": true
+    },
+    "baseline_conditions": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `baseline_conditions` to the tool, first call the tool `expandSchema` with \"/properties/baseline_conditions\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Condições para baseline</property-description>",
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Configuração habilitada",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "company_id"
+  ]
+}

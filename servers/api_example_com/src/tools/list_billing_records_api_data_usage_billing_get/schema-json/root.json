@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Company ID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "billing_period": {
+      "description": "Billing period (YYYY-MM)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Billing Period"
+    },
+    "is_processed": {
+      "description": "Filter by processed status",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Is Processed"
+    }
+  },
+  "required": []
+}

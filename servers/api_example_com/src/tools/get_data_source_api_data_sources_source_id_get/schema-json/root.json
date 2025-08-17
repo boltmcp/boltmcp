@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "title": "Source Id"
+    }
+  },
+  "required": [
+    "source_id"
+  ]
+}

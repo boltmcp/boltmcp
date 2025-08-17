@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Items per page",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "type": {
+      "description": "Filter by type",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "mqtt",
+            "rest",
+            "database",
+            "opc",
+            "modbus",
+            "websocket",
+            "file"
+          ],
+          "title": "DataSourceType",
+          "description": "Tipos de fonte de dados suportados"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Type"
+    },
+    "search": {
+      "description": "Search by name or description",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "active_only": {
+      "description": "Show only active data sources",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    },
+    "company_id": {
+      "description": "Filter by company UUID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    }
+  },
+  "required": []
+}

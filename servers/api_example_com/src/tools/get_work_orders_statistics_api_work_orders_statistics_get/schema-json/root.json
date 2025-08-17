@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "ID da empresa (obrigatório se usuário não for superuser)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "start_date": {
+      "description": "Data inicial",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "Data final",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    }
+  },
+  "required": []
+}

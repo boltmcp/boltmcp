@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "title": "Company Id"
+    },
+    "billing_period": {
+      "description": "Billing period (YYYY-MM)",
+      "type": "string",
+      "title": "Billing Period"
+    },
+    "contracted_credits": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Contracted Credits"
+    },
+    "auto_renew": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Auto Renew"
+    },
+    "notification_thresholds": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Notification Thresholds"
+    },
+    "active": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active"
+    }
+  },
+  "required": [
+    "company_id",
+    "billing_period"
+  ]
+}

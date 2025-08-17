@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "mqtt",
+        "rest",
+        "database",
+        "opc",
+        "modbus",
+        "websocket",
+        "file"
+      ],
+      "title": "DataSourceType",
+      "description": "Tipos de fonte de dados suportados"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "config": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `config` to the tool, first call the tool `expandSchema` with \"/properties/config\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "collection_interval": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 86400,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Collection Interval",
+      "description": "Intervalo de coleta de dados em segundos",
+      "default": 60
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "company_id"
+  ]
+}

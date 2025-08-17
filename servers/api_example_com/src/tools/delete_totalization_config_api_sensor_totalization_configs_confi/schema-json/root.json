@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "title": "Config Id"
+    },
+    "hard_delete": {
+      "description": "Deletar permanentemente (apenas superuser)",
+      "type": "boolean",
+      "default": false,
+      "title": "Hard Delete"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

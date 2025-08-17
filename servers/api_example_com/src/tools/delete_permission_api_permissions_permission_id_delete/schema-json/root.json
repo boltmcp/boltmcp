@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "permission_id": {
+      "type": "string",
+      "title": "Permission Id"
+    }
+  },
+  "required": [
+    "permission_id"
+  ]
+}

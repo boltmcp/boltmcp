@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "module_key": {
+      "type": "string",
+      "maxLength": 50,
+      "title": "Module Key",
+      "description": "Chave do módulo"
+    },
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Módulo habilitado",
+      "default": true
+    },
+    "settings": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `settings` to the tool, first call the tool `expandSchema` with \"/properties/settings\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Configurações específicas</property-description>",
+      "additionalProperties": true
+    },
+    "license_expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "License Expires At",
+      "description": "Data de expiração da licença"
+    },
+    "max_users": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Max Users",
+      "description": "Máximo de usuários"
+    },
+    "max_records": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Max Records",
+      "description": "Máximo de registros"
+    }
+  },
+  "required": [
+    "company_id",
+    "module_key"
+  ]
+}

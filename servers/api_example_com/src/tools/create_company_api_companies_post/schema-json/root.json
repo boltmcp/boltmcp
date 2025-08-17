@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "cnpj": {
+      "type": "string",
+      "title": "Cnpj"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "timezone": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Timezone",
+      "default": "America/Sao_Paulo"
+    },
+    "logo_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Logo Url"
+    },
+    "primary_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Primary Color",
+      "default": "#1976d2"
+    },
+    "secondary_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Secondary Color",
+      "default": "#424242"
+    },
+    "accent_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accent Color",
+      "default": "#ff4081"
+    },
+    "background_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Background Color",
+      "default": "#fafafa"
+    },
+    "text_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Text Color",
+      "default": "#212121"
+    },
+    "sidebar_color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sidebar Color"
+    }
+  },
+  "required": [
+    "name",
+    "cnpj",
+    "address"
+  ]
+}

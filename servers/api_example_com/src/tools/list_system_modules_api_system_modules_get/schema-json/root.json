@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Número da página",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Itens por página",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "search": {
+      "description": "Buscar por nome ou chave",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "category": {
+      "description": "Filtrar por categoria",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Category"
+    },
+    "available_only": {
+      "description": "Apenas módulos disponíveis",
+      "type": "boolean",
+      "default": true,
+      "title": "Available Only"
+    }
+  },
+  "required": []
+}

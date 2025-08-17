@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "price_per_gb_input": {
+      "type": "number",
+      "minimum": 0,
+      "title": "Price Per Gb Input",
+      "default": 0.5
+    },
+    "price_per_gb_output": {
+      "type": "number",
+      "minimum": 0,
+      "title": "Price Per Gb Output",
+      "default": 0.75
+    },
+    "price_per_gb_storage": {
+      "type": "number",
+      "minimum": 0,
+      "title": "Price Per Gb Storage",
+      "default": 0.25
+    },
+    "price_per_1k_requests": {
+      "type": "number",
+      "minimum": 0,
+      "title": "Price Per 1K Requests",
+      "default": 0.05
+    },
+    "currency": {
+      "type": "string",
+      "maxLength": 3,
+      "title": "Currency",
+      "default": "BRL"
+    },
+    "monthly_limit_gb": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly Limit Gb"
+    },
+    "alert_threshold_percentage": {
+      "type": "number",
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Alert Threshold Percentage",
+      "default": 80
+    },
+    "storage_calculation_type": {
+      "type": "string",
+      "pattern": "^(snapshot|accumulated)$",
+      "title": "Storage Calculation Type",
+      "default": "snapshot"
+    },
+    "storage_billing_day": {
+      "type": "integer",
+      "maximum": 31,
+      "minimum": 1,
+      "title": "Storage Billing Day",
+      "default": 1
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

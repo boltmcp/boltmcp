@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Config Id"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

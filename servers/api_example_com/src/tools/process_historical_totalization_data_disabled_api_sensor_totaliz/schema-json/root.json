@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "config_ids": {
+      "description": "IDs das configurações específicas (todas se não especificado)",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Ids"
+    },
+    "days_back": {
+      "description": "Quantos dias para trás processar",
+      "type": "integer",
+      "maximum": 365,
+      "minimum": 1,
+      "default": 30,
+      "title": "Days Back"
+    },
+    "force_reprocess": {
+      "description": "Reprocessar mesmo se dados já existem",
+      "type": "boolean",
+      "default": false,
+      "title": "Force Reprocess"
+    }
+  },
+  "required": []
+}

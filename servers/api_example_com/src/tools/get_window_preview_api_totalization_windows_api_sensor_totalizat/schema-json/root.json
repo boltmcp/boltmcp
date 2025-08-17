@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "title": "Config Id"
+    },
+    "preview_days": {
+      "description": "Dias para preview",
+      "type": "integer",
+      "maximum": 30,
+      "minimum": 1,
+      "default": 7,
+      "title": "Preview Days"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

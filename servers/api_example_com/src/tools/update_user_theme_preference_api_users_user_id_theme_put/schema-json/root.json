@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "title": "User Id"
+    },
+    "theme_preference": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "title": "Theme Preference"
+    }
+  },
+  "required": [
+    "user_id",
+    "theme_preference"
+  ]
+}

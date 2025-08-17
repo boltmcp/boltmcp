@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Config Id"
+    },
+    "trigger_timestamp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Timestamp",
+      "description": "Timestamp do trigger"
+    },
+    "trigger_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value",
+      "description": "Valor do trigger"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Notes",
+      "description": "Notas da execução"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

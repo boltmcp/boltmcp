@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "title": "Company Id"
+    },
+    "period": {
+      "description": "Period YYYY-MM (default: current month)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Period"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

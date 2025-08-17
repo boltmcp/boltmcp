@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "properties": {
+    "window_type": {
+      "type": "string",
+      "title": "Window Type"
+    },
+    "fixed_hour_start": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour Start"
+    },
+    "fixed_hour_end": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour End"
+    },
+    "daily_start_time": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily Start Time"
+    },
+    "daily_end_time": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily End Time"
+    },
+    "weekly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Start Day"
+    },
+    "weekly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly End Day"
+    },
+    "monthly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly Start Day"
+    },
+    "monthly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly End Day"
+    },
+    "custom_shifts": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nome do turno"
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "Start",
+                "description": "Horário de início (HH:MM)"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "End",
+                "description": "Horário de fim (HH:MM)"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "start",
+              "end"
+            ],
+            "title": "CustomShift",
+            "description": "Schema para turno customizado"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Custom Shifts"
+    },
+    "window_timezone": {
+      "type": "string",
+      "title": "Window Timezone",
+      "default": "UTC"
+    }
+  },
+  "required": [
+    "window_type"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "title": "User Id"
+    },
+    "permanent": {
+      "description": "Permanent deletion",
+      "type": "boolean",
+      "default": false,
+      "title": "Permanent"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

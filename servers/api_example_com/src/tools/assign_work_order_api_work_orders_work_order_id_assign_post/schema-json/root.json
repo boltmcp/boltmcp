@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "work_order_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Work Order Id"
+    },
+    "assigned_to": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned To",
+      "description": "Usuário responsável"
+    },
+    "assigned_team": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned Team",
+      "description": "Equipe responsável"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Notes",
+      "description": "Notas da atribuição"
+    }
+  },
+  "required": [
+    "work_order_id"
+  ]
+}

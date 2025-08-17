@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "title": "Config Id"
+    },
+    "apply_operation_recommendation": {
+      "description": "Aplicar recomendação de operação",
+      "type": "boolean",
+      "default": true,
+      "title": "Apply Operation Recommendation"
+    },
+    "apply_parameter_adjustments": {
+      "description": "Aplicar ajustes de parâmetros",
+      "type": "boolean",
+      "default": true,
+      "title": "Apply Parameter Adjustments"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "config_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Ids",
+      "description": "IDs específicos para executar (opcional)"
+    },
+    "force_execution": {
+      "type": "boolean",
+      "title": "Force Execution",
+      "description": "Forçar execução mesmo fora do horário",
+      "default": false
+    },
+    "custom_period_start": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Custom Period Start",
+      "description": "Período customizado - início"
+    },
+    "custom_period_end": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Custom Period End",
+      "description": "Período customizado - fim"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "description": "Filtrar por configuração específica",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Id"
+    },
+    "include_stats": {
+      "description": "Incluir estatísticas dos dados",
+      "type": "boolean",
+      "default": true,
+      "title": "Include Stats"
+    },
+    "active_only": {
+      "description": "Apenas sensores ativos",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    },
+    "limit": {
+      "description": "Limite de registros",
+      "type": "integer",
+      "maximum": 500,
+      "minimum": 1,
+      "default": 50,
+      "title": "Limit"
+    },
+    "offset": {
+      "description": "Offset para paginação",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    }
+  },
+  "required": []
+}

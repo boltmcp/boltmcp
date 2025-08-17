@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "layout_id": {
+      "type": "string",
+      "title": "Layout Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "layout_data": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Layout Data"
+    },
+    "visibility": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Visibility"
+    }
+  },
+  "required": [
+    "layout_id"
+  ]
+}

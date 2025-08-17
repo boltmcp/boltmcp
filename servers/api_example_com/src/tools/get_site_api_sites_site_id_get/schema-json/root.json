@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "site_id": {
+      "type": "string",
+      "title": "Site Id"
+    }
+  },
+  "required": [
+    "site_id"
+  ]
+}

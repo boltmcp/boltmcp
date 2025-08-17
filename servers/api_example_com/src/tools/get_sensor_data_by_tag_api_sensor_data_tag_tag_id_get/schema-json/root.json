@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "tag_id": {
+      "type": "string",
+      "title": "Tag Id"
+    },
+    "start_time": {
+      "description": "Start time filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Time"
+    },
+    "end_time": {
+      "description": "End time filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Time"
+    },
+    "limit": {
+      "description": "Maximum number of records (auto-adjusted for long periods)",
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": 1000,
+      "title": "Limit"
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    },
+    "chart_mode": {
+      "description": "🚀 OTIMIZAÇÃO: Retorna apenas dados essenciais para gráficos (timestamp, value, quality)",
+      "type": "boolean",
+      "default": false,
+      "title": "Chart Mode"
+    }
+  },
+  "required": [
+    "tag_id"
+  ]
+}

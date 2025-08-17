@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "subarea_id": {
+      "type": "string",
+      "title": "Subarea Id"
+    }
+  },
+  "required": [
+    "subarea_id"
+  ]
+}

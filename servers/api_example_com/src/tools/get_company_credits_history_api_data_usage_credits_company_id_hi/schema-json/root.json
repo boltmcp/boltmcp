@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "title": "Company Id"
+    },
+    "months": {
+      "description": "Number of months to retrieve",
+      "type": "integer",
+      "maximum": 24,
+      "minimum": 1,
+      "default": 6,
+      "title": "Months"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

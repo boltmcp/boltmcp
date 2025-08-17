@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "ID da empresa (obrigatório se usuário não for superuser)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "site_id": {
+      "description": "Filtrar por site",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Site Id"
+    },
+    "assigned_to": {
+      "description": "Filtrar por responsável",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned To"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Número da página",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Itens por página",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "company_id": {
+      "description": "Filtrar por empresa",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "enabled_only": {
+      "description": "Apenas configurações habilitadas",
+      "type": "boolean",
+      "default": true,
+      "title": "Enabled Only"
+    },
+    "search": {
+      "description": "Buscar por nome ou descrição",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": []
+}
