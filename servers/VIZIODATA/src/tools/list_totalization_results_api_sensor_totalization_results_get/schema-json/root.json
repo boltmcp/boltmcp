@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "description": "ID da configuração específica",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Id"
+    },
+    "config_ids": {
+      "description": "IDs das configurações (múltiplas)",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Ids"
+    },
+    "start_date": {
+      "description": "Data de início (ISO format)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "Data de fim (ISO format)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    },
+    "start_time": {
+      "description": "Início do período (alias para start_date)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Time"
+    },
+    "end_time": {
+      "description": "Fim do período (alias para end_date)",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Time"
+    },
+    "trigger_source": {
+      "description": "Filtrar por origem do trigger",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Source"
+    },
+    "min_value": {
+      "description": "Valor mínimo totalizado",
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Min Value"
+    },
+    "max_value": {
+      "description": "Valor máximo totalizado",
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Max Value"
+    },
+    "per_page": {
+      "description": "Registros por página",
+      "type": "integer",
+      "maximum": 10000,
+      "minimum": 1,
+      "default": 100,
+      "title": "Per Page"
+    },
+    "limit": {
+      "description": "Limite de registros (alias para per_page)",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 10000,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Limit"
+    },
+    "offset": {
+      "description": "Offset para paginação",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    },
+    "page": {
+      "description": "Número da página",
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Page"
+    },
+    "chart_mode": {
+      "description": "Modo chart - retorna dados simplificados",
+      "type": "boolean",
+      "default": false,
+      "title": "Chart Mode"
+    }
+  },
+  "required": []
+}

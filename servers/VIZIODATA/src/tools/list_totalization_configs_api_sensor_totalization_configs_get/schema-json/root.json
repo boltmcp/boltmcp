@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "active_only": {
+      "description": "Mostrar apenas configurações ativas",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    },
+    "trigger_type": {
+      "description": "Filtrar por tipo de trigger",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "time_based",
+            "sensor_based"
+          ],
+          "title": "TotalizationTriggerType",
+          "description": "Tipos de trigger para totalização"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Type"
+    },
+    "operation": {
+      "description": "Filtrar por operação",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "sum",
+            "count",
+            "average",
+            "min",
+            "max",
+            "integral",
+            "time_running",
+            "time_stopped",
+            "time_in_state",
+            "state_changes",
+            "uptime_percentage",
+            "energy_consumption",
+            "energy_cost"
+          ],
+          "title": "TotalizationOperation",
+          "description": "Operações de totalização disponíveis"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Operation"
+    },
+    "source_tag_id": {
+      "description": "Filtrar por sensor origem",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Source Tag Id"
+    },
+    "limit": {
+      "description": "Limite de registros",
+      "type": "integer",
+      "maximum": 500,
+      "minimum": 1,
+      "default": 50,
+      "title": "Limit"
+    },
+    "offset": {
+      "description": "Offset para paginação",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    }
+  },
+  "required": []
+}

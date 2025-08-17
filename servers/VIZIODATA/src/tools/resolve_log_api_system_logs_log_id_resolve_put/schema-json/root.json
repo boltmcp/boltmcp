@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "log_id": {
+      "type": "string",
+      "title": "Log Id"
+    },
+    "resolved": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Resolved"
+    },
+    "resolved_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Resolved By"
+    }
+  },
+  "required": [
+    "log_id"
+  ]
+}

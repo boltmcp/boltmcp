@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "adjustment_id": {
+      "type": "string",
+      "title": "Adjustment Id"
+    }
+  },
+  "required": [
+    "adjustment_id"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "module_key": {
+      "type": "string",
+      "title": "Module Key"
+    }
+  },
+  "required": [
+    "module_key"
+  ]
+}

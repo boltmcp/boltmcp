@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Número da página",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Itens por página",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "config_id": {
+      "description": "Filtrar por configuração",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Id"
+    },
+    "company_id": {
+      "description": "Filtrar por empresa",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "state": {
+      "description": "Filtrar por estado",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "waiting",
+            "active",
+            "completed",
+            "cancelled"
+          ],
+          "title": "WindowState",
+          "description": "Estados da janela"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State"
+    },
+    "is_baseline": {
+      "description": "Apenas baselines",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Is Baseline"
+    },
+    "start_date": {
+      "description": "Data inicial",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "Data final",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    }
+  },
+  "required": []
+}

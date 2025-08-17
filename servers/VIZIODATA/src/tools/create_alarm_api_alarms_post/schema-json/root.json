@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "tag_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Tag Id"
+    },
+    "alarm_type": {
+      "type": "string",
+      "enum": [
+        "alert",
+        "alarm",
+        "emergency"
+      ],
+      "title": "AlarmType",
+      "description": "Tipos de alarme"
+    },
+    "condition_type": {
+      "type": "string",
+      "enum": [
+        "high",
+        "low",
+        "normal"
+      ],
+      "title": "ConditionType",
+      "description": "Tipos de condição do alarme"
+    },
+    "current_value": {
+      "type": "number",
+      "title": "Current Value"
+    },
+    "limit_value": {
+      "type": "number",
+      "title": "Limit Value"
+    },
+    "status": {
+      "type": "string"
+    },
+    "alarm_time": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Alarm Time"
+    },
+    "acknowledged_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Acknowledged Time"
+    },
+    "cleared_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cleared Time"
+    },
+    "acknowledged_by": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Acknowledged By"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    },
+    "priority": {
+      "type": "integer",
+      "title": "Priority",
+      "default": 1
+    }
+  },
+  "required": [
+    "tag_id",
+    "alarm_type",
+    "condition_type",
+    "current_value",
+    "limit_value",
+    "alarm_time",
+    "message"
+  ]
+}

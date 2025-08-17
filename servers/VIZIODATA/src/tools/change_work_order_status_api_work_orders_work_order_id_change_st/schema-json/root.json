@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "work_order_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Work Order Id"
+    },
+    "new_status": {
+      "type": "string"
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reason",
+      "description": "Motivo da mudança"
+    },
+    "kanban_position": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Kanban Position",
+      "description": "Nova posição no Kanban"
+    }
+  },
+  "required": [
+    "work_order_id",
+    "new_status"
+  ]
+}

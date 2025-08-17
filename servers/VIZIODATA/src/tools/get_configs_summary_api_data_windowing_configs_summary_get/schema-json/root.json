@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Filtrar por empresa",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    }
+  },
+  "required": []
+}

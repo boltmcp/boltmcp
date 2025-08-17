@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "tag_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Tag Id"
+    }
+  },
+  "required": [
+    "tag_id"
+  ]
+}

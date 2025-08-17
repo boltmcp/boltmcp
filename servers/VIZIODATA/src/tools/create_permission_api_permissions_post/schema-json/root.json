@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "permission_type": {
+      "type": "string",
+      "enum": [
+        "company",
+        "site"
+      ],
+      "title": "PermissionType",
+      "description": "Tipos de permissão por entidade"
+    },
+    "entity_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Entity Id"
+    },
+    "permission_level": {
+      "type": "string",
+      "enum": [
+        "view",
+        "edit",
+        "admin"
+      ],
+      "title": "PermissionLevel",
+      "description": "Níveis de permissão"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    }
+  },
+  "required": [
+    "user_id",
+    "permission_type",
+    "entity_id",
+    "permission_level"
+  ]
+}

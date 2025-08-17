@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "title": "Layout Data",
+  "description": "Estrutura do layout em JSON",
+  "properties": {}
+}

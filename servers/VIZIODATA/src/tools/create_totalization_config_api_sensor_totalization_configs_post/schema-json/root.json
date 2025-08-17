@@ -1,0 +1,421 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 3,
+      "title": "Name",
+      "description": "Nome descritivo da totalização"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 500
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description",
+      "description": "Descrição detalhada"
+    },
+    "source_tag_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Source Tag Id",
+      "description": "ID do sensor que será totalizado"
+    },
+    "trigger_type": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string"
+    },
+    "time_interval": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "minute",
+            "hour",
+            "day",
+            "week",
+            "month"
+          ],
+          "title": "TotalizationTimeInterval",
+          "description": "Intervalos de tempo para totalização"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Intervalo de tempo"
+    },
+    "time_interval_value": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 60,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Interval Value",
+      "description": "Valor do intervalo (ex: a cada 2 horas)",
+      "default": 1
+    },
+    "window_type": {
+      "type": "string"
+    },
+    "fixed_hour_start": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 23,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour Start",
+      "description": "Hora de início para janelas fixas (0-23)"
+    },
+    "fixed_hour_end": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 23,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour End",
+      "description": "Hora de fim para janelas fixas (0-23)"
+    },
+    "daily_start_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily Start Time",
+      "description": "Horário de início diário (HH:MM)"
+    },
+    "daily_end_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily End Time",
+      "description": "Horário de fim diário (HH:MM)"
+    },
+    "weekly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 6,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Start Day",
+      "description": "Dia da semana início (0=segunda, 6=domingo)"
+    },
+    "weekly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 6,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly End Day",
+      "description": "Dia da semana fim (0=segunda, 6=domingo)"
+    },
+    "monthly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 31,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly Start Day",
+      "description": "Dia do mês início (1-31)"
+    },
+    "monthly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 31,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly End Day",
+      "description": "Dia do mês fim (1-31)"
+    },
+    "custom_shifts": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nome do turno"
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "Start",
+                "description": "Horário de início (HH:MM)"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "End",
+                "description": "Horário de fim (HH:MM)"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "start",
+              "end"
+            ],
+            "title": "CustomShift",
+            "description": "Schema para turno customizado"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Custom Shifts",
+      "description": "Turnos customizados"
+    },
+    "window_timezone": {
+      "type": "string",
+      "title": "Window Timezone",
+      "description": "Timezone para cálculo das janelas",
+      "default": "UTC"
+    },
+    "allow_overlap": {
+      "type": "boolean",
+      "title": "Allow Overlap",
+      "description": "Permitir janelas sobrepostas",
+      "default": false
+    },
+    "gap_tolerance_minutes": {
+      "type": "integer",
+      "maximum": 60,
+      "minimum": 0,
+      "title": "Gap Tolerance Minutes",
+      "description": "Tolerância para gaps entre janelas (minutos)",
+      "default": 0
+    },
+    "running_condition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Running Condition",
+      "description": "Condição para considerar 'funcionando' (ex: '> 0.5')"
+    },
+    "running_threshold": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Running Threshold",
+      "description": "Valor limite para considerar funcionando"
+    },
+    "state_values": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State Values",
+      "description": "Mapeamento valor->estado: {'1': 'running', '0': 'stopped', '3': 'maintenance'}"
+    },
+    "idle_timeout_minutes": {
+      "type": "integer",
+      "maximum": 60,
+      "minimum": 1,
+      "title": "Idle Timeout Minutes",
+      "description": "Timeout para considerar parado (minutos)",
+      "default": 5
+    },
+    "equipment_power_kw": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Equipment Power Kw",
+      "description": "Potência do equipamento em kW"
+    },
+    "energy_price_kwh": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Energy Price Kwh",
+      "description": "Preço da energia em R$/kWh"
+    },
+    "energy_tariff_config": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Energy Tariff Config",
+      "description": "Configuração de tarifas por horário"
+    },
+    "trigger_tag_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Tag Id",
+      "description": "ID do sensor que dispara a totalização"
+    },
+    "trigger_condition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "==",
+            "!=",
+            ">",
+            ">=",
+            "<",
+            "<="
+          ],
+          "title": "TotalizationCondition",
+          "description": "Condições para trigger baseado em sensor"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Condição do trigger"
+    },
+    "trigger_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value",
+      "description": "Valor que dispara a totalização"
+    },
+    "reset_on_trigger": {
+      "type": "boolean",
+      "title": "Reset On Trigger",
+      "description": "Reset após cada totalização",
+      "default": true
+    },
+    "min_samples": {
+      "type": "integer",
+      "minimum": 1,
+      "title": "Min Samples",
+      "description": "Mínimo de amostras para calcular",
+      "default": 1
+    },
+    "quality_filter": {
+      "type": "string",
+      "title": "Quality Filter",
+      "description": "Filtrar por qualidade dos dados",
+      "default": "good"
+    },
+    "store_intermediate_values": {
+      "type": "boolean",
+      "title": "Store Intermediate Values",
+      "description": "Armazenar valores intermediários",
+      "default": false
+    },
+    "precision_digits": {
+      "type": "integer",
+      "maximum": 6,
+      "minimum": 0,
+      "title": "Precision Digits",
+      "description": "Precisão decimal do resultado",
+      "default": 2
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "description": "Configuração ativa",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "source_tag_id",
+    "trigger_type"
+  ]
+}

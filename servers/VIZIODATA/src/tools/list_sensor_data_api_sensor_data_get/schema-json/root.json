@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "tag_ids": {
+      "description": "Comma-separated tag IDs",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tag Ids"
+    },
+    "start_time": {
+      "description": "Start time filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Time"
+    },
+    "end_time": {
+      "description": "End time filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Time"
+    },
+    "quality": {
+      "description": "Data quality filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "good",
+            "bad",
+            "uncertain",
+            "offline"
+          ],
+          "title": "DataQuality",
+          "description": "Qualidade do dado do sensor"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Quality"
+    },
+    "source": {
+      "description": "Data source filter",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Source"
+    },
+    "limit": {
+      "description": "Number of records to return (auto-adjusted for long periods)",
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": 1000,
+      "title": "Limit"
+    },
+    "offset": {
+      "description": "Number of records to skip",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    }
+  },
+  "required": []
+}

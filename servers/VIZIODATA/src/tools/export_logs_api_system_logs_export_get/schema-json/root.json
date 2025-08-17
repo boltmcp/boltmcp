@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "service": {
+      "description": "Filter by service",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Service"
+    },
+    "level": {
+      "description": "Filter by log level",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Level"
+    },
+    "start_date": {
+      "description": "Start date (YYYY-MM-DD)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "End date (YYYY-MM-DD)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    }
+  },
+  "required": []
+}

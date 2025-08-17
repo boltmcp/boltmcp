@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "company_id"
+  ]
+}

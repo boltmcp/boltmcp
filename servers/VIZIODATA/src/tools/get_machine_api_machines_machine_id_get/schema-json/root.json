@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "machine_id": {
+      "type": "string",
+      "title": "Machine Id"
+    }
+  },
+  "required": [
+    "machine_id"
+  ]
+}

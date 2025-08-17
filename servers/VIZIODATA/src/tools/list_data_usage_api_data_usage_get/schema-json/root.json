@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Company ID filter",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "user_id": {
+      "description": "User ID filter",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    },
+    "usage_type": {
+      "description": "Usage type filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "input",
+            "output",
+            "storage"
+          ],
+          "title": "DataUsageTypeEnum",
+          "description": "Tipos de usage de dados"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Usage Type"
+    },
+    "endpoint": {
+      "description": "Endpoint filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "sensor_data_create",
+            "sensor_data_list",
+            "sensor_data_aggregated",
+            "realtime_websocket",
+            "mqtt_publish",
+            "mqtt_subscribe",
+            "file_upload",
+            "file_download",
+            "api_call",
+            "dashboard_load",
+            "report_generation"
+          ],
+          "title": "DataUsageEndpointEnum",
+          "description": "Endpoints/serviços que geram usage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Endpoint"
+    },
+    "start_date": {
+      "description": "Start date filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "End date filter",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    },
+    "billing_period": {
+      "description": "Billing period (YYYY-MM)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Billing Period"
+    },
+    "page": {
+      "description": "Page number",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Items per page",
+      "type": "integer",
+      "maximum": 500,
+      "minimum": 1,
+      "default": 50,
+      "title": "Per Page"
+    }
+  },
+  "required": []
+}

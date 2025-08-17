@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "use_mqtt": {
+      "description": "Send via MQTT (recommended)",
+      "type": "boolean",
+      "default": true,
+      "title": "Use Mqtt"
+    },
+    "tag_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Tag Id"
+    },
+    "value": {
+      "type": "number",
+      "title": "Value"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp"
+    },
+    "quality": {
+      "type": "string"
+    },
+    "source": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Source"
+    }
+  },
+  "required": [
+    "tag_id",
+    "value",
+    "timestamp"
+  ]
+}

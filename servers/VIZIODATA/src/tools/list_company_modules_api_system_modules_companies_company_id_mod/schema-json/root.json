@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "page": {
+      "description": "Número da página",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Itens por página",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "enabled_only": {
+      "description": "Apenas módulos habilitados",
+      "type": "boolean",
+      "default": false,
+      "title": "Enabled Only"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

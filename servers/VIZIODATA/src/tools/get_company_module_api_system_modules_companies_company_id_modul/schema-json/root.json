@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "module_key": {
+      "type": "string",
+      "title": "Module Key"
+    }
+  },
+  "required": [
+    "company_id",
+    "module_key"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "title": "Config",
+  "default": {},
+  "properties": {}
+}

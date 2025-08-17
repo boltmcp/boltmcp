@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "title": "Company Id"
+    },
+    "billing_period": {
+      "description": "Billing period (YYYY-MM)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Billing Period"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

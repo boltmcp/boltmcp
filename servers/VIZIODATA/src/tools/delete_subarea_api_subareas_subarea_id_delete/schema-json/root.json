@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "subarea_id": {
+      "type": "string",
+      "title": "Subarea Id"
+    },
+    "permanent": {
+      "description": "Permanent deletion",
+      "type": "boolean",
+      "default": false,
+      "title": "Permanent"
+    }
+  },
+  "required": [
+    "subarea_id"
+  ]
+}

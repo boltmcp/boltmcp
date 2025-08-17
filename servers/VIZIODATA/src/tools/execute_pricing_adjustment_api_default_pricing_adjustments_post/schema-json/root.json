@@ -1,0 +1,214 @@
+{
+  "type": "object",
+  "properties": {
+    "adjustment_name": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Adjustment Name"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "adjustment_type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed_value",
+        "template_based"
+      ],
+      "title": "AdjustmentTypeEnum",
+      "description": "Tipos de reajuste"
+    },
+    "percentage_data": {
+      "anyOf": [
+        {
+          "properties": {
+            "input_percentage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Input Percentage"
+            },
+            "output_percentage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Output Percentage"
+            },
+            "storage_percentage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Storage Percentage"
+            },
+            "requests_percentage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Requests Percentage"
+            },
+            "global_percentage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Global Percentage"
+            }
+          },
+          "type": "object",
+          "title": "PercentageAdjustmentData",
+          "description": "Dados para reajuste percentual"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fixed_value_data": {
+      "anyOf": [
+        {
+          "properties": {
+            "price_per_gb_input": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Price Per Gb Input"
+            },
+            "price_per_gb_output": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Price Per Gb Output"
+            },
+            "price_per_gb_storage": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Price Per Gb Storage"
+            },
+            "price_per_1k_requests": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Price Per 1K Requests"
+            }
+          },
+          "type": "object",
+          "title": "FixedValueAdjustmentData",
+          "description": "Dados para reajuste com valores fixos"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "template_data": {
+      "anyOf": [
+        {
+          "properties": {
+            "template_id": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Template Id"
+            },
+            "override_monthly_limit": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Override Monthly Limit",
+              "description": "Se deve sobrescrever limites mensais",
+              "default": false
+            }
+          },
+          "type": "object",
+          "required": [
+            "template_id"
+          ],
+          "title": "TemplateBasedAdjustmentData",
+          "description": "Dados para reajuste baseado em template"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "target_companies": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `target_companies` to the tool, first call the tool `expandSchema` with \"/properties/target_companies\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Critérios para seleção de empresas</property-description>",
+      "additionalProperties": true
+    },
+    "preview_only": {
+      "type": "boolean",
+      "title": "Preview Only",
+      "description": "Se é apenas preview (não executa)",
+      "default": false
+    }
+  },
+  "required": [
+    "adjustment_name",
+    "adjustment_type",
+    "target_companies"
+  ]
+}

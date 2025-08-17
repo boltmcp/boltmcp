@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Company ID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "start_date": {
+      "description": "Start date",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "End date",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    },
+    "billing_period": {
+      "description": "Billing period (YYYY-MM)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Billing Period"
+    },
+    "detailed": {
+      "description": "Return detailed statistics with top users and endpoints",
+      "type": "boolean",
+      "default": false,
+      "title": "Detailed"
+    }
+  },
+  "required": []
+}

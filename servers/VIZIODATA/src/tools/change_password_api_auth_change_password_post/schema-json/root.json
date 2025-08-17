@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "current_password": {
+      "type": "string",
+      "title": "Current Password"
+    },
+    "new_password": {
+      "type": "string",
+      "title": "New Password"
+    }
+  },
+  "required": [
+    "current_password",
+    "new_password"
+  ]
+}

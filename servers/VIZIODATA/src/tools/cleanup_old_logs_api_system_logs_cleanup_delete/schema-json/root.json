@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "days": {
+      "description": "Delete logs older than N days",
+      "type": "integer",
+      "maximum": 365,
+      "minimum": 7,
+      "default": 30,
+      "title": "Days"
+    },
+    "dry_run": {
+      "description": "Simulate cleanup without deleting",
+      "type": "boolean",
+      "default": true,
+      "title": "Dry Run"
+    }
+  },
+  "required": []
+}

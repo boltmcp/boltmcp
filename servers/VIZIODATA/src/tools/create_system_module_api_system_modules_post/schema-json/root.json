@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "title": "Hidden",
+      "default": false
+    },
+    "module_key": {
+      "type": "string",
+      "maxLength": 50,
+      "title": "Module Key",
+      "description": "Chave única do módulo"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "title": "Name",
+      "description": "Nome do módulo"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description",
+      "description": "Descrição do módulo"
+    },
+    "category": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Category",
+      "description": "Categoria do módulo"
+    },
+    "version": {
+      "type": "string",
+      "maxLength": 20,
+      "title": "Version",
+      "description": "Versão do módulo",
+      "default": "1.0.0"
+    },
+    "is_available": {
+      "type": "boolean",
+      "title": "Is Available",
+      "description": "Módulo disponível no sistema",
+      "default": true
+    },
+    "requires_license": {
+      "type": "boolean",
+      "title": "Requires License",
+      "description": "Requer licença",
+      "default": false
+    },
+    "depends_on_modules": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Depends On Modules",
+      "description": "Módulos dependentes"
+    },
+    "icon": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Icon",
+      "description": "Ícone do módulo"
+    },
+    "color": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 7
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Color",
+      "description": "Cor do módulo (hex)"
+    },
+    "sort_order": {
+      "type": "integer",
+      "title": "Sort Order",
+      "description": "Ordem de exibição",
+      "default": 0
+    }
+  },
+  "required": [
+    "module_key",
+    "name"
+  ]
+}

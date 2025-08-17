@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "use_mqtt": {
+      "description": "Send via MQTT (recommended)",
+      "type": "boolean",
+      "default": true,
+      "title": "Use Mqtt"
+    },
+    "data": {
+      "items": {
+        "properties": {
+          "tag_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Tag Id"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "quality": {
+            "type": "string"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "type": "object",
+        "required": [
+          "tag_id",
+          "value",
+          "timestamp"
+        ],
+        "title": "SensorDataCreate",
+        "description": "Schema para criação de dados de sensor"
+      },
+      "type": "array",
+      "title": "Data"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

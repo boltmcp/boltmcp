@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "data_id": {
+      "type": "string",
+      "title": "Data Id"
+    }
+  },
+  "required": [
+    "data_id"
+  ]
+}

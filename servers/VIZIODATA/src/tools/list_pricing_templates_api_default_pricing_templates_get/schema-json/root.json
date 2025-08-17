@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "active_only": {
+      "description": "Show only active templates",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    }
+  },
+  "required": []
+}

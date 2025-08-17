@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Items per page",
+      "type": "integer",
+      "maximum": 500,
+      "minimum": 1,
+      "default": 50,
+      "title": "Per Page"
+    },
+    "service": {
+      "description": "Filter by service",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Service"
+    },
+    "level": {
+      "description": "Filter by log level",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Level"
+    },
+    "start_date": {
+      "description": "Start date (YYYY-MM-DD)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "End date (YYYY-MM-DD)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    },
+    "resolved": {
+      "description": "Filter by resolved status",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Resolved"
+    },
+    "search": {
+      "description": "Search in message",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": []
+}

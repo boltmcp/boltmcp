@@ -1,0 +1,31 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "work_order_id": z.string().uuid(),
+  "active": z.union([z.boolean(), z.null()]).optional(),
+  "hidden": z.union([z.boolean(), z.null()]).optional(),
+  "marked_for_deletion": z.union([z.boolean(), z.null()]).optional(),
+  "title": z.union([z.string().max(200), z.null()]).optional(),
+  "description": z.union([z.string(), z.null()]).optional(),
+  "type": z.union([z.enum(["maintenance","repair","inspection","installation","calibration","cleaning","upgrade","other"]).describe("Tipos de ordem de serviço"), z.null()]).optional(),
+  "priority": z.union([z.enum(["low","medium","high","critical"]).describe("Prioridades das ordens de serviço"), z.null()]).optional(),
+  "site_id": z.union([z.string().uuid(), z.null()]).optional(),
+  "area_id": z.union([z.string().uuid(), z.null()]).optional(),
+  "machine_id": z.union([z.string().uuid(), z.null()]).optional(),
+  "assigned_to": z.union([z.string().uuid(), z.null()]).optional(),
+  "assigned_team": z.union([z.array(z.string().uuid()), z.null()]).optional(),
+  "estimated_hours": z.union([z.number(), z.string(), z.null()]).optional(),
+  "estimated_cost": z.union([z.number(), z.string(), z.null()]).optional(),
+  "scheduled_start": z.union([z.string().datetime({ offset: true }), z.null()]).optional(),
+  "scheduled_end": z.union([z.string().datetime({ offset: true }), z.null()]).optional(),
+  "actual_start": z.union([z.string().datetime({ offset: true }), z.null()]).optional(),
+  "actual_end": z.union([z.string().datetime({ offset: true }), z.null()]).optional(),
+  "actual_hours": z.union([z.number(), z.string(), z.null()]).optional(),
+  "actual_cost": z.union([z.number(), z.string(), z.null()]).optional(),
+  "requires_approval": z.union([z.boolean(), z.null()]).optional(),
+  "completion_notes": z.union([z.string(), z.null()]).optional(),
+  "kanban_position": z.union([z.number().int(), z.null()]).optional(),
+  "kanban_column": z.union([z.string(), z.null()]).optional(),
+  "tags": z.union([z.array(z.string()), z.null()]).optional(),
+  "custom_fields": z.union([z.record(z.any()), z.null()]).optional()
+}

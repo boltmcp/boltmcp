@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "area_id": {
+      "type": "string",
+      "title": "Area Id"
+    },
+    "permanent": {
+      "description": "Permanent deletion",
+      "type": "boolean",
+      "default": false,
+      "title": "Permanent"
+    }
+  },
+  "required": [
+    "area_id"
+  ]
+}

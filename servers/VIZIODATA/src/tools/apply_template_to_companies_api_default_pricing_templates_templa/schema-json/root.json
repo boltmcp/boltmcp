@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "title": "Template Id"
+    },
+    "b_template_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Template Id"
+    },
+    "company_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Company Ids"
+    },
+    "override_existing": {
+      "type": "boolean",
+      "title": "Override Existing",
+      "description": "Se deve sobrescrever configurações existentes",
+      "default": false
+    },
+    "preserve_monthly_limits": {
+      "type": "boolean",
+      "title": "Preserve Monthly Limits",
+      "description": "Se deve preservar limites mensais existentes",
+      "default": true
+    }
+  },
+  "required": [
+    "template_id",
+    "b_template_id",
+    "company_ids"
+  ]
+}

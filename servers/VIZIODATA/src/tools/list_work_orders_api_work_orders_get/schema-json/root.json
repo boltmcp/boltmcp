@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Número da página",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Itens por página",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 20,
+      "title": "Per Page"
+    },
+    "company_id": {
+      "description": "Filtrar por empresa",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    },
+    "status": {
+      "description": "Filtrar por status",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "backlog",
+            "todo",
+            "in_progress",
+            "review",
+            "testing",
+            "done",
+            "cancelled"
+          ],
+          "title": "WorkOrderStatus",
+          "description": "Status das ordens de serviço (Kanban)"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Status"
+    },
+    "priority": {
+      "description": "Filtrar por prioridade",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "WorkOrderPriority",
+          "description": "Prioridades das ordens de serviço"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Priority"
+    },
+    "assigned_to": {
+      "description": "Filtrar por responsável",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned To"
+    },
+    "search": {
+      "description": "Buscar por título ou número",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": []
+}

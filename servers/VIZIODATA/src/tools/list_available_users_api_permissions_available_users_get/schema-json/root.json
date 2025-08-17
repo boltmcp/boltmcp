@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "description": "Filter users without permission in this company",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Id"
+    }
+  },
+  "required": []
+}

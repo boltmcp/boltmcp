@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "window_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Window Id"
+    },
+    "baseline_score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Baseline Score",
+      "description": "Score de baseline"
+    },
+    "tags": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tags",
+      "description": "Tags adicionais"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Notes",
+      "description": "Notas do baseline"
+    }
+  },
+  "required": [
+    "window_id"
+  ]
+}

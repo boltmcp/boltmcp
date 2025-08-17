@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "permission_id": {
+      "type": "string",
+      "title": "Permission Id"
+    },
+    "user_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    },
+    "permission_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "company",
+            "site"
+          ],
+          "title": "PermissionType",
+          "description": "Tipos de permissão por entidade"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "entity_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Entity Id"
+    },
+    "permission_level": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "view",
+            "edit",
+            "admin"
+          ],
+          "title": "PermissionLevel",
+          "description": "Níveis de permissão"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "active": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active"
+    },
+    "hidden": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hidden"
+    }
+  },
+  "required": [
+    "permission_id"
+  ]
+}

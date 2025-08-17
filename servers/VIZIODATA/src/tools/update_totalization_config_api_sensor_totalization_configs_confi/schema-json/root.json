@@ -1,0 +1,506 @@
+{
+  "type": "object",
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "title": "Config Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 3
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 500
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "trigger_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "time_based",
+            "sensor_based"
+          ],
+          "title": "TotalizationTriggerType",
+          "description": "Tipos de trigger para totalização"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "operation": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "sum",
+            "count",
+            "average",
+            "min",
+            "max",
+            "integral",
+            "time_running",
+            "time_stopped",
+            "time_in_state",
+            "state_changes",
+            "uptime_percentage",
+            "energy_consumption",
+            "energy_cost"
+          ],
+          "title": "TotalizationOperation",
+          "description": "Operações de totalização disponíveis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "time_interval": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "minute",
+            "hour",
+            "day",
+            "week",
+            "month"
+          ],
+          "title": "TotalizationTimeInterval",
+          "description": "Intervalos de tempo para totalização"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "time_interval_value": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 60,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Time Interval Value"
+    },
+    "window_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "rolling",
+            "fixed_hourly",
+            "fixed_daily",
+            "fixed_weekly",
+            "fixed_monthly",
+            "custom_shift",
+            "custom_period"
+          ],
+          "title": "TotalizationWindowType",
+          "description": "Tipos de janela de totalização"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fixed_hour_start": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 23,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour Start"
+    },
+    "fixed_hour_end": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 23,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Hour End"
+    },
+    "daily_start_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily Start Time"
+    },
+    "daily_end_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Daily End Time"
+    },
+    "weekly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 6,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Start Day"
+    },
+    "weekly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 6,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly End Day"
+    },
+    "monthly_start_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 31,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly Start Day"
+    },
+    "monthly_end_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 31,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly End Day"
+    },
+    "custom_shifts": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nome do turno"
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "Start",
+                "description": "Horário de início (HH:MM)"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+                "title": "End",
+                "description": "Horário de fim (HH:MM)"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "start",
+              "end"
+            ],
+            "title": "CustomShift",
+            "description": "Schema para turno customizado"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Custom Shifts"
+    },
+    "window_timezone": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Window Timezone"
+    },
+    "allow_overlap": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Allow Overlap"
+    },
+    "gap_tolerance_minutes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 60,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gap Tolerance Minutes"
+    },
+    "running_condition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Running Condition"
+    },
+    "running_threshold": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Running Threshold"
+    },
+    "state_values": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State Values"
+    },
+    "idle_timeout_minutes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 60,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Idle Timeout Minutes"
+    },
+    "equipment_power_kw": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Equipment Power Kw"
+    },
+    "energy_price_kwh": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Energy Price Kwh"
+    },
+    "energy_tariff_config": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Energy Tariff Config"
+    },
+    "trigger_tag_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Tag Id"
+    },
+    "trigger_condition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "==",
+            "!=",
+            ">",
+            ">=",
+            "<",
+            "<="
+          ],
+          "title": "TotalizationCondition",
+          "description": "Condições para trigger baseado em sensor"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "trigger_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Trigger Value"
+    },
+    "reset_on_trigger": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reset On Trigger"
+    },
+    "min_samples": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Min Samples"
+    },
+    "quality_filter": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Quality Filter"
+    },
+    "store_intermediate_values": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Store Intermediate Values"
+    },
+    "precision_digits": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 6,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Precision Digits"
+    },
+    "active": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active"
+    }
+  },
+  "required": [
+    "config_id"
+  ]
+}

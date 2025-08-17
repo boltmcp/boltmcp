@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "per_page": {
+      "description": "Items per page",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Per Page"
+    },
+    "user_id": {
+      "description": "Filter by user UUID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    },
+    "permission_type": {
+      "description": "Filter by permission type",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Permission Type"
+    },
+    "entity_id": {
+      "description": "Filter by entity UUID",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Entity Id"
+    },
+    "active_only": {
+      "description": "Show only active permissions",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    }
+  },
+  "required": []
+}

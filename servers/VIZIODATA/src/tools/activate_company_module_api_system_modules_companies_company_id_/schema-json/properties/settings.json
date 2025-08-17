@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "title": "Settings",
+  "description": "Configurações específicas",
+  "properties": {}
+}

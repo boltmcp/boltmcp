@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Company Id"
+    },
+    "billing_period": {
+      "type": "string",
+      "title": "Billing Period"
+    },
+    "contracted_credits": {
+      "type": "number",
+      "title": "Contracted Credits"
+    },
+    "auto_renew": {
+      "type": "boolean",
+      "title": "Auto Renew",
+      "default": true
+    },
+    "notification_thresholds": {
+      "type": "string",
+      "title": "Notification Thresholds",
+      "default": "80,90,95,100"
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "default": "BRL"
+    }
+  },
+  "required": [
+    "company_id",
+    "billing_period",
+    "contracted_credits"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "layout_id": {
+      "type": "string",
+      "title": "Layout Id"
+    }
+  },
+  "required": [
+    "layout_id"
+  ]
+}

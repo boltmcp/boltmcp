@@ -1,0 +1,71 @@
+{
+  "properties": {
+    "company_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Company Ids"
+    },
+    "all_companies": {
+      "type": "boolean",
+      "title": "All Companies",
+      "default": false
+    },
+    "exclude_company_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Exclude Company Ids"
+    },
+    "only_active": {
+      "type": "boolean",
+      "title": "Only Active",
+      "default": true
+    },
+    "created_after": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Created After"
+    },
+    "created_before": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Created Before"
+    }
+  },
+  "type": "object",
+  "title": "CompanySelectionCriteria",
+  "description": "Critérios para seleção de empresas"
+}

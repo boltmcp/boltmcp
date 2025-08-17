@@ -1,0 +1,8 @@
+{
+  "additionalProperties": {
+    "type": "string"
+  },
+  "type": "object",
+  "title": "Mappings",
+  "properties": {}
+}

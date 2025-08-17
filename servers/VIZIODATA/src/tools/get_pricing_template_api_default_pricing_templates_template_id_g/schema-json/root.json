@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "description": "Template ID",
+      "type": "string",
+      "title": "Template Id"
+    }
+  },
+  "required": [
+    "template_id"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "clear_expired_only": {
+      "description": "Clear only expired entries",
+      "type": "boolean",
+      "default": false,
+      "title": "Clear Expired Only"
+    }
+  },
+  "required": []
+}

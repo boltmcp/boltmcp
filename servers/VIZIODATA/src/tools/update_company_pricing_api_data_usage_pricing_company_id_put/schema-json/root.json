@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "properties": {
+    "company_id": {
+      "type": "string",
+      "title": "Company Id"
+    },
+    "price_per_gb_input": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Per Gb Input"
+    },
+    "price_per_gb_output": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Per Gb Output"
+    },
+    "price_per_gb_storage": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Per Gb Storage"
+    },
+    "price_per_1k_requests": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Per 1K Requests"
+    },
+    "monthly_limit_gb": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Monthly Limit Gb"
+    },
+    "alert_threshold_percentage": {
+      "anyOf": [
+        {
+          "type": "number",
+          "maximum": 100,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alert Threshold Percentage"
+    },
+    "storage_calculation_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(snapshot|accumulated)$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Storage Calculation Type"
+    },
+    "storage_billing_day": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 31,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Storage Billing Day"
+    }
+  },
+  "required": [
+    "company_id"
+  ]
+}

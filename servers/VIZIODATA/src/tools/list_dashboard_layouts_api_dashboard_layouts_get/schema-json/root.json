@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "visibility": {
+      "description": "Filter by visibility (public, private, shared)",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Visibility"
+    },
+    "search": {
+      "description": "Search in layout names",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "active_only": {
+      "description": "Show only active layouts",
+      "type": "boolean",
+      "default": true,
+      "title": "Active Only"
+    },
+    "limit": {
+      "description": "Number of records to return",
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 50,
+      "title": "Limit"
+    },
+    "offset": {
+      "description": "Number of records to skip",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    },
+    "per_page": {
+      "description": "Items per page (alias for limit)",
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Per Page"
+    }
+  },
+  "required": []
+}
