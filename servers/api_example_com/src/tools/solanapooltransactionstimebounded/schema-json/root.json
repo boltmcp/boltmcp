@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "Pool address (base58-44 string).",
+      "default": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
+      "example": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
+      "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$",
+      "type": "string"
+    },
+    "after_time": {
+      "description": "Unix timestamp - start time for data range",
+      "default": 1735689600,
+      "example": 1735689600,
+      "type": "integer"
+    },
+    "before_time": {
+      "description": "Unix timestamp - end time for data range",
+      "default": 1735776000,
+      "example": 1735776000,
+      "type": "integer"
+    },
+    "limit": {
+      "description": "Limit the number of results.",
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "offset": {
+      "description": "Offset the results, allows you to skip a number of rows before starting to return rows.",
+      "default": 0,
+      "maximum": 100000,
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "pool_address",
+    "after_time",
+    "before_time"
+  ]
+}

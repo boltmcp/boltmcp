@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "chain_id": {
+      "description": "Chain ID. See chains for valid IDs.",
+      "default": 8453,
+      "example": 8453,
+      "maximum": 100000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "token_address": {
+      "description": "Pool token address. See tokens for valid addresses.",
+      "example": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+      "pattern": "^0x[a-fA-F0-9]{40}$",
+      "type": "string"
+    },
+    "order_asc": {
+      "description": "List of column names to order by in ascending order divided by comma. Leave empty items to combine with descending order",
+      "type": "string"
+    },
+    "order_desc": {
+      "description": "List of column names to order by in descending order divided by comma. Leave empty items to combine with ascending order",
+      "type": "string"
+    }
+  },
+  "required": [
+    "chain_id"
+  ]
+}

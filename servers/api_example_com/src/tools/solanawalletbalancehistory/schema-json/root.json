@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "wallet_address": {
+      "description": "Solana wallet address (base58 format, 32-44 characters)",
+      "default": "DKxRinQQhKnZcfdaSnKov5v4ja95pEncjBYU8ajzVgsW",
+      "example": "DKxRinQQhKnZcfdaSnKov5v4ja95pEncjBYU8ajzVgsW",
+      "type": "string"
+    },
+    "token_address": {
+      "description": "Filter by specific token address (base58 format)",
+      "default": "So11111111111111111111111111111111111111112",
+      "example": "So11111111111111111111111111111111111111112",
+      "type": "string"
+    },
+    "after_time": {
+      "description": "Unix timestamp - start time for data range",
+      "default": 1735689600,
+      "example": 1735689600,
+      "type": "integer"
+    },
+    "before_time": {
+      "description": "Unix timestamp - end time for data range",
+      "default": 1735776000,
+      "example": 1735776000,
+      "type": "integer"
+    },
+    "limit": {
+      "description": "Limit the number of results.",
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "offset": {
+      "description": "Offset the results, allows you to skip a number of rows before starting to return rows.",
+      "default": 0,
+      "maximum": 100000,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "order_asc": {
+      "description": "List of column names to order by in ascending order divided by comma. Leave empty items to combine with descending order",
+      "type": "string"
+    },
+    "order_desc": {
+      "description": "List of column names to order by in descending order divided by comma. Leave empty items to combine with ascending order",
+      "type": "string"
+    }
+  },
+  "required": [
+    "wallet_address",
+    "token_address",
+    "after_time",
+    "before_time"
+  ]
+}

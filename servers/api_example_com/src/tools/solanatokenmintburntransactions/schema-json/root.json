@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "SPL token mint address (base58 format, 44 characters)",
+      "default": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "type": "string"
+    },
+    "after_time": {
+      "description": "Unix timestamp - only return transactions after this time",
+      "default": 1752503691,
+      "example": 1752503691,
+      "type": "integer"
+    },
+    "before_time": {
+      "description": "Unix timestamp - only return transactions before this time",
+      "default": 1752523691,
+      "example": 1752523691,
+      "type": "integer"
+    },
+    "limit": {
+      "description": "Limit the number of results.",
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "offset": {
+      "description": "Offset the results, allows you to skip a number of rows before starting to return rows.",
+      "default": 0,
+      "maximum": 100000,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "order_asc": {
+      "description": "List of column names to order by in ascending order divided by comma. Leave empty items to combine with descending order",
+      "type": "string"
+    },
+    "order_desc": {
+      "description": "List of column names to order by in descending order divided by comma. Leave empty items to combine with ascending order",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token_address",
+    "after_time",
+    "before_time"
+  ]
+}

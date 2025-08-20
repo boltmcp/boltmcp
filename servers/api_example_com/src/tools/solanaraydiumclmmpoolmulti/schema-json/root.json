@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_addresses": {
+      "description": "Comma-separated pool addresses within the same DEX. Example: addr1,addr2,addr3",
+      "default": "3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "example": "3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "type": "string"
+    }
+  },
+  "required": [
+    "pool_addresses"
+  ]
+}

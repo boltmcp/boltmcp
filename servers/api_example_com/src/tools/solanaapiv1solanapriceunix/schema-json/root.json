@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "Solana token mint address (base58 format). Example: So11111111111111111111111111111111111111112",
+      "default": "So11111111111111111111111111111111111111112",
+      "example": "So11111111111111111111111111111111111111112",
+      "type": "string"
+    },
+    "unixtime": {
+      "description": "Unix timestamp to query price for (0 to 10000000000). Example: 1726700000",
+      "default": 1750110000,
+      "example": 1750110000,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "token_address",
+    "unixtime"
+  ]
+}

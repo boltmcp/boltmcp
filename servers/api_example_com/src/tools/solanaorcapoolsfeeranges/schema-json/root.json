@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "The public key address of the Orca Whirlpool.",
+      "default": "Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
+      "example": "Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
+      "type": "string"
+    },
+    "days": {
+      "description": "The number of past days to include in the analysis. Defaults to 7.",
+      "default": 7,
+      "example": 7,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "pool_address",
+    "days"
+  ]
+}

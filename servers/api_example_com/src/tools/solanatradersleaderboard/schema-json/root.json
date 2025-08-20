@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "SPL token mint address (base58)",
+      "default": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "type": "string"
+    },
+    "interval": {
+      "description": "Lookback window for trades (SQL Interval, e.g. '24 HOUR', '12 HOUR', '1 HOUR', '30 MINUTE')",
+      "default": "24 HOUR",
+      "enum": [
+        "24 HOUR",
+        "12 HOUR",
+        "1 HOUR",
+        "30 MINUTE"
+      ],
+      "example": "24 HOUR",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token_address",
+    "interval"
+  ]
+}

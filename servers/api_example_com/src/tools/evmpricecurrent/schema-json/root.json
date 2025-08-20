@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "Address of the token prexied with 0x. See white listed tokens",
+      "default": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "example": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "type": "string"
+    },
+    "chain_id": {
+      "description": "Chain id of the EVM",
+      "default": 8453,
+      "example": 8453,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "chain_id"
+  ]
+}

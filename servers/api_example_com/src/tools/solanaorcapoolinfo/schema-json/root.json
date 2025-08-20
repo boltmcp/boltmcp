@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "The program ID (address) of the Solana pool.",
+      "default": "C9U2Ksk6KKWvLEeo5yUQ7Xu46X7NzeBJtd9PBfuXaUSM",
+      "example": "C9U2Ksk6KKWvLEeo5yUQ7Xu46X7NzeBJtd9PBfuXaUSM",
+      "type": "string"
+    }
+  },
+  "required": [
+    "pool_address"
+  ]
+}

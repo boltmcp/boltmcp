@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "token_addresses": {
+      "description": "Comma-separated list of Solana token program addresses (base58 strings).",
+      "default": "So11111111111111111111111111111111111111112,DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "example": "So11111111111111111111111111111111111111112,DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token_addresses"
+  ]
+}

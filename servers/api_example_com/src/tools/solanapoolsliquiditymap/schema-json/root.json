@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "The public key address of the Orca Whirlpool.",
+      "default": "DYFk5yvux4mkuQcxkA7H6FWgRQHc1Z7JUb42SJVxnhgG",
+      "example": "DYFk5yvux4mkuQcxkA7H6FWgRQHc1Z7JUb42SJVxnhgG",
+      "type": "string"
+    },
+    "resolution": {
+      "description": "The approximate number of data points (tick intervals) desired in the output map. Higher values mean finer granularity.",
+      "default": 200,
+      "example": 200,
+      "maximum": 1000,
+      "minimum": 10,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "pool_address",
+    "resolution"
+  ]
+}

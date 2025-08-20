@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "The program ID (mint address) of the token.",
+      "default": "So11111111111111111111111111111111111111112",
+      "example": "So11111111111111111111111111111111111111112",
+      "type": "string"
+    },
+    "interval": {
+      "description": "Block interval for sampling balances.",
+      "default": 1000000,
+      "example": 1000000,
+      "format": "int64",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "start_block": {
+      "description": "Starting block number for the time range.",
+      "default": 330000000,
+      "example": 330000000,
+      "type": "integer"
+    },
+    "end_block": {
+      "description": "Ending block number for the time range.",
+      "default": 335000000,
+      "example": 335000000,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "token_address",
+    "interval",
+    "start_block",
+    "end_block"
+  ]
+}

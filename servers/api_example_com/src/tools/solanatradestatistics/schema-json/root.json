@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "token_addresses": {
+      "description": "Comma-separated token addresses",
+      "default": "So11111111111111111111111111111111111111112",
+      "example": "So11111111111111111111111111111111111111112",
+      "type": "string"
+    },
+    "timeframe": {
+      "description": "Time interval: 1h, 4h, 12h, 24h, 7d",
+      "default": "24h",
+      "example": "24h",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token_addresses",
+    "timeframe"
+  ]
+}

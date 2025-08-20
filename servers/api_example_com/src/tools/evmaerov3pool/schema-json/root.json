@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "chain_id": {
+      "description": "Chain ID. See chains for valid IDs.",
+      "default": 8453,
+      "example": 8453,
+      "maximum": 100000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "pool_address": {
+      "description": "Pool address with 0x prefix",
+      "default": "0xffa192f04b1e5f9f5124fb40a96407564492ed20",
+      "example": "0xffa192f04b1e5f9f5124fb40a96407564492ed20",
+      "pattern": "^0x[a-fA-F0-9]{40}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "chain_id",
+    "pool_address"
+  ]
+}

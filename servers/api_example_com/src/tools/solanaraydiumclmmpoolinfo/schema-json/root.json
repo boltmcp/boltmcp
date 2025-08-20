@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "Program ID for raydium clmm pool",
+      "default": "3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "example": "3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "type": "string"
+    }
+  },
+  "required": [
+    "pool_address"
+  ]
+}

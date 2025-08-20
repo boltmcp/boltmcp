@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "Token mint address (program id)",
+      "default": "HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC",
+      "example": "HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC",
+      "type": "string"
+    },
+    "interval": {
+      "description": "Block interval to use",
+      "default": 500000,
+      "example": 500000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "start_block": {
+      "description": "Block to start from",
+      "default": 340000000,
+      "example": 340000000,
+      "type": "integer"
+    },
+    "end_block": {
+      "description": "Block to end at",
+      "default": 341000000,
+      "example": 341000000,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "token_address",
+    "interval",
+    "start_block",
+    "end_block"
+  ]
+}

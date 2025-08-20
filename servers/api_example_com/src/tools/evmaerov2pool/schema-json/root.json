@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "pool_address": {
+      "description": "Pool address with 0x prefix",
+      "default": "0x6cdcb1c4a4d1c3c6d054b27ac5b77e89eafb971d",
+      "example": "0x6cdcb1c4a4d1c3c6d054b27ac5b77e89eafb971d",
+      "pattern": "^0x[a-fA-F0-9]{40}$",
+      "type": "string"
+    },
+    "apr_days_annualized": {
+      "description": "Number of previous days to calculate APR from. 7 would mean the APR is annualized from the past 7 days of activity on the pool.",
+      "default": 7,
+      "example": 7,
+      "maximum": 30,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "pool_address",
+    "apr_days_annualized"
+  ]
+}

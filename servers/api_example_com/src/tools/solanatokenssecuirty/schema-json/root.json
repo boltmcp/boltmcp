@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "token_address": {
+      "description": "The token address to analyze",
+      "default": "So11111111111111111111111111111111111111112",
+      "example": "So11111111111111111111111111111111111111112",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token_address"
+  ]
+}

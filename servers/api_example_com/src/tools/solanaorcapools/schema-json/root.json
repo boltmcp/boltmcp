@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "dex": {
+      "description": "The Decentralized Exchange (DEX) name. Must be 'orca' for this endpoint.",
+      "default": "orca",
+      "enum": [
+        "orca"
+      ],
+      "example": "orca",
+      "type": "string"
+    }
+  },
+  "required": [
+    "dex"
+  ]
+}

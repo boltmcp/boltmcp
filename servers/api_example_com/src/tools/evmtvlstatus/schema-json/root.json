@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "chain_id": {
+      "description": "EVM chain id",
+      "default": 8453,
+      "example": 8453,
+      "type": "integer"
+    },
+    "wallet_address": {
+      "description": "Address that hold tokens prexied with 0x",
+      "default": "0xfBB6Eed8e7aa03B138556eeDaF5D271A5E1e43ef",
+      "example": "0xfBB6Eed8e7aa03B138556eeDaF5D271A5E1e43ef",
+      "type": "string"
+    },
+    "whitelisted": {
+      "description": "If true, only whitelisted tokens will be returned",
+      "default": false,
+      "example": false,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "chain_id",
+    "wallet_address"
+  ]
+}

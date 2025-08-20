@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "wallet_address": {
+      "description": "Liquidity provider address with 0x prefix",
+      "default": "0x8115afd8dffce5579381ad27524b6feeae917bef",
+      "example": "0x8115afd8dffce5579381ad27524b6feeae917bef",
+      "pattern": "^0x[a-fA-F0-9]{40}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "wallet_address"
+  ]
+}
