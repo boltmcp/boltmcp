@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 2,
+      "title": "Role"
+    },
+    "job_description": {
+      "type": "string",
+      "maxLength": 5000,
+      "minLength": 10,
+      "title": "Job Description"
+    },
+    "format": {
+      "type": "string",
+      "pattern": "^(pdf|typ)$",
+      "title": "Format",
+      "default": "pdf"
+    },
+    "original_resume": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Original Resume"
+    },
+    "enable_thinking": {
+      "type": "boolean",
+      "title": "Enable Thinking",
+      "default": false
+    }
+  },
+  "required": [
+    "role",
+    "job_description"
+  ]
+}

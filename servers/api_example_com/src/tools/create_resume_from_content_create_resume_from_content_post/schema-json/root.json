@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 2,
+      "title": "Role"
+    },
+    "profile_summary": {
+      "type": "string",
+      "maxLength": 1000,
+      "minLength": 10,
+      "title": "Profile Summary"
+    },
+    "key_achievements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "maxItems": 10,
+      "minItems": 1,
+      "title": "Key Achievements"
+    },
+    "areas_of_expertise": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Areas Of Expertise"
+    },
+    "format": {
+      "type": "string",
+      "pattern": "^(pdf|typ)$",
+      "title": "Format",
+      "default": "pdf"
+    }
+  },
+  "required": [
+    "role",
+    "profile_summary",
+    "key_achievements",
+    "areas_of_expertise"
+  ]
+}

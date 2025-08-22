@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "pdf_url": {
+      "type": "string",
+      "maxLength": 2083,
+      "minLength": 1,
+      "format": "uri",
+      "title": "Pdf Url"
+    },
+    "job_description": {
+      "type": "string",
+      "maxLength": 5000,
+      "minLength": 10,
+      "title": "Job Description"
+    }
+  },
+  "required": [
+    "pdf_url",
+    "job_description"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "typ_file": {
+      "type": "string",
+      "title": "Typ File"
+    },
+    "output_filename": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Output Filename"
+    }
+  },
+  "required": [
+    "typ_file"
+  ]
+}

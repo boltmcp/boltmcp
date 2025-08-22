@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "resume_id": {
+      "type": "integer",
+      "title": "Resume Id"
+    }
+  },
+  "required": [
+    "resume_id"
+  ]
+}
