@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "This is the ID provided by Bankable when the payable was created (see the \"Submit Payables\" response).",
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

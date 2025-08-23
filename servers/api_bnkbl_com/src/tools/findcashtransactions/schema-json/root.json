@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "account_id": {
+      "description": "The unique identifier of the investor account.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "start_date": {
+      "description": "Start date of the range for cash transactions (must be less than 180 days).",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "End date of the range for cash transactions (must be less than 180 days).",
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "account_id",
+    "start_date",
+    "end_date"
+  ]
+}

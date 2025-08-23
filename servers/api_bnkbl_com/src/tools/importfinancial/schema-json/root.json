@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "description": "This is the credit client ID provided by Bankable. when the client was created (see the \"Create Client\" response).",
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "client_id"
+  ]
+}

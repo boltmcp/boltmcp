@@ -1,0 +1,38 @@
+export const OPENAPI_URL = "https://developers.bnkbl.com/openapi/openapi.yaml"
+export const SERVER_NAME = "api_bnkbl_com"
+export const SERVER_VERSION = "0.0.1"
+export const OPERATION_FILES_RELATIVE = [
+  "./tools/gettoken/index.js",
+  "./tools/createclient/index.js",
+  "./tools/requestcontract/index.js",
+  "./tools/uploadproofofaddress/index.js",
+  "./tools/submitkyb/index.js",
+  "./tools/submitbankdata/index.js",
+  "./tools/getcontractsigners/index.js",
+  "./tools/findclient/index.js",
+  "./tools/getclient/index.js",
+  "./tools/importfinancial/index.js",
+  "./tools/getfinancingindicator/index.js",
+  "./tools/getpricebreakdown/index.js",
+  "./tools/createinvoice/index.js",
+  "./tools/findinvoices/index.js",
+  "./tools/getinvoice/index.js",
+  "./tools/cancelinvoice/index.js",
+  "./tools/getcreditpricebreakdown/index.js",
+  "./tools/createcredit/index.js",
+  "./tools/findcredits/index.js",
+  "./tools/getcredit/index.js",
+  "./tools/cancelcredit/index.js",
+  "./tools/getpayablespricebreakdown/index.js",
+  "./tools/submitpayables/index.js",
+  "./tools/findpayables/index.js",
+  "./tools/getpayabledetails/index.js",
+  "./tools/uploadinvoicepayablefile/index.js",
+  "./tools/approverepaymentplan/index.js",
+  "./tools/declinerepaymentplan/index.js",
+  "./tools/getbalances/index.js",
+  "./tools/findcashtransactions/index.js",
+  "./tools/findtrades/index.js",
+  "./tools/findpositions/index.js",
+  "./tools/findoverdue/index.js"
+]

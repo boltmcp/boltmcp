@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "This is the credit ID provided by Bankable when the credit was created (see the \"Create Credit\" response).",
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

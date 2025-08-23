@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "account_id": {
+      "description": "The unique identifier of the investor account.",
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "account_id"
+  ]
+}

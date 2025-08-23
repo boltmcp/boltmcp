@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "This is the payable financing request ID provided by Bankable when the payables were submitted",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

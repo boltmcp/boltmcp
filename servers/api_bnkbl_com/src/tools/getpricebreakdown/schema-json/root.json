@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "debtor_country_code": {
+      "description": "The debtor's two-letter country code in ISO 3166 format.",
+      "type": "string"
+    },
+    "debtor_crn": {
+      "description": "The debtor's Company Registration Number.",
+      "type": "string"
+    },
+    "issuer_country_code": {
+      "description": "The issuer's two-letter country code in ISO 3166 format.",
+      "type": "string"
+    },
+    "issuer_crn": {
+      "description": "The issuer's Company Registration Number.",
+      "type": "string"
+    },
+    "face_value": {
+      "description": "The invoice face value can only include numbers and dot (.) must be presented in (EUR) or pence (GBP). For example, 100.00 EUR .",
+      "type": "number",
+      "format": "float"
+    },
+    "due_date": {
+      "description": "The due date as shown on the potential invoice to be financed. Should be in format YYYY-MM-DD, for example, 2022-01-01.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "debtor_country_code",
+    "debtor_crn",
+    "issuer_country_code",
+    "issuer_crn",
+    "face_value",
+    "due_date"
+  ]
+}

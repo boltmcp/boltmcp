@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "description": "Unique identifier for the client.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "product": {
+      "description": "Product identifier.",
+      "type": "string",
+      "enum": [
+        "credit-line",
+        "payables",
+        "receivables",
+        "revolving-credit"
+      ]
+    },
+    "signers": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "description": "List of signing parties.",
+      "items": {
+        "type": "object",
+        "required": [
+          "email",
+          "first_name",
+          "last_name"
+        ],
+        "properties": {
+          "email": {
+            "description": "Signer email.",
+            "type": "string",
+            "example": "john.doe@bnkbl.com"
+          },
+          "first_name": {
+            "description": "Signer first name.",
+            "type": "string",
+            "example": "John"
+          },
+          "last_name": {
+            "description": "Signer last name.",
+            "type": "string",
+            "example": "Doe"
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the signer, mandatory for UK companies.",
+            "example": "New Broad Street House, 35 New Broad Street, London, United Kingdom, EC2M 1NH"
+          },
+          "proof_of_address": {
+            "type": "string",
+            "description": "Unique identifier of the file returned by the Upload Proof of Address endpoint. Mandatory for companies in the UK.",
+            "example": "fc46b7de-a9f6-4398-8448-bfe665d25d02"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "client_id",
+    "product",
+    "signers"
+  ]
+}

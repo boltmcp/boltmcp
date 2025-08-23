@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "country": {
+      "description": "ISO Country Code (two letter country code from ISO 3166).",
+      "type": "string"
+    },
+    "registration_number": {
+      "description": "Company registration number.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "country",
+    "registration_number"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "description": "Unique identifier for the client.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "product": {
+      "description": "Product identifier.",
+      "type": "string",
+      "enum": [
+        "credit-line",
+        "payables",
+        "receivables",
+        "revolving-credit"
+      ]
+    }
+  },
+  "required": [
+    "client_id",
+    "product"
+  ]
+}

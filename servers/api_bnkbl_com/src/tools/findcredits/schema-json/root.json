@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of items to obtain per response. The limit/offset schema is used for pagination. The default value is 10. The maximum allowed value is 100.",
+      "type": "string"
+    },
+    "offset": {
+      "description": "The number of items to skip in the response. The limit/offset schema is used for pagination. The default value is 0.",
+      "type": "string"
+    },
+    "sort_by": {
+      "description": "Use to determine which value to use to sort the paginated result. The default value is created_at.",
+      "type": "string",
+      "enum": [
+        "id",
+        "created_at",
+        "number",
+        "state",
+        "amount",
+        "currency",
+        "installments",
+        "client_id"
+      ]
+    },
+    "descending": {
+      "description": "Use to determine the sorting order as either descending or ascending. The default value is false, which corresponds to ascending order.",
+      "type": "string"
+    },
+    "id[]": {
+      "description": "Use to filter the credits list by a collection of credit IDs. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "number[]": {
+      "description": "Use to filter the credits list by a collection of credit number. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "state[]": {
+      "description": "Use to filter the credits list by a collection of credit states. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "amount_from": {
+      "description": "Use to filter the credits list by amount value above than the given one. It must be sent as cents. For example, the value 191.95 has to be sent as 19195.",
+      "type": "string"
+    },
+    "amount_to": {
+      "description": "Use to filter the credits list by amount value below than the given one. It must be sent as cents. For example, the value 191.95 has to be sent as 19195.",
+      "type": "string"
+    },
+    "currency[]": {
+      "description": "Use to filter the credits list by a collection of currencies. You must use this filter by adding multiple times this query parameter with different values. The format is ISO 4217.",
+      "type": "string"
+    },
+    "installments": {
+      "description": "Use to filter the credits list by the number of instalments given.",
+      "type": "string"
+    },
+    "client_id[]": {
+      "description": "Use to filter the credits list by a collection of client IDs. You must use this filter by adding multiple times this query parameter with different values. The format is ISO 4217.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

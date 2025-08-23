@@ -1,0 +1,210 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "description": "Unique identifier for the client.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "product": {
+      "description": "Product identifier.",
+      "type": "string",
+      "enum": [
+        "credit-line",
+        "payables",
+        "receivables",
+        "revolving-credit"
+      ]
+    },
+    "annual_revenue": {
+      "description": "Annual revenue of the company",
+      "type": "number",
+      "format": "float",
+      "example": 10000
+    },
+    "incorporation_date": {
+      "type": "string",
+      "description": "The incorporation date of the company",
+      "format": "date",
+      "example": "2006-01-02"
+    },
+    "financial_institution": {
+      "type": "boolean",
+      "description": "The company is a financial institution. False is obligatory to be able to onboard. We give out an error if true."
+    },
+    "income_source": {
+      "type": "string",
+      "description": "Source of income.",
+      "enum": [
+        "business_activities",
+        "investment_activities",
+        "royalties"
+      ]
+    },
+    "trading_name": {
+      "type": "string",
+      "description": "The trading name of the company if different from the legal name.",
+      "example": "Bankable"
+    },
+    "industry": {
+      "type": "string",
+      "description": "Standard Industrial Classification code.",
+      "format": "SIC"
+    },
+    "financing_frequency": {
+      "type": "string",
+      "description": "The financing frequency.",
+      "enum": [
+        "regular",
+        "sporadic",
+        "season"
+      ]
+    },
+    "financing_needed": {
+      "type": "number",
+      "format": "float",
+      "description": "Amount of financing needed.",
+      "example": 100.5
+    },
+    "comments": {
+      "type": "string",
+      "description": "Extra comment.",
+      "example": "Ipsum deserunt ad ipsum ad commodo."
+    },
+    "ultimate_beneficial_owners": {
+      "type": "array",
+      "maxItems": 4,
+      "description": "Array of objects where each object is an owner with at least 25% ownership. 0-4 people.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the owner.",
+            "example": "John Doe"
+          },
+          "nationality": {
+            "type": "string",
+            "example": "GB",
+            "description": "Nationality of the owner.",
+            "maxLength": 2,
+            "minLength": 2
+          },
+          "share": {
+            "type": "number",
+            "format": "float",
+            "description": "Share of the owner.",
+            "example": 100
+          },
+          "date_of_birth": {
+            "type": "string",
+            "description": "Birth data of the owner.",
+            "format": "date",
+            "example": "2006-01-02"
+          },
+          "personal_id": {
+            "type": "string",
+            "description": "Personal ID number of the owner, optional for UK nationals."
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the owner, mandatory for UK company or people with different nationality from company."
+          },
+          "sanctioned": {
+            "description": "Whether the owner is sanctioned or not",
+            "type": "boolean"
+          },
+          "pep": {
+            "description": "Whether the owner is a Politically Exposed Person or not.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "nationality",
+          "share",
+          "date_of_birth",
+          "personal_id",
+          "address",
+          "sanctioned",
+          "pep"
+        ]
+      }
+    },
+    "directors": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Array of objects where each object is a director of the company.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the director.",
+            "example": "John Doe"
+          },
+          "nationality": {
+            "type": "string",
+            "description": "Nationality of the director.",
+            "maxLength": 2,
+            "minLength": 2
+          },
+          "position": {
+            "type": "string",
+            "description": "Position in the company.",
+            "example": "CEO"
+          },
+          "date_of_birth": {
+            "type": "string",
+            "description": "Birth data of the director.",
+            "format": "date",
+            "example": "2006-01-02"
+          },
+          "personal_id": {
+            "type": "string",
+            "description": "Personal ID number of the director, optional for UK nationals."
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the director, mandatory for UK company or people with different nationality from company."
+          },
+          "sanctioned": {
+            "description": "Whether the director is sanctioned or not",
+            "type": "boolean"
+          },
+          "pep": {
+            "description": "Whether the director is a Politically Exposed Person or not.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "nationality",
+          "position",
+          "date_of_birth",
+          "personal_id",
+          "address",
+          "sanctioned",
+          "pep"
+        ]
+      }
+    },
+    "corporate_structure": {
+      "type": "array",
+      "description": "Array of objects where each object is a company with at least 25% ownership. Unlimited companies.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "client_id",
+    "product",
+    "annual_revenue",
+    "incorporation_date",
+    "financial_institution",
+    "income_source",
+    "financing_frequency",
+    "directors"
+  ]
+}

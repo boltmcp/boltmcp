@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of items to obtain per response. The limit/offset schema is used for pagination. The maximum allowed value is 100.",
+      "type": "integer"
+    },
+    "offset": {
+      "description": "The number of items to skip in the response. The limit/offset schema is used for pagination. The default value is 0.",
+      "type": "integer"
+    },
+    "id": {
+      "description": "Use to filter the result using a client ID. Multiple IDs in the query are supported using `key=value` pairs.",
+      "type": "string"
+    },
+    "state": {
+      "description": "Use to filter the result using client state. Multiple states in the query are supported using `key=value` pairs.",
+      "type": "string",
+      "enum": [
+        "NEW_LEAD",
+        "LEAD_VERIFIED",
+        "LEAD_REJECTED",
+        "CONTRACT_SIGNED",
+        "COMPANY_CREATED",
+        "COMPANY_REQUESTED",
+        "CONTRACT_SENT",
+        "CONTRACT_GENERATED",
+        "LEAD_INVALID_SIGNERS"
+      ]
+    },
+    "missing_bank_details": {
+      "description": "Use to filter the results to show companies that are missing only the bank details to complete the onboarding.",
+      "type": "boolean"
+    },
+    "crn": {
+      "description": "Use to filter the result using CRN (country code + registration number). Multiple CRNs in the query are supported using `key=value` pairs.",
+      "type": "string"
+    },
+    "product_id": {
+      "description": "Use to filter the result using a product ID. Multiple product IDs in the query are supported using `key=value` pairs.",
+      "type": "string",
+      "enum": [
+        "ETR",
+        "ETC"
+      ]
+    }
+  },
+  "required": [
+    "limit",
+    "offset"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "This is the Invoice ID provided by Bankable when the invoice was created (see the \"Create invoice\" response).",
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

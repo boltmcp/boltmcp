@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "account_id": {
+      "description": "The unique identifier of the investor account.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "limit": {
+      "description": "Number of items to return per response (pagination). Default is 10, maximum is 100.",
+      "type": "string"
+    },
+    "offset": {
+      "description": "Number of items to skip in the response (pagination). Default is 0.",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Start date for the range of trades (must be less than 180 days).",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "End date for the range of trades (must be less than 180 days).",
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "account_id",
+    "start_date",
+    "end_date"
+  ]
+}

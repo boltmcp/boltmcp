@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "This is the payable financing request ID provided by Bankable when the payables were submitted",
+      "type": "string"
+    },
+    "decline_reason": {
+      "description": "The reason for declining the financing request",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "decline_reason"
+  ]
+}

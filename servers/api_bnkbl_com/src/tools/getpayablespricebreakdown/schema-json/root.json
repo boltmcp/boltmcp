@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier for the client provided by Bankable.",
+      "type": "string"
+    },
+    "financing_amount": {
+      "description": "The total amount that a Client desires to finance (1 or more payables).",
+      "type": "number",
+      "format": "float"
+    },
+    "repayment_method": {
+      "description": "Whether a Client wants to repay the financing in weekly or monthly instalments.",
+      "type": "string",
+      "enum": [
+        "weekly_instalments",
+        "monthly_instalments"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "financing_amount",
+    "repayment_method"
+  ]
+}

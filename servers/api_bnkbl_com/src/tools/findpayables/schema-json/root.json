@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of items to obtain per response. The limit/offset schema is used for pagination. The default value is 10. The maximum allowed value is 100.",
+      "type": "string"
+    },
+    "offset": {
+      "description": "The number of items to skip in the response. The limit/offset schema is used for pagination. The default value is 0.",
+      "type": "string"
+    },
+    "sort_by": {
+      "description": "Use to determine which value to use to sort the paginated result. The default value is created_at.",
+      "type": "string",
+      "enum": [
+        "created_at",
+        "state",
+        "amount",
+        "currency"
+      ]
+    },
+    "descending": {
+      "description": "Use to determine the sorting order as either descending or ascending. The default value is false, which corresponds to ascending order.",
+      "type": "string",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "id[]": {
+      "description": "Use to filter the payable list by a collection of payable financing request IDs. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "state[]": {
+      "description": "Use to filter the payable request list by a collection of payable financing request states. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string",
+      "example": "APPROVED&state[]=REJECTED"
+    },
+    "client_id[]": {
+      "description": "Use to filter the payable request list by a collection of client IDs. You must use this filter by adding multiple times this query parameter with different values. The format is ISO 4217.",
+      "type": "string",
+      "example": "9d4153a3-f708-4e47-967e-bebd619a76a4&client_id[]=db9beb15-ec04-4ff5-9f3f-0f00fd03a9d3"
+    },
+    "total_requested_amount_from": {
+      "description": "Use to filter the payable request list by amount value greater than the given one. The amount can only include numbers and dot (.), and it must be presented in (EUR) or pence (GBP). For example, 100.00.",
+      "type": "string",
+      "example": "100.00"
+    },
+    "total_requested_amount_to": {
+      "description": "Use to filter the payable request list by amount value less than the given one. The amount can only include numbers and dot (.), and it must be presented in (EUR) or pence (GBP). For example, 200.00.",
+      "type": "string",
+      "example": "200.00"
+    },
+    "currency[]": {
+      "description": "Use to filter the payable request list by a collection of currencies. You must use this filter by adding multiple times this query parameter with different values. The format is ISO 4217.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

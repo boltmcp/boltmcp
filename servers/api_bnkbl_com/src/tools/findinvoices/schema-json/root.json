@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "description": "The number of items to obtain per response. The limit/offset schema is used for pagination. The default value is 10. The maximum allowed value is 100.",
+      "type": "string"
+    },
+    "offset": {
+      "description": "The number of items to skip in the response. The limit/offset schema is used for pagination. The default value is 0.",
+      "type": "string"
+    },
+    "sort_by": {
+      "description": "Use to determine which value to use to sort the paginated result. The default value is created_at.",
+      "type": "string",
+      "enum": [
+        "created_at",
+        "invoice_number",
+        "payment_reference",
+        "face_value",
+        "currency",
+        "debtor_registration_number",
+        "debtor_country",
+        "issuer_registration_number",
+        "issuer_country",
+        "issuer_name"
+      ]
+    },
+    "descending": {
+      "description": "Use to determine the sorting order as either descending or ascending. The default value is false, which corresponds to ascending order.",
+      "type": "string"
+    },
+    "invoice_number": {
+      "description": "Use to filter the invoice list by the invoice number given.",
+      "type": "string"
+    },
+    "invoice_number[]": {
+      "description": "Use to filter the invoice list by a collection of invoice number. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "payment_reference": {
+      "description": "Use to filter the invoice list by the payment reference given.",
+      "type": "string"
+    },
+    "payment_reference[]": {
+      "description": "Use to filter the invoice list by a collection of payment references. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "face_value_from": {
+      "description": "Use to filter the invoice list by face value above than the given one. It must be sent as cents. For example, the value 191.95 has to be sent as 19195.",
+      "type": "string"
+    },
+    "face_value_to": {
+      "description": "Use to filter the invoice list by face value below than the given one. It must be sent as cents. For example, the value 191.95 has to be sent as 19195.",
+      "type": "string"
+    },
+    "currency": {
+      "description": "Use to filter the invoice list by the currency code given. The format is ISO 4217.",
+      "type": "string"
+    },
+    "currency[]": {
+      "description": "Use to filter the invoice list by a collection of currencies. You must use this filter by adding multiple times this query parameter with different values. The format is ISO 4217.",
+      "type": "string"
+    },
+    "issuer_name_like": {
+      "description": "Use to filter the invoice list by the given issuer name. The like suffix determines that the query we end up doing is a LIKE %VALUE%.",
+      "type": "string"
+    },
+    "issuer_country[]": {
+      "description": "Use to filter the invoice list by a collection of issuer country codes in ISO 3166 format. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "issuer_registration_number": {
+      "description": "Use to filter the invoice list by the issuer registration number given.",
+      "type": "string"
+    },
+    "issuer_registration_number[]": {
+      "description": "Use to filter the invoice list by a collection of issuer registration numbers. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "debtor_name_like": {
+      "description": "Use to filter the invoice list by the given debtor name. The like suffix determines that the query we end up doing is a LIKE %VALUE%.",
+      "type": "string"
+    },
+    "debtor_country[]": {
+      "description": "Use to filter the invoice list by a collection of debtor countries in ISO 3166 format. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    },
+    "debtor_registration_number": {
+      "description": "Use to filter the invoice list by the debtor registration number given.",
+      "type": "string"
+    },
+    "debtor_registration_number[]": {
+      "description": "Use to filter the invoice list by a collection of debtor registration numbers. You must use this filter by adding multiple times this query parameter with different values.",
+      "type": "string"
+    }
+  },
+  "required": []
+}
