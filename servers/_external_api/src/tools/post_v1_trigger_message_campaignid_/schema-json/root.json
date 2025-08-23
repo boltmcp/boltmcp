@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "campaignId": {
+      "description": "An ID of the automated campaign you want to trigger",
+      "type": "string",
+      "format": "uuid"
+    },
+    "numberLookup": {
+      "description": "Should run number lookups billable to the account. *Minimum charge applies. Defaults to false",
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `data` to the tool, first call the tool `expandSchema` with \"/properties/data\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "campaignId",
+    "data"
+  ]
+}

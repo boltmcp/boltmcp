@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "client_secret": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string",
+      "description": "audience should always be:  'api-mobiz-smart'",
+      "default": "api-mobiz-smart"
+    },
+    "grant_type": {
+      "type": "string",
+      "description": "grant_type should always be:  'client_credentials'",
+      "default": "client_credentials"
+    }
+  },
+  "required": []
+}

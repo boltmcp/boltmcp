@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "phone": {
+      "type": "string",
+      "description": "The ideal format is the E164 format; otherwise the number will be parsed with best attempt while using using the International Dialing Code of the account's business region.",
+      "minLength": 8,
+      "maxLength": 15,
+      "example": "+18005551234"
+    },
+    "message": {
+      "type": "string",
+      "example": "You're my favorite customer"
+    }
+  },
+  "required": [
+    "phone",
+    "message"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "Accepts create OR createAndUpdate. Defaults to createAndUpdate",
+      "type": "string",
+      "enum": [
+        "create",
+        "createAndUpdate"
+      ]
+    },
+    "listIds": {
+      "description": "Accepts uuids, comma separated, of existing listIds. Defaults to empty",
+      "type": "string",
+      "format": "uuid"
+    },
+    "shouldNumberLookup": {
+      "description": "Should run number lookups billable to the account. *Minimum charge applies. Defaults to false",
+      "type": "boolean"
+    },
+    "delimiter": {
+      "description": "Csv contents delimiter. Must be single character. Defaults to ','",
+      "type": "string"
+    }
+  },
+  "required": []
+}
