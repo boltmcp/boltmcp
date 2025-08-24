@@ -1,0 +1,26 @@
+import { inputParamsSchema } from "./schema/root.js"
+import type { OpenMCPServerTool } from "@open-mcp/core"
+
+const tool: OpenMCPServerTool = {
+  "toolName": "put_periodic_period_",
+  "toolDescription": "Update the content of the current periodic note for the specified period.",
+  "baseUrl": "https://{host}:{port}",
+  "path": "/periodic/{period}/",
+  "method": "put",
+  "security": [
+    {
+      "key": "Authorization",
+      "value": "Bearer <mcp-env-var>API_KEY</mcp-env-var>",
+      "in": "header",
+      "envVarName": "API_KEY"
+    }
+  ],
+  "paramsMap": {
+    "path": {
+      "period": "period"
+    }
+  },
+  inputParamsSchema
+}
+
+export default tool

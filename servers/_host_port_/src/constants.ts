@@ -1,0 +1,35 @@
+export const OPENAPI_URL = "https://coddingtonbear.github.io/obsidian-local-rest-api/openapi.yaml"
+export const SERVER_NAME = "_host_port_"
+export const SERVER_VERSION = "0.0.1"
+export const OPERATION_FILES_RELATIVE = [
+  "./tools/get_/index.js",
+  "./tools/delete_active_/index.js",
+  "./tools/get_active_/index.js",
+  "./tools/patch_active_/index.js",
+  "./tools/post_active_/index.js",
+  "./tools/put_active_/index.js",
+  "./tools/get_commands_/index.js",
+  "./tools/post_commands_commandid_/index.js",
+  "./tools/get_obsidian_local_rest_api_crt/index.js",
+  "./tools/post_open_filename_/index.js",
+  "./tools/get_openapi_yaml/index.js",
+  "./tools/delete_periodic_period_/index.js",
+  "./tools/get_periodic_period_/index.js",
+  "./tools/patch_periodic_period_/index.js",
+  "./tools/post_periodic_period_/index.js",
+  "./tools/put_periodic_period_/index.js",
+  "./tools/delete_periodic_period_year_month_day_/index.js",
+  "./tools/get_periodic_period_year_month_day_/index.js",
+  "./tools/patch_periodic_period_year_month_day_/index.js",
+  "./tools/post_periodic_period_year_month_day_/index.js",
+  "./tools/put_periodic_period_year_month_day_/index.js",
+  "./tools/post_search_/index.js",
+  "./tools/post_search_simple_/index.js",
+  "./tools/get_vault_/index.js",
+  "./tools/delete_vault_filename_/index.js",
+  "./tools/get_vault_filename_/index.js",
+  "./tools/patch_vault_filename_/index.js",
+  "./tools/post_vault_filename_/index.js",
+  "./tools/put_vault_filename_/index.js",
+  "./tools/get_vault_pathtodirectory_/index.js"
+]

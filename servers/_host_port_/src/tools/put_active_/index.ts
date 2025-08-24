@@ -1,0 +1,22 @@
+import { inputParamsSchema } from "./schema/root.js"
+import type { OpenMCPServerTool } from "@open-mcp/core"
+
+const tool: OpenMCPServerTool = {
+  "toolName": "put_active_",
+  "toolDescription": "Update the content of the active file open in Obsidian.",
+  "baseUrl": "https://{host}:{port}",
+  "path": "/active/",
+  "method": "put",
+  "security": [
+    {
+      "key": "Authorization",
+      "value": "Bearer <mcp-env-var>API_KEY</mcp-env-var>",
+      "in": "header",
+      "envVarName": "API_KEY"
+    }
+  ],
+  "paramsMap": {},
+  inputParamsSchema
+}
+
+export default tool

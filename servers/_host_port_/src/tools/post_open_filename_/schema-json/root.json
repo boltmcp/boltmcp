@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "description": "Path to the file to return (relative to your vault root).\n",
+      "format": "path",
+      "type": "string"
+    },
+    "newLeaf": {
+      "description": "Open this as a new leaf?",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "filename"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "description": "Path to the relevant file (relative to your vault root).\n",
+      "format": "path",
+      "type": "string"
+    }
+  },
+  "required": [
+    "filename"
+  ]
+}

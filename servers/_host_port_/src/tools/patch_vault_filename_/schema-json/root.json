@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "description": "Path to the relevant file (relative to your vault root).\n",
+      "format": "path",
+      "type": "string"
+    },
+    "Operation": {
+      "description": "Patch operation to perform",
+      "enum": [
+        "append",
+        "prepend",
+        "replace"
+      ],
+      "type": "string"
+    },
+    "Target-Type": {
+      "description": "Type of target to patch",
+      "enum": [
+        "heading",
+        "block",
+        "frontmatter"
+      ],
+      "type": "string"
+    },
+    "Target-Delimiter": {
+      "description": "Delimiter to use for nested targets (i.e. Headings)",
+      "default": "::",
+      "type": "string"
+    },
+    "Target": {
+      "description": "Target to patch; this value can be URL-Encoded and *must*\nbe URL-Encoded if it includes non-ASCII characters.\n",
+      "type": "string"
+    },
+    "Trim-Target-Whitespace": {
+      "description": "Trim whitespace from Target before applying patch?",
+      "default": "false",
+      "enum": [
+        "true",
+        "false"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "filename",
+    "Operation",
+    "Target-Type",
+    "Target"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "description": "Your search query",
+      "type": "string"
+    },
+    "contextLength": {
+      "description": "How much context to return around the matching string",
+      "default": 100,
+      "type": "number"
+    }
+  },
+  "required": [
+    "query"
+  ]
+}
