@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "filter": {
+      "description": "Filter by day",
+      "type": "string",
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "unknown",
+        "other"
+      ]
+    },
+    "kids": {
+      "description": "When supplied, it will filter entries with the `Kids` Genre Demographic. When supplied as `kids=true`, it will return only Kid entries and when supplied as `kids=false`, it will filter out any Kid entries. Defaults to `false`.",
+      "type": "string",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "sfw": {
+      "description": "'Safe For Work'. When supplied, it will filter entries with the `Hentai` Genre. When supplied as `sfw=true`, it will return only SFW entries and when supplied as `sfw=false`, it will filter out any Hentai entries. Defaults to `false`.",
+      "type": "string",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "unapproved": {
+      "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+      "type": "boolean"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": []
+}

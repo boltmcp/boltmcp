@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "q": {
+      "type": "string"
+    },
+    "gender": {
+      "description": "Users Search Query Gender.",
+      "type": "string",
+      "enum": [
+        "any",
+        "male",
+        "female",
+        "nonbinary"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "maxAge": {
+      "type": "integer"
+    },
+    "minAge": {
+      "type": "integer"
+    }
+  },
+  "required": []
+}

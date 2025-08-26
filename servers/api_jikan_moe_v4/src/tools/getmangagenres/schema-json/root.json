@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "filter": {
+      "description": "Filter genres by type",
+      "type": "string",
+      "enum": [
+        "genres",
+        "explicit_genres",
+        "themes",
+        "demographics"
+      ]
+    }
+  },
+  "required": []
+}

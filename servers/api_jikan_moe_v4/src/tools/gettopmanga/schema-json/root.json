@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Available Manga types",
+      "type": "string",
+      "enum": [
+        "manga",
+        "novel",
+        "lightnovel",
+        "oneshot",
+        "doujin",
+        "manhwa",
+        "manhua"
+      ]
+    },
+    "filter": {
+      "description": "Top items filter types",
+      "type": "string",
+      "enum": [
+        "publishing",
+        "upcoming",
+        "bypopularity",
+        "favorite"
+      ]
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": []
+}

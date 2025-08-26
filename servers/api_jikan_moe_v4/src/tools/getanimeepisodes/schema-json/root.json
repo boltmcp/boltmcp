@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

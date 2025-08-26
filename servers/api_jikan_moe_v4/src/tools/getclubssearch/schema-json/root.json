@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "q": {
+      "type": "string"
+    },
+    "type": {
+      "description": "Club Search Query Type",
+      "type": "string",
+      "enum": [
+        "public",
+        "private",
+        "secret"
+      ]
+    },
+    "category": {
+      "description": "Club Search Query Category",
+      "type": "string",
+      "enum": [
+        "anime",
+        "manga",
+        "actors_and_artists",
+        "characters",
+        "cities_and_neighborhoods",
+        "companies",
+        "conventions",
+        "games",
+        "japan",
+        "music",
+        "other",
+        "schools"
+      ]
+    },
+    "order_by": {
+      "description": "Club Search Query OrderBy",
+      "type": "string",
+      "enum": [
+        "mal_id",
+        "name",
+        "members_count",
+        "created"
+      ]
+    },
+    "sort": {
+      "description": "Search query sort direction",
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ]
+    },
+    "letter": {
+      "description": "Return entries starting with the given letter",
+      "type": "string"
+    }
+  },
+  "required": []
+}

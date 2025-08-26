@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "filter": {
+      "description": "Entry types",
+      "type": "string",
+      "enum": [
+        "tv",
+        "movie",
+        "ova",
+        "special",
+        "ona",
+        "music"
+      ]
+    },
+    "sfw": {
+      "description": "'Safe For Work'. This is a flag. When supplied it will filter out entries according to the SFW Policy. You do not need to pass a value to it. e.g usage: `?sfw`",
+      "type": "boolean"
+    },
+    "unapproved": {
+      "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+      "type": "boolean"
+    },
+    "continuing": {
+      "description": "This is a flag. When supplied it will include entries which are continuing from previous seasons. MAL includes these items on the seasons view in the &#8243;TV (continuing)&#8243; section. (Example: https://myanimelist.net/anime/season/2024/winter) <br />Example usage: `?continuing`",
+      "type": "boolean"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Available Anime types",
+      "type": "string",
+      "enum": [
+        "tv",
+        "movie",
+        "ova",
+        "special",
+        "ona",
+        "music",
+        "cm",
+        "pv",
+        "tv_special"
+      ]
+    },
+    "filter": {
+      "description": "Top items filter types",
+      "type": "string",
+      "enum": [
+        "airing",
+        "upcoming",
+        "bypopularity",
+        "favorite"
+      ]
+    },
+    "rating": {
+      "description": "Available Anime audience ratings<br><br><b>Ratings</b><br><ul><li>G - All Ages</li><li>PG - Children</li><li>PG-13 - Teens 13 or older</li><li>R - 17+ (violence & profanity)</li><li>R+ - Mild Nudity</li><li>Rx - Hentai</li></ul>",
+      "type": "string",
+      "enum": [
+        "g",
+        "pg",
+        "pg13",
+        "r17",
+        "r",
+        "rx"
+      ]
+    },
+    "sfw": {
+      "description": "Filter out Adult entries",
+      "type": "boolean"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": []
+}

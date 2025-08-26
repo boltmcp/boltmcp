@@ -1,0 +1,119 @@
+{
+  "type": "object",
+  "properties": {
+    "unapproved": {
+      "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+      "type": "boolean"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "q": {
+      "type": "string"
+    },
+    "type": {
+      "description": "Available Anime types",
+      "type": "string",
+      "enum": [
+        "tv",
+        "movie",
+        "ova",
+        "special",
+        "ona",
+        "music",
+        "cm",
+        "pv",
+        "tv_special"
+      ]
+    },
+    "score": {
+      "type": "number"
+    },
+    "min_score": {
+      "description": "Set a minimum score for results.",
+      "type": "number"
+    },
+    "max_score": {
+      "description": "Set a maximum score for results",
+      "type": "number"
+    },
+    "status": {
+      "description": "Available Anime statuses",
+      "type": "string",
+      "enum": [
+        "airing",
+        "complete",
+        "upcoming"
+      ]
+    },
+    "rating": {
+      "description": "Available Anime audience ratings<br><br><b>Ratings</b><br><ul><li>G - All Ages</li><li>PG - Children</li><li>PG-13 - Teens 13 or older</li><li>R - 17+ (violence & profanity)</li><li>R+ - Mild Nudity</li><li>Rx - Hentai</li></ul>",
+      "type": "string",
+      "enum": [
+        "g",
+        "pg",
+        "pg13",
+        "r17",
+        "r",
+        "rx"
+      ]
+    },
+    "sfw": {
+      "description": "Filter out Adult entries",
+      "type": "boolean"
+    },
+    "genres": {
+      "description": "Filter by genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "genres_exclude": {
+      "description": "Exclude genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "order_by": {
+      "description": "Available Anime order_by properties",
+      "type": "string",
+      "enum": [
+        "mal_id",
+        "title",
+        "start_date",
+        "end_date",
+        "episodes",
+        "score",
+        "scored_by",
+        "rank",
+        "popularity",
+        "members",
+        "favorites"
+      ]
+    },
+    "sort": {
+      "description": "Search query sort direction",
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ]
+    },
+    "letter": {
+      "description": "Return entries starting with the given letter",
+      "type": "string"
+    },
+    "producers": {
+      "description": "Filter by producer(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Filter by starting date. Format: YYYY-MM-DD. e.g `2022`, `2005-05`, `2005-01-01`",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "Filter by ending date. Format: YYYY-MM-DD. e.g `2022`, `2005-05`, `2005-01-01`",
+      "type": "string"
+    }
+  },
+  "required": []
+}

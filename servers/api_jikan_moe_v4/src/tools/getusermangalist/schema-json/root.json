@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "status": {
+      "description": "User's anime list status filter options",
+      "type": "string",
+      "enum": [
+        "all",
+        "reading",
+        "completed",
+        "onhold",
+        "dropped",
+        "plantoread"
+      ]
+    }
+  },
+  "required": [
+    "username"
+  ]
+}

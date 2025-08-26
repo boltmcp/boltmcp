@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "anime",
+        "manga"
+      ]
+    }
+  },
+  "required": [
+    "username"
+  ]
+}

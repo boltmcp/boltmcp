@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "q": {
+      "type": "string"
+    },
+    "order_by": {
+      "description": "Available People order_by properties",
+      "type": "string",
+      "enum": [
+        "mal_id",
+        "name",
+        "birthday",
+        "favorites"
+      ]
+    },
+    "sort": {
+      "description": "Search query sort direction",
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ]
+    },
+    "letter": {
+      "description": "Return entries starting with the given letter",
+      "type": "string"
+    }
+  },
+  "required": []
+}

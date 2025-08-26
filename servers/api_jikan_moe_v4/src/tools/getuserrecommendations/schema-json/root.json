@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "page": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "username"
+  ]
+}

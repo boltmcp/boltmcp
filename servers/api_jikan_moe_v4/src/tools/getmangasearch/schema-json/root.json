@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "properties": {
+    "unapproved": {
+      "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+      "type": "boolean"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "q": {
+      "type": "string"
+    },
+    "type": {
+      "description": "Available Manga types",
+      "type": "string",
+      "enum": [
+        "manga",
+        "novel",
+        "lightnovel",
+        "oneshot",
+        "doujin",
+        "manhwa",
+        "manhua"
+      ]
+    },
+    "score": {
+      "type": "number"
+    },
+    "min_score": {
+      "description": "Set a minimum score for results.",
+      "type": "number"
+    },
+    "max_score": {
+      "description": "Set a maximum score for results",
+      "type": "number"
+    },
+    "status": {
+      "description": "Available Manga statuses",
+      "type": "string",
+      "enum": [
+        "publishing",
+        "complete",
+        "hiatus",
+        "discontinued",
+        "upcoming"
+      ]
+    },
+    "sfw": {
+      "description": "Filter out Adult entries",
+      "type": "boolean"
+    },
+    "genres": {
+      "description": "Filter by genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "genres_exclude": {
+      "description": "Exclude genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "order_by": {
+      "description": "Available Manga order_by properties",
+      "type": "string",
+      "enum": [
+        "mal_id",
+        "title",
+        "start_date",
+        "end_date",
+        "chapters",
+        "volumes",
+        "score",
+        "scored_by",
+        "rank",
+        "popularity",
+        "members",
+        "favorites"
+      ]
+    },
+    "sort": {
+      "description": "Search query sort direction",
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ]
+    },
+    "letter": {
+      "description": "Return entries starting with the given letter",
+      "type": "string"
+    },
+    "magazines": {
+      "description": "Filter by magazine(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Filter by starting date. Format: YYYY-MM-DD. e.g `2022`, `2005-05`, `2005-01-01`",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "Filter by ending date. Format: YYYY-MM-DD. e.g `2022`, `2005-05`, `2005-01-01`",
+      "type": "string"
+    }
+  },
+  "required": []
+}

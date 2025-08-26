@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "type": {
+      "description": "The type of reviews to filter by. Defaults to anime.",
+      "type": "string",
+      "enum": [
+        "anime",
+        "manga"
+      ]
+    },
+    "preliminary": {
+      "description": "Whether the results include preliminary reviews or not. Defaults to true.",
+      "type": "boolean"
+    },
+    "spoilers": {
+      "description": "Whether the results include reviews with spoilers or not. Defaults to true.",
+      "type": "boolean"
+    }
+  },
+  "required": []
+}
