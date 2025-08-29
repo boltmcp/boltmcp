@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "uses": {
+      "type": "integer",
+      "title": "Uses"
+    },
+    "groupId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Groupid"
+    },
+    "householdId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Householdid"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "uses"
+  ]
+}

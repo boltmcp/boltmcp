@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "integer",
+      "title": "Item Id"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date"
+    },
+    "entryType": {
+      "default": "breakfast",
+      "type": "string",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "side"
+      ],
+      "title": "PlanEntryType"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "default": ""
+    },
+    "recipeId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Recipeid"
+    },
+    "id": {
+      "type": "integer",
+      "title": "Id"
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Groupid"
+    },
+    "userId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Userid"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "date",
+    "id",
+    "groupId",
+    "userId"
+  ]
+}

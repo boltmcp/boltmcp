@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "recipe_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Recipe Id"
+    },
+    "file_name": {
+      "type": "string",
+      "title": "File Name"
+    }
+  },
+  "required": [
+    "recipe_id",
+    "file_name"
+  ]
+}

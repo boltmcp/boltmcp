@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

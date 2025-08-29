@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "User Id"
+    },
+    "file_name": {
+      "type": "string",
+      "title": "File Name"
+    }
+  },
+  "required": [
+    "user_id",
+    "file_name"
+  ]
+}

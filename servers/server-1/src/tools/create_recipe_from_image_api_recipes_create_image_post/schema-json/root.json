@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "translateLanguage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Translatelanguage"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "default": true
+    },
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "title": "Url",
+      "default": ""
+    },
+    "webhookType": {
+      "default": "mealplan",
+      "type": "string",
+      "enum": [
+        "mealplan"
+      ],
+      "title": "WebhookType"
+    },
+    "scheduledTime": {
+      "type": "string",
+      "format": "time",
+      "title": "Scheduledtime"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "scheduledTime"
+  ]
+}

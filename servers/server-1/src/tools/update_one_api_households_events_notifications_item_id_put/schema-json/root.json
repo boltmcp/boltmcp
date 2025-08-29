@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "appriseUrl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Appriseurl"
+    },
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "default": true
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "householdId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Householdid"
+    },
+    "options": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `options` to the tool, first call the tool `expandSchema` with \"/properties/options\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>These events are in-sync with the EventTypes found in the EventBusService.\nIf you modify this, make sure to update the EventBusService as well.</property-description>",
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "name",
+    "groupId",
+    "householdId",
+    "id"
+  ]
+}

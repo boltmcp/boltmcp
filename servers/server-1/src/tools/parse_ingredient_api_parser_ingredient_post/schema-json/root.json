@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "parser": {
+      "default": "nlp",
+      "type": "string",
+      "enum": [
+        "nlp",
+        "brute",
+        "openai"
+      ],
+      "title": "RegisteredParser"
+    },
+    "ingredient": {
+      "type": "string",
+      "title": "Ingredient"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "ingredient"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "fromFood": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Fromfood"
+    },
+    "toFood": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Tofood"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "fromFood",
+    "toFood"
+  ]
+}

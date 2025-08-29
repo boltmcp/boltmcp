@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "file_name": {
+      "type": "string",
+      "title": "File Name"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "file_name"
+  ]
+}

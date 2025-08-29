@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "fromUnit": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Fromunit"
+    },
+    "toUnit": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Tounit"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "fromUnit",
+    "toUnit"
+  ]
+}

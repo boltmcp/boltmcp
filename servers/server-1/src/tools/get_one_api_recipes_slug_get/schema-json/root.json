@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "slug": {
+      "description": "A recipe's slug or id",
+      "type": "string",
+      "title": "Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "slug"
+  ]
+}

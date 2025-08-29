@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "recipes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Recipes"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipes"
+  ]
+}

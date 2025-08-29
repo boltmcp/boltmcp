@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "includeTags": {
+      "type": "boolean",
+      "title": "Includetags",
+      "default": false
+    },
+    "url": {
+      "type": "string",
+      "title": "Url"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "slug",
+    "url"
+  ]
+}

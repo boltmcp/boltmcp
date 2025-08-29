@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "pluralName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pluralname"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "default": ""
+    },
+    "extras": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Extras",
+      "default": {}
+    },
+    "fraction": {
+      "type": "boolean",
+      "title": "Fraction",
+      "default": true
+    },
+    "abbreviation": {
+      "type": "string",
+      "title": "Abbreviation",
+      "default": ""
+    },
+    "pluralAbbreviation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pluralabbreviation",
+      "default": ""
+    },
+    "useAbbreviation": {
+      "type": "boolean",
+      "title": "Useabbreviation",
+      "default": false
+    },
+    "aliases": {
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "CreateIngredientUnitAlias"
+      },
+      "type": "array",
+      "title": "Aliases",
+      "default": []
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "name"
+  ]
+}

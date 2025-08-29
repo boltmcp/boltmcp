@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "force": {
+      "type": "boolean",
+      "default": false,
+      "title": "Force"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

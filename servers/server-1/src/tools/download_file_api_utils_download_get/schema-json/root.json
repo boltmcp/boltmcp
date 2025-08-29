@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    }
+  },
+  "required": []
+}

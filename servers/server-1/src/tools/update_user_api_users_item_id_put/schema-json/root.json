@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "username": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Username"
+    },
+    "fullName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fullname"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "authMethod": {
+      "default": "Mealie",
+      "type": "string",
+      "enum": [
+        "Mealie",
+        "LDAP",
+        "OIDC"
+      ],
+      "title": "AuthMethod"
+    },
+    "admin": {
+      "type": "boolean",
+      "title": "Admin",
+      "default": false
+    },
+    "group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group"
+    },
+    "household": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Household"
+    },
+    "advanced": {
+      "type": "boolean",
+      "title": "Advanced",
+      "default": false
+    },
+    "canInvite": {
+      "type": "boolean",
+      "title": "Caninvite",
+      "default": false
+    },
+    "canManage": {
+      "type": "boolean",
+      "title": "Canmanage",
+      "default": false
+    },
+    "canManageHousehold": {
+      "type": "boolean",
+      "title": "Canmanagehousehold",
+      "default": false
+    },
+    "canOrganize": {
+      "type": "boolean",
+      "title": "Canorganize",
+      "default": false
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "email"
+  ]
+}

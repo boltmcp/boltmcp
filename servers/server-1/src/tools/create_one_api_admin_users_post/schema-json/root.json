@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "username": {
+      "type": "string",
+      "title": "Username"
+    },
+    "fullName": {
+      "type": "string",
+      "title": "Fullname"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "authMethod": {
+      "default": "Mealie",
+      "type": "string",
+      "enum": [
+        "Mealie",
+        "LDAP",
+        "OIDC"
+      ],
+      "title": "AuthMethod"
+    },
+    "admin": {
+      "type": "boolean",
+      "title": "Admin",
+      "default": false
+    },
+    "group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group"
+    },
+    "household": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Household"
+    },
+    "advanced": {
+      "type": "boolean",
+      "title": "Advanced",
+      "default": false
+    },
+    "canInvite": {
+      "type": "boolean",
+      "title": "Caninvite",
+      "default": false
+    },
+    "canManage": {
+      "type": "boolean",
+      "title": "Canmanage",
+      "default": false
+    },
+    "canManageHousehold": {
+      "type": "boolean",
+      "title": "Canmanagehousehold",
+      "default": false
+    },
+    "canOrganize": {
+      "type": "boolean",
+      "title": "Canorganize",
+      "default": false
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "username",
+    "fullName",
+    "email",
+    "password"
+  ]
+}

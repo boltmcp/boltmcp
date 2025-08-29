@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "report_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "backup",
+            "restore",
+            "migration",
+            "bulk_import"
+          ],
+          "title": "ReportCategory"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Report Type"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

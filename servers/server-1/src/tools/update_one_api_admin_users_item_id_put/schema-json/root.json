@@ -1,0 +1,175 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "username": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Username"
+    },
+    "fullName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fullname"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "authMethod": {
+      "default": "Mealie",
+      "type": "string",
+      "enum": [
+        "Mealie",
+        "LDAP",
+        "OIDC"
+      ],
+      "title": "AuthMethod"
+    },
+    "admin": {
+      "type": "boolean",
+      "title": "Admin",
+      "default": false
+    },
+    "group": {
+      "type": "string",
+      "title": "Group"
+    },
+    "household": {
+      "type": "string",
+      "title": "Household"
+    },
+    "advanced": {
+      "type": "boolean",
+      "title": "Advanced",
+      "default": false
+    },
+    "canInvite": {
+      "type": "boolean",
+      "title": "Caninvite",
+      "default": false
+    },
+    "canManage": {
+      "type": "boolean",
+      "title": "Canmanage",
+      "default": false
+    },
+    "canManageHousehold": {
+      "type": "boolean",
+      "title": "Canmanagehousehold",
+      "default": false
+    },
+    "canOrganize": {
+      "type": "boolean",
+      "title": "Canorganize",
+      "default": false
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "groupSlug": {
+      "type": "string",
+      "title": "Groupslug"
+    },
+    "householdId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Householdid"
+    },
+    "householdSlug": {
+      "type": "string",
+      "title": "Householdslug"
+    },
+    "tokens": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "createdAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Createdat"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "id"
+            ],
+            "title": "LongLiveTokenOut"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tokens"
+    },
+    "cacheKey": {
+      "type": "string",
+      "title": "Cachekey"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "id",
+    "email",
+    "group",
+    "household",
+    "groupId",
+    "groupSlug",
+    "householdId",
+    "householdSlug",
+    "cacheKey"
+  ]
+}

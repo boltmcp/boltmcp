@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "recipe_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Recipe Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipe_id"
+  ]
+}

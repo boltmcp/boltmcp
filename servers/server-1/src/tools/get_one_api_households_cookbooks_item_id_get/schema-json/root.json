@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Item Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id"
+  ]
+}

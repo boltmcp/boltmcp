@@ -1,0 +1,141 @@
+{
+  "default": {
+    "testMessage": false,
+    "webhookTask": false,
+    "recipeCreated": false,
+    "recipeUpdated": false,
+    "recipeDeleted": false,
+    "userSignup": false,
+    "dataMigrations": false,
+    "dataExport": false,
+    "dataImport": false,
+    "mealplanEntryCreated": false,
+    "shoppingListCreated": false,
+    "shoppingListUpdated": false,
+    "shoppingListDeleted": false,
+    "cookbookCreated": false,
+    "cookbookUpdated": false,
+    "cookbookDeleted": false,
+    "tagCreated": false,
+    "tagUpdated": false,
+    "tagDeleted": false,
+    "categoryCreated": false,
+    "categoryUpdated": false,
+    "categoryDeleted": false
+  },
+  "properties": {
+    "testMessage": {
+      "type": "boolean",
+      "title": "Testmessage",
+      "default": false
+    },
+    "webhookTask": {
+      "type": "boolean",
+      "title": "Webhooktask",
+      "default": false
+    },
+    "recipeCreated": {
+      "type": "boolean",
+      "title": "Recipecreated",
+      "default": false
+    },
+    "recipeUpdated": {
+      "type": "boolean",
+      "title": "Recipeupdated",
+      "default": false
+    },
+    "recipeDeleted": {
+      "type": "boolean",
+      "title": "Recipedeleted",
+      "default": false
+    },
+    "userSignup": {
+      "type": "boolean",
+      "title": "Usersignup",
+      "default": false
+    },
+    "dataMigrations": {
+      "type": "boolean",
+      "title": "Datamigrations",
+      "default": false
+    },
+    "dataExport": {
+      "type": "boolean",
+      "title": "Dataexport",
+      "default": false
+    },
+    "dataImport": {
+      "type": "boolean",
+      "title": "Dataimport",
+      "default": false
+    },
+    "mealplanEntryCreated": {
+      "type": "boolean",
+      "title": "Mealplanentrycreated",
+      "default": false
+    },
+    "shoppingListCreated": {
+      "type": "boolean",
+      "title": "Shoppinglistcreated",
+      "default": false
+    },
+    "shoppingListUpdated": {
+      "type": "boolean",
+      "title": "Shoppinglistupdated",
+      "default": false
+    },
+    "shoppingListDeleted": {
+      "type": "boolean",
+      "title": "Shoppinglistdeleted",
+      "default": false
+    },
+    "cookbookCreated": {
+      "type": "boolean",
+      "title": "Cookbookcreated",
+      "default": false
+    },
+    "cookbookUpdated": {
+      "type": "boolean",
+      "title": "Cookbookupdated",
+      "default": false
+    },
+    "cookbookDeleted": {
+      "type": "boolean",
+      "title": "Cookbookdeleted",
+      "default": false
+    },
+    "tagCreated": {
+      "type": "boolean",
+      "title": "Tagcreated",
+      "default": false
+    },
+    "tagUpdated": {
+      "type": "boolean",
+      "title": "Tagupdated",
+      "default": false
+    },
+    "tagDeleted": {
+      "type": "boolean",
+      "title": "Tagdeleted",
+      "default": false
+    },
+    "categoryCreated": {
+      "type": "boolean",
+      "title": "Categorycreated",
+      "default": false
+    },
+    "categoryUpdated": {
+      "type": "boolean",
+      "title": "Categoryupdated",
+      "default": false
+    },
+    "categoryDeleted": {
+      "type": "boolean",
+      "title": "Categorydeleted",
+      "default": false
+    }
+  },
+  "type": "object",
+  "title": "GroupEventNotifierOptions",
+  "description": "These events are in-sync with the EventTypes found in the EventBusService.\nIf you modify this, make sure to update the EventBusService as well."
+}

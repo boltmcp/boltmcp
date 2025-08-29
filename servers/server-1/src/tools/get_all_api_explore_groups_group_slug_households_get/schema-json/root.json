@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "group_slug": {
+      "type": "string",
+      "title": "Group Slug"
+    },
+    "orderBy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderby"
+    },
+    "orderByNullPosition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "first",
+            "last"
+          ],
+          "title": "OrderByNullPosition"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderbynullposition"
+    },
+    "orderDirection": {
+      "default": "desc",
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ],
+      "title": "OrderDirection"
+    },
+    "queryFilter": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Queryfilter"
+    },
+    "paginationSeed": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Paginationseed"
+    },
+    "page": {
+      "type": "integer",
+      "default": 1,
+      "title": "Page"
+    },
+    "perPage": {
+      "type": "integer",
+      "default": 50,
+      "title": "Perpage"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "group_slug"
+  ]
+}

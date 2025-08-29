@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "username_or_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "format": "uuid4"
+        }
+      ],
+      "title": "Username Or Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "username_or_id"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "color": {
+      "type": "string",
+      "title": "Color",
+      "default": "#959595"
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "name",
+    "groupId",
+    "id"
+  ]
+}

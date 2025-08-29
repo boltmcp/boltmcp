@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid4"
+      },
+      "title": "Ids"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

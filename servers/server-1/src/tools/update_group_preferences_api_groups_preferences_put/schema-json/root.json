@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "privateGroup": {
+      "type": "boolean",
+      "title": "Privategroup",
+      "default": true
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

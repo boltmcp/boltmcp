@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date"
+    },
+    "entryType": {
+      "default": "dinner",
+      "type": "string",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "side"
+      ],
+      "title": "PlanEntryType"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "date"
+  ]
+}

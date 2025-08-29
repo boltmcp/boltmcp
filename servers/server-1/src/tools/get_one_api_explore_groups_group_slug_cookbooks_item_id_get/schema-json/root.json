@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Item Id"
+    },
+    "group_slug": {
+      "type": "string",
+      "title": "Group Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "group_slug"
+  ]
+}

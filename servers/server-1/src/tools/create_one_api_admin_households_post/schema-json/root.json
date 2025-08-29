@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "groupId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Groupid"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Name"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

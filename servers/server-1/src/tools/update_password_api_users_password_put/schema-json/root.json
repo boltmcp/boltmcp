@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "currentPassword": {
+      "type": "string",
+      "title": "Currentpassword",
+      "default": ""
+    },
+    "newPassword": {
+      "type": "string",
+      "minLength": 8,
+      "title": "Newpassword"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "newPassword"
+  ]
+}

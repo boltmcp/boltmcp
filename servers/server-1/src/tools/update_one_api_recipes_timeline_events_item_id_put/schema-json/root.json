@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "subject": {
+      "type": "string",
+      "title": "Subject"
+    },
+    "eventMessage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Eventmessage"
+    },
+    "image": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "has image",
+            "does not have image"
+          ],
+          "title": "TimelineEventImage"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "subject"
+  ]
+}

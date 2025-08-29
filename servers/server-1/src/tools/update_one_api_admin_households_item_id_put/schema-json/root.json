@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Name"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "preferences": {
+      "anyOf": [
+        {
+          "properties": {
+            "privateHousehold": {
+              "type": "boolean",
+              "title": "Privatehousehold",
+              "default": true
+            },
+            "lockRecipeEditsFromOtherHouseholds": {
+              "type": "boolean",
+              "title": "Lockrecipeeditsfromotherhouseholds",
+              "default": true
+            },
+            "firstDayOfWeek": {
+              "type": "integer",
+              "title": "Firstdayofweek",
+              "default": 0
+            },
+            "recipePublic": {
+              "type": "boolean",
+              "title": "Recipepublic",
+              "default": true
+            },
+            "recipeShowNutrition": {
+              "type": "boolean",
+              "title": "Recipeshownutrition",
+              "default": false
+            },
+            "recipeShowAssets": {
+              "type": "boolean",
+              "title": "Recipeshowassets",
+              "default": false
+            },
+            "recipeLandscapeView": {
+              "type": "boolean",
+              "title": "Recipelandscapeview",
+              "default": false
+            },
+            "recipeDisableComments": {
+              "type": "boolean",
+              "title": "Recipedisablecomments",
+              "default": false
+            },
+            "recipeDisableAmount": {
+              "type": "boolean",
+              "title": "Recipedisableamount",
+              "default": true
+            }
+          },
+          "type": "object",
+          "title": "UpdateHouseholdPreferences"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "groupId",
+    "name",
+    "id"
+  ]
+}

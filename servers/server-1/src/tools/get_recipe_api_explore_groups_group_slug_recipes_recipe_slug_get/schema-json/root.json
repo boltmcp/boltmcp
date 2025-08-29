@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "recipe_slug": {
+      "type": "string",
+      "title": "Recipe Slug"
+    },
+    "group_slug": {
+      "type": "string",
+      "title": "Group Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipe_slug",
+    "group_slug"
+  ]
+}

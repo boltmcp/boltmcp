@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "includeTags": {
+      "type": "boolean",
+      "title": "Includetags",
+      "default": false
+    },
+    "data": {
+      "type": "string",
+      "title": "Data"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

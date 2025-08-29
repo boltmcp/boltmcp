@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "template_name": {
+      "type": "string",
+      "title": "Template Name"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "slug",
+    "template_name"
+  ]
+}

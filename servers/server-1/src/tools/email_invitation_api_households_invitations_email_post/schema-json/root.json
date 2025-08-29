@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "token": {
+      "type": "string",
+      "title": "Token"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "email",
+    "token"
+  ]
+}

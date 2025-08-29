@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "id",
+    "slug"
+  ]
+}

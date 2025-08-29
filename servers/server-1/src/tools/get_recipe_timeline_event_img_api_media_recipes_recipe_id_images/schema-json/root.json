@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "recipe_id": {
+      "type": "string",
+      "title": "Recipe Id"
+    },
+    "timeline_event_id": {
+      "type": "string",
+      "title": "Timeline Event Id"
+    },
+    "file_name": {
+      "type": "string",
+      "enum": [
+        "original.webp",
+        "min-original.webp",
+        "tiny-original.webp"
+      ],
+      "title": "ImageType"
+    }
+  },
+  "required": [
+    "recipe_id",
+    "timeline_event_id",
+    "file_name"
+  ]
+}

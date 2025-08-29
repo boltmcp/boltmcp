@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "properties": {
+    "foods": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid4"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Foods"
+    },
+    "tools": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid4"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tools"
+    },
+    "orderBy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderby"
+    },
+    "orderByNullPosition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "first",
+            "last"
+          ],
+          "title": "OrderByNullPosition"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderbynullposition"
+    },
+    "orderDirection": {
+      "default": "desc",
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ],
+      "title": "OrderDirection"
+    },
+    "queryFilter": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Queryfilter"
+    },
+    "paginationSeed": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Paginationseed"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 10,
+      "title": "Limit"
+    },
+    "maxMissingFoods": {
+      "type": "integer",
+      "default": 5,
+      "title": "Maxmissingfoods"
+    },
+    "maxMissingTools": {
+      "type": "integer",
+      "default": 5,
+      "title": "Maxmissingtools"
+    },
+    "includeFoodsOnHand": {
+      "type": "boolean",
+      "default": true,
+      "title": "Includefoodsonhand"
+    },
+    "includeToolsOnHand": {
+      "type": "boolean",
+      "default": true,
+      "title": "Includetoolsonhand"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": []
+}

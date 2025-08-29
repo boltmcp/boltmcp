@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "recipes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Recipes"
+    },
+    "exportType": {
+      "default": "json",
+      "type": "string",
+      "enum": [
+        "json"
+      ],
+      "title": "ExportTypes"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipes"
+  ]
+}

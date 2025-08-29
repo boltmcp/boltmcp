@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "pluralName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pluralname"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "default": ""
+    },
+    "extras": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Extras",
+      "default": {}
+    },
+    "labelId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Labelid"
+    },
+    "aliases": {
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "CreateIngredientFoodAlias"
+      },
+      "type": "array",
+      "title": "Aliases",
+      "default": []
+    },
+    "householdsWithIngredientFood": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Householdswithingredientfood",
+      "default": []
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "name"
+  ]
+}

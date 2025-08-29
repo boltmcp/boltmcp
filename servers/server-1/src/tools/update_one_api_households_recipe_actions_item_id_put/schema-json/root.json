@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "actionType": {
+      "type": "string",
+      "enum": [
+        "link",
+        "post"
+      ],
+      "title": "GroupRecipeActionType"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "url": {
+      "type": "string",
+      "title": "Url"
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "householdId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Householdid"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "actionType",
+    "title",
+    "url",
+    "groupId",
+    "householdId"
+  ]
+}

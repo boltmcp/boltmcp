@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "category_slug": {
+      "type": "string",
+      "title": "Category Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "category_slug"
+  ]
+}

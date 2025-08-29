@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "appriseUrl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Appriseurl"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

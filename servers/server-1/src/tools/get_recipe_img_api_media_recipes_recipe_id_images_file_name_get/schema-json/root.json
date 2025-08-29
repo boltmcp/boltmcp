@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "recipe_id": {
+      "type": "string",
+      "title": "Recipe Id"
+    },
+    "file_name": {
+      "type": "string",
+      "enum": [
+        "original.webp",
+        "min-original.webp",
+        "tiny-original.webp"
+      ],
+      "title": "ImageType"
+    }
+  },
+  "required": [
+    "recipe_id",
+    "file_name"
+  ]
+}

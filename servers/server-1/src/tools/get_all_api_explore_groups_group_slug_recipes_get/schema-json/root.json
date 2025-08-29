@@ -1,0 +1,247 @@
+{
+  "type": "object",
+  "properties": {
+    "group_slug": {
+      "type": "string",
+      "title": "Group Slug"
+    },
+    "categories": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Categories"
+    },
+    "tags": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tags"
+    },
+    "tools": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tools"
+    },
+    "foods": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Foods"
+    },
+    "households": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Households"
+    },
+    "orderBy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderby"
+    },
+    "orderByNullPosition": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "first",
+            "last"
+          ],
+          "title": "OrderByNullPosition"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Orderbynullposition"
+    },
+    "orderDirection": {
+      "default": "desc",
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ],
+      "title": "OrderDirection"
+    },
+    "queryFilter": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Queryfilter"
+    },
+    "paginationSeed": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Paginationseed"
+    },
+    "page": {
+      "type": "integer",
+      "default": 1,
+      "title": "Page"
+    },
+    "perPage": {
+      "type": "integer",
+      "default": 50,
+      "title": "Perpage"
+    },
+    "cookbook": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cookbook"
+    },
+    "requireAllCategories": {
+      "type": "boolean",
+      "default": false,
+      "title": "Requireallcategories"
+    },
+    "requireAllTags": {
+      "type": "boolean",
+      "default": false,
+      "title": "Requirealltags"
+    },
+    "requireAllTools": {
+      "type": "boolean",
+      "default": false,
+      "title": "Requirealltools"
+    },
+    "requireAllFoods": {
+      "type": "boolean",
+      "default": false,
+      "title": "Requireallfoods"
+    },
+    "search": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "group_slug"
+  ]
+}

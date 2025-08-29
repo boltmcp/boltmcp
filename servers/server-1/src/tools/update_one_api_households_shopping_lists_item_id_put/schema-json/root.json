@@ -1,0 +1,622 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "extras": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Extras",
+      "default": {}
+    },
+    "createdAt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Createdat"
+    },
+    "update_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Update At"
+    },
+    "groupId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Groupid"
+    },
+    "userId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Userid"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "listItems": {
+      "items": {
+        "properties": {
+          "quantity": {
+            "type": "number",
+            "title": "Quantity",
+            "default": 1
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid4",
+                    "title": "Id"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "Name"
+                  },
+                  "pluralName": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Pluralname"
+                  },
+                  "description": {
+                    "type": "string",
+                    "title": "Description",
+                    "default": ""
+                  },
+                  "extras": {
+                    "anyOf": [
+                      {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Extras",
+                    "default": {}
+                  },
+                  "fraction": {
+                    "type": "boolean",
+                    "title": "Fraction",
+                    "default": true
+                  },
+                  "abbreviation": {
+                    "type": "string",
+                    "title": "Abbreviation",
+                    "default": ""
+                  },
+                  "pluralAbbreviation": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Pluralabbreviation",
+                    "default": ""
+                  },
+                  "useAbbreviation": {
+                    "type": "boolean",
+                    "title": "Useabbreviation",
+                    "default": false
+                  },
+                  "aliases": {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "title": "Name"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ],
+                      "title": "IngredientUnitAlias"
+                    },
+                    "type": "array",
+                    "title": "Aliases",
+                    "default": []
+                  },
+                  "createdAt": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Createdat"
+                  },
+                  "update_at": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Update At"
+                  }
+                },
+                "type": "object",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "title": "IngredientUnit"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "food": {
+            "anyOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid4",
+                    "title": "Id"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "Name"
+                  },
+                  "pluralName": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Pluralname"
+                  },
+                  "description": {
+                    "type": "string",
+                    "title": "Description",
+                    "default": ""
+                  },
+                  "extras": {
+                    "anyOf": [
+                      {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Extras",
+                    "default": {}
+                  },
+                  "labelId": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid4"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Labelid"
+                  },
+                  "aliases": {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "title": "Name"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ],
+                      "title": "IngredientFoodAlias"
+                    },
+                    "type": "array",
+                    "title": "Aliases",
+                    "default": []
+                  },
+                  "householdsWithIngredientFood": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "title": "Householdswithingredientfood",
+                    "default": []
+                  },
+                  "label": {
+                    "anyOf": [
+                      {
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "title": "Name"
+                          },
+                          "color": {
+                            "type": "string",
+                            "title": "Color",
+                            "default": "#959595"
+                          },
+                          "groupId": {
+                            "type": "string",
+                            "format": "uuid4",
+                            "title": "Groupid"
+                          },
+                          "id": {
+                            "type": "string",
+                            "format": "uuid4",
+                            "title": "Id"
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "groupId",
+                          "id"
+                        ],
+                        "title": "MultiPurposeLabelSummary"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "createdAt": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Createdat"
+                  },
+                  "update_at": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Update At"
+                  }
+                },
+                "type": "object",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "title": "IngredientFood"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note",
+            "default": ""
+          },
+          "isFood": {
+            "type": "boolean",
+            "title": "Isfood",
+            "default": false
+          },
+          "disableAmount": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Disableamount"
+          },
+          "display": {
+            "type": "string",
+            "title": "Display",
+            "default": ""
+          },
+          "shoppingListId": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Shoppinglistid"
+          },
+          "checked": {
+            "type": "boolean",
+            "title": "Checked",
+            "default": false
+          },
+          "position": {
+            "type": "integer",
+            "title": "Position",
+            "default": 0
+          },
+          "foodId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Foodid"
+          },
+          "labelId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Labelid"
+          },
+          "unitId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unitid"
+          },
+          "extras": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extras",
+            "default": {}
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Id"
+          },
+          "groupId": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Groupid"
+          },
+          "householdId": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Householdid"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Name"
+                  },
+                  "color": {
+                    "type": "string",
+                    "title": "Color",
+                    "default": "#959595"
+                  },
+                  "groupId": {
+                    "type": "string",
+                    "format": "uuid4",
+                    "title": "Groupid"
+                  },
+                  "id": {
+                    "type": "string",
+                    "format": "uuid4",
+                    "title": "Id"
+                  }
+                },
+                "type": "object",
+                "required": [
+                  "name",
+                  "groupId",
+                  "id"
+                ],
+                "title": "MultiPurposeLabelSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "recipeReferences": {
+            "items": {
+              "properties": {
+                "recipeId": {
+                  "type": "string",
+                  "format": "uuid4",
+                  "title": "Recipeid"
+                },
+                "recipeQuantity": {
+                  "type": "number",
+                  "title": "Recipequantity",
+                  "default": 0
+                },
+                "recipeScale": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Recipescale",
+                  "default": 1
+                },
+                "recipeNote": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Recipenote"
+                },
+                "id": {
+                  "type": "string",
+                  "format": "uuid4",
+                  "title": "Id"
+                },
+                "shoppingListItemId": {
+                  "type": "string",
+                  "format": "uuid4",
+                  "title": "Shoppinglistitemid"
+                }
+              },
+              "type": "object",
+              "required": [
+                "recipeId",
+                "id",
+                "shoppingListItemId"
+              ],
+              "title": "ShoppingListItemRecipeRefOut"
+            },
+            "type": "array",
+            "title": "Recipereferences",
+            "default": []
+          },
+          "createdAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Createdat"
+          },
+          "update_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Update At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "shoppingListId",
+          "id",
+          "groupId",
+          "householdId"
+        ],
+        "title": "ShoppingListItemOut"
+      },
+      "type": "array",
+      "title": "Listitems",
+      "default": []
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "groupId",
+    "userId",
+    "id"
+  ]
+}

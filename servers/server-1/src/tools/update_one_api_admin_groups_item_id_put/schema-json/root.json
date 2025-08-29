@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "preferences": {
+      "anyOf": [
+        {
+          "properties": {
+            "privateGroup": {
+              "type": "boolean",
+              "title": "Privategroup",
+              "default": true
+            }
+          },
+          "type": "object",
+          "title": "UpdateGroupPreferences"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "id",
+    "name"
+  ]
+}

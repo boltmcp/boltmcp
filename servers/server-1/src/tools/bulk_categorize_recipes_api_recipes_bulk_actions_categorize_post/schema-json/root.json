@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "recipes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Recipes"
+    },
+    "categories": {
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Id"
+          },
+          "groupId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid4"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Groupid"
+          },
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "id",
+          "slug"
+        ],
+        "title": "CategoryBase"
+      },
+      "type": "array",
+      "title": "Categories"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipes",
+    "categories"
+  ]
+}

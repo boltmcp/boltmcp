@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "token": {
+      "type": "string",
+      "title": "Token"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "slug",
+    "token"
+  ]
+}

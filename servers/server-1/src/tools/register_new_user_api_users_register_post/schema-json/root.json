@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "properties": {
+    "group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group"
+    },
+    "household": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Household"
+    },
+    "groupToken": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Grouptoken"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "username": {
+      "type": "string",
+      "title": "Username"
+    },
+    "fullName": {
+      "type": "string",
+      "title": "Fullname"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    },
+    "passwordConfirm": {
+      "type": "string",
+      "title": "Passwordconfirm"
+    },
+    "advanced": {
+      "type": "boolean",
+      "title": "Advanced",
+      "default": false
+    },
+    "private": {
+      "type": "boolean",
+      "title": "Private",
+      "default": false
+    },
+    "seedData": {
+      "type": "boolean",
+      "title": "Seeddata",
+      "default": false
+    },
+    "locale": {
+      "type": "string",
+      "title": "Locale",
+      "default": "en-US"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "email",
+    "username",
+    "fullName",
+    "password",
+    "passwordConfirm"
+  ]
+}

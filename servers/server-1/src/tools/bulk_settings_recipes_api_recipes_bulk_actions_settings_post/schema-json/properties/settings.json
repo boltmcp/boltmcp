@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "public": {
+      "type": "boolean",
+      "title": "Public",
+      "default": false
+    },
+    "showNutrition": {
+      "type": "boolean",
+      "title": "Shownutrition",
+      "default": false
+    },
+    "showAssets": {
+      "type": "boolean",
+      "title": "Showassets",
+      "default": false
+    },
+    "landscapeView": {
+      "type": "boolean",
+      "title": "Landscapeview",
+      "default": false
+    },
+    "disableComments": {
+      "type": "boolean",
+      "title": "Disablecomments",
+      "default": true
+    },
+    "disableAmount": {
+      "type": "boolean",
+      "title": "Disableamount",
+      "default": true
+    },
+    "locked": {
+      "type": "boolean",
+      "title": "Locked",
+      "default": false
+    }
+  },
+  "type": "object",
+  "title": "RecipeSettings"
+}

@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "title": "Item Id"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "default": ""
+    },
+    "slug": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Slug"
+    },
+    "position": {
+      "type": "integer",
+      "title": "Position",
+      "default": 1
+    },
+    "public": {
+      "type": "boolean",
+      "title": "Public",
+      "default": false
+    },
+    "queryFilterString": {
+      "type": "string",
+      "title": "Queryfilterstring",
+      "default": ""
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "name"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "type": "object",
+  "properties": {
+    "imports": {
+      "items": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "categories": {
+            "anyOf": [
+              {
+                "items": {
+                  "properties": {
+                    "id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid4"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Id"
+                    },
+                    "groupId": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid4"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Groupid"
+                    },
+                    "name": {
+                      "type": "string",
+                      "title": "Name"
+                    },
+                    "slug": {
+                      "type": "string",
+                      "title": "Slug"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "slug"
+                  ],
+                  "title": "RecipeCategory"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Categories"
+          },
+          "tags": {
+            "anyOf": [
+              {
+                "items": {
+                  "properties": {
+                    "id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid4"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Id"
+                    },
+                    "groupId": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid4"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Groupid"
+                    },
+                    "name": {
+                      "type": "string",
+                      "title": "Name"
+                    },
+                    "slug": {
+                      "type": "string",
+                      "title": "Slug"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "slug"
+                  ],
+                  "title": "RecipeTag"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tags"
+          }
+        },
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "title": "CreateRecipeBulk"
+      },
+      "type": "array",
+      "title": "Imports"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "imports"
+  ]
+}

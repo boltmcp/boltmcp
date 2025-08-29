@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "actionType": {
+      "type": "string",
+      "enum": [
+        "link",
+        "post"
+      ],
+      "title": "GroupRecipeActionType"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "url": {
+      "type": "string",
+      "title": "Url"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "actionType",
+    "title",
+    "url"
+  ]
+}

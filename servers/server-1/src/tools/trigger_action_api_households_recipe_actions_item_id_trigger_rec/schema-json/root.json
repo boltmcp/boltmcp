@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "recipe_slug": {
+      "type": "string",
+      "title": "Recipe Slug"
+    },
+    "scaled_amount": {
+      "type": "number",
+      "title": "Scaled Amount",
+      "default": 1
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id",
+    "recipe_slug"
+  ]
+}

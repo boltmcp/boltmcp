@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "tool_slug": {
+      "type": "string",
+      "title": "Tool Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "tool_slug"
+  ]
+}

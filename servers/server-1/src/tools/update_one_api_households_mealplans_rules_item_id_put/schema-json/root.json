@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Item Id"
+    },
+    "day": {
+      "default": "unset",
+      "type": "string",
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "unset"
+      ],
+      "title": "PlanRulesDay"
+    },
+    "entryType": {
+      "default": "unset",
+      "type": "string",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "side",
+        "unset"
+      ],
+      "title": "PlanRulesType"
+    },
+    "queryFilterString": {
+      "type": "string",
+      "title": "Queryfilterstring",
+      "default": ""
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "item_id"
+  ]
+}

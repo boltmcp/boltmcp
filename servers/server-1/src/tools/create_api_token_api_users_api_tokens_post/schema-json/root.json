@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "integrationId": {
+      "type": "string",
+      "title": "Integrationid",
+      "default": "generic"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

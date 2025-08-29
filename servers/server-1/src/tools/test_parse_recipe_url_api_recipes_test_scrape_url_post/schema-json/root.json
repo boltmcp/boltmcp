@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "Url"
+    },
+    "useOpenAI": {
+      "type": "boolean",
+      "title": "Useopenai",
+      "default": false
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

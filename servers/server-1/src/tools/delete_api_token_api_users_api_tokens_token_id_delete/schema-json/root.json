@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "token_id": {
+      "type": "integer",
+      "title": "Token Id"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "token_id"
+  ]
+}

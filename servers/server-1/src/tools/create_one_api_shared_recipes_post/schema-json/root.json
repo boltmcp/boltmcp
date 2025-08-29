@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "recipeId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Recipeid"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Expiresat"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipeId"
+  ]
+}

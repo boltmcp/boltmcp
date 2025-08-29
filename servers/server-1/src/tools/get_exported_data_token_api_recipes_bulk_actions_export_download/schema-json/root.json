@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "format": "path",
+      "title": "Path"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "path"
+  ]
+}

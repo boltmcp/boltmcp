@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "household_slug": {
+      "type": "string",
+      "title": "Household Slug"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "household_slug"
+  ]
+}

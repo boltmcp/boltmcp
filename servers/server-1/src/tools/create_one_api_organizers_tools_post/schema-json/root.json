@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "householdsWithTool": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Householdswithtool",
+      "default": []
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

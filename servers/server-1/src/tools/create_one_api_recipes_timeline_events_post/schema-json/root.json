@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "recipeId": {
+      "type": "string",
+      "format": "uuid4",
+      "title": "Recipeid"
+    },
+    "userId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Userid"
+    },
+    "subject": {
+      "type": "string",
+      "title": "Subject"
+    },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "system",
+        "info",
+        "comment"
+      ],
+      "title": "TimelineEventType"
+    },
+    "eventMessage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Eventmessage"
+    },
+    "image": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "has image",
+            "does not have image"
+          ],
+          "title": "TimelineEventImage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": "does not have image"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp",
+      "default": "2025-08-29T10:00:36.405163Z"
+    },
+    "accept-language": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accept-Language"
+    }
+  },
+  "required": [
+    "recipeId",
+    "subject",
+    "eventType"
+  ]
+}
