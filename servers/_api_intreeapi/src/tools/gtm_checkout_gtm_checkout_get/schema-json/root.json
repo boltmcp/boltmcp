@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "description": "The ID of the hub where the checkout is being made. The treet code being applied should be owned by this hub.",
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "coupon": {
+      "description": "The coupon code being applied to the checkout. This should be the code of the redeemed Treet.",
+      "type": "string",
+      "title": "Coupon"
+    },
+    "value": {
+      "description": "The final price at the end of checkout.",
+      "type": "number",
+      "title": "Value"
+    },
+    "currency": {
+      "description": "The currency of the checkout. This should be a valid ISO 4217 currency code.",
+      "type": "string",
+      "title": "Currency"
+    }
+  },
+  "required": [
+    "hub_id",
+    "coupon",
+    "value",
+    "currency"
+  ]
+}

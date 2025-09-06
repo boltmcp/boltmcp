@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "obj_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Obj Id",
+      "description": "The ID of the object that the agreement is for. For example, the ID of an app user for app TOS agreement."
+    },
+    "obj_type": {
+      "description": "Specifies the type of object associated with the obj_id.",
+      "type": "string",
+      "enum": [
+        "app_user",
+        "biz_user"
+      ],
+      "title": "ContractAgreementObjectType"
+    },
+    "contract_type": {
+      "description": "The type of contract that the agreement is for.",
+      "type": "string",
+      "enum": [
+        "app_tos",
+        "hub_tos",
+        "pack_purchase_contract"
+      ],
+      "title": "ContractType"
+    }
+  },
+  "required": [
+    "obj_id",
+    "obj_type",
+    "contract_type"
+  ]
+}

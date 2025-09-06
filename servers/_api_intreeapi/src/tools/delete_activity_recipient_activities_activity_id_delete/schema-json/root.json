@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Activity Id"
+    }
+  },
+  "required": [
+    "activity_id"
+  ]
+}

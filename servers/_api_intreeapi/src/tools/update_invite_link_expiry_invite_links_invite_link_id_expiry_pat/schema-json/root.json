@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "invite_link_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Invite Link Id"
+    },
+    "expires_at": {
+      "title": "Expires At",
+      "description": "The expiry date of the link, maximum 7 days from InviteLink creation.",
+      "example": "2025-09-04T13:23:19.427545Z",
+      "anyOf": [
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "invite_link_id"
+  ]
+}

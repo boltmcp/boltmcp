@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_partnership_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Partnership Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    }
+  },
+  "required": [
+    "biz_partnership_id",
+    "business_id"
+  ]
+}

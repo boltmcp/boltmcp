@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "description": "Hub ids to fetch claims for. Example: `?hub_id={num1}&hub_id={num2}`",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "title": "Hub Id"
+    },
+    "start": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Start"
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time",
+      "title": "End"
+    }
+  },
+  "required": [
+    "hub_id",
+    "start",
+    "end"
+  ]
+}

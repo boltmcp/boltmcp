@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "group_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 1,
+      "minItems": 0,
+      "uniqueItems": true,
+      "title": "Group Ids",
+      "description": "The ids of the groups to add to the invite."
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone"
+    },
+    "user_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    }
+  },
+  "required": [
+    "group_ids",
+    "business_id"
+  ]
+}

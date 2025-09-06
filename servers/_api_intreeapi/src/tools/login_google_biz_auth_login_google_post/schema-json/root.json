@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "title": "Code",
+      "description": "ID token received from auth provider."
+    }
+  },
+  "required": [
+    "code"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "hub_name": {
+      "type": "string",
+      "title": "Hub Name"
+    },
+    "recipient_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Recipient Ids"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    }
+  },
+  "required": [
+    "hub_id",
+    "hub_name",
+    "recipient_ids",
+    "id",
+    "title"
+  ]
+}

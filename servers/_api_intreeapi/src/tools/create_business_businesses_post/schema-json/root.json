@@ -1,0 +1,399 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Org Id"
+    },
+    "web_domain": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 2,
+      "title": "Web Domain",
+      "description": "Community handle. Only alphanumeric characters and `æ, ø, å, Æ, Ø, Å` are allowed: `a-z` `A-Z`, `0-9`, `æ, ø, å, Æ, Ø, Å`. ",
+      "examples": [
+        "JoesClub51",
+        "ÆØÅClub"
+      ]
+    },
+    "can_app_members_invite": {
+      "type": "boolean",
+      "title": "Can App Members Invite",
+      "default": false
+    },
+    "can_app_members_accept_applications": {
+      "type": "boolean",
+      "title": "Can App Members Accept Applications",
+      "default": false
+    },
+    "access_type": {
+      "default": "hidden",
+      "type": "string",
+      "enum": [
+        "public",
+        "discoverable",
+        "hidden"
+      ],
+      "title": "BusinessAccessType",
+      "description": "Access type of a Business.\n\n`public`: Business can be found through the explore page\n\n`discoverable`: Business is searchable by exact handle\n\n`hidden`: Business is not searchable"
+    },
+    "hub_type": {
+      "default": "community",
+      "type": "string",
+      "enum": [
+        "community",
+        "provider"
+      ],
+      "title": "HubType",
+      "description": "Type of a hub.\n\n- `community`: Hub is community where app users can join and post\n- `provider`: Hub is a provider who can share treets to communities"
+    },
+    "location_type": {
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "local",
+        "global_"
+      ],
+      "title": "BizLocationType",
+      "description": "Type of a Business location.\n\n- `none`: Business has no location data\n- `local`: Business has local location data\n- `global_`: Business has global location data"
+    },
+    "location_data": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Location Data",
+      "description": "Location data for the business. The format is defined on web frontend.",
+      "examples": [
+        {
+          "city": "New York",
+          "country": "USA"
+        }
+      ]
+    },
+    "join_type": {
+      "default": "open",
+      "type": "string",
+      "enum": [
+        "open",
+        "apply",
+        "apply_domain",
+        "integration"
+      ],
+      "title": "JoinType",
+      "description": "How users by default joins the Hub.\n\n- `open`: Users can join without approval\n- `apply`: Users need to apply to join\n- `apply_domain`: Users need to apply using email domain verification.\n    Cannot be used for app created businesses.\n    Note that `require_member_verification` must be True.\n- `integration`: Join using one of the integrations."
+    },
+    "require_member_verification": {
+      "type": "boolean",
+      "title": "Require Member Verification",
+      "description": "Determine if verification is required for members to join. Different ways of verification can be used, and setting this to true will tell backend to enforce that if no verification is done, then the user will be removed from the business. Currently the only verification supported is by email domain.",
+      "default": false
+    },
+    "business_profile": {
+      "anyOf": [
+        {
+          "properties": {
+            "website_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "maxLength": 2047,
+              "title": "Website Url",
+              "examples": [
+                "https://intree.com"
+              ]
+            },
+            "phone": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phone",
+              "examples": [
+                "+4512345678"
+              ]
+            },
+            "video_url": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2047
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Video Url",
+              "examples": [
+                "https://youtu.be/02IsQyHiEV6"
+              ]
+            },
+            "email": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "email"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "maxLength": 255,
+              "title": "Email",
+              "examples": [
+                "johndoe@gmail.com"
+              ]
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 1,
+              "title": "Title",
+              "description": "Title of the business profile.",
+              "examples": [
+                "My Business"
+              ]
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 600,
+                  "description": "Description of the business profile.",
+                  "examples": [
+                    "This is my business we are selling..."
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Description"
+            },
+            "address": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 255,
+                  "description": "Address of the business profile.",
+                  "examples": [
+                    "Baker Street 4"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Address"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "title"
+          ],
+          "title": "BizProfileInputRequestNoMediaDTO",
+          "description": "DTO for a request for creating a new BizProfile."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "categories": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Categories"
+    },
+    "locations": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "ref_code": {
+                "type": "string",
+                "title": "Ref Code",
+                "description": "Added in the response if given. If not given, then it will just be set some a default value.",
+                "default": "default"
+              },
+              "address": {
+                "type": "string",
+                "title": "Address",
+                "description": "This can be whatever format client decides on.",
+                "examples": [
+                  "123 Main St, San Francisco, CA 94105"
+                ]
+              },
+              "location": {
+                "type": "string",
+                "title": "Location",
+                "description": "Must be a point using format `(latitude,longitude)`.",
+                "examples": [
+                  "(37.7749,-122.4194)"
+                ]
+              }
+            },
+            "type": "object",
+            "required": [
+              "address",
+              "location"
+            ],
+            "title": "BizLocationInputRequestDTO",
+            "description": "DTO for input."
+          },
+          "type": "array",
+          "maxItems": 10
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Locations"
+    },
+    "apply_domains": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}$",
+                "title": "Name",
+                "examples": [
+                  "intree.com"
+                ]
+              },
+              "verification_interval_minutes": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 5
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Verification Interval Minutes",
+                "description": "Note that the min value for PROD is 1440."
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "verification_interval_minutes"
+            ],
+            "title": "BizDomainInputRequestDTO",
+            "description": "DTO for input."
+          },
+          "type": "array",
+          "maxItems": 10,
+          "description": "Can only be used when `join_type=apply_domain`. If none are given then all domains are allowed."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Apply Domains"
+    },
+    "enable_feed": {
+      "type": "boolean",
+      "title": "Enable Feed",
+      "default": true
+    },
+    "enable_app_user_post": {
+      "type": "boolean",
+      "title": "Enable App User Post",
+      "default": true
+    },
+    "enable_members": {
+      "type": "boolean",
+      "title": "Enable Members",
+      "default": true
+    },
+    "enable_aspects": {
+      "type": "boolean",
+      "title": "Enable Aspects",
+      "default": true
+    },
+    "default_currency": {
+      "default": "dkk",
+      "type": "string",
+      "enum": [
+        "usd",
+        "jpy",
+        "bgn",
+        "czk",
+        "dkk",
+        "gbp",
+        "huf",
+        "pln",
+        "ron",
+        "sek",
+        "chf",
+        "isk",
+        "nok",
+        "try",
+        "aud",
+        "brl",
+        "cad",
+        "cny",
+        "hkd",
+        "idr",
+        "ils",
+        "inr",
+        "krw",
+        "mxn",
+        "myr",
+        "nzd",
+        "php",
+        "sgd",
+        "thb",
+        "zar",
+        "eur",
+        "unknown"
+      ],
+      "title": "Currency",
+      "description": "Supported currencies."
+    }
+  },
+  "required": [
+    "web_domain"
+  ]
+}

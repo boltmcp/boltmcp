@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "sort_by": {
+      "description": "Sort by options for ambassador insights.\n\n- `created_at`: sort by when the ambassador user is created.\n- `num_shared`: sort by the amount of direct shares in the period.\n- `num_arrivals`: sort by the amount of arrivals in the period.\n- `num_redeems_from_shares`: sort by amount of redeems from shares in the period.\n- `rank`: sort by the rank of the ambassador.",
+      "default": "asc(rank)",
+      "type": "string",
+      "enum": [
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(num_shared)",
+        "desc(num_shared)",
+        "asc(num_arrivals)",
+        "desc(num_arrivals)",
+        "asc(num_redeems_from_shares)",
+        "desc(num_redeems_from_shares)",
+        "asc(rank)",
+        "desc(rank)"
+      ],
+      "title": "AmbassadorLeaderboardSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Start Date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "End Date"
+    },
+    "user_id": {
+      "description": "Filter on user ID. To keep rank consistent, this will make the user the first result, the limit will be set to 1, total will be set to 1 and next will be set to null, in case the user does not exist, it will return empty and have the total be 0.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    }
+  },
+  "required": [
+    "hub_id"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_ownership_transfer_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Ownership Transfer Id"
+    }
+  },
+  "required": [
+    "biz_ownership_transfer_id"
+  ]
+}

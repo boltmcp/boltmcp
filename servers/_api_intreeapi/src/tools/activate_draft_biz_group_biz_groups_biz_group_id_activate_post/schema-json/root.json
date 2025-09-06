@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_group_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Group Id"
+    },
+    "visibility": {
+      "default": "public",
+      "type": "string",
+      "enum": [
+        "public",
+        "private",
+        "member_public",
+        "group_member_public"
+      ],
+      "title": "BizGroupVisibility",
+      "description": "Visibility of a BizGroup.\n\n`public`: visible to everyone\n\n`private`: only access through link or invitation, but cannot be seen\n\n`member_public`: visible to members of the community\n\n`group_member_public`: like private but visible to members already in the group"
+    }
+  },
+  "required": [
+    "biz_group_id"
+  ]
+}

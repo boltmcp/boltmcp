@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "start": {
+      "description": "Start of interval, to count data from",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "examples": [
+        "2025-09-04T13:23:22.442444Z"
+      ],
+      "title": "Start"
+    },
+    "stop": {
+      "description": "End of interval, to count data from",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "examples": [
+        "2025-09-04T13:23:22.442511Z"
+      ],
+      "title": "Stop"
+    },
+    "bins": {
+      "description": "Type to group data by",
+      "type": "string",
+      "enum": [
+        "time",
+        "weekday",
+        "month",
+        "monthday",
+        "yearday"
+      ],
+      "title": "AnalyticsBinsType"
+    },
+    "tz": {
+      "description": "Timezone to get data in, defaults to UTC.",
+      "type": "string",
+      "default": "UTC",
+      "title": "Tz"
+    },
+    "include_biz_made": {
+      "description": "If true will include posts and comments made by the business. If false will only include posts and comments made by members. Default is false.",
+      "type": "boolean",
+      "default": false,
+      "title": "Include Biz Made"
+    },
+    "embed_post_activity": {
+      "type": "boolean",
+      "default": true,
+      "title": "Embed Post Activity"
+    },
+    "embed_comment_activity": {
+      "type": "boolean",
+      "default": true,
+      "title": "Embed Comment Activity"
+    }
+  },
+  "required": [
+    "business_id",
+    "bins"
+  ]
+}

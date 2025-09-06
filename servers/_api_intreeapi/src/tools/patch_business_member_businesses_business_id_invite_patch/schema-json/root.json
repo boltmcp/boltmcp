@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "invite_status": {
+      "type": "string",
+      "enum": [
+        "invited",
+        "accepted",
+        "rejected"
+      ],
+      "title": "BusinessMemberInviteStatus",
+      "description": "Invite status for BusinessMember.\n\n`invited`: invited to join the business\n\n`accepted`: accepted the invitation to join the business\n\n`rejected`: rejected the invitation to join the business"
+    }
+  },
+  "required": [
+    "business_id",
+    "invite_status"
+  ]
+}

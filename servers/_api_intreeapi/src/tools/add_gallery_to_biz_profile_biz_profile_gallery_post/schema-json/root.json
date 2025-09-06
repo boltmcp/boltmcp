@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_profile_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Profile Id"
+    },
+    "gallery_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Gallery Ids"
+    }
+  },
+  "required": [
+    "biz_profile_id",
+    "gallery_ids"
+  ]
+}

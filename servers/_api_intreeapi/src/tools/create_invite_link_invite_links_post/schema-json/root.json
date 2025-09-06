@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "example": "2025-09-04T13:23:19.427545Z",
+          "anyOf": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expires At"
+    },
+    "limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Limit",
+      "description": "Limit for number of times the link can be used."
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

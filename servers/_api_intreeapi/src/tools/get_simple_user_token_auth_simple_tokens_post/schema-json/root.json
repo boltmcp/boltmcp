@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "examples": [
+            "+4512341234"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone",
+      "description": "Phone number linked to token."
+    }
+  },
+  "required": [
+    "phone"
+  ]
+}

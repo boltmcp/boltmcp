@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "X-Firebase-AppCheck": {
+      "description": "TEMPORARILY DISABLED. AppCheck token.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "X-Firebase-Appcheck"
+    },
+    "X-Recaptcha-Token": {
+      "description": "reCAPTCHA token. Optional for all envs below QA.",
+      "type": "string",
+      "default": "",
+      "title": "X-Recaptcha-Token"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

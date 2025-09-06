@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_business": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Business"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_application_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Application Id"
+    }
+  },
+  "required": [
+    "biz_application_id"
+  ]
+}

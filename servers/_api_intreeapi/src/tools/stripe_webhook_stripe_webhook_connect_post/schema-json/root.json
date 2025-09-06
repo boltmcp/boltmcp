@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Id"
+    },
+    "object": {
+      "type": "string",
+      "title": "Object"
+    },
+    "account": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Account"
+    },
+    "created": {
+      "type": "integer",
+      "title": "Created"
+    },
+    "data": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `data` to the tool, first call the tool `expandSchema` with \"/properties/data\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "livemode": {
+      "type": "boolean",
+      "title": "Livemode"
+    },
+    "type": {
+      "type": "string",
+      "title": "Type"
+    },
+    "Stripe-Signature": {
+      "type": "string",
+      "title": "Stripe-Signature"
+    }
+  },
+  "required": [
+    "id",
+    "object",
+    "created",
+    "data",
+    "livemode",
+    "type",
+    "Stripe-Signature"
+  ]
+}

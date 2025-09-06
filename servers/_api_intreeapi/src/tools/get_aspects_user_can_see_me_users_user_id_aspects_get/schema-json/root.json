@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_icon_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Icon Image"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_recent_posts": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Recent Posts"
+    },
+    "embed_preview_members": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Preview Members"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

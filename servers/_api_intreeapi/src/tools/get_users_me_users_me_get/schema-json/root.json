@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "embed_total_relations": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Relations"
+    },
+    "embed_total_aspects": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Aspects"
+    },
+    "embed_total_communities": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Communities"
+    },
+    "embed_agrees_to_app_tos": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Agrees To App Tos"
+    }
+  },
+  "required": []
+}

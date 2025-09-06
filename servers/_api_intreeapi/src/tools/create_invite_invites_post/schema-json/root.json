@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "invite_link_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Invite Link Id"
+    },
+    "user_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Id"
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone",
+      "description": "If a user does not exist, then a booked user will be created.",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "aspect_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Aspect Ids"
+    }
+  },
+  "required": []
+}

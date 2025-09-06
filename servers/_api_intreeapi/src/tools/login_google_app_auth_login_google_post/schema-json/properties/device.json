@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "vendor_id": {
+      "type": "string",
+      "maxLength": 50,
+      "title": "Vendor Id",
+      "description": "Unique identifier for device.",
+      "examples": [
+        "32fc716f-465f-4bc8-bc71-6acd2d60930b"
+      ]
+    },
+    "vendor_name": {
+      "description": "Used to determine which push notification provider to use.",
+      "type": "string",
+      "enum": [
+        "apple",
+        "android",
+        "other"
+      ],
+      "title": "VendorName"
+    },
+    "os_name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Os Name",
+      "examples": [
+        "iOS"
+      ]
+    },
+    "os_version": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Os Version",
+      "examples": [
+        "13.0"
+      ]
+    },
+    "device_name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Device Name",
+      "examples": [
+        "iPhone 14"
+      ]
+    }
+  },
+  "type": "object",
+  "required": [
+    "vendor_id",
+    "vendor_name"
+  ],
+  "title": "DeviceInputRequestDTO",
+  "description": "Input request DTO for creating a Device."
+}

@@ -1,0 +1,83 @@
+{
+  "type": "object",
+  "properties": {
+    "bins": {
+      "description": "Type to group data by",
+      "type": "string",
+      "enum": [
+        "time",
+        "weekday",
+        "month",
+        "monthday",
+        "yearday"
+      ],
+      "title": "AnalyticsBinsType"
+    },
+    "tz": {
+      "description": "Timezone to get data in, defaults to UTC.",
+      "type": "string",
+      "default": "UTC",
+      "title": "Tz"
+    },
+    "start": {
+      "description": "Start of interval, to count data from",
+      "type": "string",
+      "format": "date-time",
+      "title": "Start"
+    },
+    "stop": {
+      "description": "End of interval, to count data from",
+      "type": "string",
+      "format": "date-time",
+      "title": "Stop"
+    },
+    "treet_id": {
+      "description": "Id of Treet to get data for, if not given, get all data for hub",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Id"
+    },
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "pack_id": {
+      "description": "Id of pack to get data for, if not given, get all data for hub",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pack Id"
+    },
+    "ambassador_id": {
+      "description": "Id of ambassador who shared treets used, if not given, get for all ambassadors.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Ambassador Id"
+    }
+  },
+  "required": [
+    "bins",
+    "hub_id"
+  ]
+}

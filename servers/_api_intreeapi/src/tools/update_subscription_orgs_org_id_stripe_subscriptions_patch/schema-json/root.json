@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "update_to_latest_payment_method": {
+      "type": "boolean",
+      "title": "Update To Latest Payment Method",
+      "description": "Update the default Stripe Payment Method of the subscription to the latest one added. If none exists, then an error is raised.",
+      "default": false
+    },
+    "new_tier": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "base",
+            "pro"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "New Tier",
+      "description": "Change the Org's tier. Updating to the same tier does nothing."
+    }
+  },
+  "required": [
+    "org_id"
+  ]
+}

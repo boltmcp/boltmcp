@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "phone": {
+      "description": "Phone numbers to fetch. Example: `?phone={num1}&phone={num2}`. Please note that all phone numbers start with a `+` and the country code. Only phone numbers belonging to users in a relation with or have been invited by the current user will be returned.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Phone"
+    }
+  },
+  "required": [
+    "phone"
+  ]
+}

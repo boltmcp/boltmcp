@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "sort_by": {
+      "description": "Sort by options for treet insights.\n\n- `title`: sort by the title of the treet.\n- `created_at`: sort by when the treet is created.\n- `period_redeems`: sort by the amount of redeems in the period.\n- `period_shares`: sort by the amount of shares in the period.\n- `num_direct`: sort by the amount of direct accesses in the period.\n- `num_shared`: sort by the amount of direct shares in the period.\n- `num_reshared`: sort by the amount of reshares in the period.\n- `num_reach`: sort by the amount of reach in the period.",
+      "default": "asc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(period_redeems)",
+        "desc(period_redeems)",
+        "asc(period_shares)",
+        "desc(period_shares)",
+        "asc(num_direct)",
+        "desc(num_direct)",
+        "asc(num_shared)",
+        "desc(num_shared)",
+        "asc(num_reshared)",
+        "desc(num_reshared)",
+        "asc(num_reach)",
+        "desc(num_reach)"
+      ],
+      "title": "TreetInsightsSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Start Date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "End Date"
+    },
+    "hub_access_state": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "owner",
+            "direct",
+            "partner",
+            "world_wide"
+          ],
+          "title": "TreetAccessHubState",
+          "description": "Describes how the Hub has access to the Treet.\n\nThe values are ordered by priority.\n\nE.g. if the Hub has direct access and suddenly get owner access,\nthen it will be changed to owner access.\nBut if it has direct access and suddenly gets partner access,\nthen it will not change.\n\n- `owner`: The Hub is the owner of the Treet.\n- `direct`: An admin or similar has given the Hub direct access to the Treet.\n- `partner`: A partner of the Hub has given the Hub access to the Treet.\n- `world_wide`: The Treet was picked from a world wide pool.\n\nCurrently only owner and partner access is used."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hub Access State"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": [
+    "hub_id"
+  ]
+}

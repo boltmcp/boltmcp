@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "stripe_customer_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Stripe Customer Id"
+    },
+    "num_ambassadors": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Num Ambassadors",
+      "description": "Ambassadors during this period"
+    },
+    "org_tier": {
+      "anyOf": [
+        {
+          "properties": {
+            "origin_tier": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "free",
+                    "base",
+                    "pro",
+                    "custom",
+                    "dev"
+                  ],
+                  "title": "OrgTier",
+                  "description": "Tiers of an Org.\n\n- `free`: Fixed tier\n- `base`: Fixed tier\n- `pro` : Fixed tier\n\n- `custom`: Custom tier which will default to pro for unset fields.\n- `dev`: Tier only used for development."
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object",
+          "title": "OrgTierUpdateDevDTO",
+          "description": "DTO."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "org_id"
+  ]
+}

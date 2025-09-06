@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Thread Id"
+    }
+  },
+  "required": [
+    "thread_id"
+  ]
+}

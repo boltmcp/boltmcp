@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "redeem_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Redeem Id"
+    }
+  },
+  "required": [
+    "redeem_id"
+  ]
+}

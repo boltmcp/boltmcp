@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "pack_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Pack Id"
+    },
+    "treet_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 3,
+      "title": "Treet Ids"
+    }
+  },
+  "required": [
+    "pack_id",
+    "treet_ids"
+  ]
+}

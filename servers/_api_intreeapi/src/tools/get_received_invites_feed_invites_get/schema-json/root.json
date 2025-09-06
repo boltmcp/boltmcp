@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_owner": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Owner"
+    },
+    "id": {
+      "description": "Filter by invite id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "current_user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Current User Id"
+    },
+    "user_id": {
+      "description": "User ids to fetch users for. Example: `?user_id={num1}&user_id={num2}`",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "title": "User Id"
+    }
+  },
+  "required": [
+    "current_user_id",
+    "user_id"
+  ]
+}

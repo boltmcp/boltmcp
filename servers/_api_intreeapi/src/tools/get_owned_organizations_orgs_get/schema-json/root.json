@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by Orgs.\n\n- `name`: sort by the name of the organization.\n- `created_at`: sort by organization was made.\n\nNote that, desc(created_at) is used as tiebreaker.",
+      "default": "asc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(name)",
+        "desc(name)",
+        "asc(created_at)",
+        "desc(created_at)"
+      ],
+      "title": "OrgSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "embed_businesses": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Businesses"
+    },
+    "embed_ambassador_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Ambassador Data"
+    },
+    "embed_hub_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Hub Data"
+    }
+  },
+  "required": []
+}

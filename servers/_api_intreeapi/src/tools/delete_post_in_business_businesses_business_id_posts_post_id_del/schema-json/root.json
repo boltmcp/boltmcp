@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    }
+  },
+  "required": [
+    "post_id",
+    "business_id"
+  ]
+}

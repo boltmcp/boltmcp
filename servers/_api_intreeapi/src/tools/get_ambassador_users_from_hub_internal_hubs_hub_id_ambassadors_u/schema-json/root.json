@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    }
+  },
+  "required": [
+    "hub_id"
+  ]
+}

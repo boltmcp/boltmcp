@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "ambassador_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Ambassador Id"
+    },
+    "recipient_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Recipient Ids"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    },
+    "ambassador_name": {
+      "type": "string",
+      "title": "Ambassador Name"
+    }
+  },
+  "required": [
+    "id",
+    "ambassador_id",
+    "recipient_ids",
+    "title",
+    "ambassador_name"
+  ]
+}

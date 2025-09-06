@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "item_to_move_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Item To Move Id",
+      "description": "Id of the item that is being moved."
+    },
+    "previous_item_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Previous Item Id",
+      "description": "Id of the item, which is going to be the previous item after the moved item is moved. If null, then the moved item is moved to the front."
+    }
+  },
+  "required": [
+    "item_to_move_id",
+    "previous_item_id"
+  ]
+}

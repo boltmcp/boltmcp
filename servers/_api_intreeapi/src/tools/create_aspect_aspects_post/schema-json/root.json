@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "properties": {
+    "website_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "maxLength": 2047,
+      "title": "Website Url",
+      "examples": [
+        "https://intree.com"
+      ]
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone",
+      "examples": [
+        "+4512345678"
+      ]
+    },
+    "video_url": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2047
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Video Url",
+      "examples": [
+        "https://youtu.be/02IsQyHiEV6"
+      ]
+    },
+    "email": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "email"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "maxLength": 255,
+      "title": "Email",
+      "examples": [
+        "johndoe@gmail.com"
+      ]
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 4095
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "icon_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Icon Image Id"
+    },
+    "cover_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Id"
+    },
+    "tags": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tags"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "minLength": 1,
+      "title": "Title"
+    },
+    "use_profile_image": {
+      "type": "boolean",
+      "title": "Use Profile Image",
+      "default": false
+    },
+    "gallery_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 30,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gallery Ids"
+    },
+    "member_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Member Ids"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

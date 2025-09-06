@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "is_active": {
+      "description": "Filter by active status. If false will only return subscriptions, that are not active. If true will only return active subscriptions. If not given, all are returned.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Is Active"
+    },
+    "price_type": {
+      "description": "Filter by price type. If not given will return all types.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "free",
+          "one_time",
+          "subscription"
+        ],
+        "title": "BizGroupPaymentType",
+        "description": "Payment type for a BizGroup.\n\n- `free`: free (on prod this can only be created by Intree staff)\n- `one_time`: one time payment\n- `subscription`: subscription"
+      },
+      "title": "Price Type"
+    }
+  },
+  "required": []
+}

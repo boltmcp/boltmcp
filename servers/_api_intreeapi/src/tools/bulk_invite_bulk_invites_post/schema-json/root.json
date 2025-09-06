@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "external_client_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "External Client Id",
+      "description": "This ID can be used to track the result of the task."
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "pack_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pack Id",
+      "description": "Optional pack to invite to."
+    },
+    "emails": {
+      "items": {
+        "type": "string",
+        "format": "email"
+      },
+      "type": "array",
+      "maxItems": 1000,
+      "minItems": 1,
+      "title": "Emails"
+    }
+  },
+  "required": [
+    "business_id",
+    "emails"
+  ]
+}

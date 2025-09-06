@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "web_domain": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2047,
+      "title": "Web Domain"
+    },
+    "suggestions_num": {
+      "description": "Maximum number of suggestions to return.",
+      "type": "integer",
+      "maximum": 10,
+      "minimum": 0,
+      "default": 0,
+      "title": "Suggestions Num"
+    }
+  },
+  "required": [
+    "web_domain"
+  ]
+}

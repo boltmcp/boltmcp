@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "ref_code": {
+      "description": "The invite code of the business.",
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 6,
+      "title": "Ref Code"
+    }
+  },
+  "required": [
+    "ref_code"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    },
+    "member_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Member Id"
+    }
+  },
+  "required": [
+    "aspect_id",
+    "member_id"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "group_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 1,
+      "minItems": 0,
+      "uniqueItems": true,
+      "title": "Group Ids",
+      "description": "The ids of the groups to add to the invite."
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "use_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMaximum": 2147483646,
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Use Limit"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "example": "2025-09-04T13:23:19.427545Z",
+          "anyOf": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expires At",
+      "description": "If null, then default is 7 days from now. It set then business must be verified."
+    },
+    "tag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tag",
+      "description": "Tag is used to attach meta data to the user after accepting the invite link."
+    }
+  },
+  "required": [
+    "group_ids",
+    "business_id"
+  ]
+}

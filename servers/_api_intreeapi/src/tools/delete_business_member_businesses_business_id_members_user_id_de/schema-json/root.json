@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    }
+  },
+  "required": [
+    "business_id",
+    "user_id"
+  ]
+}

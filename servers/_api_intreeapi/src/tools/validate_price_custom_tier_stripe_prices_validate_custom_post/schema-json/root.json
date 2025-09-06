@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "token": {
+      "description": "Custom tier token received in email.",
+      "type": "string",
+      "title": "Token"
+    }
+  },
+  "required": [
+    "token"
+  ]
+}

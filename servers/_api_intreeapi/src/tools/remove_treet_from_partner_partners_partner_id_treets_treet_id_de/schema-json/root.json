@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "partner_id": {
+      "description": "ID of the hub you want to remove the Treet from.",
+      "type": "string",
+      "format": "uuid",
+      "title": "Partner Id"
+    },
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    }
+  },
+  "required": [
+    "partner_id",
+    "treet_id"
+  ]
+}

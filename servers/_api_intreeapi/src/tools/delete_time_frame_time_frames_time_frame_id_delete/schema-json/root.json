@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "time_frame_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Time Frame Id"
+    }
+  },
+  "required": [
+    "time_frame_id"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    },
+    "hide": {
+      "type": "boolean",
+      "title": "Hide"
+    }
+  },
+  "required": [
+    "post_id",
+    "hide"
+  ]
+}

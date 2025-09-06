@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "user_external_id_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User External Id Id"
+    }
+  },
+  "required": [
+    "user_external_id_id"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "description": "User ids to fetch users for. Example: `?user_id={num1}&user_id={num2}`",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "title": "User Id"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

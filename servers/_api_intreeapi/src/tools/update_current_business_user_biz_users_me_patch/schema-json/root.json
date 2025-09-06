@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name",
+      "examples": [
+        "Lars Smart"
+      ]
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "examples": [
+            "+4512341234"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "settings": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Settings",
+      "description": "\n            The settings allows you to specify time preferences.\n\n            The possible settings and their allowed values are as follows:\n                - `date_format`: The format for displaying dates.\n                Allowed values are 'dd/mm/yyyy', 'mm/dd/yyyy', and 'yyy/mm/dd'.\n                - `time_format`: The format for displaying time.\n                Allowed values are '12h' and '24h'.\n                - `country`: The country configuration. This is not validated.\n                - `time_zone`: The time zone using dst aware Canonical timezones.\n                    Format is their TZ identifier e.g. `Continent/City`.\n                    See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones\n\n            If a `settings` value is set to `None`,\n            the frontend should use the current system default values.\n        ",
+      "examples": [
+        {
+          "country": "denmark",
+          "date_format": "dd/mm/yyyy",
+          "time_format": "24h",
+          "time_zone": "Europe/Copenhagen"
+        }
+      ]
+    },
+    "avatar_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Avatar Image Id",
+      "description": "The UUID of the image to set as the avatar image. Must be media that belongs to the user."
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,259 @@
+{
+  "type": "object",
+  "properties": {
+    "cover_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Id"
+    },
+    "vertical_cover_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Vertical Cover Image Id"
+    },
+    "banner_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Banner Image Id"
+    },
+    "gradient_color_start": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gradient Color Start"
+    },
+    "gradient_color_end": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gradient Color End"
+    },
+    "pattern_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pattern Id"
+    },
+    "price_type": {
+      "default": "free",
+      "type": "string",
+      "enum": [
+        "free",
+        "one_time",
+        "subscription"
+      ],
+      "title": "BizGroupPaymentType",
+      "description": "Payment type for a BizGroup.\n\n- `free`: free (on prod this can only be created by Intree staff)\n- `one_time`: one time payment\n- `subscription`: subscription"
+    },
+    "paid_by": {
+      "default": "business",
+      "type": "string",
+      "enum": [
+        "business",
+        "member"
+      ],
+      "title": "BizGroupPaidBy",
+      "description": "Who pays for a BizGroup.\n\n- `business`: Attached card pays for each member.\n- `member`: Member of group pays.\n\nIn both cases the payment will go to the business where Intree takes a fee."
+    },
+    "price": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 0,
+      "title": "Price",
+      "description": "Price in US cents. Should be 0 when `price_type=free`. `price_type=free` should have `paid_by=business`. Min for member paid: 200 cents.",
+      "default": 0
+    },
+    "interval": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "day",
+            "month",
+            "week",
+            "year"
+          ],
+          "title": "BizGroupBillingInterval",
+          "description": "Billing interval for BizGroup subscriptions.\n\nUse interval if and only if `price_type=subscription`.\n\nWhen `paid_by=business`, then always `interval=month` and `interval_count=1`.\n\nInterval is defined similar to Stripe's interval and interval_count:\n- E.g. if `interval=month` and `interval_count=3` then bills occur every 3 months.\n- Maximum of three years interval allowed (3 years, 36 months, or 156 weeks)."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "interval_count": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 1095,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Interval Count"
+    },
+    "one_time_duration_minutes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 2147483646,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "One Time Duration Minutes",
+      "description": "Duration in minutes for one-time payment. Does not work for subscriptions. If null, then no limit. If set, then it will limit the duration of the group."
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "avatar_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Avatar Image Id"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "minLength": 1,
+      "title": "Title"
+    },
+    "show_title": {
+      "type": "boolean",
+      "title": "Show Title",
+      "default": true
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2000
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private",
+        "member_public",
+        "group_member_public"
+      ],
+      "title": "BizGroupVisibility",
+      "description": "Visibility of a BizGroup.\n\n`public`: visible to everyone\n\n`private`: only access through link or invitation, but cannot be seen\n\n`member_public`: visible to members of the community\n\n`group_member_public`: like private but visible to members already in the group"
+    },
+    "access_state": {
+      "default": "public",
+      "type": "string",
+      "enum": [
+        "public",
+        "application"
+      ],
+      "title": "BizGroupAccessState",
+      "description": "Specifies the access state of a BizGroup - how it can be accessed.\n\n- `public`: anyone can join\n- `application`: requires application"
+    },
+    "member_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 2147483646,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Member Limit",
+      "description": "Max number of members allowed in the group. If null, then no limit. If subscription, then it will limit the current number of active members. If one-time payment, then it will limit the number of total joined members."
+    },
+    "treet_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Ids"
+    },
+    "is_draft": {
+      "type": "boolean",
+      "title": "Is Draft",
+      "default": false
+    },
+    "treet_share_access": {
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "one_level",
+        "reshares"
+      ],
+      "title": "TreetShareAccess",
+      "description": "The access level of a Treet share for packs.\n\n- `none`: Only members can receive treets from the pack\n- `one_level`: Members can share treets from the pack\n- `reshares`: Users receiving treets from anyone can share them"
+    }
+  },
+  "required": [
+    "business_id",
+    "title",
+    "visibility"
+  ]
+}

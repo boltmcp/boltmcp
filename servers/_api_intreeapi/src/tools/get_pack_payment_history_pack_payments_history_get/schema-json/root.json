@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_pack_subscription": {
+      "description": "Whether to embed the pack subscription details. If true and the embedded subscription is null, it means no current subscription.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Pack Subscription"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by me contacts.\n\n- `created_at`: when the user got in relation.\n- `username`: username of contact.\n- `full_name`: full name of contact.\n\nNote that when not sorting by full_name, desc(created_at) is used as\ntiebreaker.",
+      "default": "desc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(username)",
+        "desc(username)",
+        "asc(full_name)",
+        "desc(full_name)"
+      ],
+      "title": "MeContactsSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_avatar_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Avatar Image"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "id": {
+      "description": "Filter by user id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "relation_id": {
+      "description": "Filter by relation id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Relation Id"
+    },
+    "search": {
+      "description": "Search string for full name of contact.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": []
+}

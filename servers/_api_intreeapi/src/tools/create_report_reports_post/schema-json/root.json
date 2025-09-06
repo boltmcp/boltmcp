@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Business Id",
+      "description": "When this is provided then the business receives the report. If the report is related to a business, user in a business, or post in a business, the business id must be provided. If not, it will be assumed that the report is in regards to a relationship between users. Leave it out if the reported object is the business - e.g. if the post author is the business itself. Since we do not allow sending reports to a business when they are the one being reported."
+    },
+    "object_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Object Id",
+      "description": "The object id concerned by the report."
+    },
+    "object_type": {
+      "description": "The type of object that is being reported. ",
+      "type": "string",
+      "enum": [
+        "post",
+        "user",
+        "business"
+      ],
+      "title": "ReportObjectType"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 500
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Message",
+      "description": "The message to send with the report, if any."
+    },
+    "reasons": {
+      "items": {
+        "type": "string",
+        "enum": [
+          "harmful_content",
+          "nudity_or_pornography",
+          "fraud_or_scam",
+          "sale_or_promotion_of_illegal_items",
+          "spam",
+          "misinformation_and_disinformation",
+          "intellectual_property_violation",
+          "imminent_physical_harm"
+        ],
+        "title": "ReportReasonType",
+        "description": "Enum for report reasons.\n\n- `harmful_content` - Harmful Content\n- `nudity_or_pornography` - Nudity\n- `fraud_or_scam` - Fraud or Scam\n- `sale_or_promotion_of_illegal_items` - Sale or Promotion of Illegal Items\n- `spam` - Spam\n- `misinformation_and_disinformation` - Misinformation and Disinformation\n- `intellectual_property_violation` - Intellectual Property Violation\n- `imminent_physical_harm` - Imminent Physical Harm"
+      },
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Reasons"
+    }
+  },
+  "required": [
+    "object_id",
+    "object_type",
+    "reasons"
+  ]
+}

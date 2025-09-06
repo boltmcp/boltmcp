@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "transfer_codes": {
+      "description": "Transfer codes from the original Treet to the duplicated Treet. This will remove the codes from the old treet.",
+      "type": "boolean",
+      "default": false,
+      "title": "Transfer Codes"
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

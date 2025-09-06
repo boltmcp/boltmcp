@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "event_type": {
+      "enum": [
+        "notification",
+        "biz_treet_access_revoked",
+        "biz_treet_access_regranted"
+      ],
+      "type": "string",
+      "title": "Event Type"
+    }
+  },
+  "required": [
+    "user_id",
+    "event_type"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "expected_type": {
+      "type": "string",
+      "enum": [
+        "community",
+        "provider"
+      ],
+      "title": "HubType",
+      "description": "Type of a hub.\n\n- `community`: Hub is community where app users can join and post\n- `provider`: Hub is a provider who can share treets to communities"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "write"
+      ],
+      "title": "Role",
+      "description": "Role.\n\n- `write`: Has write access or above to the business."
+    },
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "account_type": {
+      "type": "string",
+      "enum": [
+        "REGULAR",
+        "BUSINESS"
+      ],
+      "title": "AccountType",
+      "description": "Enum used to indicate account type.\n\n- `REGULAR`: app user account\n- `BUSINESS`: hub/hub user account"
+    }
+  },
+  "required": [
+    "business_id",
+    "expected_type",
+    "role",
+    "user_id",
+    "account_type"
+  ]
+}

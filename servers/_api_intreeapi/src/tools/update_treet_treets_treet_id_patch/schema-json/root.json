@@ -1,0 +1,477 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "treet": {
+      "anyOf": [
+        {
+          "properties": {
+            "valid_from": {
+              "anyOf": [
+                {
+                  "example": "2025-09-04T13:23:19.427545Z",
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Valid From",
+              "examples": [
+                "2020-10-04T21:33:32.815Z"
+              ]
+            },
+            "expires_at": {
+              "anyOf": [
+                {
+                  "example": "2025-09-04T13:23:19.427545Z",
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Expires At",
+              "examples": [
+                "2020-10-05T21:35:32.815Z"
+              ]
+            },
+            "schedule_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Schedule Id"
+            },
+            "total_redeem_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 100000,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Total Redeem Limit"
+            },
+            "user_redeem_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 100000,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "User Redeem Limit"
+            },
+            "share_redeem_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 100000,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Share Redeem Limit",
+              "description": "Gives an error if set to greater than user_limit."
+            },
+            "is_sharable": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is Sharable"
+            },
+            "total_share_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 100000,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Total Share Limit"
+            },
+            "user_share_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 100000,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "User Share Limit"
+            },
+            "branch_limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMaximum": 10,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Branch Limit"
+            },
+            "show_redeems_left": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Show Redeems Left",
+              "description": "If false, UI should hide redeems left for app users."
+            },
+            "allow_bookings": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Allow Bookings"
+            },
+            "hidden_until": {
+              "anyOf": [
+                {
+                  "example": "2025-09-04T13:23:19.427545Z",
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Hidden Until",
+              "description": "Hidden until this date. If None, then the treet is always shown."
+            },
+            "state": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "active",
+                    "inactive",
+                    "archived"
+                  ],
+                  "title": "TreetState",
+                  "description": "The state of a Treet.\n\n- `active`: The Treet is active.\n- `inactive`: It cannot be redeemed but should be shown in main stats.\n- `archived`: It cannot be redeemed and should not be shown in main stats.\n\nIf the owner wants to never see stats for the Treet again,\nthen they should delete it instead of archiving it."
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "redeem_validation_type": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "naive",
+                    "in_person",
+                    "external"
+                  ],
+                  "title": "RedeemValidationType",
+                  "description": "Redeem validation type for a Treet.\n\nWhen a Redeem is validated, then it is \"used\".\n\n- `naive`: The redeem is automatically verified, when the Treet is redeemed.\n- `in_person`: In person validation\n- `external`: (not used) external validation, through a website or another app etc."
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Type of redeem validation."
+            },
+            "cooldown": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 315576000,
+                  "minimum": 120
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cooldown",
+              "description": "Cooldown in seconds. If not set, no cooldown."
+            },
+            "allow_reservations": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Allow Reservations",
+              "description": "If false, reservations button will be hidden on app."
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "title": "TreetUpdateRequestDTO",
+          "description": "Update DTO for client."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "treet_version": {
+      "anyOf": [
+        {
+          "properties": {
+            "cover_image_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cover Image Id"
+            },
+            "title": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100,
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Title"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Description"
+            },
+            "additional_info": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Additional Info"
+            },
+            "website_url": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2047
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Website Url"
+            },
+            "instructions": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 2000
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Instructions"
+            },
+            "static_code": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Static Code"
+            },
+            "code_type": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "no_code",
+                    "static",
+                    "upload"
+                  ],
+                  "title": "TreetCodeType",
+                  "description": "Code type for Treet.\n\n- `no_code`: Treet does not have a code.\n- `static`: Single static code is used for all Treets.\n- `upload`: Each Redeem gets a unique code from one of the uploaded codes."
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "code_display_type": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "text",
+                    "qrcode",
+                    "barcode"
+                  ],
+                  "title": "TreetCodeDisplayType",
+                  "description": "How a code of a Treet is displayed.\n\n- `none`: Do not display the code\n- `text`: Display code as text\n- `qrcode`: Display as QR code\n- `barcode`: display as barcode"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "title": "TreetVersionUpdateRequestDTO",
+          "description": "Update DTO for client."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "gallery_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gallery Ids"
+    },
+    "locations": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "address": {
+                "type": "string",
+                "title": "Address",
+                "description": "This can be whatever format client decides on.",
+                "examples": [
+                  "123 Main St, San Francisco, CA 94105"
+                ]
+              },
+              "location": {
+                "type": "string",
+                "title": "Location",
+                "description": "Must be a point using format `(latitude,longitude)`.",
+                "examples": [
+                  "(37.7749,-122.4194)"
+                ]
+              }
+            },
+            "type": "object",
+            "required": [
+              "address",
+              "location"
+            ],
+            "title": "TreetLocationDataDTO",
+            "description": "DTO for location data."
+          },
+          "type": "array",
+          "maxItems": 10
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Locations"
+    },
+    "category_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Category Ids"
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

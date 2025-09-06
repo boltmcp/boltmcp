@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "valid_from": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Valid From"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Expires At"
+    },
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "treet_name": {
+      "type": "string",
+      "title": "Treet Name"
+    },
+    "cover_image_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Url"
+    }
+  },
+  "required": [
+    "valid_from",
+    "expires_at",
+    "treet_id",
+    "hub_id",
+    "treet_name"
+  ]
+}

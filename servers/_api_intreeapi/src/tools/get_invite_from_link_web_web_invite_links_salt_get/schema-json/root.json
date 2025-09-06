@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "salt": {
+      "type": "string",
+      "title": "Salt"
+    },
+    "error_if_expired": {
+      "type": "boolean",
+      "default": true,
+      "title": "Error If Expired"
+    }
+  },
+  "required": [
+    "salt"
+  ]
+}

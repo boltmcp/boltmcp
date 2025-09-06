@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "invite_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Invite Id"
+    },
+    "invite_link_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Invite Link Id"
+    }
+  },
+  "required": []
+}

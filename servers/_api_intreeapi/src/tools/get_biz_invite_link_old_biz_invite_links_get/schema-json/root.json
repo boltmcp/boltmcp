@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "link": {
+      "type": "string",
+      "minLength": 8,
+      "title": "Link"
+    },
+    "embed_groups": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Groups"
+    },
+    "embed_total_members": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Members"
+    },
+    "embed_total_passes": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Passes"
+    },
+    "embed_total_posts": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Posts"
+    }
+  },
+  "required": [
+    "link"
+  ]
+}

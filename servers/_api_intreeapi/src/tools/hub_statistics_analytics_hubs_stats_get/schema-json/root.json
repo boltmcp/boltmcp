@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "min_items": 1,
+      "title": "Hub Id"
+    },
+    "embed_total_treets": {
+      "description": "Embeds the amount of treets owned by the hub and the amount of treets shared with the them.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Treets"
+    },
+    "redeem_limit_hit": {
+      "description": "If true, only considers treets that have hit total redeem limit. If false, only considers treets that have not hit total redeem limit. If not given, all relevant treets are considered.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Redeem Limit Hit"
+    },
+    "start_date": {
+      "description": "Start date for the period to get data for.",
+      "type": "string",
+      "format": "date-time",
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "End date for the period to get data for.",
+      "type": "string",
+      "format": "date-time",
+      "title": "End Date"
+    },
+    "embed_claim_count": {
+      "description": "Embeds the amount of claims made in the hub.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Claim Count"
+    }
+  },
+  "required": [
+    "hub_id"
+  ]
+}

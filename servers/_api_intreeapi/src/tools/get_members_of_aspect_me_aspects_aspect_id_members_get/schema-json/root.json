@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    },
+    "embed_member": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Member"
+    },
+    "limit": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "sort_by": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?:asc|desc)\\([\\w\\.]+\\)(?:;(?:asc|desc)\\([\\w\\.]+\\))*$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sort By"
+    }
+  },
+  "required": [
+    "aspect_id"
+  ]
+}

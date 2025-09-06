@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "biz_partnership_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Partnership Id"
+    },
+    "weekly_distributes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Distributes",
+      "description": "Weekly amount of total times other business can distribute treets to your groups. If set to None, there will be no limit."
+    },
+    "contact_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Contact Id",
+      "description": "ID of the BizUser of your business, that you want as contact for this business."
+    },
+    "show_as_partner": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Show As Partner",
+      "description": "Whether to show the other business as a partner under business."
+    }
+  },
+  "required": [
+    "business_id",
+    "biz_partnership_id"
+  ]
+}

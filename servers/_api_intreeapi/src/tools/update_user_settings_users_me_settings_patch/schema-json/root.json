@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "get_push_on_new_invite": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Invite"
+    },
+    "get_push_on_new_introduction": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Introduction"
+    },
+    "get_push_on_new_relation": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Relation"
+    },
+    "get_push_on_thread_activity": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On Thread Activity"
+    },
+    "get_push_on_new_biz_invite": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Biz Invite"
+    },
+    "get_push_on_new_treet": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Treet"
+    },
+    "get_push_on_new_post": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On New Post"
+    },
+    "get_push_on_owned_biz_updates": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On Owned Biz Updates"
+    },
+    "get_push_on_reservation": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Get Push On Reservation"
+    }
+  },
+  "required": []
+}

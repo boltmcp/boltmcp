@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "biz_relation_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz Relation Id",
+      "description": "The id of the BizRelation of the new owner. This is used when transferring ownership between app users. All other fields must be omitted when providing this field."
+    },
+    "biz_user_email": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "email"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz User Email",
+      "description": "The email of the BizUser that will receive the ownership transfer request. This is used when transferring ownership to a biz user. The `message` field is optional when providing this field, but `biz_relation_id` must be omitted. The transfer request is available for 1 days."
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 200
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Message",
+      "description": "Message to be included in the email sent to the new owner."
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

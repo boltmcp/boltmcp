@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "maxLength": 750,
+      "minLength": 1,
+      "title": "Message",
+      "description": "Message of the verification application.",
+      "examples": [
+        "I want to verify my business."
+      ]
+    },
+    "business_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Business Id",
+      "description": "If `business_id` is provided, the application is for a community provider to become verified. Otherwise it is for a business user to become a House Master."
+    }
+  },
+  "required": [
+    "message"
+  ]
+}

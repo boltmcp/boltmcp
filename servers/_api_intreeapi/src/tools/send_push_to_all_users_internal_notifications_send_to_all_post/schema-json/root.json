@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "batch_size": {
+      "type": "integer",
+      "maximum": 1000,
+      "minimum": 1,
+      "default": 100,
+      "title": "Batch Size"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body"
+    }
+  },
+  "required": [
+    "title",
+    "body"
+  ]
+}

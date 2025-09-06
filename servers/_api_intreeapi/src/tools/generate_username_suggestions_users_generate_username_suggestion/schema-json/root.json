@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "maxLength": 255,
+      "minLength": 1,
+      "title": "Full Name",
+      "examples": [
+        "Lars Smart"
+      ]
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

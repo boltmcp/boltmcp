@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "base",
+        "pro"
+      ],
+      "title": "Tier"
+    },
+    "promo_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Promo Code",
+      "description": "Customer facing promo/discount code."
+    }
+  },
+  "required": [
+    "org_id",
+    "tier"
+  ]
+}

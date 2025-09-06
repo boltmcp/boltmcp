@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "pack_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Pack Ids"
+    }
+  },
+  "required": [
+    "hub_id",
+    "pack_ids"
+  ]
+}

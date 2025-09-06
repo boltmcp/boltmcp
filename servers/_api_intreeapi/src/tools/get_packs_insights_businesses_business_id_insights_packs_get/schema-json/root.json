@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "sort_by": {
+      "description": "Sort by options for pack insights.\n\n- `title`: sort by the title of the pack.\n- `created_at`: sort by when the pack is created.\n- `claim_count`: sort by the amount of claims.\n- `revenue`: sort by the revenue.",
+      "default": "asc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(claim_count)",
+        "desc(claim_count)",
+        "asc(revenue)",
+        "desc(revenue)"
+      ],
+      "title": "PackInsightsSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Start Date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "End Date"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

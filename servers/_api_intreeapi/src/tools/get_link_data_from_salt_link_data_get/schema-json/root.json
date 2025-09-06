@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "salt": {
+      "description": "Salt of the invite link.",
+      "type": "string",
+      "title": "Salt"
+    }
+  },
+  "required": [
+    "salt"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    }
+  },
+  "required": [
+    "post_id"
+  ]
+}

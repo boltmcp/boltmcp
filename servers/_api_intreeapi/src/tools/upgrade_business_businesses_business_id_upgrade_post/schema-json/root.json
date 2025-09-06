@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "upgrade_token": {
+      "type": "string",
+      "title": "Upgrade Token"
+    },
+    "new_web_domain": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 30,
+          "minLength": 2,
+          "description": "Community handle. Only alphanumeric characters and `æ, ø, å, Æ, Ø, Å` are allowed: `a-z` `A-Z`, `0-9`, `æ, ø, å, Æ, Ø, Å`. ",
+          "examples": [
+            "JoesClub51",
+            "ÆØÅClub"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "New Web Domain",
+      "description": "A new web domain can be selected (given it is not taken)."
+    }
+  },
+  "required": [
+    "business_id",
+    "upgrade_token"
+  ]
+}

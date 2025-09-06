@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "amount_of_users": {
+      "type": "integer",
+      "title": "Amount Of Users",
+      "description": "Amount of users you want to create.",
+      "default": 1
+    },
+    "is_in_relation": {
+      "type": "boolean",
+      "title": "Is In Relation",
+      "description": "Whether to create a connection between all users created.",
+      "default": false
+    }
+  },
+  "required": []
+}

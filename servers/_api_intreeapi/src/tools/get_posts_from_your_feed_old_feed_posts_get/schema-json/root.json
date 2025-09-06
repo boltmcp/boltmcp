@@ -1,0 +1,152 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 20,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "description": "base64 encoded datetime",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_author": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Author"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "embed_aspects": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Aspects"
+    },
+    "embed_business": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Business"
+    },
+    "embed_recent_comment": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Recent Comment"
+    },
+    "embed_state": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed State"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "author_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Author Id"
+    },
+    "aspect_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Aspect Id"
+    },
+    "business_id": {
+      "description": "Filter by business id. If set will only return posts that are in the business. Using this filter is the only way to embed the `BizRelation` of the post author(s).",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Business Id"
+    },
+    "aspect_member_feed_preference": {
+      "anyOf": [
+        {
+          "const": "preferred",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Aspect Member Feed Preference"
+    },
+    "state": {
+      "description": "Filter by post state. 'saved' returns only saved posts. 'hidden' returns only hidden posts. If not set will hide hidden posts.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "hidden",
+            "saved"
+          ],
+          "title": "UserPostState",
+          "description": "A user's preference of a post.\n\n`hidden`: the post will be hidden in the feed, can be gotten with\n`GET /feed/posts?state=hidden`\n\n`saved`: unused"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State"
+    },
+    "post_type": {
+      "description": "Filter by post type. 'biz' returns only posts made to a business. 'aspect' returns only posts made to an aspect. If not set will return both types.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "biz",
+            "aspect"
+          ],
+          "title": "PostType",
+          "description": "The type of a post.\n\n`biz`: a post made to a biz\n\n`aspect`: a post made to an aspect"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Post Type"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "blocked_user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Blocked User Id"
+    }
+  },
+  "required": [
+    "blocked_user_id"
+  ]
+}

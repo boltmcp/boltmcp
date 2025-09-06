@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_user": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed User"
+    },
+    "embed_aspects": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Aspects"
+    },
+    "search": {
+      "description": "Search string for full name of contact.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

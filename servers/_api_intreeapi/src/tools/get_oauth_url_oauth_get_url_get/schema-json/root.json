@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "integration": {
+      "description": "Type of OAuth integration.\n\nNOTE: remember to update migrations if you update this enum.",
+      "type": "string",
+      "enum": [
+        "planday",
+        "google"
+      ],
+      "title": "OauthIntegration"
+    },
+    "redirect_url": {
+      "description": "Redirect URL from backend to frontend. If not provided, defaults to Intree app.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Redirect Url"
+    },
+    "community_id": {
+      "description": "Specify which community to auto join. It will be returned in the default redirect if not overwritten.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Community Id"
+    }
+  },
+  "required": [
+    "integration"
+  ]
+}

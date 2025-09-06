@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Report Id"
+    }
+  },
+  "required": [
+    "report_id"
+  ]
+}

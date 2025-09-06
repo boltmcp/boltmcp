@@ -1,0 +1,327 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by for Treets on hub.\n\n- `title`: title of the current version of the Treet.\n- `created_at`: when the Treet is created.\n- `expires_at`: when the Treet expires.\n- `total_redeems`: the amount of redeems made on the Treet.\n- `total_shares`: the amount of shares made on the Treet.\n- `redeems_left`: the amount of redeems left.\n\nNote that when not sorting by created_at, desc(created_at) is used as tiebreaker.\nAlso note that null values will be sorted last when asc and first when desc.",
+      "default": "desc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(expires_at)",
+        "desc(expires_at)",
+        "asc(total_redeems)",
+        "desc(total_redeems)",
+        "asc(total_shares)",
+        "desc(total_shares)",
+        "asc(redeems_left)",
+        "desc(redeems_left)"
+      ],
+      "title": "TreetHubSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "embed_hub": {
+      "description": "Embed the hub owner of the Treet.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Hub"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "embed_packs": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Packs"
+    },
+    "embed_schedule_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Schedule Data"
+    },
+    "embed_locations": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Locations"
+    },
+    "embed_categories": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Categories"
+    },
+    "embed_time_frame_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Time Frame Data"
+    },
+    "id": {
+      "description": "Filter by Treet ID.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "hub_id": {
+      "description": "Filter on the hub with access to the treet.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hub Id"
+    },
+    "owner_id": {
+      "description": "Filter on the hub who made the treet.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Owner Id"
+    },
+    "partner_id": {
+      "description": "Filter on partner that has received or given Treet to given hub. hub_id must also be given.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Partner Id"
+    },
+    "pack_id": {
+      "description": "Filter only Treet that are in the given pack.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pack Id"
+    },
+    "inverse_pack_filter": {
+      "description": "If true, only returns treets that are not in given pack. pack_id must also be given.",
+      "type": "boolean",
+      "default": false,
+      "title": "Inverse Pack Filter"
+    },
+    "category_id": {
+      "description": "ID of category to fetch treets with.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    },
+    "is_expired": {
+      "description": "If `true` only expired treets are returned. If `false` only treets that are not expired are returned. If not set: expired and not expired treets are returned.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Is Expired"
+    },
+    "state": {
+      "description": "Filter by Treet state. If not set, all states are returned.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive",
+              "archived"
+            ],
+            "title": "TreetState",
+            "description": "The state of a Treet.\n\n- `active`: The Treet is active.\n- `inactive`: It cannot be redeemed but should be shown in main stats.\n- `archived`: It cannot be redeemed and should not be shown in main stats.\n\nIf the owner wants to never see stats for the Treet again,\nthen they should delete it instead of archiving it."
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State"
+    },
+    "access_state": {
+      "description": "Filter on how the Hub has access to the Treets. If not set, all states are returned.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "owner",
+            "direct",
+            "partner",
+            "world_wide"
+          ],
+          "title": "TreetAccessHubState",
+          "description": "Describes how the Hub has access to the Treet.\n\nThe values are ordered by priority.\n\nE.g. if the Hub has direct access and suddenly get owner access,\nthen it will be changed to owner access.\nBut if it has direct access and suddenly gets partner access,\nthen it will not change.\n\n- `owner`: The Hub is the owner of the Treet.\n- `direct`: An admin or similar has given the Hub direct access to the Treet.\n- `partner`: A partner of the Hub has given the Hub access to the Treet.\n- `world_wide`: The Treet was picked from a world wide pool.\n\nCurrently only owner and partner access is used."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Access State"
+    },
+    "search": {
+      "description": "Search Treets by: Treet title.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "medium_threshold_expires_at": {
+      "description": "Threshold for expires at in days to be medium.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Medium Threshold Expires At"
+    },
+    "critical_threshold_expires_at": {
+      "description": "Threshold for expires at in days to be critical.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Critical Threshold Expires At"
+    },
+    "medium_threshold_redeems_left": {
+      "description": "Threshold for redeems left as a percentage to be medium. Example: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be medium, but redeem limit of 5 and 2 redeems left (2/5=40%) is not.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Medium Threshold Redeems Left"
+    },
+    "critical_threshold_redeems_left": {
+      "description": "Threshold for redeems left as a percentage to be critical. Example: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be critical, but redeem limit of 5 and 2 redeems left (2/5=40%) is not.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Critical Threshold Redeems Left"
+    },
+    "hub_member_treet_role": {
+      "description": "Filter by role current user has to the . If not set, all roles are returned.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "read",
+            "write"
+          ],
+          "title": "HubMemberTreetRole",
+          "description": "The access role of a Hub member in terms of Treet access.\n\nThis is simplified compared to the main Hub roles, as here we only\ncare about access to Treets.\n\n- `write`: roles that can write to the hub\n- `read`: roles that can only read from the hub"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hub Member Treet Role"
+    },
+    "redeem_limit_hit": {
+      "description": "If true, only returns treets with their redeem limit hit. If false, only returns treets that have not hit their redeem limit.If not given, both fully redeemed and not treets are returned.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Redeem Limit Hit"
+    },
+    "highlight_featured_treets": {
+      "description": "If true, places featured treets first and sets field `is_featured`. `pack_id` must be set and `inverse_pack_filter` must be false.",
+      "type": "boolean",
+      "default": false,
+      "title": "Highlight Featured Treets"
+    }
+  },
+  "required": []
+}

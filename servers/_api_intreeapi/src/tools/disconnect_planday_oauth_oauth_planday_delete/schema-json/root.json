@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Org Id"
+    }
+  },
+  "required": [
+    "org_id"
+  ]
+}

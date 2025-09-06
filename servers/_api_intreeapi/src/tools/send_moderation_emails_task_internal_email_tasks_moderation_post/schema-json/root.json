@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "media_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Media Id"
+    },
+    "moderation_label_names": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Moderation Label Names",
+      "description": "List of moderation labels."
+    }
+  },
+  "required": [
+    "media_id",
+    "moderation_label_names"
+  ]
+}

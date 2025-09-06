@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "title": "Token",
+      "description": "Token embedded in the link of the \"forgot-password\" email."
+    },
+    "new_password": {
+      "type": "string",
+      "maxLength": 125,
+      "format": "password",
+      "title": "New Password",
+      "writeOnly": true,
+      "examples": [
+        "1234"
+      ]
+    }
+  },
+  "required": [
+    "token",
+    "new_password"
+  ]
+}

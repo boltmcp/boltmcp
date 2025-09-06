@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "date_start": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Date Start"
+    },
+    "date_stop": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Date Stop"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    }
+  },
+  "required": [
+    "password"
+  ]
+}

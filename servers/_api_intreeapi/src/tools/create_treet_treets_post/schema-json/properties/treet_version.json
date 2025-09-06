@@ -1,0 +1,115 @@
+{
+  "properties": {
+    "cover_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Id"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Title"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2000,
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "additional_info": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2000,
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Additional Info"
+    },
+    "website_url": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2047,
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Website Url"
+    },
+    "instructions": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2000
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Instructions"
+    },
+    "static_code": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Static Code"
+    },
+    "code_type": {
+      "default": "no_code",
+      "type": "string",
+      "enum": [
+        "no_code",
+        "static",
+        "upload"
+      ],
+      "title": "TreetCodeType",
+      "description": "Code type for Treet.\n\n- `no_code`: Treet does not have a code.\n- `static`: Single static code is used for all Treets.\n- `upload`: Each Redeem gets a unique code from one of the uploaded codes."
+    },
+    "code_display_type": {
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "text",
+        "qrcode",
+        "barcode"
+      ],
+      "title": "TreetCodeDisplayType",
+      "description": "How a code of a Treet is displayed.\n\n- `none`: Do not display the code\n- `text`: Display code as text\n- `qrcode`: Display as QR code\n- `barcode`: display as barcode"
+    }
+  },
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "title": "TreetVersionInputRequestDTO",
+  "description": "InputDTO."
+}

@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "interval_type": {
+      "type": "string",
+      "enum": [
+        "day",
+        "week",
+        "month"
+      ],
+      "title": "TimeFrameType",
+      "description": "Enum for when the time frame limit is applied.\n\nE.g. if `day`, then the Treet will have a daily redeem limit per user.\n\nNote that the values corresponds to the Postgres time parts.\n\n- `day`: daily\n- `week`: weekly\n- `month`: monthly"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100000,
+      "exclusiveMinimum": 0,
+      "title": "Limit"
+    },
+    "tz": {
+      "type": "string",
+      "title": "Tz",
+      "default": "UTC"
+    }
+  },
+  "required": [
+    "treet_id",
+    "interval_type",
+    "limit"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    },
+    "invite_link_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Invite Link Id"
+    }
+  },
+  "required": [
+    "treet_id",
+    "invite_link_id"
+  ]
+}

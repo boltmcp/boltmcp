@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by feed businesses.\n\n- `joined_at`: when the user joined the business.\n- `web_domain`: the domain of the business.\n- `title`: the title of the business profile.\n- `total_members`: the total number of members in the business.\n\nNote that when not sorting by web_domain, asc(web_domain) is used as tiebreaker.\n\nWhen sorting on total_members, then businesses that have enable_members=false will\nbe placed last no matter the orientation.",
+      "default": "asc(title)",
+      "type": "string",
+      "enum": [
+        "asc(joined_at)",
+        "desc(joined_at)",
+        "asc(web_domain)",
+        "desc(web_domain)",
+        "asc(title)",
+        "desc(title)",
+        "asc(total_members)",
+        "desc(total_members)"
+      ],
+      "title": "FeedBizSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "web_domain": {
+      "description": "Filters the businesses based on their web domain. This takes precedence over the `id` and `only_show_owned` fields. When specified either one or no business will be returned as this is exact match.",
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "Community handle. Only alphanumeric characters and `æ, ø, å, Æ, Ø, Å` are allowed: `a-z` `A-Z`, `0-9`, `æ, ø, å, Æ, Ø, Å`. ",
+          "examples": [
+            "JoesClub51",
+            "ÆØÅClub"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Web Domain"
+    },
+    "only_show_owned": {
+      "description": "Only shows businesses you own if true, show all if false",
+      "type": "boolean",
+      "default": false,
+      "title": "Only Show Owned"
+    },
+    "only_show_joined": {
+      "description": "Only shows businesses you have joined if true, also shows invited businesses if false",
+      "type": "boolean",
+      "default": false,
+      "title": "Only Show Joined"
+    },
+    "search": {
+      "description": "Search for business.profile.title",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "enable_feed": {
+      "description": "Filter businesses based on their feed status.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable Feed"
+    },
+    "enable_app_user_post": {
+      "description": "Filter businesses based on whether app users can post.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable App User Post"
+    },
+    "category_id": {
+      "description": "ID of category to fetch businesses with.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    },
+    "embed_preview_members": {
+      "description": "Embeds a preview of 5 members + the total_members field.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Preview Members"
+    },
+    "embed_app_owner": {
+      "description": "Embeds the owner if it is an app community.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed App Owner"
+    },
+    "embed_is_ambassador": {
+      "description": "Embeds if the user is an ambassador in the hub.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Is Ambassador"
+    },
+    "embed_total_passes": {
+      "description": "Embeds the total number of non-hidden passes in the business.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Passes"
+    },
+    "embed_total_posts": {
+      "description": "Embeds the total number of posts made by the business.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Posts"
+    }
+  },
+  "required": []
+}

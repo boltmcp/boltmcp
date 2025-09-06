@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 100,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Treet Ids"
+    },
+    "user_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 100,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "User Ids"
+    }
+  },
+  "required": [
+    "treet_ids",
+    "user_ids"
+  ]
+}

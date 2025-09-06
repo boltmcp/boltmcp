@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "schedule_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Schedule Id"
+    },
+    "business_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Business Id"
+    }
+  },
+  "required": []
+}

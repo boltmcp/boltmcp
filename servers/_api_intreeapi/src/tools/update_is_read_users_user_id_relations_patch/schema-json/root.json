@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "is_read": {
+      "type": "boolean",
+      "title": "Is Read",
+      "description": "\n            New is_read value, which will be set on either\n            is_read1 or is_read2, depending on which user is making the request.\n        "
+    }
+  },
+  "required": [
+    "user_id",
+    "is_read"
+  ]
+}

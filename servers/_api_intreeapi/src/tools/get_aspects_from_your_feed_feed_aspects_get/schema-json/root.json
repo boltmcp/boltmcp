@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_icon_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Icon Image"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_recent_posts": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Recent Posts"
+    },
+    "embed_owner": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Owner"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "id": {
+      "description": "Filter by aspect id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "owner_id": {
+      "description": "Filter by owner id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Owner Id"
+    },
+    "feed_preference": {
+      "description": "Filter by feed preference.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "preferred",
+            "normal",
+            "hidden"
+          ],
+          "title": "AspectMemberFeedPreference",
+          "description": "User's feed preference to an aspect.\n\n`preferred`: posts in this aspect will also appear in the user's preferred feed\n\n`normal`: posts in this aspect will appear in the user's normal feed\n\n`hidden`: posts in this aspect will not appear in the user's feed"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Feed Preference"
+    }
+  },
+  "required": []
+}

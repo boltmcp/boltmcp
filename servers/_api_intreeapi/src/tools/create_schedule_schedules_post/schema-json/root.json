@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name",
+      "examples": [
+        "My interval"
+      ]
+    },
+    "enforce_interval": {
+      "type": "boolean",
+      "title": "Enforce Interval",
+      "description": "When treets have set a schedule with enforce_interval true, the schedule will be enforced for those treets. When false, the schedule is not enforced.",
+      "default": true
+    },
+    "tz": {
+      "type": "string",
+      "title": "Tz",
+      "description": "Timezone which the intervals are given in.",
+      "default": "UTC"
+    },
+    "intervals": {
+      "items": {
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "time",
+            "title": "Start",
+            "description": "Start time of the interval. The time will be interpreted as being in the time zone of the schedule. Any offsets will be ignored i.e. 08:00-0500 will be interpreted as 08:00."
+          },
+          "stop": {
+            "type": "string",
+            "format": "time",
+            "title": "Stop",
+            "description": "Stop time of the interval. The time will be interpreted as being in the time zone of the schedule. Any offsets will be ignored i.e. 08:00-0500 will be interpreted as 08:00."
+          },
+          "day": {
+            "description": "The day of the week the interval is active. Monday=1, Sunday=7",
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "title": "DaysOfTheWeek"
+          },
+          "limit": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100000,
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Limit",
+            "description": "The limit for amount of verifications a user can make in this interval. No tally is being kept between intervals. If not set, no limit."
+          }
+        },
+        "type": "object",
+        "required": [
+          "start",
+          "stop",
+          "day"
+        ],
+        "title": "IntervalInputRequestDTO",
+        "description": "Input DTO for client."
+      },
+      "type": "array",
+      "title": "Intervals"
+    }
+  },
+  "required": [
+    "hub_id",
+    "intervals"
+  ]
+}

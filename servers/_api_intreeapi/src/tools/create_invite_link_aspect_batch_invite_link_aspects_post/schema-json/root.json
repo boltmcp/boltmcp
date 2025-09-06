@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "title": "Aspect Ids"
+    },
+    "invite_link_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Invite Link Id"
+    }
+  },
+  "required": [
+    "aspect_ids",
+    "invite_link_id"
+  ]
+}

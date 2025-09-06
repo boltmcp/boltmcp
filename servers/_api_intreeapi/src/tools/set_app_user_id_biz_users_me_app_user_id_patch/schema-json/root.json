@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1,
+      "title": "Username"
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 255,
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    }
+  },
+  "required": [
+    "username",
+    "phone"
+  ]
+}

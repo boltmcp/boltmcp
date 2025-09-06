@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "post_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "biz",
+            "aspect"
+          ],
+          "title": "PostType",
+          "description": "The type of a post.\n\n`biz`: a post made to a biz\n\n`aspect`: a post made to an aspect"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Post Type"
+    }
+  },
+  "required": []
+}

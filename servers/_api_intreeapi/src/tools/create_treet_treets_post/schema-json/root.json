@@ -1,0 +1,265 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Valid From"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expires At"
+    },
+    "hidden_until": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hidden Until"
+    },
+    "treet_version": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `treet_version` to the tool, first call the tool `expandSchema` with \"/properties/treet_version\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>InputDTO.</property-description>",
+      "additionalProperties": true
+    },
+    "total_redeem_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Redeem Limit"
+    },
+    "user_redeem_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Redeem Limit"
+    },
+    "share_redeem_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Share Redeem Limit",
+      "description": "If not set, it will be set to user_limit. If set to greater than user_limit it will also be set to user_limit"
+    },
+    "show_redeems_left": {
+      "type": "boolean",
+      "title": "Show Redeems Left",
+      "description": "If false, UI should hide redeems left for app users.",
+      "default": false
+    },
+    "is_sharable": {
+      "type": "boolean",
+      "title": "Is Sharable",
+      "default": false
+    },
+    "total_share_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Share Limit"
+    },
+    "user_share_limit": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Share Limit"
+    },
+    "branch_limit": {
+      "type": "integer",
+      "exclusiveMaximum": 10,
+      "minimum": 0,
+      "title": "Branch Limit",
+      "default": 0
+    },
+    "redeem_validation_type": {
+      "default": "naive",
+      "type": "string",
+      "enum": [
+        "naive",
+        "in_person",
+        "external"
+      ],
+      "title": "RedeemValidationType",
+      "description": "Redeem validation type for a Treet.\n\nWhen a Redeem is validated, then it is \"used\".\n\n- `naive`: The redeem is automatically verified, when the Treet is redeemed.\n- `in_person`: In person validation\n- `external`: (not used) external validation, through a website or another app etc."
+    },
+    "schedule_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Schedule Id"
+    },
+    "cooldown": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 315576000,
+          "minimum": 120
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cooldown",
+      "description": "Cooldown in seconds. If not set, no cooldown."
+    },
+    "allow_reservations": {
+      "type": "boolean",
+      "title": "Allow Reservations",
+      "description": "If false, reservations button will be hidden on app.",
+      "default": false
+    },
+    "gallery_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gallery Ids"
+    },
+    "category_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Category Ids"
+    },
+    "codes": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "maxItems": 10000,
+          "minItems": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Codes"
+    },
+    "locations": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "address": {
+                "type": "string",
+                "title": "Address",
+                "description": "This can be whatever format client decides on.",
+                "examples": [
+                  "123 Main St, San Francisco, CA 94105"
+                ]
+              },
+              "location": {
+                "type": "string",
+                "title": "Location",
+                "description": "Must be a point using format `(latitude,longitude)`.",
+                "examples": [
+                  "(37.7749,-122.4194)"
+                ]
+              }
+            },
+            "type": "object",
+            "required": [
+              "address",
+              "location"
+            ],
+            "title": "TreetLocationInputRequestDTO",
+            "description": "DTO for input."
+          },
+          "type": "array",
+          "maxItems": 10
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Locations"
+    }
+  },
+  "required": [
+    "hub_id",
+    "valid_from",
+    "treet_version"
+  ]
+}

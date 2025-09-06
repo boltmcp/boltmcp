@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by options for redeems.\n\n`title`: sort by the title of the redeemed treet\n`created_at`: sort by when the redeem was made",
+      "default": "desc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)"
+      ],
+      "title": "AppRedeemSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "embed_hub": {
+      "description": "Embed the hub owner of the Treet.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Hub"
+    },
+    "embed_treet_code": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Treet Code"
+    },
+    "embed_cover_image": {
+      "description": "Embed cover image from version of redeem.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_schedule_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Schedule Data"
+    },
+    "embed_cooldown_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cooldown Data"
+    },
+    "embed_time_frame_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Time Frame Data"
+    },
+    "embed_locations": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Locations"
+    },
+    "embed_booking_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Booking Data"
+    },
+    "id": {
+      "description": "Filter by id of Redeem.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "treet_id": {
+      "description": "Filter by Redeems made on Treet id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Id"
+    },
+    "hub_id": {
+      "description": "Filter by hub id of Treet.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hub Id"
+    },
+    "category_id": {
+      "description": "ID of category to fetch treets with.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    },
+    "search": {
+      "description": "Search Redeems by: Treet title.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "pack_id": {
+      "description": "Filter by pack id of Treet.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pack Id"
+    }
+  },
+  "required": []
+}

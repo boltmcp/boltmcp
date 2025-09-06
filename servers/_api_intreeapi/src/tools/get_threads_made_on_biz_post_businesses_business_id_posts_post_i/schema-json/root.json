@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_recent_comment": {
+      "description": "This will be the same as initial_comment if there are no other comments to the thread.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Recent Comment"
+    },
+    "embed_initial_comment": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Initial Comment"
+    },
+    "embed_number_of_comments": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Number Of Comments"
+    },
+    "embed_author": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Author"
+    },
+    "id": {
+      "description": "Filter by thread id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": [
+    "post_id",
+    "business_id"
+  ]
+}

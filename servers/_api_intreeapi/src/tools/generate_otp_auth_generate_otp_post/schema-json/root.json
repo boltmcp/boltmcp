@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "error_if_user_not_exists": {
+      "description": "Error if user does not exist.",
+      "type": "boolean",
+      "default": false,
+      "title": "Error If User Not Exists"
+    },
+    "error_if_user_exists": {
+      "description": "Error if user exists.",
+      "type": "boolean",
+      "default": false,
+      "title": "Error If User Exists"
+    },
+    "vendor_name": {
+      "description": "Vendor name used to determine the recaptcha project to use.",
+      "default": "ios",
+      "type": "string",
+      "enum": [
+        "web",
+        "android",
+        "ios"
+      ],
+      "title": "RecaptchaVendorName"
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 255,
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "X-Firebase-AppCheck": {
+      "description": "TEMPORARILY DISABLED. AppCheck token.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "X-Firebase-Appcheck"
+    },
+    "X-Recaptcha-Token": {
+      "description": "reCAPTCHA token. Required for all envs except local and test.",
+      "type": "string",
+      "default": "",
+      "title": "X-Recaptcha-Token"
+    }
+  },
+  "required": [
+    "phone"
+  ]
+}

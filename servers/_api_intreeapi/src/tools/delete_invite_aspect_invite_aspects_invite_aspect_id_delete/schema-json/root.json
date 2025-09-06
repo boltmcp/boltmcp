@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "invite_aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Invite Aspect Id"
+    }
+  },
+  "required": [
+    "invite_aspect_id"
+  ]
+}

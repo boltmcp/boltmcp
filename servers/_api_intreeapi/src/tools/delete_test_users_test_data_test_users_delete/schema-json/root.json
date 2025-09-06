@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "phone_numbers": {
+      "description": "This will delete each user for a number given",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Phone Numbers"
+    }
+  },
+  "required": [
+    "phone_numbers"
+  ]
+}

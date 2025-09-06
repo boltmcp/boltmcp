@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

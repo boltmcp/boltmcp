@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "integration_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "planday",
+            "google"
+          ],
+          "title": "OauthIntegration",
+          "description": "Type of OAuth integration.\n\nNOTE: remember to update migrations if you update this enum."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Integration Type"
+    },
+    "integration_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Integration Id"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

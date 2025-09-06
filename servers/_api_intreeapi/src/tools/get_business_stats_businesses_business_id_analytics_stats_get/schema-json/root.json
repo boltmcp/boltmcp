@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "embed_member_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Member Count"
+    },
+    "embed_team_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Team Count"
+    },
+    "embed_partner_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Partner Count"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

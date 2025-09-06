@@ -1,0 +1,91 @@
+{
+  "properties": {
+    "city": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "City",
+      "examples": [
+        "Frederiksberg"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 2,
+      "minLength": 2,
+      "title": "Country",
+      "description": "ISO 3166-1 alpha-2 country code.",
+      "examples": [
+        "DK"
+      ]
+    },
+    "line1": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Line1",
+      "description": "E.g. street, PO Box, company name.",
+      "examples": [
+        "Amalievej 20"
+      ]
+    },
+    "line2": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Line2",
+      "description": "Usually used for floor, apartment, etc. But frontend may use it as a workaround to display VAT on the invoice."
+    },
+    "postal_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Postal Code",
+      "description": "ZIP or postal code",
+      "examples": [
+        "1875"
+      ]
+    },
+    "state": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "State",
+      "description": "State, county or region.",
+      "examples": [
+        "Hovedstaden"
+      ]
+    }
+  },
+  "type": "object",
+  "required": [
+    "country"
+  ],
+  "title": "AddressDTO",
+  "description": "DTO for a Stripe Address.\n\nAn address is required to compute automatic tax for Stripe.\nThe amount of required fields depends on the country."
+}

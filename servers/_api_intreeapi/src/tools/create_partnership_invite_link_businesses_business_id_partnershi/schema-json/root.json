@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "group_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group Ids",
+      "description": "Ids of groups that the invite link will give express access to."
+    },
+    "weekly_distributes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Distributes",
+      "description": "Number of times express access can be used per week. If None, express access has no limit."
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "example": "2025-09-04T13:23:19.427545Z",
+          "anyOf": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expires At",
+      "description": "Date and time when the invite link will expire.Default is 7 days from now.This is also the maximum expiry date allowed."
+    },
+    "email": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Email",
+      "description": "Email to send the invite link to. If None, no email will be sent."
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Message",
+      "description": "Message to send with the email. If None, no message will be sent."
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

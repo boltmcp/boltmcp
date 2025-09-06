@@ -1,0 +1,288 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by options for packs for hub.\n\n- `title`: sort by the title of the pack.\n- `created_at`: sort by when the pack is created.\n- `total_members`: sort by the amount of members in the pack.\n- `total_treets`: sort by the amount of treets in the pack.\n- `price`: sort by the price of the pack.",
+      "default": "asc(title)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(total_members)",
+        "desc(total_members)",
+        "asc(total_treets)",
+        "desc(total_treets)",
+        "asc(price)",
+        "desc(price)"
+      ],
+      "title": "HubPackSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "treet_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Id"
+    },
+    "treet_access_role": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "read",
+            "write"
+          ],
+          "title": "HubMemberTreetRole",
+          "description": "The access role of a Hub member in terms of Treet access.\n\nThis is simplified compared to the main Hub roles, as here we only\ncare about access to Treets.\n\n- `write`: roles that can write to the hub\n- `read`: roles that can only read from the hub"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Access Role"
+    },
+    "inverse_treet_filter": {
+      "description": "If true and treet_id is given, it will return all packs not containing treet. If false and treet_id is given only shows packs containing treet.",
+      "type": "boolean",
+      "default": false,
+      "title": "Inverse Treet Filter"
+    },
+    "include_draft": {
+      "description": "If true includes draft packs. If false does not include draft packs. Default is false.",
+      "type": "boolean",
+      "default": false,
+      "title": "Include Draft"
+    },
+    "treet_amount": {
+      "description": "If set, will return packs based on treet_amount_comparator.",
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Treet Amount"
+    },
+    "treet_amount_comparator": {
+      "description": "Comparator for amount of treets (tac). When treets_amount is set and a pack has x treets it will return packs that have `treet_amount (tac) x` for example `10 > x` will give packs with more than 10 treets.",
+      "default": "equal",
+      "type": "string",
+      "enum": [
+        "greater",
+        "equal",
+        "less"
+      ],
+      "title": "AmountTreetsComparator"
+    },
+    "hub_id": {
+      "description": "Filter by owner of pack. If not given, no filter is applied",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Hub Id"
+    },
+    "category_id": {
+      "description": "ID of category to fetch treets with.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    },
+    "title": {
+      "description": "Filter by title of pack. If not given, no filter is applied.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    },
+    "total_treets_get_expired": {
+      "description": "If true it will only count expired Treets. If false it will only count active Treets. If not given, no filter is applied. The filter will only be applied if embedding total_treets. This filter will also affect the treet_amount filter and the values used when sorting by amount of treets.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Treets Get Expired"
+    },
+    "total_treets_get_archived": {
+      "description": "If true it will only count archived Treets. If false it will count active and archived Treets. If not given, no filter is applied. The filter will only be applied if embedding total_treets. This filter will also affect the treet_amount filter and the values used when sorting by amount of treets.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Treets Get Archived"
+    },
+    "medium_threshold_expires_at": {
+      "description": "Threshold for expires at in days to be medium.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Medium Threshold Expires At"
+    },
+    "critical_threshold_expires_at": {
+      "description": "Threshold for expires at in days to be critical.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100000,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Critical Threshold Expires At"
+    },
+    "medium_threshold_redeems_left": {
+      "description": "Threshold for redeems left as a percentage to be medium. Ex: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be medium. But redeem limit of 5 and 2 redeems left (2/5=40%) is not.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Medium Threshold Redeems Left"
+    },
+    "critical_threshold_redeems_left": {
+      "description": "Threshold for redeems left as a percentage to be critical. Ex: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be critical. But redeem limit of 5 and 2 redeems left (2/5=40%) is not.",
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 100,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Critical Threshold Redeems Left"
+    },
+    "treet_share_access": {
+      "description": "Treet share access the pack should have.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "one_level",
+              "reshares"
+            ],
+            "title": "TreetShareAccess",
+            "description": "The access level of a Treet share for packs.\n\n- `none`: Only members can receive treets from the pack\n- `one_level`: Members can share treets from the pack\n- `reshares`: Users receiving treets from anyone can share them"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 1,
+      "max_items": 10,
+      "title": "Treet Share Access"
+    },
+    "embed_total_treets": {
+      "description": "Amount of treets in pack. Must be true when sorting by it.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Treets"
+    },
+    "embed_total_members": {
+      "description": "Amount of members in pack. Must be true when sorting by it.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Members"
+    },
+    "embed_featured_treets": {
+      "description": "Embed featured treets in pack.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Featured Treets"
+    },
+    "embed_hub": {
+      "description": "Embed the hub owner of the Pack.",
+      "type": "boolean",
+      "default": true,
+      "title": "Embed Hub"
+    }
+  },
+  "required": []
+}

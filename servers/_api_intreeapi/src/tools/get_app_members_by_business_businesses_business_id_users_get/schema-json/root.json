@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "sort_by": {
+      "description": "Sort by for AppMember.\n\n`full_name`: sort by full name\n\n`created_at`: sort by created at",
+      "default": "full_name",
+      "type": "string",
+      "enum": [
+        "full_name",
+        "created_at"
+      ],
+      "title": "AppMemberSortBy"
+    },
+    "embed_group_members": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Group Members"
+    },
+    "embed_redeems": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Redeems"
+    },
+    "embed_shares": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Shares"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    },
+    "group_id": {
+      "description": "Filter by group ID.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group Id"
+    },
+    "search": {
+      "description": "Search for an ambassador by full name.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

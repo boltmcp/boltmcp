@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "partner_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Partner Id"
+    },
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "treet": {
+      "anyOf": [
+        {
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Id"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            }
+          },
+          "type": "object",
+          "required": [
+            "id",
+            "title"
+          ],
+          "title": "TreetTitleDTO",
+          "description": "DTO for treet title and id."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cover_image_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Url"
+    }
+  },
+  "required": [
+    "partner_id",
+    "hub_id"
+  ]
+}

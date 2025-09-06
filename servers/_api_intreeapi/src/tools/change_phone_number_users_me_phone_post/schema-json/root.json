@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "phone": {
+      "type": "string",
+      "maxLength": 255,
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "otp": {
+      "type": "string",
+      "title": "Otp",
+      "examples": [
+        "123456"
+      ]
+    }
+  },
+  "required": [
+    "phone",
+    "otp"
+  ]
+}

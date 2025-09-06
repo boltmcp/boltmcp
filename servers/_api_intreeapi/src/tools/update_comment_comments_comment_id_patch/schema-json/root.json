@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "comment_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Comment Id"
+    },
+    "content": {
+      "type": "string",
+      "maxLength": 2000,
+      "title": "Content"
+    }
+  },
+  "required": [
+    "comment_id",
+    "content"
+  ]
+}

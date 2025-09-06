@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_partnership_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Partnership Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "biz_groups": {
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "enabled"
+        ],
+        "title": "BizGroupEnabledDTO",
+        "description": "DTO for BizGroupEnabled."
+      },
+      "type": "array",
+      "title": "Biz Groups"
+    }
+  },
+  "required": [
+    "biz_partnership_id",
+    "business_id",
+    "biz_groups"
+  ]
+}

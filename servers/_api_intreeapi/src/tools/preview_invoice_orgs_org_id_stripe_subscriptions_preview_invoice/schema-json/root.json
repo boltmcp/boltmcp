@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "new_tier": {
+      "type": "string",
+      "enum": [
+        "base",
+        "pro"
+      ],
+      "title": "New Tier"
+    }
+  },
+  "required": [
+    "org_id",
+    "new_tier"
+  ]
+}

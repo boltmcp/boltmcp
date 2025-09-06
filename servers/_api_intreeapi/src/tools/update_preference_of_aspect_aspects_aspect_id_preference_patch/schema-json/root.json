@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    },
+    "feed_preference": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "preferred",
+            "normal",
+            "hidden"
+          ],
+          "title": "AspectMemberFeedPreference",
+          "description": "User's feed preference to an aspect.\n\n`preferred`: posts in this aspect will also appear in the user's preferred feed\n\n`normal`: posts in this aspect will appear in the user's normal feed\n\n`hidden`: posts in this aspect will not appear in the user's feed"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "notification_preference": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "push",
+            "activity",
+            "silent"
+          ],
+          "title": "AspectMemberNotificationPreference",
+          "description": "User's notification preference to an aspect.\n\nUNUSED\n\n`push`: user will receive push notifications for this aspect\n\n`activity`: user will receive activity notifications for this aspect\n\n`silent`: user will not receive notifications for this aspect"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "note": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 4095
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Note"
+    }
+  },
+  "required": [
+    "aspect_id"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "ids_to_remove": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Ids To Remove"
+    },
+    "new_domains": {
+      "anyOf": [
+        {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}$",
+                "title": "Name",
+                "examples": [
+                  "intree.com"
+                ]
+              },
+              "verification_interval_minutes": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 5
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Verification Interval Minutes",
+                "description": "Note that the min value for PROD is 1440."
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "verification_interval_minutes"
+            ],
+            "title": "BizDomainInputRequestDTO",
+            "description": "DTO for input."
+          },
+          "type": "array",
+          "maxItems": 10
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "New Domains"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "booking_event_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Booking Event Id",
+      "description": "Use to connect a booking from HOSAPI to the redeem."
+    },
+    "booking_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Booking Name",
+      "description": "Name attached to booking. Only used if the event_id is given."
+    },
+    "invite_link_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Invite Link Id"
+    },
+    "reservation_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reservation Id",
+      "description": "Id for reservation to be used when redeeming, if not given, it will check if there are any existing reservations, and use that. Should be given for anonymous user."
+    }
+  },
+  "required": [
+    "invite_link_id"
+  ]
+}

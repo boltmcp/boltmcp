@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "maxLength": 2000,
+      "title": "Content"
+    },
+    "thread_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Thread Id"
+    }
+  },
+  "required": [
+    "content",
+    "thread_id"
+  ]
+}

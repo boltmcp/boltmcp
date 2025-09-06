@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "viewer",
+            "moderator",
+            "collaborator",
+            "admin",
+            "billing"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Role"
+    }
+  },
+  "required": [
+    "business_id",
+    "user_id"
+  ]
+}

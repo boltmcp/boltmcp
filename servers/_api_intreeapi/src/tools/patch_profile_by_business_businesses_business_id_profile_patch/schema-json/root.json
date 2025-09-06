@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "website_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "maxLength": 2047,
+      "title": "Website Url",
+      "examples": [
+        "https://intree.com"
+      ]
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone",
+      "examples": [
+        "+4512345678"
+      ]
+    },
+    "video_url": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2047
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Video Url",
+      "examples": [
+        "https://youtu.be/02IsQyHiEV6"
+      ]
+    },
+    "email": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "email"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "maxLength": 255,
+      "title": "Email",
+      "examples": [
+        "johndoe@gmail.com"
+      ]
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1,
+          "description": "Title of the business profile.",
+          "examples": [
+            "My Business"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    },
+    "logo_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Logo Image Id"
+    },
+    "cover_image_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Id"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 600,
+          "description": "Description of the business profile.",
+          "examples": [
+            "This is my business we are selling..."
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "address": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255,
+          "description": "Address of the business profile.",
+          "examples": [
+            "Baker Street 4"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Address"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

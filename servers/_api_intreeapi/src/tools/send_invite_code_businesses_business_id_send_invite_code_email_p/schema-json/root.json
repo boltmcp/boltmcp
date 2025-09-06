@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email",
+      "description": "Email address of the a user of the recipient business. They do not have to have an Intree Business account.",
+      "examples": [
+        "mikkel@vase.fre"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "title": "Message",
+      "description": "This will be embedded in the content of the email."
+    }
+  },
+  "required": [
+    "business_id",
+    "email",
+    "message"
+  ]
+}

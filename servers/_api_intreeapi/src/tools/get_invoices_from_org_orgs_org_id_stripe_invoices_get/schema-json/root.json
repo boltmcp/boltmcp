@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "draft",
+            "open",
+            "paid",
+            "uncollectible",
+            "void"
+          ],
+          "title": "InvoiceStatus",
+          "description": "Status of an invoice.\n\n- `draft`: The invoice isn't ready to use.\n- `open`: The invoice is finalized and awaiting payment. If payment fails status\nwill stay `open`.\n- `paid`: Stripe updates invoice from `open` to `paid` if payment succeeds.\n- `void`: This invoice is canceled.\n- `uncollectible`: The customer is unlikely to pay the invoice. Normally, you\ntreat it as bad debt in your accounting process.,"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Status"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    }
+  },
+  "required": [
+    "org_id"
+  ]
+}

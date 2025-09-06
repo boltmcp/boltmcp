@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Thread Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_author": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Author"
+    }
+  },
+  "required": [
+    "thread_id",
+    "business_id"
+  ]
+}

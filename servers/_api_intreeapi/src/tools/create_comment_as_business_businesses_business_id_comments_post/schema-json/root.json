@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "content": {
+      "type": "string",
+      "maxLength": 2000,
+      "title": "Content"
+    },
+    "thread_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Thread Id"
+    }
+  },
+  "required": [
+    "business_id",
+    "content",
+    "thread_id"
+  ]
+}

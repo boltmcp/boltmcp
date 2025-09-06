@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_group_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Group Id"
+    },
+    "biz_invite_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz Invite Id",
+      "description": "Join using an invite, with attached group."
+    },
+    "biz_invite_link_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz Invite Link Id",
+      "description": "Join using an invite link, with attached group."
+    }
+  },
+  "required": [
+    "biz_group_id"
+  ]
+}

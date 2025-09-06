@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "embed_agrees_to_hub_tos": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Agrees To Hub Tos"
+    }
+  },
+  "required": []
+}

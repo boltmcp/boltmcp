@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "description": "Query to be included in the email.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Query"
+    }
+  },
+  "required": []
+}

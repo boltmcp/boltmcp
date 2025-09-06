@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "otp": {
+      "description": "Disabled.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "examples": [
+        "123456"
+      ],
+      "title": "Otp"
+    }
+  },
+  "required": []
+}

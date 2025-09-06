@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "role": {
+      "enum": [
+        "moderator",
+        "member"
+      ],
+      "type": "string",
+      "title": "Role"
+    }
+  },
+  "required": [
+    "user_id",
+    "business_id",
+    "role"
+  ]
+}

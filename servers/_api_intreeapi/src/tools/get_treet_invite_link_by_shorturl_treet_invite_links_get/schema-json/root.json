@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "shorturl": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{8}$",
+      "title": "Shorturl"
+    }
+  },
+  "required": [
+    "shorturl"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "properties": {
+    "pack_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Pack Id"
+    },
+    "sort_by": {
+      "description": "Sort by for Treets in app.\n\n- `title`: title of the current version of the Treet.\n- `created_at`: when the Treet is created.\n- `received_at`: when the Treet was received by the current user.\n- `expires_at`: when the Treet expires.\n- `redeems_left`: the amount of redeems left.\n- `shares_left`: the amount of shares left.\n\nNote that when not sorting by created_at, desc(created_at) is used as tiebreaker.\nAlso note that null values will be sorted last when asc and first when desc.",
+      "default": "desc(created_at)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(received_at)",
+        "desc(received_at)",
+        "asc(expires_at)",
+        "desc(expires_at)",
+        "asc(redeems_left)",
+        "desc(redeems_left)",
+        "asc(shares_left)",
+        "desc(shares_left)"
+      ],
+      "title": "TreetAppSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "type": "string",
+      "default": "0",
+      "title": "Token"
+    },
+    "embed_hub": {
+      "description": "Embed the hub owner of the Treet.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Hub"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "embed_schedule_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Schedule Data"
+    },
+    "embed_cooldown_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cooldown Data"
+    },
+    "embed_time_frame_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Time Frame Data"
+    },
+    "embed_locations": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Locations"
+    },
+    "embed_shared_by_ids": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Shared By Ids"
+    },
+    "embed_reservation_data": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Reservation Data"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "redeem_limit_hit": {
+      "description": "If true, only returns treets with their redeem limit hit. If false, only returns treets that have not hit their redeem limit.If not given, both fully redeemed and not treets are returned.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Redeem Limit Hit"
+    },
+    "is_upcoming": {
+      "description": "If `true` only upcoming treets are returned. If `false` only treets that are not upcoming are returned. If not set: upcoming and not upcoming treets are returned.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Is Upcoming"
+    },
+    "category_id": {
+      "description": "ID of category to fetch treets with.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    }
+  },
+  "required": [
+    "pack_id"
+  ]
+}

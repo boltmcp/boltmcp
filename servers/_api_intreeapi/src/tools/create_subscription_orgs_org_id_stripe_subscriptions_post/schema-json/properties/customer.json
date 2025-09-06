@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "description": "Customer's email address. Stripe returns a 4xx error if above 512 characters which we propagate to the user. If email is not given, then it will be required during checkout."
+    },
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "The customer's full name or business name."
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The customer's phone number."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phone"
+    },
+    "address": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `address` to the tool, first call the tool `expandSchema` with \"/properties/customer/properties/address\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>DTO for a Stripe Address.\n\nAn address is required to compute automatic tax for Stripe.\nThe amount of required fields depends on the country.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "type": "object",
+  "required": [
+    "email",
+    "name",
+    "address"
+  ],
+  "title": "CustomerRequestDTO",
+  "description": "DTO for a Stripe Customer."
+}

@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "maxLength": 255,
+      "minLength": 1,
+      "title": "Full Name",
+      "examples": [
+        "Lars Smart"
+      ]
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 255,
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Date Of Birth",
+      "description": "Must be at least 16 years old.",
+      "default": "1990-01-01T00:00:00",
+      "examples": [
+        "1990-01-01"
+      ]
+    },
+    "salt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Salt",
+      "description": "Salt of invite link token is to be used with."
+    },
+    "X-Recaptcha-Token": {
+      "description": "reCAPTCHA token. Optional for all envs below QA.",
+      "type": "string",
+      "default": "",
+      "title": "X-Recaptcha-Token"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone"
+  ]
+}

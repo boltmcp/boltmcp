@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "timeout_duration_minutes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "maximum": 10512000,
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Timeout Duration Minutes",
+      "description": "Duration of the timeout. If null then it is infinite."
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 500
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reason"
+    }
+  },
+  "required": [
+    "user_id",
+    "business_id"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "schedule_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Schedule Id"
+    }
+  },
+  "required": [
+    "schedule_id"
+  ]
+}

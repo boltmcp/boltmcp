@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Offset"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "minimum": 1,
+      "default": 10,
+      "title": "Limit"
+    },
+    "external_client_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "External Client Id"
+    },
+    "task_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "email",
+            "other"
+          ],
+          "title": "BulkTaskType",
+          "description": "Enum for Bulk Task Types.\n\n- `email`: Bulk email tasks.\n- `other`: Other types of bulk tasks - likely not implemented yet."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Task Type"
+    },
+    "start_date": {
+      "description": "Filter by date range",
+      "anyOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "example": "2025-09-04T13:23:19.427545Z"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Start Date"
+    },
+    "end_date": {
+      "description": "Filter by date range",
+      "anyOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "example": "2025-09-04T13:23:19.427545Z"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "End Date"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

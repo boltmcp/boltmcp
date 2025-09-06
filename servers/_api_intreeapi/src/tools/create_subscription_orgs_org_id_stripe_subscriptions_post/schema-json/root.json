@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "base",
+        "pro"
+      ],
+      "title": "Tier"
+    },
+    "promo_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Promo Code",
+      "description": "Customer facing promo/discount code."
+    },
+    "customer": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `customer` to the tool, first call the tool `expandSchema` with \"/properties/customer\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>DTO for a Stripe Customer.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "org_id",
+    "tier",
+    "customer"
+  ]
+}

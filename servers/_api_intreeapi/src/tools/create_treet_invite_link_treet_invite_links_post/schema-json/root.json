@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "expires_at": {
+      "title": "Expires At",
+      "description": "The expiry date of the link. Default is 7 days from current time.",
+      "example": "2025-09-04T13:23:19.427545Z",
+      "anyOf": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

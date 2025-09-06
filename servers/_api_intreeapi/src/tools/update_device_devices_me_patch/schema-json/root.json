@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "push_token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Push Token"
+    },
+    "voip_token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Voip Token"
+    }
+  },
+  "required": []
+}

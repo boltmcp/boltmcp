@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Thread Id"
+    },
+    "check_post_access": {
+      "description": "If true, give 403 if user does not have access to post thread was made in.",
+      "type": "boolean",
+      "default": false,
+      "title": "Check Post Access"
+    }
+  },
+  "required": [
+    "thread_id"
+  ]
+}

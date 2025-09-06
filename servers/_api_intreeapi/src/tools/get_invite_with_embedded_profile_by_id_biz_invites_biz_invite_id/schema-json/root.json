@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_invite_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Invite Id"
+    },
+    "embed_groups": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Groups"
+    },
+    "embed_total_members": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Members"
+    },
+    "embed_total_passes": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Passes"
+    },
+    "embed_total_posts": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Total Posts"
+    }
+  },
+  "required": [
+    "biz_invite_id"
+  ]
+}

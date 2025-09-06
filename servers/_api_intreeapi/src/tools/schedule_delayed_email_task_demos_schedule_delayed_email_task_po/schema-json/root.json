@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "delay_in_minutes": {
+      "type": "integer",
+      "default": 1,
+      "title": "Delay In Minutes"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

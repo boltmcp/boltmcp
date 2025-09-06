@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "treet_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 100,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Treet Ids"
+    },
+    "pack_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 100,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Pack Ids"
+    }
+  },
+  "required": [
+    "hub_id",
+    "treet_ids",
+    "pack_ids"
+  ]
+}

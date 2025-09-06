@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "partnership_id": {
+      "description": "Filter by BizPartnership ID.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Partnership Id"
+    },
+    "partner_id": {
+      "description": "Filter by  the other partner's business ID. Cannot be the current business.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Partner Id"
+    },
+    "search": {
+      "description": "Search on the partner's business profile title.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "embed_logo_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Logo Image"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_contacts": {
+      "description": "Embed the contacts of each business.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Contacts"
+    },
+    "embed_member_count": {
+      "description": "Embed amount of members for each business.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Member Count"
+    },
+    "embed_shared_treets_count": {
+      "description": "Embed number of treets this business has shared with or received by the partner.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Shared Treets Count"
+    },
+    "embed_active_users": {
+      "description": "Embed number of active users who have access to treets from provider business.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Active Users"
+    },
+    "embed_lifetime_redeems": {
+      "description": "Embed lifetime redeems of treets shared with partner.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Lifetime Redeems"
+    },
+    "embed_weekly_distributes_made": {
+      "description": "Embed amount of weekly distributes made to groups owned by the other partner.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Weekly Distributes Made"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

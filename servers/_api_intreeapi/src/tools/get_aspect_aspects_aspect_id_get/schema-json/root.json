@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    }
+  },
+  "required": [
+    "aspect_id"
+  ]
+}

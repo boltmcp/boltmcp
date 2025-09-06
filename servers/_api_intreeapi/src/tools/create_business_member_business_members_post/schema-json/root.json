@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "emails": {
+      "items": {
+        "type": "string",
+        "format": "email"
+      },
+      "type": "array",
+      "title": "Emails"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "viewer",
+        "moderator",
+        "collaborator",
+        "admin",
+        "billing"
+      ],
+      "title": "Role"
+    }
+  },
+  "required": [
+    "business_id",
+    "emails",
+    "role"
+  ]
+}

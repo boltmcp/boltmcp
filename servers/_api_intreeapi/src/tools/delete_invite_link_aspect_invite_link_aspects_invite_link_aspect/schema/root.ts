@@ -1,0 +1,5 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "invite_link_aspect_id": z.string().uuid()
+}

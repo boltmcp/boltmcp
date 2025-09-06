@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    },
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    }
+  },
+  "required": [
+    "post_id",
+    "aspect_id"
+  ]
+}

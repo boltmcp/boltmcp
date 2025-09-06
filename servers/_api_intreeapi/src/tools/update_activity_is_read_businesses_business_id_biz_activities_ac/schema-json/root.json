@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Activity Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "is_read": {
+      "type": "boolean",
+      "title": "Is Read"
+    }
+  },
+  "required": [
+    "activity_id",
+    "business_id",
+    "is_read"
+  ]
+}

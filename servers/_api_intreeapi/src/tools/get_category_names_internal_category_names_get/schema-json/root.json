@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "category_id": {
+      "description": "Category ids to fetch names for. Example: `?category_id={num1}&category_id={num2}`",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "title": "Category Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "offset": {
+      "type": "integer",
+      "default": 0,
+      "title": "Offset"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 100,
+      "title": "Limit"
+    }
+  },
+  "required": [
+    "category_id"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "title": "Code",
+      "description": "ID token received from auth provider."
+    },
+    "device": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `device` to the tool, first call the tool `expandSchema` with \"/properties/device\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>\n<property-description>Input request DTO for creating a Device.</property-description>",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "code",
+    "device"
+  ]
+}

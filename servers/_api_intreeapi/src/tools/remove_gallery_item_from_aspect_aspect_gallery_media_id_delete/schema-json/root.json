@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "media_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Media Id"
+    }
+  },
+  "required": [
+    "media_id"
+  ]
+}

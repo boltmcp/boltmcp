@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "title": "Org Id"
+    },
+    "sort_by": {
+      "description": "Sort by options for pass for org.\n\n- `title`: sort by the title of the pass.\n- `created_at`: sort by when the pass is created.\n- `price`: sort by the price of the pass.",
+      "default": "asc(title)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(price)",
+        "desc(price)",
+        "asc(claim_count)",
+        "desc(claim_count)"
+      ],
+      "title": "OrgPackSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "pack_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "basic",
+            "ambassador"
+          ],
+          "title": "PackType",
+          "description": "Type of pack.\n\n- `basic`: does not allow treet sharing\n- `ambassador`: allows for treet sharing"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pack Type"
+    },
+    "embed_treet_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Treet Count"
+    },
+    "embed_treet_owner_avatars": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Treet Owner Avatars"
+    },
+    "embed_member_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Member Count"
+    },
+    "embed_claim_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Claim Count"
+    },
+    "embed_origin_business": {
+      "description": "",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Origin Business"
+    }
+  },
+  "required": [
+    "org_id"
+  ]
+}

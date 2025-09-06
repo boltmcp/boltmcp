@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "post_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Post Id"
+    },
+    "comment": {
+      "anyOf": [
+        {
+          "properties": {
+            "content": {
+              "type": "string",
+              "maxLength": 2000,
+              "title": "Content"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "content"
+          ],
+          "title": "BaseCommentInputRequestDTO",
+          "description": "DTO facing client for creating a new comment."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Initial comment."
+    }
+  },
+  "required": [
+    "business_id",
+    "post_id"
+  ]
+}

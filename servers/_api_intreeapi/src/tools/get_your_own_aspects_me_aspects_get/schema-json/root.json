@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "sort_by": {
+      "description": "Sort by your own aspects.\n\n- `position`: sort by the custom position set by the user.\n- `created_at`: sort by created at",
+      "default": "asc(position)",
+      "type": "string",
+      "enum": [
+        "desc(position)",
+        "asc(position)",
+        "desc(created_at)",
+        "asc(created_at)"
+      ],
+      "title": "AspectSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_icon_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Icon Image"
+    },
+    "embed_cover_image": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Cover Image"
+    },
+    "embed_recent_posts": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Recent Posts"
+    },
+    "embed_preview_members": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Preview Members"
+    },
+    "embed_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Gallery"
+    },
+    "id": {
+      "description": "Filter by aspect id.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    }
+  },
+  "required": []
+}

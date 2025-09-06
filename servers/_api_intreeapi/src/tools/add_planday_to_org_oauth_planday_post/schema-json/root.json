@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "org_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Org Id"
+    },
+    "secret": {
+      "type": "string",
+      "title": "Secret"
+    }
+  },
+  "required": [
+    "org_id",
+    "secret"
+  ]
+}

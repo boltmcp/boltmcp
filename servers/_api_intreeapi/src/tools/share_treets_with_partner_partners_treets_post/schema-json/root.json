@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "partner_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Partner Id",
+      "description": "The hub id of the partner to share treets with."
+    },
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id",
+      "description": "The hub id that owns the treets."
+    },
+    "treet_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 100,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Treet Ids"
+    }
+  },
+  "required": [
+    "partner_id",
+    "hub_id",
+    "treet_ids"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_banned_user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Banned User Id"
+    }
+  },
+  "required": [
+    "biz_banned_user_id"
+  ]
+}

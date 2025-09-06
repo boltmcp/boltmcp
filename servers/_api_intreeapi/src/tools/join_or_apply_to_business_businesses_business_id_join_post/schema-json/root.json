@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "biz_invite_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz Invite Id"
+    },
+    "biz_invite_link_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Biz Invite Link Id"
+    },
+    "biz_application": {
+      "anyOf": [
+        {
+          "properties": {
+            "message": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 500
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Message"
+            }
+          },
+          "type": "object",
+          "title": "BizApplicationInputRequestDTO",
+          "description": "DTO for creating new BizApplication."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "aspect_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Aspect Ids",
+      "description": "User owned aspect IDs to be sent with the request. When joining through invite/invite link, BizRelationAspects will be created. When sending an application, the aspect IDs will be stored, and application viewer will be able to see them."
+    },
+    "apply_with_email": {
+      "anyOf": [
+        {
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email",
+              "title": "Email",
+              "description": "A verification link will be sent to the email. The email's domain must be allowed by the business."
+            }
+          },
+          "type": "object",
+          "required": [
+            "email"
+          ],
+          "title": "ApplyWithEmailDTO",
+          "description": "DTO for applying to a business with email."
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Required with `business.join_type=apply_domain`"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

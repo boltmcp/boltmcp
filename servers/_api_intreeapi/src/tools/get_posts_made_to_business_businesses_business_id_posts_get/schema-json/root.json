@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "sort_by": {
+      "description": "Sort biz posts.\n\n- `created_at`: sort by when post was created",
+      "default": "desc(created_at)",
+      "type": "string",
+      "enum": [
+        "desc(created_at)",
+        "asc(created_at)"
+      ],
+      "title": "BizPostSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "author_id": {
+      "description": "Filter by author id. If set will only return posts that are made by the user.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Author Id"
+    },
+    "get_scheduled": {
+      "description": "If true will only return scheduled posts. If false will only get released posts.",
+      "type": "boolean",
+      "default": false,
+      "title": "Get Scheduled"
+    },
+    "embed_post_author": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Post Author"
+    },
+    "embed_post_gallery": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Post Gallery"
+    },
+    "embed_comment_info": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Comment Info"
+    },
+    "embed_biz_relation": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Biz Relation"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "total_users": {
+      "type": "integer",
+      "title": "Total Users",
+      "default": 1000
+    },
+    "aspects_per_user": {
+      "type": "integer",
+      "title": "Aspects Per User",
+      "default": 5
+    },
+    "relations_per_user": {
+      "type": "integer",
+      "title": "Relations Per User",
+      "default": 10
+    },
+    "create_avatar_images": {
+      "type": "boolean",
+      "title": "Create Avatar Images",
+      "default": true
+    },
+    "create_cover_images": {
+      "type": "boolean",
+      "title": "Create Cover Images",
+      "default": true
+    }
+  },
+  "required": []
+}

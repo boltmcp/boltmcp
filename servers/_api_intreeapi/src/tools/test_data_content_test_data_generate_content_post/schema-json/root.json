@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "phone_numbers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Phone Numbers",
+      "description": "The phone numbers of the users. This will generate content for each phone number given"
+    },
+    "num_relations": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Num Relations",
+      "description": "The number of relations to create for each user. "
+    }
+  },
+  "required": [
+    "phone_numbers"
+  ]
+}

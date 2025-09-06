@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "phone": {
+      "type": "string",
+      "maxLength": 255,
+      "title": "Phone",
+      "examples": [
+        "+4512341234"
+      ]
+    },
+    "key": {
+      "type": "string",
+      "title": "Key",
+      "description": "Key to verify the request."
+    }
+  },
+  "required": [
+    "phone",
+    "key"
+  ]
+}

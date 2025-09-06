@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_invite_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Invite Id"
+    }
+  },
+  "required": [
+    "biz_invite_id"
+  ]
+}

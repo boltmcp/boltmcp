@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "treet_name": {
+      "type": "string",
+      "title": "Treet Name"
+    },
+    "hub_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Hub Id"
+    },
+    "cover_image_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cover Image Url"
+    }
+  },
+  "required": [
+    "treet_name",
+    "hub_id"
+  ]
+}

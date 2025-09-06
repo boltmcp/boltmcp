@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "User Id"
+    },
+    "biz_group_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Group Id"
+    }
+  },
+  "required": [
+    "user_id",
+    "biz_group_id"
+  ]
+}

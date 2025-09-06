@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Activity Id"
+    },
+    "is_read": {
+      "type": "boolean",
+      "title": "Is Read"
+    }
+  },
+  "required": [
+    "activity_id",
+    "is_read"
+  ]
+}

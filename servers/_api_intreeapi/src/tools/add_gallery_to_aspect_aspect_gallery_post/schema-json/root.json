@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "aspect_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Aspect Id"
+    },
+    "gallery_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 30,
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Gallery Ids"
+    }
+  },
+  "required": [
+    "aspect_id",
+    "gallery_ids"
+  ]
+}

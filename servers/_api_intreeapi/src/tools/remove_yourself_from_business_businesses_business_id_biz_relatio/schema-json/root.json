@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "delete_posts": {
+      "description": "If true, delete all posts created by this user in this biz.",
+      "type": "boolean",
+      "default": false,
+      "title": "Delete Posts"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

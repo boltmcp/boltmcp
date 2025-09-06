@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "token": {
+      "type": "string",
+      "title": "Token"
+    }
+  },
+  "required": [
+    "business_id",
+    "token"
+  ]
+}

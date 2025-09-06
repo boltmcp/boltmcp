@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "domain_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Domain Id"
+    },
+    "token": {
+      "type": "string",
+      "title": "Token"
+    },
+    "tag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Tag"
+    }
+  },
+  "required": [
+    "domain_id",
+    "token"
+  ]
+}

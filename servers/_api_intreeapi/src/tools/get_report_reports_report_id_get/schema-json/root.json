@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Report Id"
+    },
+    "embed_object": {
+      "description": "The object that will be embedded, is dependant of the `object_type` of the report. For now, only `post` is supported for embedding.",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Object"
+    }
+  },
+  "required": [
+    "report_id"
+  ]
+}

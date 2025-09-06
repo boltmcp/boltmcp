@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "embed_biz_user": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Biz User"
+    },
+    "role": {
+      "description": "Filters the BusinessMembers based on their role.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "owner",
+            "admin",
+            "billing",
+            "collaborator",
+            "moderator",
+            "viewer"
+          ],
+          "title": "BusinessMemberRole",
+          "description": "Role of a BusinessMember.\n\n`owner`: Has complete read and write access to the business.\nCan delete the business.\n\n`admin`: Has the same access as the owner, except they cannot delete the business,\nchange the owner or promote other users to admin.\n\n`billing`: Has read access to the business and can manage billing.\n\n`collaborator`: Has the same access as the admin, except they cannot edit the\nbusiness or view billing.\n\n`moderator`: Has the same access as the collaborator, except they cannot manage\ntreets.\n\n`viewer`: Has read access to the business.\n\nThe tree lookup is as follows:\nowner\n  |\n  │\nadmin\n  ├──────────────┐\n  │              │\ncollaborator  billing\n  │\n  │\nmoderator\n  │\n  │\nviewer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Role"
+    },
+    "search": {
+      "description": "Search string for the name of a BusinessMember.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

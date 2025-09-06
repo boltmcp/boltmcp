@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email",
+      "description": "Required email to login with.",
+      "examples": [
+        "example@mail.com"
+      ]
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

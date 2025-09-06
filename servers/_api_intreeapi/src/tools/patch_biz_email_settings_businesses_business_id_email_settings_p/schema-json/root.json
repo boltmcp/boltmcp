@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "email_settings": {
+      "items": {
+        "properties": {
+          "notification_type": {
+            "type": "string",
+            "enum": [
+              "account",
+              "invite",
+              "partnership",
+              "treet"
+            ],
+            "title": "EmailNotificationType",
+            "description": "Email notification types.\n\n- `account`: account-related emails, such as reset-password\n- `invite`: invite-related emails, such as invite-code\n- `partnership`: partnership-related emails, such as new-partner\n- `treet`: treet-related emails, such as first-treet-redeem"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        },
+        "type": "object",
+        "required": [
+          "notification_type",
+          "enabled"
+        ],
+        "title": "EmailSetting",
+        "description": "Email setting for a business."
+      },
+      "type": "array",
+      "minItems": 1,
+      "title": "Email Settings"
+    }
+  },
+  "required": [
+    "business_id",
+    "email_settings"
+  ]
+}

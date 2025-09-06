@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "hub_id": {
+      "description": "Hub ids to fetch hubs for. Example: `?hub_id={num1}&hub_id={num2}`",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "title": "Hub Id"
+    },
+    "embed_org": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Org"
+    }
+  },
+  "required": [
+    "hub_id"
+  ]
+}

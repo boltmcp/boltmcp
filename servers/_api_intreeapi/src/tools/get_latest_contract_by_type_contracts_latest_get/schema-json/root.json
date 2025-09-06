@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "contract_type": {
+      "description": "The type of contract to get. Will return the latest contract of this type.",
+      "type": "string",
+      "enum": [
+        "app_tos",
+        "hub_tos",
+        "pack_purchase_contract"
+      ],
+      "title": "ContractType"
+    }
+  },
+  "required": [
+    "contract_type"
+  ]
+}

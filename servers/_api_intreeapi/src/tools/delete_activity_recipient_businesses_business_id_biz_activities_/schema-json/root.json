@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Activity Id"
+    },
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    }
+  },
+  "required": [
+    "activity_id",
+    "business_id"
+  ]
+}

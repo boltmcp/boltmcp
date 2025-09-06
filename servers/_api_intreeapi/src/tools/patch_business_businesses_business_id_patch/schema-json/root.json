@@ -1,0 +1,377 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 255
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "invited_by_ref_code": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 6,
+          "minLength": 6
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Invited By Ref Code",
+      "description": "Invite code of a business that invited you :D This will link the inviter business to your business, and can only be done once!",
+      "examples": [
+        "AG9PL1"
+      ]
+    },
+    "onboarding_data": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Onboarding Data",
+      "description": "Each value must correspond to a step in the onboarding process, which is defined in the frontend. Only the `done` key is required, except if null.",
+      "examples": [
+        {
+          "created_a_treet": true,
+          "done": false,
+          "watched_jonathans_video": false
+        }
+      ]
+    },
+    "location_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "none",
+            "local",
+            "global_"
+          ],
+          "title": "BizLocationType",
+          "description": "Type of a Business location.\n\n- `none`: Business has no location data\n- `local`: Business has local location data\n- `global_`: Business has global location data"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "location_data": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Location Data",
+      "description": "Location data for the business. The format is defined on web frontend.",
+      "examples": [
+        {
+          "city": "New York",
+          "country": "USA"
+        }
+      ]
+    },
+    "access_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "public",
+            "discoverable",
+            "hidden"
+          ],
+          "title": "BusinessAccessType",
+          "description": "Access type of a Business.\n\n`public`: Business can be found through the explore page\n\n`discoverable`: Business is searchable by exact handle\n\n`hidden`: Business is not searchable"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "can_app_members_invite": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Can App Members Invite",
+      "description": "False: only biz users and app owner+admins can invite."
+    },
+    "can_app_members_accept_applications": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Can App Members Accept Applications",
+      "description": "False: only biz users and app owner+admins can view and accept applications."
+    },
+    "hub_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "const": "community"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Hub Type",
+      "description": "Upgrade from `provider` to `community`. Cannot be reversed."
+    },
+    "categories": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Categories"
+    },
+    "location_update_data": {
+      "anyOf": [
+        {
+          "properties": {
+            "ids_to_remove": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ids To Remove"
+            },
+            "new_locations": {
+              "anyOf": [
+                {
+                  "items": {
+                    "properties": {
+                      "ref_code": {
+                        "type": "string",
+                        "title": "Ref Code",
+                        "description": "Added in the response if given. If not given, then it will just be set some a default value.",
+                        "default": "default"
+                      },
+                      "address": {
+                        "type": "string",
+                        "title": "Address",
+                        "description": "This can be whatever format client decides on.",
+                        "examples": [
+                          "123 Main St, San Francisco, CA 94105"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "title": "Location",
+                        "description": "Must be a point using format `(latitude,longitude)`.",
+                        "examples": [
+                          "(37.7749,-122.4194)"
+                        ]
+                      }
+                    },
+                    "type": "object",
+                    "required": [
+                      "address",
+                      "location"
+                    ],
+                    "title": "BizLocationInputRequestDTO",
+                    "description": "DTO for input."
+                  },
+                  "type": "array",
+                  "maxItems": 10
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "New Locations"
+            }
+          },
+          "type": "object",
+          "title": "BizLocationUpdateRequestDTO",
+          "description": "DTO for input."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "join_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "open",
+            "apply",
+            "apply_domain",
+            "integration"
+          ],
+          "title": "JoinType",
+          "description": "How users by default joins the Hub.\n\n- `open`: Users can join without approval\n- `apply`: Users need to apply to join\n- `apply_domain`: Users need to apply using email domain verification.\n    Cannot be used for app created businesses.\n    Note that `require_member_verification` must be True.\n- `integration`: Join using one of the integrations."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "require_member_verification": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Require Member Verification",
+      "description": "If this goes from false to true, then all members will get a manual verification. If this goes from true to false, then all verifications will be removed."
+    },
+    "enable_feed": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable Feed"
+    },
+    "enable_app_user_post": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable App User Post"
+    },
+    "enable_members": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable Members"
+    },
+    "enable_aspects": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable Aspects"
+    },
+    "enable_app_leaderboard": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Enable App Leaderboard"
+    },
+    "default_currency": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "usd",
+            "jpy",
+            "bgn",
+            "czk",
+            "dkk",
+            "gbp",
+            "huf",
+            "pln",
+            "ron",
+            "sek",
+            "chf",
+            "isk",
+            "nok",
+            "try",
+            "aud",
+            "brl",
+            "cad",
+            "cny",
+            "hkd",
+            "idr",
+            "ils",
+            "inr",
+            "krw",
+            "mxn",
+            "myr",
+            "nzd",
+            "php",
+            "sgd",
+            "thb",
+            "zar",
+            "eur",
+            "unknown"
+          ],
+          "title": "Currency",
+          "description": "Supported currencies."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

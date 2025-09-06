@@ -1,0 +1,9 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "business_id": z.string().uuid(),
+  "limit": z.number().int().gt(0).lte(100).optional(),
+  "token": z.union([z.string(), z.null()]).optional(),
+  "activity_type": z.union([z.array(z.enum(["generic","new_partner_treet","new_multiple_partner_treets","new_partner_added","new_team_member","new_biz_application","new_biz_owner","new_group_application","treet_expires_soon","treet_redeem_limit_hit","treet_share_limit_hit","new_reported_member","thread_activity"]).describe("Type of activity sent in on IntreeBusiness web.\n\n- `generic`: generic notification from intree\n\n- `new_partner_treet`: a partner has shared a treet with the business\n- `new_multiple_partner_treets`: multiple treets are shared from one partner\n- `new_partner_added`: a new partnership is created\n- `new_team_member`: a new team member is added\n- `new_biz_application`: a new application is received\n- `new_biz_owner`: ownership has been transferred\n- `new_group_application`: a new group application is received\n- `treet_expires_soon`: a treet is about to expire\n- `treet_redeem_limit_hit`: a treet has hit its redeem limit\n- `treet_share_limit_hit`: a treet has hit its share limit\n- `new_reported_member`: a member has been reported\n- `thread_activity`: a new thread with comment has been made on a business post")), z.null()]).describe("Filter to only receive certain activity types.\n\nIt is possible to filter multiple types: Example: `activity_type={type1}&activity_type={type2}`").optional(),
+  "id": z.union([z.string().uuid(), z.null()]).describe("Filter on the id of the activity.").optional()
+}

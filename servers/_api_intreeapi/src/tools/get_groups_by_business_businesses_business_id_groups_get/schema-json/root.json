@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "sort_by": {
+      "description": "Sort by options for packs for hub.\n\n- `title`: sort by the title of the pack.\n- `created_at`: sort by when the pack is created.\n- `total_members`: sort by the amount of members in the pack.\n- `total_treets`: sort by the amount of treets in the pack.\n- `price`: sort by the price of the pack.",
+      "default": "asc(title)",
+      "type": "string",
+      "enum": [
+        "asc(title)",
+        "desc(title)",
+        "asc(created_at)",
+        "desc(created_at)",
+        "asc(total_members)",
+        "desc(total_members)",
+        "asc(total_treets)",
+        "desc(total_treets)",
+        "asc(price)",
+        "desc(price)"
+      ],
+      "title": "HubPackSortBy"
+    },
+    "limit": {
+      "type": "integer",
+      "maximum": 100,
+      "exclusiveMinimum": 0,
+      "default": 10,
+      "title": "Limit"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Id"
+    },
+    "price_period_start": {
+      "anyOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "example": "2025-09-04T13:23:19.427545Z"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Period Start"
+    },
+    "price_period_end": {
+      "anyOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "example": "2025-09-04T13:23:19.427545Z"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Period End"
+    },
+    "category_id": {
+      "description": "ID of category to fetch treets with.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "min_items": 0,
+      "max_items": 10,
+      "title": "Category Id"
+    },
+    "search": {
+      "description": "Search for the title of the Group.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Search"
+    },
+    "include_draft": {
+      "description": "If true includes draft packs. If false does not include draft packs. Default is false.",
+      "type": "boolean",
+      "default": false,
+      "title": "Include Draft"
+    },
+    "embed_treet_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Treet Count"
+    },
+    "embed_treet_owner_avatars": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Treet Owner Avatars"
+    },
+    "embed_member_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Member Count"
+    },
+    "embed_active_payment_count": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Active Payment Count"
+    },
+    "embed_revenue": {
+      "description": "Get revenue and members in period for groups",
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Revenue"
+    },
+    "embed_featured_treets": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Featured Treets"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}

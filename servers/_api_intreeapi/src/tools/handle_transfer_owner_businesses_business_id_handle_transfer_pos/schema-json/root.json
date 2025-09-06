@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "biz_ownership_transfer_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Ownership Transfer Id",
+      "description": "The id of the BizOwnershipTransfer to accept. This is provided in the email sent to the new owner, and is set to expire after 1 days."
+    },
+    "accept": {
+      "type": "boolean",
+      "title": "Accept",
+      "description": "Whether to accept the ownership transfer. If false, the transfer request will be deleted, and nothing will happen."
+    },
+    "org_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Org Id",
+      "description": "The new org to link the hub to. Must be owned by current user."
+    }
+  },
+  "required": [
+    "business_id",
+    "biz_ownership_transfer_id",
+    "accept"
+  ]
+}

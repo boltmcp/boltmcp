@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "booking_event_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Booking Event Id",
+      "description": "Use to connect a booking from HOSAPI to the redeem."
+    },
+    "booking_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Booking Name",
+      "description": "Name attached to booking. Only used if the event_id is given."
+    },
+    "treet_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Treet Id"
+    }
+  },
+  "required": [
+    "treet_id"
+  ]
+}

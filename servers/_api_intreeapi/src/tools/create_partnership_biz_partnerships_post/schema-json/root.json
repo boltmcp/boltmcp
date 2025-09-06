@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id",
+      "description": "ID of current business making the call."
+    },
+    "biz_partnership_invite_link_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Partnership Invite Link Id",
+      "description": "ID of the BizPartnershipInviteLink being accepted"
+    },
+    "group_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Group Ids",
+      "description": "IDs of the groups that the invited business will have express access to."
+    },
+    "weekly_distributes": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Weekly Distributes",
+      "description": "Weekly amount of total times other business can distribute treets to your groups. If set to None, there will be no limit."
+    }
+  },
+  "required": [
+    "business_id",
+    "biz_partnership_invite_link_id"
+  ]
+}

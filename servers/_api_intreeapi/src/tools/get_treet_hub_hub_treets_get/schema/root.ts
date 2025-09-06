@@ -1,0 +1,33 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "sort_by": z.enum(["asc(title)","desc(title)","asc(created_at)","desc(created_at)","asc(expires_at)","desc(expires_at)","asc(total_redeems)","desc(total_redeems)","asc(total_shares)","desc(total_shares)","asc(redeems_left)","desc(redeems_left)"]).describe("Sort by for Treets on hub.\n\n- `title`: title of the current version of the Treet.\n- `created_at`: when the Treet is created.\n- `expires_at`: when the Treet expires.\n- `total_redeems`: the amount of redeems made on the Treet.\n- `total_shares`: the amount of shares made on the Treet.\n- `redeems_left`: the amount of redeems left.\n\nNote that when not sorting by created_at, desc(created_at) is used as tiebreaker.\nAlso note that null values will be sorted last when asc and first when desc.").optional(),
+  "limit": z.number().int().gte(1).lte(100).optional(),
+  "token": z.string().optional(),
+  "embed_hub": z.boolean().describe("Embed the hub owner of the Treet.").optional(),
+  "embed_cover_image": z.boolean().optional(),
+  "embed_gallery": z.boolean().optional(),
+  "embed_packs": z.boolean().optional(),
+  "embed_schedule_data": z.boolean().optional(),
+  "embed_locations": z.boolean().optional(),
+  "embed_categories": z.boolean().optional(),
+  "embed_time_frame_data": z.boolean().optional(),
+  "id": z.union([z.string().uuid(), z.null()]).describe("Filter by Treet ID.").optional(),
+  "hub_id": z.union([z.string().uuid(), z.null()]).describe("Filter on the hub with access to the treet.").optional(),
+  "owner_id": z.union([z.string().uuid(), z.null()]).describe("Filter on the hub who made the treet.").optional(),
+  "partner_id": z.union([z.string().uuid(), z.null()]).describe("Filter on partner that has received or given Treet to given hub. hub_id must also be given.").optional(),
+  "pack_id": z.union([z.string().uuid(), z.null()]).describe("Filter only Treet that are in the given pack.").optional(),
+  "inverse_pack_filter": z.boolean().describe("If true, only returns treets that are not in given pack. pack_id must also be given.").optional(),
+  "category_id": z.union([z.array(z.string().uuid()), z.null()]).describe("ID of category to fetch treets with.").optional(),
+  "is_expired": z.union([z.boolean(), z.null()]).describe("If `true` only expired treets are returned. If `false` only treets that are not expired are returned. If not set: expired and not expired treets are returned.").optional(),
+  "state": z.union([z.array(z.enum(["active","inactive","archived"]).describe("The state of a Treet.\n\n- `active`: The Treet is active.\n- `inactive`: It cannot be redeemed but should be shown in main stats.\n- `archived`: It cannot be redeemed and should not be shown in main stats.\n\nIf the owner wants to never see stats for the Treet again,\nthen they should delete it instead of archiving it.")), z.null()]).describe("Filter by Treet state. If not set, all states are returned.").optional(),
+  "access_state": z.union([z.enum(["owner","direct","partner","world_wide"]).describe("Describes how the Hub has access to the Treet.\n\nThe values are ordered by priority.\n\nE.g. if the Hub has direct access and suddenly get owner access,\nthen it will be changed to owner access.\nBut if it has direct access and suddenly gets partner access,\nthen it will not change.\n\n- `owner`: The Hub is the owner of the Treet.\n- `direct`: An admin or similar has given the Hub direct access to the Treet.\n- `partner`: A partner of the Hub has given the Hub access to the Treet.\n- `world_wide`: The Treet was picked from a world wide pool.\n\nCurrently only owner and partner access is used."), z.null()]).describe("Filter on how the Hub has access to the Treets. If not set, all states are returned.").optional(),
+  "search": z.union([z.string().min(1), z.null()]).describe("Search Treets by: Treet title.").optional(),
+  "medium_threshold_expires_at": z.union([z.number().int().gte(0).lte(100000), z.null()]).describe("Threshold for expires at in days to be medium.").optional(),
+  "critical_threshold_expires_at": z.union([z.number().int().gte(0).lte(100000), z.null()]).describe("Threshold for expires at in days to be critical.").optional(),
+  "medium_threshold_redeems_left": z.union([z.number().int().gte(0).lte(100), z.null()]).describe("Threshold for redeems left as a percentage to be medium. Example: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be medium, but redeem limit of 5 and 2 redeems left (2/5=40%) is not.").optional(),
+  "critical_threshold_redeems_left": z.union([z.number().int().gte(0).lte(100), z.null()]).describe("Threshold for redeems left as a percentage to be critical. Example: if 20, then for redeem limit of 10 and 2 redeems left (2/10=20%), it will be critical, but redeem limit of 5 and 2 redeems left (2/5=40%) is not.").optional(),
+  "hub_member_treet_role": z.union([z.enum(["read","write"]).describe("The access role of a Hub member in terms of Treet access.\n\nThis is simplified compared to the main Hub roles, as here we only\ncare about access to Treets.\n\n- `write`: roles that can write to the hub\n- `read`: roles that can only read from the hub"), z.null()]).describe("Filter by role current user has to the . If not set, all roles are returned.").optional(),
+  "redeem_limit_hit": z.union([z.boolean(), z.null()]).describe("If true, only returns treets with their redeem limit hit. If false, only returns treets that have not hit their redeem limit.If not given, both fully redeemed and not treets are returned.").optional(),
+  "highlight_featured_treets": z.boolean().describe("If true, places featured treets first and sets field `is_featured`. `pack_id` must be set and `inverse_pack_filter` must be false.").optional()
+}

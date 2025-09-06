@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "biz_invite_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Biz Invite Id"
+    },
+    "group_ids": {
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "type": "array",
+      "maxItems": 1,
+      "minItems": 0,
+      "uniqueItems": true,
+      "title": "Group Ids",
+      "description": "The ids of the groups to add to the invite."
+    }
+  },
+  "required": [
+    "biz_invite_id",
+    "group_ids"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "shorturl": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{8}$",
+      "title": "Shorturl"
+    },
+    "embed_aspects": {
+      "type": "boolean",
+      "default": false,
+      "title": "Embed Aspects"
+    }
+  },
+  "required": [
+    "shorturl"
+  ]
+}

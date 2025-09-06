@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Business Id"
+    },
+    "content": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 2000
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Content"
+    },
+    "gallery_ids": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gallery Ids"
+    },
+    "created_at": {
+      "anyOf": [
+        {
+          "example": "2025-09-04T13:23:19.427545Z",
+          "anyOf": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Created At"
+    }
+  },
+  "required": [
+    "business_id"
+  ]
+}
