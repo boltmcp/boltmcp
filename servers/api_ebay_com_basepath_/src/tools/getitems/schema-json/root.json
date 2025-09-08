@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "item_ids": {
+      "description": "A comma separated list of the unique identifiers of the items to retrieve (maximum 20).<br><br><span class=\"tablenote\"><b>Note:</b> In any given request, either <code>item_ids</code> <b>or</b> <code>item_group_ids</code> can be retrieved. Attempting to retrieve both will result in an error.</span><br><b>RESTful Item ID Format: </b><code>v1</code>|<code><i>#</i></code>|<code><i>#</i></code><br><br>For a single SKU listing, pass in the item ID: <pre>v1|2**********2|0</pre>For a multi-SKU listing, pass in the identifier of the variation:<pre>v1|1**********2|4**********2</pre><br>For more information about item IDs for RESTful APIs, refer to <a href=\"/api-docs/buy/static/api-browse.html#Legacy\" target=\"_blank\">Item ID legacy API compatibility overview</a> in the <a href=\"/api-docs/buy/static/buying-ig-landing.html\" target=\"_blank\">Buying Integration Guide</a>.",
+      "type": "string"
+    },
+    "item_group_ids": {
+      "description": "A comma separated list of the unique identifiers of the item groups being retrieved (maximum 10).<br><br><span class=\"tablenote\"><b>Note:</b> In any given request, either <code>item_ids</code> <b>or</b> <code>item_group_ids</code> can be retrieved. Attempting to retrieve both will result in an error.</span><br><b>RESTful Group Item ID Format:</b> <code>############</code><br><br>For example:<pre>3**********9</pre>",
+      "type": "string"
+    },
+    "quantity_for_shipping_estimate": {
+      "description": "This query parameter sets the item quantity to be used when calculating the shipping estimate information returned in the <a href=\"/api-docs/buy/browse/resources/item/methods/getItems#response.items.shippingOptions\">shippingOptions</a> container of the response.<br><br>This value must be a positive integer value and should not exceed the quantity available in the listing. This field is not recommended for auction listings, as they will always have a quantity of 1.",
+      "type": "string"
+    },
+    "X-EBAY-C-ENDUSERCTX": {
+      "description": "This header is can be used in following two situations:<br><ul><li>To retrieve the <b>itemAffiliateWebUrl</b> field in the response, the ePN affiliate can pass in their affiliate credentials using this header. For more information, see <a href=\"/api-docs/buy/static/api-browse.html#affiliate-header\" target=\"_blank \">Header for affiliate information.</a></li><li>If the listing is using calculated or flat-rate shipping with shipping rate tables, the user can use this header to provide country and postal code in order for the <b>shippingOption</b> container, which includes shipping costs and delivery estimates, to be returned. For more information, see <a href=\"/api-docs/buy/static/api-browse.html#X-EBAY-C-ENDUSERCTX-context\" target=\"_blank \">Header for shipping information accuracy.</a></li></ul>",
+      "type": "string"
+    },
+    "X-EBAY-C-MARKETPLACE-ID": {
+      "description": "This header identifies the seller's eBay marketplace. It is required for all marketplaces outside of the US.<br><br><span class=\"tablenote\"><b>Note:</b> If the marketplace ID value is invalid or missing, the default value of <code>EBAY_US</code> is used.</span><br>See <a href=\"/api-docs/buy/browse/types/ba:MarketplaceIdEnum\" target=\"_blank\">MarketplaceIdEnum</a> for a list of supported marketplaces.<br><br><b>Default:</b> <code>EBAY_US</code>",
+      "type": "string"
+    },
+    "Accept-Language": {
+      "description": "This header is used to indicate the natural language and locale preferred by the user for the response.<br><br>This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:<ul><li>When targeting the French locale of the Belgium marketplace, it is required to pass in <code>fr-BE</code> to specify this. If this locale is not specified, the language will default to Dutch.</li><li>When targeting the French locale of the Canadian marketplace, it is required to pass in <code>fr-CA</code> to specify this. If this locale is not specified, the language will default to English.</li></ul>",
+      "type": "string"
+    }
+  },
+  "required": []
+}

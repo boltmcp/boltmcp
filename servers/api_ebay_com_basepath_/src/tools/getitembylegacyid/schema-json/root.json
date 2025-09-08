@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "fieldgroups": {
+      "description": "This field controls what is returned in the response. If this field is not set, the method returns all details about the item. Multiple <code>fieldgroups</code> can be set.<br><br><b>Valid Values:</b><ul><li> <b>PRODUCT</b><br>This field group adds the <a href=\"/api-docs/buy/browse/resources/item/methods/getItemByLegacyId#response.product\">product</a> container to the response. </li><li><b>ADDITIONAL_SELLER_DETAILS</b><br>This field group adds the <a href=\"/api-docs/buy/browse/resources/item/methods/getItemByLegacyId#response.seller.userId\">userId</a> field to the response.</li></ul>",
+      "type": "string"
+    },
+    "legacy_item_id": {
+      "description": "This query parameter is the unique identifier that specifies the item being retrieved.<br><br><span class=\"tablenote\"><b> Note:</b> When passing in the ID for a multi-variation listing, you must also use the <code>legacy_variation_id</code> field and pass in the ID of the specific item variation. If not, all variation within the multi-SKU listing will be retrieved.</span></li></ul><br>The following is an example of using the value of the <b>ItemID</b> field for a specific item to get the RESTful <code>itemId</code> value.<pre><code>browse/v1/item/get_item_by_legacy_id?legacy_item_id=1**********9</code></pre>",
+      "type": "string"
+    },
+    "legacy_variation_id": {
+      "description": "This query parameter specifies the legacy item ID of a specific item in a multi-variation listing, such as that for the <i>red shirt size L</i> item.<br><br><div class=\"msgbox_important\"><p class=\"msgbox_importantInDiv\" data-mc-autonum=\"&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important! &lt;/span&gt;&lt;/b&gt;\"><span class=\"autonumber\"><span><b><span style=\"color: #dd1e31;\" class=\"mcFormatColor\">Important!</span></b></span></span> A <code>legacy_item_id</code> value must always be passed in when specifying a <code>legacy_variation_id</code> value.</p></div>",
+      "type": "string"
+    },
+    "legacy_variation_sku": {
+      "description": "This query parameter specifies the legacy SKU of an item. SKUs are the unique identifiers of an item created by the seller.<br><br>The following is an example of using the value of the <code>ItemID</code> and <code>SKU</code> fields to get the RESTful <code>itemId</code> value.<pre><code>browse/v1/item/get_item_by_legacy_id?legacy_item_id=1**********9&amp;legacy_variation_sku=V**********M</code></pre><div class=\"msgbox_important\"><p class=\"msgbox_importantInDiv\" data-mc-autonum=\"&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important! &lt;/span&gt;&lt;/b&gt;\"><span class=\"autonumber\"><span><b><span style=\"color: #dd1e31;\" class=\"mcFormatColor\">Important!</span></b></span></span> A <code>legacy_item_id</code> value must always be passed in when specifying a <code>legacy_variation_sku</code> value.</p></div>",
+      "type": "string"
+    },
+    "quantity_for_shipping_estimate": {
+      "description": "This query parameter sets the item quantity to be used when calculating the shipping estimate information returned in the <a href=\"/api-docs/buy/browse/resources/item/methods/getItemByLegacyId#response.shippingOptions\">shippingOptions</a> container of the response.<br><br>This value must be a positive integer value and should not exceed the quantity available in the listing. This field is not recommended for auction listings, as they will always have a quantity of 1.",
+      "type": "string"
+    },
+    "X-EBAY-C-ENDUSERCTX": {
+      "description": "This header is can be used in following two situations:<br><ul><li>To retrieve the <b>itemAffiliateWebUrl</b> field in the response, the ePN affiliate can pass in their affiliate credentials using this header. For more information, see <a href=\"/api-docs/buy/static/api-browse.html#affiliate-header\" target=\"_blank \">Header for affiliate information.</a></li><li>If the listing is using calculated or flat-rate shipping with shipping rate tables, the user can use this header to provide country and postal code in order for the <b>shippingOption</b> container, which includes shipping costs and delivery estimates, to be returned. For more information, see <a href=\"/api-docs/buy/static/api-browse.html#X-EBAY-C-ENDUSERCTX-context\" target=\"_blank \">Header for shipping information accuracy.</a></li></ul>",
+      "type": "string"
+    },
+    "X-EBAY-C-MARKETPLACE-ID": {
+      "description": "This header identifies the seller's eBay marketplace. It is required for all marketplaces outside of the US.<br><br><span class=\"tablenote\"><b>Note:</b> If the marketplace ID value is invalid or missing, the default value of <code>EBAY_US</code> is used.</span><br>See <a href=\"/api-docs/buy/browse/types/ba:MarketplaceIdEnum\" target=\"_blank\">MarketplaceIdEnum</a> for a list of supported marketplaces.<br><br><b>Default:</b> <code>EBAY_US</code>",
+      "type": "string"
+    },
+    "Accept-Language": {
+      "description": "This header is used to indicate the natural language and locale preferred by the user for the response.<br><br>This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:<ul><li>When targeting the French locale of the Belgium marketplace, it is required to pass in <code>fr-BE</code> to specify this. If this locale is not specified, the language will default to Dutch.</li><li>When targeting the French locale of the Canadian marketplace, it is required to pass in <code>fr-CA</code> to specify this. If this locale is not specified, the language will default to English.</li></ul>",
+      "type": "string"
+    }
+  },
+  "required": [
+    "legacy_item_id"
+  ]
+}
