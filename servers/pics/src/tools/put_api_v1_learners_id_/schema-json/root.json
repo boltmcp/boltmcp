@@ -1,0 +1,275 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Learners ident",
+      "title": "String",
+      "type": "string"
+    },
+    "b_id": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Required. Learner's identifier"
+    },
+    "title": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's title",
+      "nullable": true
+    },
+    "firstNames": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Required. Learner's first names"
+    },
+    "preferredFirstName": {
+      "title": "String",
+      "maxLength": 30,
+      "type": "string",
+      "description": "Maximum length: 30. Learner's preferred first name",
+      "nullable": true
+    },
+    "surname": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Required. Learner's surname"
+    },
+    "email": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's email address",
+      "nullable": true
+    },
+    "risk": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's risk information",
+      "nullable": true
+    },
+    "address": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `address` to the tool, first call the tool `expandSchema` with \"/properties/address\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "ward": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's ward",
+      "nullable": true
+    },
+    "homePhone": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's home phone number",
+      "nullable": true
+    },
+    "mobile": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's mobile phone number",
+      "format": "tel",
+      "nullable": true
+    },
+    "username": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's username",
+      "nullable": true
+    },
+    "userID": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's user ID",
+      "nullable": true
+    },
+    "allowedContactMethods": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "List of allowed contact methods for the learner",
+      "nullable": true
+    },
+    "preferredContactMethod": {
+      "title": "String",
+      "type": "string",
+      "description": "Preferred contact method for the learner",
+      "nullable": true
+    },
+    "dateOfBirth": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Learner's date of birth",
+      "format": "date-time",
+      "nullable": true
+    },
+    "sex": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Required. Learner's sex"
+    },
+    "ethnicity": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's ethnicity",
+      "nullable": true
+    },
+    "niNumber": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's National Insurance Number",
+      "nullable": true
+    },
+    "ilrDisability": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's Individual Learning Record (ILR) disability information",
+      "nullable": true
+    },
+    "lldDs": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "List of Learning Difficulties and/or Disabilities (LLDDs) for the learner",
+      "nullable": true
+    },
+    "primaryLLDD": {
+      "title": "String",
+      "type": "string",
+      "description": "Learner's primary LLDD",
+      "nullable": true
+    },
+    "nextOfKinName": {
+      "title": "String",
+      "type": "string",
+      "description": "Name of the next of kin for the learner",
+      "nullable": true
+    },
+    "nextOfKinRelationship": {
+      "title": "String",
+      "type": "string",
+      "description": "Relationship with the next of kin for the learner",
+      "nullable": true
+    },
+    "nextOfKinPhone": {
+      "title": "String",
+      "type": "string",
+      "description": "Phone number of the next of kin for the learner",
+      "nullable": true
+    },
+    "nextOfKinPhone2": {
+      "title": "String",
+      "type": "string",
+      "description": "Second phone number of the next of kin for the learner",
+      "nullable": true
+    },
+    "nextOfKinEmail": {
+      "title": "String",
+      "type": "string",
+      "description": "Email address of the next of kin for the learner",
+      "nullable": true
+    },
+    "otherSystemID": {
+      "title": "String",
+      "type": "string",
+      "description": "ID from another system for the learner",
+      "nullable": true
+    },
+    "providerIdent": {
+      "title": "String",
+      "type": "string",
+      "description": "Provider identifier for the learner",
+      "nullable": true
+    },
+    "mainOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Main officer assigned to the learner",
+      "nullable": true
+    },
+    "recruitmentOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Recruitment officer assigned to the learner",
+      "nullable": true
+    },
+    "mentorOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Mentor officer assigned to the learner",
+      "nullable": true
+    },
+    "plannedStart": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Planned start date for the learner",
+      "format": "date-time",
+      "nullable": true
+    },
+    "expectedEnd": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Expected end date for the learner",
+      "format": "date-time",
+      "nullable": true
+    },
+    "countryOfDomicile": {
+      "title": "String",
+      "type": "string",
+      "description": "Country of domicile for the learner",
+      "nullable": true
+    },
+    "site": {
+      "title": "String",
+      "type": "string",
+      "description": "Site information for the learner",
+      "nullable": true
+    },
+    "uln": {
+      "title": "String",
+      "type": "string",
+      "description": "Unique Learner Number (ULN) for the learner",
+      "nullable": true
+    },
+    "restrictedUseIndicator": {
+      "title": "String",
+      "type": "string",
+      "description": "Restricted use indicator for the learner",
+      "nullable": true
+    },
+    "gcseMath": {
+      "title": "String",
+      "type": "string",
+      "description": "GCSE Math qualification status for the learner",
+      "nullable": true
+    },
+    "gcseEnglish": {
+      "title": "String",
+      "type": "string",
+      "description": "GCSE English qualification status for the learner",
+      "nullable": true
+    },
+    "qualificationPlan": {
+      "title": "String",
+      "type": "string",
+      "description": "Qualification plan for the learner",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id",
+    "b_id",
+    "firstNames",
+    "surname",
+    "sex"
+  ]
+}

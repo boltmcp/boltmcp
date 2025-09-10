@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Organisation's id",
+      "title": "String",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

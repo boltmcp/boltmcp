@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Id of the Appointment to attach a file to",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "iD": {
+      "title": "Int32",
+      "type": "integer",
+      "description": "Appointment ID",
+      "format": "int32"
+    },
+    "description": {
+      "title": "String",
+      "type": "string",
+      "description": "Description of the attachment"
+    },
+    "fileType": {
+      "title": "String",
+      "type": "string",
+      "description": "File type of the attachment"
+    },
+    "expires": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Expiry date of the attachment",
+      "format": "date-time"
+    },
+    "file": {
+      "title": "IFormFile",
+      "type": "string",
+      "description": "Required. The file to be attached",
+      "format": "binary"
+    }
+  },
+  "required": [
+    "id",
+    "iD",
+    "description",
+    "file"
+  ]
+}

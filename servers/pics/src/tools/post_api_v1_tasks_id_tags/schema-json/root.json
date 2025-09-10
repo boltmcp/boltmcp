@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Task's ID",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "items": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "TagViewModelItem",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "String",
+            "type": "string",
+            "description": "Tag ID",
+            "nullable": true
+          },
+          "description": {
+            "title": "String",
+            "type": "string",
+            "description": "Tag Description",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "List of Tag items",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

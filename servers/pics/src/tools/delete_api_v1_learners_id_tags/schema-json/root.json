@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Id of the Learner to delete Tags from",
+      "title": "String",
+      "type": "string"
+    },
+    "items": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "TagViewModelItem",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "String",
+            "type": "string",
+            "description": "Tag ID",
+            "nullable": true
+          },
+          "description": {
+            "title": "String",
+            "type": "string",
+            "description": "Tag Description",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "List of Tag items",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

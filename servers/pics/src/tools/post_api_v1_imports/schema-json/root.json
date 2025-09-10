@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "importType": {
+      "title": "ImportType",
+      "enum": [
+        "Learner",
+        "Applicant",
+        "Organisation"
+      ],
+      "type": "string",
+      "description": "The import type"
+    },
+    "fields": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "AddImportFieldViewModel",
+        "type": "object",
+        "properties": {
+          "fieldName": {
+            "title": "String",
+            "type": "string",
+            "description": "Field name",
+            "nullable": true
+          },
+          "fieldValue": {
+            "title": "String",
+            "type": "string",
+            "description": "Fields value",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a view model for a single field to be added via an import"
+      },
+      "description": "List of field names and values",
+      "nullable": true
+    }
+  },
+  "required": []
+}

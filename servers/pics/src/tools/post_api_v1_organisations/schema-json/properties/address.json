@@ -1,0 +1,43 @@
+{
+  "title": "AddressViewModel",
+  "type": "object",
+  "properties": {
+    "line1": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "nullable": true
+    },
+    "line2": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "nullable": true
+    },
+    "line3": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "nullable": true
+    },
+    "line4": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "nullable": true
+    },
+    "line5": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "nullable": true
+    },
+    "postcode": {
+      "title": "String",
+      "maxLength": 8,
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false
+}

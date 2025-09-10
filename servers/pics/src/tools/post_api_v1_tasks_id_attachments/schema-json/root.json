@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Id of the Task to attach a file to",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "iD": {
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "description": {
+      "title": "String",
+      "type": "string"
+    },
+    "fileType": {
+      "title": "String",
+      "type": "string"
+    },
+    "expires": {
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "file": {
+      "title": "IFormFile",
+      "type": "string",
+      "format": "binary"
+    }
+  },
+  "required": [
+    "id",
+    "iD",
+    "description",
+    "file"
+  ]
+}

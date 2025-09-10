@@ -1,0 +1,193 @@
+{
+  "type": "object",
+  "properties": {
+    "surname": {
+      "description": "Search for Learners by surname",
+      "title": "String",
+      "type": "string"
+    },
+    "firstNames": {
+      "description": "Search for Learners by first names",
+      "title": "String",
+      "type": "string"
+    },
+    "sex": {
+      "description": "Search for Learners by sex",
+      "title": "String",
+      "type": "string"
+    },
+    "learningStatus": {
+      "description": "Search for Learners by learning status",
+      "title": "LearningStatus",
+      "enum": [
+        "All",
+        "InLearningToday",
+        "InLearningAndLastYearLeavers",
+        "InLearningAndRecentLeavers",
+        "InLearningAndYetToStart",
+        "YetToStart",
+        "RecentLeavers",
+        "RecentAdded",
+        "AllLeavers",
+        "PastExpectedEnd"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "description": "Search for Learners by status",
+      "title": "String",
+      "type": "string"
+    },
+    "workflow": {
+      "description": "Search for Learners by workflow",
+      "title": "String",
+      "type": "string"
+    },
+    "workflowStatus": {
+      "description": "Search for Learners by workflow status",
+      "title": "String",
+      "type": "string"
+    },
+    "workflowSubStatus": {
+      "description": "Search for Learners by workflow sub status",
+      "title": "String",
+      "type": "string"
+    },
+    "qualificationPlan": {
+      "description": "Search for Learners by qualification plan",
+      "title": "String",
+      "type": "string"
+    },
+    "site": {
+      "description": "Search for Learners by site",
+      "title": "String",
+      "type": "string"
+    },
+    "subcontractorCode": {
+      "description": "Search for Learners by subcontractor code",
+      "title": "String",
+      "type": "string"
+    },
+    "nINumber": {
+      "description": "Search for Learners by national insurance number",
+      "title": "String",
+      "type": "string"
+    },
+    "postcode": {
+      "description": "Search for Learners by postcode",
+      "title": "String",
+      "type": "string"
+    },
+    "uLN": {
+      "description": "Search for Learners by ULN",
+      "title": "String",
+      "type": "string"
+    },
+    "mainOfficer": {
+      "description": "Search for Learners by main officer",
+      "title": "String",
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "description": "Search for Learners by date of birth",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "employer": {
+      "description": "Search for Learners by Employer",
+      "title": "String",
+      "type": "string"
+    },
+    "pONumber": {
+      "description": "Search for Learners by PO number",
+      "title": "String",
+      "type": "string"
+    },
+    "providerIdent": {
+      "description": "Search for Learners by their Provider Assigned ID",
+      "title": "String",
+      "type": "string"
+    },
+    "learnerReferenceNumber": {
+      "description": "Search for Learners by their LRN (Learner Reference Number)",
+      "title": "String",
+      "type": "string"
+    },
+    "createdSince": {
+      "description": "Search for Learners created since a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "modifiedSince": {
+      "description": "Search for Learners modified by another system since a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "plannedStartAfter": {
+      "description": "Search for Learners in learning on or before a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "plannedStartBefore": {
+      "description": "Search for Learners starting on or after a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "expectedEndAfter": {
+      "description": "Search for Learners expected to be ending on or after a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "expectedEndBefore": {
+      "description": "Search for Learners expected to be ending on or before a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sortBy": {
+      "description": "Sort results by",
+      "title": "SortBy",
+      "enum": [
+        "Surname",
+        "FirstNames",
+        "StartDate",
+        "ExpectedEnd",
+        "ActualEnd",
+        "Created",
+        "InternalID"
+      ],
+      "type": "string"
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

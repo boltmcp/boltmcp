@@ -1,0 +1,325 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Title",
+      "nullable": true
+    },
+    "firstNames": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Applicant's First Names"
+    },
+    "preferredFirstName": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Preferred First Name",
+      "nullable": true
+    },
+    "surname": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Applicant's Surname"
+    },
+    "previousSurname": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Previous Surname",
+      "nullable": true
+    },
+    "email": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Email",
+      "nullable": true
+    },
+    "risk": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Risk",
+      "nullable": true
+    },
+    "address": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `address` to the tool, first call the tool `expandSchema` with \"/properties/address\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "homePhone": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Home Phone Number",
+      "nullable": true
+    },
+    "mobile": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Mobile Phone Number",
+      "format": "tel",
+      "nullable": true
+    },
+    "picsUsername": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's PICS Username",
+      "nullable": true
+    },
+    "allowedContactMethods": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "Applicant's Allowed Contact Method Codes",
+      "nullable": true
+    },
+    "preferredContactMethod": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Preferred Contact Method Code",
+      "nullable": true
+    },
+    "dateOfBirth": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Applicant's Date Of Birth",
+      "format": "date-time",
+      "nullable": true
+    },
+    "sex": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Sex",
+      "nullable": true
+    },
+    "ethnicity": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Ethnicity",
+      "nullable": true
+    },
+    "niNumber": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's NINumber",
+      "nullable": true
+    },
+    "learnerReferenceNumber": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Learner Reference Number",
+      "nullable": true
+    },
+    "ilrDisability": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's ILR Disability",
+      "nullable": true
+    },
+    "lldDs": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "Applicant's LLDDs",
+      "nullable": true
+    },
+    "primaryLLDD": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Primary LLDD",
+      "nullable": true
+    },
+    "householdSituation": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "Applicant's Household Situation",
+      "nullable": true
+    },
+    "nextOfKinName": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Next Of Kin Name",
+      "nullable": true
+    },
+    "nextOfKinRelationship": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Next Of Kin Relationship",
+      "nullable": true
+    },
+    "nextOfKinPhone": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Next Of Kin Phone Number",
+      "nullable": true
+    },
+    "nextOfKinPhone2": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Next Of Kin Phone Number 2",
+      "nullable": true
+    },
+    "nextOfKinEmail": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Next Of Kin Email",
+      "nullable": true
+    },
+    "otherSystemID": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Other System ID",
+      "nullable": true
+    },
+    "providerIdent": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Provider Ident",
+      "nullable": true
+    },
+    "mainOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Main Officer Code",
+      "nullable": true
+    },
+    "recruitmentOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Recruitment Officer Code",
+      "nullable": true
+    },
+    "mentorOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Mentor Officer Code",
+      "nullable": true
+    },
+    "plannedStart": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Applicant's Planned Start Date",
+      "format": "date-time",
+      "nullable": true
+    },
+    "expectedEnd": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Applicant's Expected End Date",
+      "format": "date-time",
+      "nullable": true
+    },
+    "countryOfDomicile": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Country Of Domicile",
+      "nullable": true
+    },
+    "site": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Site Code",
+      "nullable": true
+    },
+    "uln": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's ULN",
+      "nullable": true
+    },
+    "restrictedUseIndicator": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Restricted Use Indicator",
+      "nullable": true
+    },
+    "gcseMath": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's GCSE Math",
+      "nullable": true
+    },
+    "gcseEnglish": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's GCSE English",
+      "nullable": true
+    },
+    "qualificationPlan": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Qualification Plan Code",
+      "nullable": true
+    },
+    "act": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's ACT",
+      "nullable": true
+    },
+    "vatStatus": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's VATStatus",
+      "nullable": true
+    },
+    "asStatus": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Apprenticeship Service Status",
+      "nullable": true
+    },
+    "asCohort": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Apprenticeship Service Cohort",
+      "nullable": true
+    },
+    "bksbUsername": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's BKSB Username",
+      "nullable": true
+    },
+    "workflow": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Workflow",
+      "nullable": true
+    },
+    "employerCode": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Employer Code",
+      "nullable": true
+    },
+    "recruitmentAgencyCode": {
+      "title": "String",
+      "type": "string",
+      "description": "Applicant's Recruitment Agency Code",
+      "nullable": true
+    },
+    "opportunityID": {
+      "title": "Nullable`1",
+      "type": "integer",
+      "description": "Applicant's Opportunity ID",
+      "format": "int32",
+      "nullable": true
+    }
+  },
+  "required": [
+    "firstNames",
+    "surname"
+  ]
+}

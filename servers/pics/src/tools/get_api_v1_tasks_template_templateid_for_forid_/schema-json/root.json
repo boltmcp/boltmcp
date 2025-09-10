@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "templateID": {
+      "description": "The ID of the template to be used",
+      "title": "String",
+      "type": "string"
+    },
+    "forID": {
+      "description": "The ID of the entity the appointment is being create for",
+      "title": "String",
+      "type": "string"
+    }
+  },
+  "required": [
+    "templateID",
+    "forID"
+  ]
+}

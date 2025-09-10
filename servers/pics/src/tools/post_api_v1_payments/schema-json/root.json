@@ -1,0 +1,156 @@
+{
+  "type": "object",
+  "properties": {
+    "learnerIdent": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Learner identifier associated with the payment"
+    },
+    "organisationCode": {
+      "title": "String",
+      "type": "string",
+      "description": "Organisation code associated with the payment",
+      "nullable": true
+    },
+    "paymentItem": {
+      "title": "String",
+      "type": "string",
+      "description": "Payment item details",
+      "nullable": true
+    },
+    "systemType": {
+      "title": "String",
+      "type": "string",
+      "description": "System type associated with the payment",
+      "nullable": true
+    },
+    "creditDebit": {
+      "title": "String",
+      "type": "string",
+      "description": "Credit or debit status associated with the payment",
+      "nullable": true
+    },
+    "description": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Description of the payment"
+    },
+    "reference": {
+      "title": "String",
+      "type": "string",
+      "description": "Reference number associated with the payment",
+      "nullable": true
+    },
+    "purchaseOrderNumber": {
+      "title": "String",
+      "type": "string",
+      "description": "Purchase order number associated with the payment",
+      "nullable": true
+    },
+    "invoiceNumber": {
+      "title": "String",
+      "type": "string",
+      "description": "Invoice number associated with the payment",
+      "nullable": true
+    },
+    "notes": {
+      "title": "String",
+      "type": "string",
+      "description": "Additional notes related to the payment",
+      "nullable": true
+    },
+    "status": {
+      "title": "String",
+      "type": "string",
+      "description": "Status of the payment",
+      "nullable": true
+    },
+    "createdDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is created",
+      "format": "date-time",
+      "nullable": true
+    },
+    "raisedDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is raised",
+      "format": "date-time",
+      "nullable": true
+    },
+    "raisedBy": {
+      "title": "String",
+      "type": "string",
+      "description": "Person who raised the payment",
+      "nullable": true
+    },
+    "expectedDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is expected",
+      "format": "date-time",
+      "nullable": true
+    },
+    "expectedAmount": {
+      "title": "Nullable`1",
+      "type": "number",
+      "description": "Expected amount for the payment",
+      "format": "double",
+      "nullable": true
+    },
+    "authorisedDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is authorized",
+      "format": "date-time",
+      "nullable": true
+    },
+    "authorisedBy": {
+      "title": "String",
+      "type": "string",
+      "description": "Person who authorized the payment",
+      "nullable": true
+    },
+    "actualDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is actually processed",
+      "format": "date-time",
+      "nullable": true
+    },
+    "actualAmount": {
+      "title": "Nullable`1",
+      "type": "number",
+      "description": "Actual amount for the payment",
+      "format": "double",
+      "nullable": true
+    },
+    "actualBy": {
+      "title": "String",
+      "type": "string",
+      "description": "Person associated with the actual processing of the payment",
+      "nullable": true
+    },
+    "invoicedDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is invoiced",
+      "format": "date-time",
+      "nullable": true
+    },
+    "reconciledDate": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Date when the payment is reconciled",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "required": [
+    "learnerIdent",
+    "description"
+  ]
+}

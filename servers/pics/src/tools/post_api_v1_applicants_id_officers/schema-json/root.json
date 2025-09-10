@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Applicant's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "items": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "OfficerViewModelItem",
+        "type": "object",
+        "properties": {
+          "relationshipID": {
+            "title": "String",
+            "type": "string",
+            "description": "Officer's relationship ID",
+            "nullable": true
+          },
+          "relationshipType": {
+            "title": "String",
+            "type": "string",
+            "description": "Officer's relationship type",
+            "nullable": true
+          },
+          "relationshipTitle": {
+            "title": "String",
+            "type": "string",
+            "description": "Officer's relationship title",
+            "nullable": true
+          },
+          "officer": {
+            "title": "String",
+            "type": "string",
+            "description": "Officer's code",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a view model item for an officer entity relationship"
+      },
+      "description": "List of officer items",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

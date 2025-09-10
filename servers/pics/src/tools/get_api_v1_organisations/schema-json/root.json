@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "additionalID": {
+      "description": "Additional Portfolio ID for the Organisation to be found",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "status": {
+      "description": "Status of the Organisation to be found",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "name": {
+      "description": "Name of the Organisation to be found",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "postcode": {
+      "description": "Postcode of the Organisation to be found",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "site": {
+      "description": "Search for employers by site",
+      "title": "String",
+      "type": "string"
+    },
+    "tag": {
+      "description": "Search for Organisations by tag",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "createdSince": {
+      "description": "Search for Organisations created after the given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedSince": {
+      "description": "Search for Organisations modified after the given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

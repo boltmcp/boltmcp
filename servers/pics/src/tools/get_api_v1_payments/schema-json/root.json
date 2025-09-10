@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "learnerIdent": {
+      "description": "Learner Ident of payments to be found",
+      "title": "String",
+      "type": "string"
+    },
+    "organisationCode": {
+      "description": "Organisation code of payments to be found",
+      "title": "String",
+      "type": "string"
+    },
+    "reference": {
+      "description": "Reference of payments to be found, including Reference, PO Number, or Invoice Number",
+      "title": "String",
+      "type": "string"
+    },
+    "status": {
+      "description": "List of Statuses of payments to be found",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

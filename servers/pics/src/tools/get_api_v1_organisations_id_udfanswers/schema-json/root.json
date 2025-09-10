@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Organisation's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "udfApiCodes": {
+      "description": "The unique codes for the User Defined questions",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "type": "object",
+  "properties": {
+    "surname": {
+      "description": "Search for Applicants by Surname",
+      "title": "String",
+      "type": "string"
+    },
+    "firstNames": {
+      "description": "Search for Applicants by first name",
+      "title": "String",
+      "type": "string"
+    },
+    "sex": {
+      "description": "Search for Applicants by sex",
+      "title": "String",
+      "type": "string"
+    },
+    "status": {
+      "description": "Search for Applicants by Status",
+      "title": "String",
+      "type": "string"
+    },
+    "workflowCode": {
+      "description": "Search for Applicants by Workflow Code",
+      "title": "String",
+      "type": "string"
+    },
+    "workflowStatus": {
+      "description": "Search for Applicants by Workflow Status",
+      "title": "String",
+      "type": "string"
+    },
+    "workflowSubStatus": {
+      "description": "Search for Applicants by Workflow Sub Status",
+      "title": "String",
+      "type": "string"
+    },
+    "qualificationPlan": {
+      "description": "Search for Applicants by Qualification Plan",
+      "title": "String",
+      "type": "string"
+    },
+    "site": {
+      "description": "Search for Applicants by Site",
+      "title": "String",
+      "type": "string"
+    },
+    "nINumber": {
+      "description": "Search for Applicants by NI Number",
+      "title": "String",
+      "type": "string"
+    },
+    "learnerReferenceNumber": {
+      "description": "Search for Applicants by Learner Reference Number",
+      "title": "String",
+      "type": "string"
+    },
+    "postcode": {
+      "description": "Search for Applicants by Postcode",
+      "title": "String",
+      "type": "string"
+    },
+    "uLN": {
+      "description": "Search for Applicants by ULN",
+      "title": "String",
+      "type": "string"
+    },
+    "mainOfficer": {
+      "description": "Search for Applicants by Main Officer Code",
+      "title": "String",
+      "type": "string"
+    },
+    "recruitmentOfficer": {
+      "description": "Search for Applicants by Recruitment Officer Code",
+      "title": "String",
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "description": "Search for Applicants by Date Of Birth",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "employerCode": {
+      "description": "Search for Applicants by Employer Code",
+      "title": "String",
+      "type": "string"
+    },
+    "modifiedSince": {
+      "description": "Search for Applicants by Modified Since",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdSince": {
+      "description": "Search for Applicants by Created Since",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "plannedStartAfter": {
+      "description": "Search for Applicants by Planned Start After",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "plannedStartBefore": {
+      "description": "Search for Applicants by Planned Start Before",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "expectedEndAfter": {
+      "description": "Search for Applicants by Expected End After",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "expectedEndBefore": {
+      "description": "Search for Applicants by Expected End Before",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sortBy": {
+      "description": "Select how the results should be sorted",
+      "title": "SortBy",
+      "enum": [
+        "Surname",
+        "FirstNames",
+        "Created",
+        "StatusChange",
+        "InternalIdentifier"
+      ],
+      "type": "string",
+      "default": "Surname"
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

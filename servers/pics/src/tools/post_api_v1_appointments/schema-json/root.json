@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "String",
+      "maxLength": 255,
+      "minLength": 1,
+      "type": "string",
+      "description": "The Appointment Title"
+    },
+    "description": {
+      "title": "String",
+      "type": "string",
+      "description": "Description of the Appointment",
+      "nullable": true
+    },
+    "workflow": {
+      "title": "String",
+      "type": "string",
+      "description": "The Appointment's Workflow Code",
+      "nullable": true
+    },
+    "class": {
+      "title": "String",
+      "type": "string",
+      "description": "The Appointment Class",
+      "nullable": true
+    },
+    "type": {
+      "title": "String",
+      "type": "string",
+      "description": "The Appointment Class",
+      "nullable": true
+    },
+    "expectedStart": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The Appointment's Expected Start",
+      "format": "date-time",
+      "nullable": true
+    },
+    "expectedEnd": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The Appointment's Expected End",
+      "format": "date-time",
+      "nullable": true
+    },
+    "actualStart": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The Appointment's Actual Start",
+      "format": "date-time",
+      "nullable": true
+    },
+    "actualEnd": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The Appointment's Actual End",
+      "format": "date-time",
+      "nullable": true
+    },
+    "allDay": {
+      "title": "Boolean",
+      "type": "boolean",
+      "description": "Indicates if the Appointment is set to run All Day"
+    },
+    "participants": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "ParticipantViewModel",
+        "type": "object",
+        "properties": {
+          "eventID": {
+            "title": "Int32",
+            "type": "integer",
+            "description": "Event ID",
+            "format": "int32"
+          },
+          "id": {
+            "title": "String",
+            "type": "string",
+            "description": "The Participant's ID",
+            "nullable": true
+          },
+          "type": {
+            "title": "String",
+            "type": "string",
+            "description": "The Type of Participant",
+            "nullable": true
+          },
+          "roles": {
+            "title": "List`1",
+            "type": "array",
+            "items": {
+              "title": "String",
+              "type": "string"
+            },
+            "description": "The Roles assigned to the Participant for the Appointment",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "List of Appointment Participants",
+      "nullable": true
+    },
+    "templateID": {
+      "title": "String",
+      "type": "string",
+      "description": "Not user editable. Assigned when using the create with template function.",
+      "nullable": true
+    },
+    "templateIDChecksum": {
+      "title": "String",
+      "type": "string",
+      "description": "Not user editable. Assigned when using the create with template function.",
+      "nullable": true
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

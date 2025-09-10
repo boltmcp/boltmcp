@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Task's ID",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "udfApiCodes": {
+      "description": "The unique codes for the User Defined questions",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

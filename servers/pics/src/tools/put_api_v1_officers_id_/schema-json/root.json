@@ -1,0 +1,148 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Officer's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "b_id": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "The Officer's ID"
+    },
+    "title": {
+      "title": "String",
+      "maxLength": 5,
+      "type": "string",
+      "description": "The Officer's title code",
+      "nullable": true
+    },
+    "firstNames": {
+      "title": "String",
+      "maxLength": 30,
+      "minLength": 1,
+      "type": "string",
+      "description": "The Officer's first names"
+    },
+    "surname": {
+      "title": "String",
+      "maxLength": 30,
+      "minLength": 1,
+      "type": "string",
+      "description": "The Officer's surname"
+    },
+    "jobTitle": {
+      "title": "String",
+      "maxLength": 150,
+      "type": "string",
+      "description": "The Officer's job title",
+      "nullable": true
+    },
+    "email": {
+      "title": "String",
+      "maxLength": 100,
+      "type": "string",
+      "description": "The Officer's email address",
+      "format": "email",
+      "nullable": true
+    },
+    "roles": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "The Officer's role codes"
+    },
+    "systemStatus": {
+      "title": "String",
+      "maxLength": 1,
+      "minLength": 1,
+      "type": "string",
+      "description": "The Officer's system status"
+    },
+    "address": {
+      "title": "String",
+      "maxLength": 180,
+      "type": "string",
+      "description": "The Officer's address",
+      "nullable": true
+    },
+    "postcode": {
+      "title": "String",
+      "type": "string",
+      "description": "The Officer's postcode",
+      "format": "postal-code",
+      "nullable": true
+    },
+    "phone": {
+      "title": "String",
+      "maxLength": 30,
+      "type": "string",
+      "description": "The Officer's phone number",
+      "format": "tel",
+      "nullable": true
+    },
+    "mobile": {
+      "title": "String",
+      "maxLength": 15,
+      "type": "string",
+      "description": "The Officer's mobile number",
+      "format": "tel",
+      "nullable": true
+    },
+    "allowedContactMethods": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "The Officer's allowed contact methods",
+      "nullable": true
+    },
+    "preferredContactMethod": {
+      "title": "String",
+      "type": "string",
+      "description": "The officer's preferred contact method",
+      "nullable": true
+    },
+    "sex": {
+      "title": "String",
+      "maxLength": 1,
+      "type": "string",
+      "description": "The Officer's sex code",
+      "nullable": true
+    },
+    "ethnicity": {
+      "title": "String",
+      "maxLength": 2,
+      "type": "string",
+      "description": "The Officer's ethnicity",
+      "nullable": true
+    },
+    "additionalID": {
+      "title": "String",
+      "type": "string",
+      "description": "The Officer's additional ID",
+      "nullable": true
+    },
+    "superior": {
+      "title": "String",
+      "type": "string",
+      "description": "The Officer's superior code",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id",
+    "b_id",
+    "firstNames",
+    "surname",
+    "roles",
+    "systemStatus"
+  ]
+}

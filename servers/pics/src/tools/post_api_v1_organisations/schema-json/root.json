@@ -1,0 +1,255 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the organisation"
+    },
+    "alias": {
+      "title": "String",
+      "maxLength": 60,
+      "type": "string",
+      "description": "Alias of the organisation",
+      "nullable": true
+    },
+    "phone": {
+      "title": "String",
+      "maxLength": 25,
+      "type": "string",
+      "description": "Phone number of the organisation",
+      "format": "tel",
+      "nullable": true
+    },
+    "mobile": {
+      "title": "String",
+      "maxLength": 15,
+      "type": "string",
+      "description": "Mobile number of the organisation",
+      "format": "tel",
+      "nullable": true
+    },
+    "email": {
+      "title": "String",
+      "maxLength": 100,
+      "type": "string",
+      "description": "Email address of the organisation",
+      "nullable": true
+    },
+    "alternateEmail": {
+      "title": "String",
+      "maxLength": 100,
+      "type": "string",
+      "description": "Alternate email address of the organisation",
+      "nullable": true
+    },
+    "address": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `address` to the tool, first call the tool `expandSchema` with \"/properties/address\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "ward": {
+      "title": "String",
+      "type": "string",
+      "description": "Ward associated with the organisation",
+      "nullable": true
+    },
+    "allowedContactMethods": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "List of allowed contact methods for the organisation",
+      "nullable": true
+    },
+    "preferredContactMethod": {
+      "title": "String",
+      "type": "string",
+      "description": "Preferred contact method for the organisation",
+      "nullable": true
+    },
+    "risk": {
+      "title": "String",
+      "maxLength": 1,
+      "type": "string",
+      "description": "Risk level associated with the organisation",
+      "nullable": true
+    },
+    "website": {
+      "title": "String",
+      "maxLength": 100,
+      "type": "string",
+      "description": "Website of the organisation",
+      "format": "uri",
+      "nullable": true
+    },
+    "upin": {
+      "title": "String",
+      "maxLength": 8,
+      "type": "string",
+      "description": "UPIN associated with the organisation",
+      "nullable": true
+    },
+    "ukprn": {
+      "title": "String",
+      "maxLength": 8,
+      "type": "string",
+      "description": "UKPRN associated with the organisation",
+      "nullable": true
+    },
+    "edsReference": {
+      "title": "String",
+      "maxLength": 9,
+      "type": "string",
+      "description": "EDS reference associated with the organisation",
+      "nullable": true
+    },
+    "companyRegistrationNumber": {
+      "title": "String",
+      "maxLength": 8,
+      "type": "string",
+      "description": "Company registration number associated with the organisation",
+      "nullable": true
+    },
+    "epaOrganisation": {
+      "title": "String",
+      "maxLength": 7,
+      "minLength": 7,
+      "type": "string",
+      "description": "EPA organisation associated with the organisation",
+      "nullable": true
+    },
+    "mainOfficer": {
+      "title": "String",
+      "type": "string",
+      "description": "Main officer associated with the organisation",
+      "nullable": true
+    },
+    "mainContact": {
+      "title": "String",
+      "type": "string",
+      "description": "Main contact associated with the organisation",
+      "nullable": true
+    },
+    "headOffice": {
+      "title": "String",
+      "type": "string",
+      "description": "Head office associated with the organisation",
+      "nullable": true
+    },
+    "status": {
+      "title": "String",
+      "type": "string",
+      "description": "Status of the organisation",
+      "nullable": true
+    },
+    "additionalID": {
+      "title": "String",
+      "maxLength": 50,
+      "type": "string",
+      "description": "Additional ID associated with the organisation",
+      "nullable": true
+    },
+    "roles": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "List of roles associated with the organisation",
+      "nullable": true
+    },
+    "invoiceAddress": {
+      "type": "object",
+      "description": "<llm-instruction>This part of the input schema is truncated. If you want to pass the property `invoiceAddress` to the tool, first call the tool `expandSchema` with \"/properties/invoiceAddress\" in the list of pointers. This will return the expanded input schema which you can then use in the tool call. You may have to call `expandSchema` multiple times if the schema is nested.</llm-instruction>",
+      "additionalProperties": true
+    },
+    "invoiceName": {
+      "title": "String",
+      "type": "string",
+      "description": "Invoice name associated with the organisation",
+      "nullable": true
+    },
+    "invoicePhone": {
+      "title": "String",
+      "type": "string",
+      "description": "Invoice phone number associated with the organisation",
+      "nullable": true
+    },
+    "invoiceEmail": {
+      "title": "String",
+      "type": "string",
+      "description": "Invoice email address associated with the organisation",
+      "nullable": true
+    },
+    "allowMarketing": {
+      "title": "String",
+      "type": "string",
+      "description": "Allow marketing status associated with the organisation",
+      "nullable": true
+    },
+    "hasIIP": {
+      "title": "String",
+      "type": "string",
+      "description": "Has IIP status associated with the organisation",
+      "nullable": true
+    },
+    "previousTraining": {
+      "title": "String",
+      "type": "string",
+      "description": "Previous training status associated with the organisation",
+      "nullable": true
+    },
+    "ethnicMinorityBusiness": {
+      "title": "String",
+      "type": "string",
+      "description": "Ethnic minority business status associated with the organisation",
+      "nullable": true
+    },
+    "notes": {
+      "title": "String",
+      "type": "string",
+      "description": "Notes associated with the organisation",
+      "nullable": true
+    },
+    "employerSizeBand": {
+      "title": "String",
+      "type": "string",
+      "description": "Employer size band associated with the organisation",
+      "nullable": true
+    },
+    "accountingSystemID": {
+      "title": "String",
+      "type": "string",
+      "description": "Accounting system ID associated with the organisation",
+      "nullable": true
+    },
+    "vatRegNo": {
+      "title": "String",
+      "type": "string",
+      "description": "VAT registration number associated with the organisation",
+      "nullable": true
+    },
+    "employeeCount": {
+      "title": "Nullable`1",
+      "type": "integer",
+      "description": "Employee count associated with the organisation",
+      "format": "int32",
+      "nullable": true
+    },
+    "annualTurnover": {
+      "title": "Nullable`1",
+      "type": "number",
+      "description": "Annual turnover associated with the organisation",
+      "format": "double",
+      "nullable": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

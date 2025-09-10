@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "firstNames": {
+      "description": "Search for Officer by forename",
+      "title": "String",
+      "type": "string"
+    },
+    "surname": {
+      "description": "Search for Officer by surname",
+      "title": "String",
+      "type": "string"
+    },
+    "sex": {
+      "description": "Search for Officer by sex",
+      "title": "String",
+      "type": "string"
+    },
+    "postcode": {
+      "description": "Search for Officer by postcode",
+      "title": "String",
+      "type": "string"
+    },
+    "email": {
+      "description": "Search for Officer by email",
+      "title": "String",
+      "type": "string"
+    },
+    "role": {
+      "description": "Search for Officer by role",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "jobTitle": {
+      "description": "Search for Officer by job title",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "mainOrganisation": {
+      "description": "Search for Officer by main organisation",
+      "title": "String",
+      "type": "string"
+    },
+    "superiorOfficer": {
+      "description": "Search for Officer by superior officer",
+      "title": "String",
+      "type": "string"
+    },
+    "site": {
+      "description": "Search for Officers by site",
+      "title": "String",
+      "type": "string"
+    },
+    "status": {
+      "description": "Search for Officers by system status",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "tag": {
+      "description": "Search for Officers by tag",
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "createdSince": {
+      "description": "Search for Officers created since a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "modifiedSince": {
+      "description": "Search for Officers modified since a given date",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sortBy": {
+      "description": "Control the sorting of the results using one of the following: Title, Forename, Surname, Sex, Postcode, Email, Type, JobTitle, MainOrg",
+      "title": "SortBy",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "type": "integer",
+      "format": "int32"
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

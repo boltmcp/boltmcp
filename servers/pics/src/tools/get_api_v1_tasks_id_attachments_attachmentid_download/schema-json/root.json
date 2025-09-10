@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The task's ID",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "attachmentId": {
+      "description": "The task attachment's 32-character ID",
+      "title": "String",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "attachmentId"
+  ]
+}

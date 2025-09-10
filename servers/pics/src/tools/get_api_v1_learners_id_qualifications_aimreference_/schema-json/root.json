@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Learner's id",
+      "title": "String",
+      "type": "string"
+    },
+    "aimReference": {
+      "description": "The Qualification's Aim Reference",
+      "title": "String",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "aimReference"
+  ]
+}

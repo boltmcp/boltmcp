@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Learner's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "assessmentId": {
+      "description": "The ID of the assessment to be deleted",
+      "title": "String",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "assessmentId"
+  ]
+}

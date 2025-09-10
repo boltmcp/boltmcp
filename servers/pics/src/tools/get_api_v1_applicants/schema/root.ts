@@ -1,0 +1,31 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "surname": z.string().describe("Search for Applicants by Surname").optional(),
+  "firstNames": z.string().describe("Search for Applicants by first name").optional(),
+  "sex": z.string().describe("Search for Applicants by sex").optional(),
+  "status": z.string().describe("Search for Applicants by Status").optional(),
+  "workflowCode": z.string().describe("Search for Applicants by Workflow Code").optional(),
+  "workflowStatus": z.string().describe("Search for Applicants by Workflow Status").optional(),
+  "workflowSubStatus": z.string().describe("Search for Applicants by Workflow Sub Status").optional(),
+  "qualificationPlan": z.string().describe("Search for Applicants by Qualification Plan").optional(),
+  "site": z.string().describe("Search for Applicants by Site").optional(),
+  "nINumber": z.string().describe("Search for Applicants by NI Number").optional(),
+  "learnerReferenceNumber": z.string().describe("Search for Applicants by Learner Reference Number").optional(),
+  "postcode": z.string().describe("Search for Applicants by Postcode").optional(),
+  "uLN": z.string().describe("Search for Applicants by ULN").optional(),
+  "mainOfficer": z.string().describe("Search for Applicants by Main Officer Code").optional(),
+  "recruitmentOfficer": z.string().describe("Search for Applicants by Recruitment Officer Code").optional(),
+  "dateOfBirth": z.string().datetime({ offset: true }).describe("Search for Applicants by Date Of Birth").optional(),
+  "employerCode": z.string().describe("Search for Applicants by Employer Code").optional(),
+  "modifiedSince": z.string().datetime({ offset: true }).describe("Search for Applicants by Modified Since").optional(),
+  "createdSince": z.string().datetime({ offset: true }).describe("Search for Applicants by Created Since").optional(),
+  "plannedStartAfter": z.string().datetime({ offset: true }).describe("Search for Applicants by Planned Start After").optional(),
+  "plannedStartBefore": z.string().datetime({ offset: true }).describe("Search for Applicants by Planned Start Before").optional(),
+  "expectedEndAfter": z.string().datetime({ offset: true }).describe("Search for Applicants by Expected End After").optional(),
+  "expectedEndBefore": z.string().datetime({ offset: true }).describe("Search for Applicants by Expected End Before").optional(),
+  "sortBy": z.enum(["Surname","FirstNames","Created","StatusChange","InternalIdentifier"]).describe("Select how the results should be sorted").optional(),
+  "sortDirection": z.enum(["Assending","Descending"]).describe("Sort Direction").optional(),
+  "pageNumber": z.number().int().describe("Page Number").optional(),
+  "pageSize": z.number().int().gte(5).lte(1000).describe("Page Size").optional()
+}

@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Task's ID",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    },
+    "b_id": {
+      "title": "Int32",
+      "type": "integer",
+      "description": "The Task's ID",
+      "format": "int32"
+    },
+    "description": {
+      "title": "String",
+      "type": "string",
+      "description": "Description of the Task",
+      "nullable": true
+    },
+    "notes": {
+      "title": "String",
+      "type": "string",
+      "description": "Additional Notes for the Task - Employability Only",
+      "nullable": true
+    },
+    "status": {
+      "title": "String",
+      "type": "string",
+      "description": "The Task's Status",
+      "nullable": true
+    },
+    "subStatus": {
+      "title": "String",
+      "type": "string",
+      "description": "The Task's Sub Status",
+      "nullable": true
+    },
+    "workflow": {
+      "title": "String",
+      "type": "string",
+      "description": "The Task's Workflow Code",
+      "nullable": true
+    },
+    "dueOn": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The date the Task is due on",
+      "format": "date-time",
+      "nullable": true
+    },
+    "doneOn": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The date the Task was completed on",
+      "format": "date-time",
+      "nullable": true
+    },
+    "start": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "The date the Task was started on",
+      "format": "date-time",
+      "nullable": true
+    },
+    "participants": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "ParticipantViewModel",
+        "type": "object",
+        "properties": {
+          "eventID": {
+            "title": "Int32",
+            "type": "integer",
+            "description": "Event ID",
+            "format": "int32"
+          },
+          "id": {
+            "title": "String",
+            "type": "string",
+            "description": "The Participant's ID",
+            "nullable": true
+          },
+          "type": {
+            "title": "String",
+            "type": "string",
+            "description": "The Type of Participant",
+            "nullable": true
+          },
+          "roles": {
+            "title": "List`1",
+            "type": "array",
+            "items": {
+              "title": "String",
+              "type": "string"
+            },
+            "description": "The Roles assigned to the Participant for the Appointment",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "List of Task Participants",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id",
+    "b_id"
+  ]
+}

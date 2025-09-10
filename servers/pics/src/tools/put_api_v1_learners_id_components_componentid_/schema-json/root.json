@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Learner's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "componentId": {
+      "description": "The learner component ID to be edited",
+      "title": "String",
+      "type": "string"
+    },
+    "b_id": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Component ID"
+    },
+    "start": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Start Date",
+      "format": "date-time",
+      "nullable": true
+    },
+    "priorityFlag": {
+      "title": "Nullable`1",
+      "type": "integer",
+      "description": "Priority Flag",
+      "format": "int32",
+      "nullable": true
+    },
+    "due": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Due Date",
+      "format": "date-time",
+      "nullable": true
+    },
+    "done": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Done Date",
+      "format": "date-time",
+      "nullable": true
+    },
+    "notes": {
+      "title": "String",
+      "type": "string",
+      "description": "Notes",
+      "nullable": true
+    },
+    "linkId": {
+      "title": "String",
+      "type": "string",
+      "description": "Used to link a task to a component",
+      "nullable": true
+    }
+  },
+  "required": [
+    "id",
+    "componentId",
+    "b_id"
+  ]
+}

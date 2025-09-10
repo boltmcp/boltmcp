@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Learner's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "componentID": {
+      "title": "String",
+      "minLength": 1,
+      "type": "string",
+      "description": "Component ID"
+    }
+  },
+  "required": [
+    "id",
+    "componentID"
+  ]
+}

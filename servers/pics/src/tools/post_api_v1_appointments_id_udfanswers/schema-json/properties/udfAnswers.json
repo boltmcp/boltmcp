@@ -1,0 +1,12 @@
+{
+  "title": "Dictionary`2",
+  "type": "object",
+  "additionalProperties": {
+    "title": "String",
+    "type": "string",
+    "nullable": true
+  },
+  "description": "List of UDF Answer key value pairs",
+  "nullable": true,
+  "properties": {}
+}

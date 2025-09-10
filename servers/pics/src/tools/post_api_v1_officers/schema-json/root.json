@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "firstNames": {
+      "title": "String",
+      "maxLength": 30,
+      "minLength": 1,
+      "type": "string",
+      "description": "Officer's first names"
+    },
+    "surname": {
+      "title": "String",
+      "maxLength": 30,
+      "minLength": 1,
+      "type": "string",
+      "description": "Officer's surname"
+    },
+    "email": {
+      "title": "String",
+      "maxLength": 100,
+      "type": "string",
+      "description": "Officer's email address",
+      "format": "email",
+      "nullable": true
+    },
+    "phone": {
+      "title": "String",
+      "maxLength": 30,
+      "type": "string",
+      "description": "Officer's phone number",
+      "format": "tel",
+      "nullable": true
+    },
+    "roles": {
+      "title": "List`1",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      },
+      "description": "Officer's roles"
+    }
+  },
+  "required": [
+    "firstNames",
+    "surname",
+    "roles"
+  ]
+}

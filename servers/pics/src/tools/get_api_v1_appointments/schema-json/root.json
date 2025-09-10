@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "text": {
+      "description": "Search by Title",
+      "title": "String",
+      "type": "string"
+    },
+    "type": {
+      "description": "Search by Appointment Type",
+      "title": "String",
+      "type": "string"
+    },
+    "class": {
+      "description": "Search by Appointment Class",
+      "title": "String",
+      "type": "string"
+    },
+    "status": {
+      "description": "Search by Appointment Status",
+      "title": "String",
+      "type": "string"
+    },
+    "subStatus": {
+      "description": "Search by Appointment SubStatus",
+      "title": "String",
+      "type": "string"
+    },
+    "workflow": {
+      "description": "Search by Appointment Workflow",
+      "title": "String",
+      "type": "string"
+    },
+    "modifiedSince": {
+      "description": "Search for Appointments Modified Since",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdSince": {
+      "description": "Search for Appointments Created Since",
+      "title": "Nullable`1",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sortDirection": {
+      "description": "Sort Direction",
+      "title": "SortDirection",
+      "enum": [
+        "Assending",
+        "Descending"
+      ],
+      "type": "string",
+      "default": "Descending"
+    },
+    "pageNumber": {
+      "description": "Page Number",
+      "title": "Nullable`1",
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "description": "Page Size",
+      "title": "Int32",
+      "maximum": 1000,
+      "minimum": 5,
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": []
+}

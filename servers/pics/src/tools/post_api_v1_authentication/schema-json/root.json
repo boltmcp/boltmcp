@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "title": "String",
+      "type": "string",
+      "description": "Username",
+      "nullable": true
+    },
+    "password": {
+      "title": "String",
+      "type": "string",
+      "description": "Password",
+      "nullable": true
+    }
+  },
+  "required": []
+}

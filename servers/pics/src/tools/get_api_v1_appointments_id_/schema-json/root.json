@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Appointment's ID",
+      "title": "Int32",
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

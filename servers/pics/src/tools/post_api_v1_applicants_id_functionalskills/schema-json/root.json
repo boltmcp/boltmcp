@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The Applicant's ID",
+      "title": "String",
+      "type": "string"
+    },
+    "type": {
+      "title": "String",
+      "maxLength": 1,
+      "minLength": 1,
+      "type": "string",
+      "description": "Functional Skills assessment type code",
+      "example": "I"
+    },
+    "subject": {
+      "title": "String",
+      "maxLength": 1,
+      "minLength": 1,
+      "type": "string",
+      "description": "Functional Skills assessment subject code",
+      "example": "E"
+    },
+    "level": {
+      "title": "String",
+      "maxLength": 3,
+      "minLength": 1,
+      "type": "string",
+      "description": "Functional Skills assessment level code",
+      "example": "L10"
+    },
+    "date": {
+      "title": "Nullable`1",
+      "type": "string",
+      "description": "Functional Skills assessment date",
+      "format": "date-time"
+    },
+    "result": {
+      "title": "Nullable`1",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number",
+      "description": "Functional Skills assessment result",
+      "format": "double",
+      "nullable": true,
+      "example": 50
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "subject",
+    "level",
+    "date"
+  ]
+}
