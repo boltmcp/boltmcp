@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "title": "Page"
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 4,
+      "title": "Limit"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "authorization"
+  ]
+}

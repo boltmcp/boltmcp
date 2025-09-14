@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "bot_id": {
+      "type": "string",
+      "title": "Bot Id"
+    },
+    "plan": {
+      "type": "string",
+      "title": "Plan"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "bot_id",
+    "plan",
+    "authorization"
+  ]
+}

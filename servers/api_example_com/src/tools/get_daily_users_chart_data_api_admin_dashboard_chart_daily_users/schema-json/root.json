@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 7,
+      "title": "Days"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "authorization"
+  ]
+}

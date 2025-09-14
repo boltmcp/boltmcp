@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "title": "Amount"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "amount",
+    "authorization"
+  ]
+}

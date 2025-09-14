@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "chila_id": {
+      "type": "string",
+      "title": "Chila Id"
+    },
+    "days": {
+      "type": "integer",
+      "maximum": 30,
+      "minimum": 1,
+      "default": 7,
+      "title": "Days"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "chila_id",
+    "authorization"
+  ]
+}

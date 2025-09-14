@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "prita_id": {
+      "type": "string",
+      "title": "Prita Id"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "prita_id",
+    "authorization"
+  ]
+}

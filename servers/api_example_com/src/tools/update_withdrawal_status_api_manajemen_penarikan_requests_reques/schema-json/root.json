@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "title": "Request Id"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "request_id",
+    "status",
+    "authorization"
+  ]
+}

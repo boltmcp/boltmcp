@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "urutan": {
+      "type": "string",
+      "title": "Urutan"
+    },
+    "auto_renewal_status": {
+      "type": "boolean",
+      "title": "Auto Renewal Status"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "urutan",
+    "auto_renewal_status",
+    "authorization"
+  ]
+}

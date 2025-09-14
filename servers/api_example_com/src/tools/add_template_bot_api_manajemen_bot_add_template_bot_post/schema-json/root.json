@@ -1,0 +1,167 @@
+{
+  "type": "object",
+  "properties": {
+    "bot_name": {
+      "type": "string",
+      "title": "Bot Name"
+    },
+    "bot_role": {
+      "type": "string",
+      "title": "Bot Role"
+    },
+    "bot_description": {
+      "type": "string",
+      "title": "Bot Description"
+    },
+    "image_src": {
+      "type": "string",
+      "title": "Image Src"
+    },
+    "activation_fee": {
+      "type": "number",
+      "title": "Activation Fee"
+    },
+    "monthly_fee": {
+      "type": "number",
+      "title": "Monthly Fee"
+    },
+    "tersedia": {
+      "type": "boolean",
+      "title": "Tersedia"
+    },
+    "bot_type": {
+      "type": "string",
+      "title": "Bot Type"
+    },
+    "plan": {
+      "type": "string",
+      "title": "Plan"
+    },
+    "alur_kerja_1": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alur Kerja 1"
+    },
+    "deskripsi_alur_kerja_1": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Deskripsi Alur Kerja 1"
+    },
+    "alur_kerja_2": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alur Kerja 2"
+    },
+    "deskripsi_alur_kerja_2": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Deskripsi Alur Kerja 2"
+    },
+    "alur_kerja_3": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alur Kerja 3"
+    },
+    "deskripsi_alur_kerja_3": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Deskripsi Alur Kerja 3"
+    },
+    "alur_kerja_4": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alur Kerja 4"
+    },
+    "deskripsi_alur_kerja_4": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Deskripsi Alur Kerja 4"
+    },
+    "alur_kerja_5": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Alur Kerja 5"
+    },
+    "deskripsi_alur_kerja_5": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Deskripsi Alur Kerja 5"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "bot_name",
+    "bot_role",
+    "bot_description",
+    "image_src",
+    "activation_fee",
+    "monthly_fee",
+    "tersedia",
+    "bot_type",
+    "plan",
+    "authorization"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "chila_id": {
+      "type": "string",
+      "title": "Chila Id"
+    },
+    "page": {
+      "type": "integer",
+      "default": 1,
+      "title": "Page"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 15,
+      "title": "Limit"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "chila_id",
+    "authorization"
+  ]
+}

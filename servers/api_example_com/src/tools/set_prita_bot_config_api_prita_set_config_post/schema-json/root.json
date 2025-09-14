@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "urutan": {
+      "type": "string",
+      "title": "Urutan"
+    },
+    "config": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config"
+    },
+    "admin_notification": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Admin Notification"
+    },
+    "active_notification": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Active Notification"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "urutan",
+    "authorization"
+  ]
+}

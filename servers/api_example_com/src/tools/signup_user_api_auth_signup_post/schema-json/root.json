@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Ref"
+    },
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "password"
+  ]
+}

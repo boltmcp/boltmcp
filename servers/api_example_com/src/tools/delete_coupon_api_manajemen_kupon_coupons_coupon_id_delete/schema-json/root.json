@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "coupon_id": {
+      "type": "string",
+      "title": "Coupon Id"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "coupon_id",
+    "authorization"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "chila_id": {
+      "type": "string",
+      "title": "Chila Id"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "chila_id",
+    "authorization"
+  ]
+}

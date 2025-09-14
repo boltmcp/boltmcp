@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "password": {
+      "type": "string",
+      "title": "Password"
+    },
+    "token": {
+      "type": "string",
+      "title": "Token"
+    },
+    "refreshToken": {
+      "type": "string",
+      "title": "Refreshtoken"
+    }
+  },
+  "required": [
+    "password",
+    "token",
+    "refreshToken"
+  ]
+}

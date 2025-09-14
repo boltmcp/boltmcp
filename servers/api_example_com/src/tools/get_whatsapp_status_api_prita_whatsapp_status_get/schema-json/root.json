@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "urutan": {
+      "type": "string",
+      "title": "Urutan"
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "urutan",
+    "authorization"
+  ]
+}

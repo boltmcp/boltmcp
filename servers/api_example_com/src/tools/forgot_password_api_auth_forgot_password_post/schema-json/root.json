@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "redirect_to": {
+      "type": "string",
+      "title": "Redirect To"
+    }
+  },
+  "required": [
+    "email",
+    "redirect_to"
+  ]
+}

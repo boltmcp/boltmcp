@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "prita_id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Prita Id"
+    },
+    "token": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Token"
+    },
+    "message_content": {
+      "type": "string",
+      "title": "Message Content"
+    },
+    "recipient_type": {
+      "type": "string",
+      "title": "Recipient Type"
+    },
+    "recipients": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Recipients"
+    },
+    "attachment_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Attachment Url"
+    },
+    "recipients_count": {
+      "type": "integer",
+      "title": "Recipients Count"
+    }
+  },
+  "required": [
+    "prita_id",
+    "message_content",
+    "recipient_type",
+    "recipients_count"
+  ]
+}

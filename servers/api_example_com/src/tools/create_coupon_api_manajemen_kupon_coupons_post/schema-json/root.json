@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "credits_amount": {
+      "type": "number",
+      "title": "Credits Amount"
+    },
+    "is_multi_use": {
+      "type": "boolean",
+      "title": "Is Multi Use",
+      "default": true
+    },
+    "campaign_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Campaign Code"
+    },
+    "quantity": {
+      "type": "integer",
+      "title": "Quantity",
+      "default": 1
+    },
+    "authorization": {
+      "type": "string",
+      "title": "Authorization"
+    }
+  },
+  "required": [
+    "credits_amount",
+    "authorization"
+  ]
+}
