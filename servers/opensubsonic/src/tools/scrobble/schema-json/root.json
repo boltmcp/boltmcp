@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A string which uniquely identifies the file to scrobble.",
+      "type": "string"
+    },
+    "time": {
+      "description": "(Since 1.8.0) The time (in milliseconds since 1 Jan 1970) at which the song was listened to.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "submission": {
+      "description": "Whether this is a “submission” or a “now playing” notification.",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

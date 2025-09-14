@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "The list type. Must be one of the following: random, newest, highest, frequent, recent. Since 1.8.0 you can also use alphabeticalByName or alphabeticalByArtist to page through all albums alphabetically, and starred to retrieve starred albums. Since 1.10.1 you can use byYear and byGenre to list albums in a given year range or genre.",
+      "type": "string",
+      "enum": [
+        "random",
+        "newest",
+        "highest",
+        "frequent",
+        "recent",
+        "alphabeticalByName",
+        "alphabeticalByArtist",
+        "starred",
+        "byYear",
+        "byGenre"
+      ]
+    },
+    "size": {
+      "description": "The number of albums to return. Max 500.",
+      "type": "integer",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 500
+    },
+    "offset": {
+      "description": "The list offset. Useful if you for example want to page through the list of newest albums.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "fromYear": {
+      "description": "Required if `type=='byYear'`. The first year in the range. If `fromYear` > `toYear` a reverse chronological list is returned.",
+      "type": "integer"
+    },
+    "toYear": {
+      "description": "Required if `type=='byYear'`. The last year in the range.",
+      "type": "integer"
+    },
+    "genre": {
+      "description": "Required if `type=='byGenre'`. The name of the genre, e.g., “Rock”.",
+      "type": "string"
+    },
+    "musicFolderId": {
+      "description": "(Since 1.11.0) Only return albums in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

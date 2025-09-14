@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The artist, album or song ID.",
+      "type": "string"
+    },
+    "count": {
+      "description": "Max number of similar artists to return.",
+      "type": "integer",
+      "default": 20,
+      "minimum": 0
+    },
+    "includeNotPresent": {
+      "description": "Whether to return artists that are not present in the media library.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

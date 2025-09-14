@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The song ID.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

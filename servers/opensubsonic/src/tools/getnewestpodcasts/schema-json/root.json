@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "count": {
+      "description": "The maximum number of episodes to return.",
+      "type": "integer",
+      "default": 20
+    }
+  },
+  "required": []
+}

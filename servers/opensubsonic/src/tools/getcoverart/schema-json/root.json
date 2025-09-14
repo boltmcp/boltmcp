@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The coverArt ID. Returned by most entities likes `Child` or `AlbumID3`",
+      "type": "string"
+    },
+    "size": {
+      "description": "If specified, scale image to this size.",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

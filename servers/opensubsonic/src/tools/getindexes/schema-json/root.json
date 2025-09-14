@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "musicFolderId": {
+      "description": "If specified, only return artists in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    },
+    "ifModifiedSince": {
+      "description": "If specified, only return a result if the artist collection has changed since the given time (in milliseconds since 1 Jan 1970).",
+      "type": "integer"
+    }
+  },
+  "required": []
+}

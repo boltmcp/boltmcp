@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the Podcast channel to delete.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

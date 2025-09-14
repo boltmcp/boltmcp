@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "ID of a song in the play queue. Use one id parameter for each song in the play queue. Specify no IDs to clear",
+      "type": "string"
+    },
+    "currentIndex": {
+      "description": "The index of the current playing song. This is required if one or more IDs is provided.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "position": {
+      "description": "The position in milliseconds within the currently playing song.",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": []
+}

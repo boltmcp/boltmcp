@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "musicFolderId": {
+      "description": "If specified, only return artists in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

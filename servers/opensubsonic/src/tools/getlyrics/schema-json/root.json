@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "artist": {
+      "description": "The artist name.",
+      "type": "string"
+    },
+    "title": {
+      "description": "The song title.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

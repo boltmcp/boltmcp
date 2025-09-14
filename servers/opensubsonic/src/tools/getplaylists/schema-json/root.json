@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "(Since 1.8.0) If specified, return playlists for this user rather than for the authenticated user. The authenticated user must have admin role if this parameter is used.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

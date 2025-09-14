@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "The name of the user to delete.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "username"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "ID of the share to update.",
+      "type": "string"
+    },
+    "description": {
+      "description": "A user-defined description that will be displayed to people visiting the shared media.",
+      "type": "string"
+    },
+    "expires": {
+      "description": "The time at which the share expires. Given as milliseconds since 1970, or zero to remove the expiration.",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

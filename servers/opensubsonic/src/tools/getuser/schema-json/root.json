@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "The name of the user to retrieve. You can only retrieve your own user unless you have admin privileges.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "username"
+  ]
+}

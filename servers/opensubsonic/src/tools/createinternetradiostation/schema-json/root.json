@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "streamUrl": {
+      "description": "The stream URL for the station.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The station name.",
+      "type": "string"
+    },
+    "homepageUrl": {
+      "description": "The home page URL for the station.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "streamUrl",
+    "name"
+  ]
+}

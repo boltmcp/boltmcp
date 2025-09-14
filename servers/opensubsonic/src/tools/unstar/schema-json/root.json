@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the file (song) or folder (album/artist) to star. Multiple parameters allowed.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "albumId": {
+      "description": "The ID of an album to star. Use this rather than `id` if the client accesses the media collection according to ID3 tags rather than file structure. Multiple parameters allowed.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artistId": {
+      "description": "The ID of an artist to star. Use this rather than `id` if the client accesses the media collection according to ID3 tags rather than file structure. Multiple parameters allowed.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": []
+}

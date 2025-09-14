@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The artist ID.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The artist, album or song ID.",
+      "type": "string"
+    },
+    "count": {
+      "description": "Max number of songs to return.",
+      "type": "integer",
+      "default": 50,
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

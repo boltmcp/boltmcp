@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A string which uniquely identifies the file (song) or folder (album/artist) to rate.",
+      "type": "string"
+    },
+    "rating": {
+      "description": "The rating between 1 and 5 (inclusive), or 0 to remove the rating.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "id",
+    "rating"
+  ]
+}

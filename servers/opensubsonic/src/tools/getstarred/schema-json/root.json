@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "musicFolderId": {
+      "description": "(Since 1.12.0) Only return albums in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

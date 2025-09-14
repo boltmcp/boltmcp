@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID for the station.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

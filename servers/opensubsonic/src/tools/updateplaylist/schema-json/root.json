@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "playlistId": {
+      "description": "The playlist ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The human-readable name of the playlist.",
+      "type": "string"
+    },
+    "comment": {
+      "description": "The playlist comment.",
+      "type": "string"
+    },
+    "public": {
+      "description": "`true` if the playlist should be visible to all users, `false` otherwise.",
+      "type": "boolean"
+    },
+    "songIdToAdd": {
+      "description": "Add this song with this ID to the playlist. Multiple parameters allowed.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "songIndexToRemove": {
+      "description": "Remove the song at this position in the playlist. Multiple parameters allowed.",
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    }
+  },
+  "required": [
+    "playlistId"
+  ]
+}

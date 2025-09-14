@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "playlistId": {
+      "description": "The playlist ID. Required if updating an existing playlist.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The human-readable name of the playlist. Required if creating a new playlist.",
+      "type": "string"
+    },
+    "songId": {
+      "description": "ID of a song in the playlist. Use one `songId` parameter for each song in the playlist.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": []
+}

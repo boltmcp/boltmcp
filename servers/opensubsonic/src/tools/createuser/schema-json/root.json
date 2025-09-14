@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "The name of the new user.",
+      "type": "string"
+    },
+    "password": {
+      "description": "The password of the new user, either in clear text of hex-encoded (see above).",
+      "type": "string"
+    },
+    "email": {
+      "description": "The email address of the new user.",
+      "type": "string"
+    },
+    "ldapAuthenticated": {
+      "description": "Whether the user is authenticated in LDAP.",
+      "type": "boolean",
+      "default": false
+    },
+    "adminRole": {
+      "description": "Whether the user is administrator.",
+      "type": "boolean",
+      "default": false
+    },
+    "settingsRole": {
+      "description": "Whether the user is allowed to change personal settings and password.",
+      "type": "boolean",
+      "default": true
+    },
+    "streamRole": {
+      "description": "Whether the user is allowed to play files.",
+      "type": "boolean",
+      "default": true
+    },
+    "jukeboxRole": {
+      "description": "Whether the user is allowed to play files in jukebox mode.",
+      "type": "boolean",
+      "default": false
+    },
+    "downloadRole": {
+      "description": "Whether the user is allowed to download files.",
+      "type": "boolean",
+      "default": false
+    },
+    "uploadRole": {
+      "description": "Whether the user is allowed to upload files.",
+      "type": "boolean",
+      "default": false
+    },
+    "playlistRole": {
+      "description": "Whether the user is allowed to create and delete playlists. Since 1.8.0, changing this role has no effect.",
+      "type": "boolean",
+      "default": false
+    },
+    "coverArtRole": {
+      "description": "Whether the user is allowed to change cover art and tags.",
+      "type": "boolean",
+      "default": false
+    },
+    "commentRole": {
+      "description": "Whether the user is allowed to create and edit comments and ratings.",
+      "type": "boolean",
+      "default": false
+    },
+    "podcastRole": {
+      "description": "Whether the user is allowed to administrate Podcasts.",
+      "type": "boolean",
+      "default": false
+    },
+    "shareRole": {
+      "description": "(Since 1.8.0) Whether the user is allowed to share files with anyone.",
+      "type": "boolean",
+      "default": false
+    },
+    "videoConversionRole": {
+      "description": "(Since 1.15.0) Whether the user is allowed to start video conversions.",
+      "type": "boolean",
+      "default": false
+    },
+    "musicFolderId": {
+      "description": "(Since 1.12.0) IDs of the music folders the user is allowed access to. Include the parameter once for each folder. Default all folders.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "username",
+    "password",
+    "email"
+  ]
+}

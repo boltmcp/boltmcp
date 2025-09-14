@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "The URL of the Podcast to add.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

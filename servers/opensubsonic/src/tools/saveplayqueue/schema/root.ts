@@ -1,0 +1,7 @@
+import { z } from "zod"
+
+export const inputParamsSchema = {
+  "id": z.string().describe("ID of a song in the play queue. Use one id parameter for each song in the play queue. Specify no IDs to clear").optional(),
+  "current": z.string().describe("The ID of the current playing song.  This is required if one or more IDs is provided.").optional(),
+  "position": z.number().int().gte(0).describe("The position in milliseconds within the currently playing song.").optional()
+}

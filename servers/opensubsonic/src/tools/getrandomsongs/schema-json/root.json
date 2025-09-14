@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "size": {
+      "description": "The maximum number of songs to return. Max 500.",
+      "type": "integer",
+      "default": 10,
+      "minimum": 0,
+      "maximum": 500
+    },
+    "genre": {
+      "description": "Only returns songs belonging to this genre.",
+      "type": "string"
+    },
+    "fromYear": {
+      "description": "(Since 1.9.0) Only return songs from this year or later.",
+      "type": "integer"
+    },
+    "toYear": {
+      "description": "Only return songs published before or in this year.",
+      "type": "integer"
+    },
+    "musicFolderId": {
+      "description": "Only return songs in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

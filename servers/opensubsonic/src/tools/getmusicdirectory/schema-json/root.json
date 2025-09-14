@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A string which uniquely identifies the music folder. Obtained by calls to `getIndexes` or `getMusicDirectory`.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

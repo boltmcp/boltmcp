@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the video.",
+      "type": "string"
+    },
+    "format": {
+      "description": "Preferred captions format (“srt” or “vtt”).",
+      "type": "string",
+      "enum": [
+        "srt",
+        "vtt"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

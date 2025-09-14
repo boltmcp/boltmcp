@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "artist": {
+      "description": "Artist to search for.",
+      "type": "string"
+    },
+    "album": {
+      "description": "Album to search for.",
+      "type": "string"
+    },
+    "title": {
+      "description": "Song title to search for.",
+      "type": "string"
+    },
+    "any": {
+      "description": "Searches all fields.",
+      "type": "boolean"
+    },
+    "count": {
+      "description": "Maximum number of results to return.",
+      "type": "integer",
+      "default": 20,
+      "minimum": 0
+    },
+    "offset": {
+      "description": "Search result offset. Used for paging.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "newerThan": {
+      "description": "Only return matches that are newer than this. Given as milliseconds since 1970.",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": []
+}

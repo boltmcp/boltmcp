@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "ID of the media file to bookmark. If a bookmark already exists for this file it will be overwritten.",
+      "type": "string"
+    },
+    "position": {
+      "description": "The position (in milliseconds) within the media file.",
+      "type": "integer"
+    },
+    "comment": {
+      "description": "A user-defined comment.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "position"
+  ]
+}

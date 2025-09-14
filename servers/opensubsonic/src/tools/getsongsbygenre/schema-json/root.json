@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "genre": {
+      "description": "The genre, as returned by `getGenres`.",
+      "type": "string"
+    },
+    "count": {
+      "description": "The maximum number of songs to return. Max 500.",
+      "type": "integer",
+      "default": 10,
+      "minimum": 0,
+      "maximum": 500
+    },
+    "offset": {
+      "description": "The offset. Useful if you want to page through the songs in a genre.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "musicFolderId": {
+      "description": "(Since 1.12.0) Only return albums in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "genre"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "(Since 1.9.0) If specified, only return the Podcast channel with this ID.",
+      "type": "string"
+    },
+    "includeEpisodes": {
+      "description": "(Since 1.9.0) Whether to include Podcast episodes in the returned result.",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": []
+}

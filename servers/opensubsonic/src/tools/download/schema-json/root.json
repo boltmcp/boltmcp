@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A string which uniquely identifies the file to stream. Obtained by calls to getMusicDirectory.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

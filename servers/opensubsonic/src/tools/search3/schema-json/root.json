@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "description": "Search query. Servers must support an empty query and return all the data to allow clients to properly access all the media information for offline sync.",
+      "type": "string"
+    },
+    "artistCount": {
+      "description": "Maximum number of artists to return.",
+      "type": "integer",
+      "default": 20,
+      "minimum": 0
+    },
+    "artistOffset": {
+      "description": "Search result offset for artists. Used for paging.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "albumCount": {
+      "description": "Maximum number of albums to return.",
+      "type": "integer",
+      "default": 20,
+      "minimum": 0
+    },
+    "albumOffset": {
+      "description": "Search result offset for albums. Used for paging.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "songCount": {
+      "description": "Maximum number of songs to return.",
+      "type": "integer",
+      "default": 20,
+      "minimum": 0
+    },
+    "songOffset": {
+      "description": "Search result offset for songs. Used for paging.",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "musicFolderId": {
+      "description": "(Since 1.12.0) Only return albums in the music folder with the given ID. See `getMusicFolders`.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "query"
+  ]
+}
