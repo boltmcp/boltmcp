@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "number"
+    },
+    "limit": {
+      "description": "Number of items per page",
+      "type": "number"
+    },
+    "sort": {
+      "description": "Sort by",
+      "type": "string",
+      "enum": [
+        "playtime",
+        "worth",
+        "balance",
+        "votes",
+        "kdr",
+        "deaths",
+        "kills"
+      ],
+      "default": "playtime"
+    },
+    "search": {
+      "description": "Search query for filtering",
+      "type": "string"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "number"
+    },
+    "limit": {
+      "description": "Number of items per page",
+      "type": "number"
+    },
+    "sort": {
+      "description": "Sort by ascending or descending",
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "DESC"
+    },
+    "search": {
+      "description": "Search query for filtering",
+      "type": "string"
+    }
+  },
+  "required": []
+}

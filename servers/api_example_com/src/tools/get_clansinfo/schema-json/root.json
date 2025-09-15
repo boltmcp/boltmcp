@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "tag": {
+      "description": "Clan tag",
+      "type": "string"
+    },
+    "sort": {
+      "description": "Sort by",
+      "type": "string",
+      "enum": [
+        "playtime",
+        "worth",
+        "balance",
+        "votes",
+        "kdr",
+        "deaths",
+        "kills"
+      ],
+      "default": "playtime"
+    }
+  },
+  "required": [
+    "tag"
+  ]
+}

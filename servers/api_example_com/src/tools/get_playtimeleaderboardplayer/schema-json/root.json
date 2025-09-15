@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "player": {
+      "description": "Player name",
+      "type": "string"
+    },
+    "sort": {
+      "description": "Sort by ascending or descending",
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "DESC"
+    }
+  },
+  "required": [
+    "player"
+  ]
+}

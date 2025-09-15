@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "page": {
+      "description": "Page number",
+      "type": "number"
+    },
+    "limit": {
+      "description": "Number of items per page",
+      "type": "number"
+    },
+    "sort": {
+      "description": "Sort by monthly or all time votes",
+      "type": "string",
+      "enum": [
+        "MonthTotal",
+        "AllTimeTotal"
+      ],
+      "default": "MonthTotal"
+    },
+    "search": {
+      "description": "Search query for filtering",
+      "type": "string"
+    }
+  },
+  "required": []
+}

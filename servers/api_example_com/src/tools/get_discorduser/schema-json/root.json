@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "player": {
+      "description": "Player name",
+      "type": "string"
+    }
+  },
+  "required": [
+    "player"
+  ]
+}
