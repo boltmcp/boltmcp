@@ -111,9 +111,12 @@ docker compose down
 
 ```bash
 docker compose down
+git pull
 docker compose pull
 docker compose up --wait
 ```
+
+> After pulling changes from GitHub, make sure your [.env](.env) file includes all variables defined in [.env.example](.env.example)
 
 ## Cleanup
 
