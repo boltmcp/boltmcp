@@ -11,9 +11,31 @@ This setup is only for local testing and not for production environments. Access
 
 Make sure Docker Desktop is open and running (or alternatively, have Docker Compose installed by other means).
 
-## Setup
+## Installation
 
-### 1. Download the application
+### 1. Set up your environment
+
+#### Create an environment file:
+
+```bash
+cp .env.example .env
+```
+
+#### Check the state of your `/etc/hosts`:
+
+```bash
+cat /etc/hosts
+```
+
+If it doesn't contain an entry for `host.docker.internal`, run the command below (requires password).
+
+```bash
+echo "\n127.0.0.1 host.docker.internal" | sudo tee -a /etc/hosts
+```
+
+> **Note**: This command adds a line to your `/etc/hosts` which tells your computer to resolve the hostname `host.docker.internal` to the localhost IP address `127.0.0.1`.
+
+### 2. Download the application
 
 #### Generate a personal access token (PAT)
 
@@ -38,28 +60,6 @@ docker login ghcr.io
 ```bash
 docker compose pull
 ```
-
-### 2. Set up your environment
-
-#### Create an environment file:
-
-```bash
-cp .env.example .env
-```
-
-#### Check the state of your `/etc/hosts`:
-
-```bash
-cat /etc/hosts
-```
-
-If it doesn't contain an entry for `host.docker.internal`, run the command below (requires password).
-
-```bash
-echo "\n127.0.0.1 host.docker.internal" | sudo tee -a /etc/hosts
-```
-
-> **Note**: This command adds a line to your `/etc/hosts` which tells your computer to resolve the hostname `host.docker.internal` to the localhost IP address `127.0.0.1`.
 
 ### 3. Set up the identity provider
 
