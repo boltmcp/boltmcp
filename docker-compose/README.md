@@ -129,7 +129,7 @@ docker compose down --volumes --rmi all
 
 ### Images fail to pull
 
-If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have succesfully [authenticated with docker](#docker-login).
+If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have succesfully [authenticated with docker](#authenticate-docker-with-ghcr).
 
 ### Port conflicts
 
@@ -137,4 +137,4 @@ If you get port conflict errors, make sure ports `3000`, `3001`, and `8080` are 
 
 ### Database connection errors
 
-If services fail to connect to the database, ensure all required environment variables are set correctly in your `.env` file.
+If services fail to connect to the database, ensure all required environment variables are set correctly in your [.env](.env) file.
