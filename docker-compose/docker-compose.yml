@@ -1,0 +1,93 @@
+services:
+  database:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=${DB_NAME:?}
+      - POSTGRES_USER=${DB_USER:?}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:?}
+    volumes:
+      - postgres_data:${POSTGRES_DATA_PATH}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  migrate:
+    image: ghcr.io/boltmcp/boltmcp-platform-migrate:latest
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:?}
+      - DB_USER=${DB_USER:?}
+      - DB_PASSWORD=${DB_PASSWORD:?}
+    restart: "no"
+  web:
+    image: ghcr.io/boltmcp/boltmcp-platform-web:latest
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      keycloak:
+        condition: service_healthy
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:?}
+      - DB_USER=${DB_USER:?}
+      - DB_PASSWORD=${DB_PASSWORD:?}
+      - SPECS_STORAGE_PATH=${SPECS_STORAGE_PATH:?}
+      - OIDC_PROVIDER=${OIDC_PROVIDER:?}
+      - OIDC_ISSUER_URL=${OIDC_ISSUER_URL:?}
+      - OIDC_CLIENT_ID=${OIDC_CLIENT_ID:?}
+      - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET:?}
+      - AUTH_SECRET=${AUTH_SECRET:?}
+      - NEXTAUTH_URL=${NEXTAUTH_URL:?}
+      - AUTH_URL=${AUTH_URL:?}
+    ports:
+      - "3000:3000"
+  mcp-server:
+    image: ghcr.io/boltmcp/boltmcp-platform-mcp-server:latest
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:?}
+      - DB_USER=${DB_USER:?}
+      - DB_PASSWORD=${DB_PASSWORD:?}
+      - PORT=3001
+    ports:
+      - "3001:3001"
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.1-0
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://database:5432/${DB_NAME:?}
+      - KC_DB_USERNAME=${DB_USER:?}
+      - KC_DB_PASSWORD=${DB_PASSWORD:?}
+      - KC_HOSTNAME=${KEYCLOAK_HOSTNAME:-localhost}
+      - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN_USERNAME:-admin}
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:?}
+      - KC_HEALTH_ENABLED=true
+      - KC_METRICS_ENABLED=true
+    ports:
+      - "8080:8080"
+    command: start-dev
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "exec 3<>/dev/tcp/127.0.0.1/9000 && echo -e 'GET /health/ready HTTP/1.1\\r\\nhost: 127.0.0.1\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '\"status\": *\"UP\"'",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+volumes:
+  postgres_data:
