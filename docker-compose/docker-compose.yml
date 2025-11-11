@@ -45,6 +45,8 @@ services:
       - AUTH_SECRET=${AUTH_SECRET:?}
       - NEXTAUTH_URL=${NEXTAUTH_URL:?}
       - AUTH_URL=${AUTH_URL:?}
+      - MCP_SERVER_BASE_URL=${MCP_SERVER_BASE_URL:?}
+      - MCP_CLIENT_BASE_URL=${MCP_CLIENT_BASE_URL:?}
     ports:
       - "3000:3000"
   mcp-server:
@@ -76,6 +78,7 @@ services:
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:?}
       - KC_HEALTH_ENABLED=true
       - KC_METRICS_ENABLED=true
+      # - KC_DB_SCHEMA=keycloak
     ports:
       - "8080:8080"
     command: start-dev
@@ -85,5 +88,24 @@ services:
       timeout: 5s
       retries: 10
       start_period: 60s
+  mcp-client:
+    build: ./boltmcp-playground
+    depends_on:
+      keycloak:
+        condition: service_healthy
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:?}
+    ports:
+      - "3002:3002"
+      # mcp-inspector:
+      #   image: ghcr.io/modelcontextprotocol/inspector:latest
+      #   ports:
+      #     - "6274:6274"
+      #     - "6277:6277"
+      #   environment:
+      #     - HOST=0.0.0.0
+      #     - ALLOWED_ORIGINS=http://0.0.0.0:6274,http://localhost:6274
+      #     - MCP_AUTO_OPEN_ENABLED=false
+      #     - MCP_PROXY_AUTH_TOKEN=abc123
 volumes:
   postgres_data:
