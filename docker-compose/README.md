@@ -89,7 +89,7 @@ docker compose up keycloak --wait
   - Copy the **Client Secret**
   - Paste it into [.env](.env) as the value of the `OIDC_CLIENT_SECRET` variable
 
-## Run BoltMCP
+## Start the application
 
 After completing the setup above, run all the services:
 
@@ -109,14 +109,31 @@ docker compose down
 
 ## Update to a newer version
 
+First stop the application:
+
 ```bash
 docker compose down
-git pull
-docker compose pull
-docker compose up --wait
 ```
 
-> After pulling changes from GitHub, make sure your [.env](.env) file includes all variables defined in [.env.example](.env.example)
+Then pull the latest configuration:
+
+```bash
+git pull
+```
+
+Check if you have any missing or redundant environment variables:
+
+```bash
+diff .env.example .env
+```
+
+Update [.env](.env) as required.
+
+Finally, start the application:
+
+```bash
+docker compose up --wait
+```
 
 ## Cleanup
 
