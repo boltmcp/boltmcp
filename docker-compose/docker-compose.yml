@@ -46,7 +46,9 @@ services:
       - NEXTAUTH_URL=${NEXTAUTH_URL:?}
       - AUTH_URL=${AUTH_URL:?}
       - MCP_SERVER_BASE_URL=${MCP_SERVER_BASE_URL:?}
-      - MCP_CLIENT_BASE_URL=${MCP_CLIENT_BASE_URL:?}
+      - PLAYGROUND_BASE_URL=${PLAYGROUND_BASE_URL:?}
+      - MCP_INSPECTOR_BASE_URL=${MCP_INSPECTOR_BASE_URL:?}
+      - MCP_INSPECTOR_PROXY_AUTH_TOKEN=${MCP_INSPECTOR_PROXY_AUTH_TOKEN:?}
     ports:
       - "3000:3000"
   mcp-server:
@@ -58,9 +60,15 @@ services:
       - DB_HOST=database
       - DB_PORT=5432
       - DB_NAME=${DB_NAME:?}
-      - DB_USER=${DB_USER:?}
-      - DB_PASSWORD=${DB_PASSWORD:?}
+      - DB_USER=${MCP_SERVER_DB_USER:?}
+      - DB_PASSWORD=${MCP_SERVER_DB_PASSWORD:?}
       - PORT=3001
+      - MCP_SERVER_BASE_URL=${MCP_SERVER_BASE_URL:?}
+      - AUTH_HOST=${KEYCLOAK_HOSTNAME:?}
+      - AUTH_PORT=8080
+      - AUTH_REALM=master
+      - OAUTH_CLIENT_ID=${MCP_SERVER_AUTH_CLIENT_ID:?}
+      - OAUTH_CLIENT_SECRET=${MCP_SERVER_AUTH_CLIENT_SECRET:?}
     ports:
       - "3001:3001"
   keycloak:
@@ -73,8 +81,8 @@ services:
       - KC_DB_URL=jdbc:postgresql://database:5432/${DB_NAME:?}
       - KC_DB_USERNAME=${DB_USER:?}
       - KC_DB_PASSWORD=${DB_PASSWORD:?}
-      - KC_HOSTNAME=${KEYCLOAK_HOSTNAME:-localhost}
-      - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN_USERNAME:-admin}
+      - KC_HOSTNAME=${KEYCLOAK_HOSTNAME:?}
+      - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN_USERNAME:?}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:?}
       - KC_HEALTH_ENABLED=true
       - KC_METRICS_ENABLED=true
@@ -89,23 +97,35 @@ services:
       retries: 10
       start_period: 60s
   mcp-client:
-    build: ./boltmcp-playground
+    image: ghcr.io/boltmcp/boltmcp-platform-mcp-client:latest
     depends_on:
       keycloak:
         condition: service_healthy
     environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY:?}
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:?}
+      - DB_SCHEMA=${PLAYGROUND_DB_SCHEMA:?}
+      - DB_USER=${PLAYGROUND_DB_USER:?}
+      - DB_PASSWORD=${PLAYGROUND_DB_PASSWORD:?}
+      - BETTER_AUTH_SECRET=${PLAYGROUND_BETTER_AUTH_SECRET:?}
+      - BETTER_AUTH_URL=${PLAYGROUND_BASE_URL:?}
+      - AUTH_ISSUER_URL=${OIDC_ISSUER_URL:?}
+      - AUTH_CLIENT_ID=${PLAYGROUND_AUTH_CLIENT_ID:?}
+      - AUTH_CLIENT_SECRET=${PLAYGROUND_AUTH_CLIENT_SECRET:?}
+      - MCP_SERVER_BASE_URL=${MCP_SERVER_BASE_URL:?}
+      - OPENAI_API_KEY=${PLAYGROUND_OPENAI_API_KEY:?}
     ports:
       - "3002:3002"
-      # mcp-inspector:
-      #   image: ghcr.io/modelcontextprotocol/inspector:latest
-      #   ports:
-      #     - "6274:6274"
-      #     - "6277:6277"
-      #   environment:
-      #     - HOST=0.0.0.0
-      #     - ALLOWED_ORIGINS=http://0.0.0.0:6274,http://localhost:6274
-      #     - MCP_AUTO_OPEN_ENABLED=false
-      #     - MCP_PROXY_AUTH_TOKEN=abc123
+  mcp-inspector:
+    image: ghcr.io/modelcontextprotocol/inspector:0.17.2
+    ports:
+      - "6274:6274"
+      - "6277:6277"
+    environment:
+      - HOST=0.0.0.0
+      - MCP_PROXY_AUTH_TOKEN=${MCP_INSPECTOR_PROXY_AUTH_TOKEN:?}
+      - ALLOWED_ORIGINS=http://0.0.0.0:6274,http://localhost:6274,http://host.docker.internal:6274
+      - MCP_AUTO_OPEN_ENABLED=false
 volumes:
   postgres_data:
