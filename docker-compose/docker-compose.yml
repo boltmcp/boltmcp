@@ -3,17 +3,28 @@ services:
     image: postgres:15-alpine
     environment:
       - POSTGRES_DB=${DB_NAME:?}
-      - POSTGRES_USER=${DB_USER:?}
-      - POSTGRES_PASSWORD=${DB_PASSWORD:?}
+      - POSTGRES_USER=${DB_SUPERUSER_USER:?}
+      - POSTGRES_PASSWORD=${DB_SUPERUSER_PASSWORD:?}
+      - BOLTMCP_INIT_PLATFORM_USER=${DB_PLATFORM_USER:?}
+      - BOLTMCP_INIT_PLATFORM_PASSWORD=${DB_PLATFORM_PASSWORD:?}
+      - BOLTMCP_INIT_MCP_SERVER_USER=${DB_MCP_SERVER_USER:?}
+      - BOLTMCP_INIT_MCP_SERVER_PASSWORD=${DB_MCP_SERVER_PASSWORD:?}
+      - BOLTMCP_INIT_PLAYGROUND_SCHEMA=${DB_PLAYGROUND_SCHEMA:?}
+      - BOLTMCP_INIT_PLAYGROUND_USER=${DB_PLAYGROUND_USER:?}
+      - BOLTMCP_INIT_PLAYGROUND_PASSWORD=${DB_PLAYGROUND_PASSWORD:?}
+      - BOLTMCP_INIT_KEYCLOAK_SCHEMA=${DB_KEYCLOAK_SCHEMA:?}
+      - BOLTMCP_INIT_KEYCLOAK_USER=${DB_KEYCLOAK_USER:?}
+      - BOLTMCP_INIT_KEYCLOAK_PASSWORD=${DB_KEYCLOAK_PASSWORD:?}
     volumes:
       - postgres_data:${POSTGRES_DATA_PATH}
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_SUPERUSER_USER} -d ${DB_NAME}"]
       interval: 5s
       timeout: 5s
       retries: 5
   migrate:
-    image: ghcr.io/boltmcp/boltmcp-platform-migrate:latest
+    image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-migrate:latest
     depends_on:
       database:
         condition: service_healthy
@@ -21,11 +32,29 @@ services:
       - DB_HOST=database
       - DB_PORT=5432
       - DB_NAME=${DB_NAME:?}
-      - DB_USER=${DB_USER:?}
-      - DB_PASSWORD=${DB_PASSWORD:?}
+      - DB_USER=${DB_PLATFORM_USER:?}
+      - DB_PASSWORD=${DB_PLATFORM_PASSWORD:?}
+    restart: "no"
+  playground-migrate:
+    image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-playground-migrate:latest
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:?}
+      - DB_SCHEMA=${DB_PLAYGROUND_SCHEMA:?}
+      - DB_USER=${DB_PLAYGROUND_USER:?}
+      - DB_PASSWORD=${DB_PLAYGROUND_PASSWORD:?}
+      - AUTH_ISSUER_URL=${OIDC_ISSUER_URL:?}
+      - BETTER_AUTH_SECRET=${PLAYGROUND_BETTER_AUTH_SECRET:?}
+      - BETTER_AUTH_URL=${PLAYGROUND_BASE_URL:?}
+      - AUTH_CLIENT_ID=${PLAYGROUND_AUTH_CLIENT_ID:?}
+      - AUTH_CLIENT_SECRET=${PLAYGROUND_AUTH_CLIENT_SECRET:?}
     restart: "no"
   web:
-    image: ghcr.io/boltmcp/boltmcp-platform-web:latest
+    image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-web:latest
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -35,8 +64,8 @@ services:
       - DB_HOST=database
       - DB_PORT=5432
       - DB_NAME=${DB_NAME:?}
-      - DB_USER=${DB_USER:?}
-      - DB_PASSWORD=${DB_PASSWORD:?}
+      - DB_USER=${DB_PLATFORM_USER:?}
+      - DB_PASSWORD=${DB_PLATFORM_PASSWORD:?}
       - SPECS_STORAGE_PATH=${SPECS_STORAGE_PATH:?}
       - OIDC_PROVIDER=${OIDC_PROVIDER:?}
       - OIDC_ISSUER_URL=${OIDC_ISSUER_URL:?}
@@ -52,7 +81,7 @@ services:
     ports:
       - "3000:3000"
   mcp-server:
-    image: ghcr.io/boltmcp/boltmcp-platform-mcp-server:latest
+    image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-mcp-server:latest
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -60,8 +89,8 @@ services:
       - DB_HOST=database
       - DB_PORT=5432
       - DB_NAME=${DB_NAME:?}
-      - DB_USER=${MCP_SERVER_DB_USER:?}
-      - DB_PASSWORD=${MCP_SERVER_DB_PASSWORD:?}
+      - DB_USER=${DB_MCP_SERVER_USER:?}
+      - DB_PASSWORD=${DB_MCP_SERVER_PASSWORD:?}
       - PORT=3001
       - MCP_SERVER_BASE_URL=${MCP_SERVER_BASE_URL:?}
       - AUTH_HOST=${KEYCLOAK_HOSTNAME:?}
@@ -79,14 +108,14 @@ services:
     environment:
       - KC_DB=postgres
       - KC_DB_URL=jdbc:postgresql://database:5432/${DB_NAME:?}
-      - KC_DB_USERNAME=${DB_USER:?}
-      - KC_DB_PASSWORD=${DB_PASSWORD:?}
+      - KC_DB_SCHEMA=${DB_KEYCLOAK_SCHEMA:?}
+      - KC_DB_USERNAME=${DB_KEYCLOAK_USER:?}
+      - KC_DB_PASSWORD=${DB_KEYCLOAK_PASSWORD:?}
       - KC_HOSTNAME=${KEYCLOAK_HOSTNAME:?}
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN_USERNAME:?}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:?}
       - KC_HEALTH_ENABLED=true
       - KC_METRICS_ENABLED=true
-      # - KC_DB_SCHEMA=keycloak
     ports:
       - "8080:8080"
     command: start-dev
@@ -96,18 +125,20 @@ services:
       timeout: 5s
       retries: 10
       start_period: 60s
-  mcp-client:
-    image: ghcr.io/boltmcp/boltmcp-platform-mcp-client:latest
+  playground:
+    image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-playground:latest
     depends_on:
+      playground-migrate:
+        condition: service_completed_successfully
       keycloak:
         condition: service_healthy
     environment:
       - DB_HOST=database
       - DB_PORT=5432
       - DB_NAME=${DB_NAME:?}
-      - DB_SCHEMA=${PLAYGROUND_DB_SCHEMA:?}
-      - DB_USER=${PLAYGROUND_DB_USER:?}
-      - DB_PASSWORD=${PLAYGROUND_DB_PASSWORD:?}
+      - DB_SCHEMA=${DB_PLAYGROUND_SCHEMA:?}
+      - DB_USER=${DB_PLAYGROUND_USER:?}
+      - DB_PASSWORD=${DB_PLAYGROUND_PASSWORD:?}
       - BETTER_AUTH_SECRET=${PLAYGROUND_BETTER_AUTH_SECRET:?}
       - BETTER_AUTH_URL=${PLAYGROUND_BASE_URL:?}
       - AUTH_ISSUER_URL=${OIDC_ISSUER_URL:?}

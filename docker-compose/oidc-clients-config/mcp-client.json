@@ -1,0 +1,14 @@
+{
+  "clientId": "boltmcp-mcp-client",
+  "name": "MCP Client",
+  "redirectUris": ["*"],
+  "webOrigins": ["*"],
+  "protocol": "openid-connect",
+  "enabled": true,
+  "publicClient": false,
+  "serviceAccountsEnabled": false,
+  "directAccessGrantsEnabled": false,
+  "consentRequired": true,
+  "standardFlowEnabled": true,
+  "frontchannelLogout": true
+}
