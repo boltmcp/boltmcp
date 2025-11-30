@@ -53,7 +53,7 @@ cat ./key.json | docker --config ./docker-profile login \
 #### Pull images
 
 ```bash
-docker compose pull
+docker --config ./docker-profile compose pull
 ```
 
 ### 3. Set up the identity provider
@@ -63,7 +63,7 @@ docker compose pull
 We'll use Keycloak as our identity provider (IdP) to authenticate users of BoltMCP.
 
 ```bash
-docker compose up keycloak --wait
+docker --config ./docker-profile compose up keycloak --wait
 ```
 
 #### Create OIDC clients
@@ -117,7 +117,7 @@ Copy and paste the client id and secret to the values of `PLAYGROUND_AUTH_CLIENT
 After completing the setup above, run all the services:
 
 ```bash
-docker compose up --wait
+docker --config ./docker-profile compose up --wait
 ```
 
 Now you can open [http://host.docker.internal:3000](http://host.docker.internal:3000) and sign in.
@@ -127,7 +127,7 @@ Now you can open [http://host.docker.internal:3000](http://host.docker.internal:
 ## Stop the application
 
 ```bash
-docker compose down
+docker --config ./docker-profile down
 ```
 
 ## Update to a newer version
@@ -135,7 +135,7 @@ docker compose down
 First stop the application:
 
 ```bash
-docker compose down
+docker --config ./docker-profile compose down
 ```
 
 Then pull the latest configuration:
@@ -155,7 +155,7 @@ Update [.env](.env) as required.
 Finally, start the application:
 
 ```bash
-docker compose up --wait
+docker --config ./docker-profile compose up --wait
 ```
 
 ## Cleanup
@@ -163,7 +163,7 @@ docker compose up --wait
 To stop the application and remove the persisted data and all downloaded images:
 
 ```bash
-docker compose down --volumes --rmi all
+docker --config ./docker-profile compose down --volumes --rmi all
 ```
 
 > **Warning**: This will delete all your BoltMCP data.
