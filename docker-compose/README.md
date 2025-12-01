@@ -96,13 +96,17 @@ OIDC_MCP_CLIENT_CLIENT_ID="..."
 OIDC_MCP_CLIENT_CLIENT_SECRET="..."
 ```
 
-#### Set admin user email
+#### Update admin user
 
-Finally we'll give our admin user a placeholder email address. For good practice we recommend replacing `you@example.com` in this command with an email address that you own.
+Finally we'll give our admin user a placeholder email address and name:
 
 ```bash
-./keycloak/set-user-email.sh admin you@example.com
+./keycloak/update-user.sh admin \
+  --email "you@example.com" \
+  --firstName "You"
 ```
+
+> Replace the values of `email` and `firstName` with your actual email address and name
 
 ## Start the application
 

@@ -13,17 +13,50 @@ error_exit() {
 }
 
 # Parse arguments
-USERNAME="${1}"
-EMAIL="${2}"
+USERNAME=""
+EMAIL=""
+FIRST_NAME=""
 
-# Validate arguments
-if [ -z "$USERNAME" ] || [ -z "$EMAIL" ]; then
-    error_exit "Username and email are required.\nUsage: $0 <username> <email>"
+# First positional argument is username
+if [ -n "$1" ] && [[ ! "$1" =~ ^-- ]]; then
+    USERNAME="$1"
+    shift
 fi
 
-echo -e "${GREEN}Setting email for user...${NC}\n"
+# Parse flag arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --email)
+            EMAIL="$2"
+            shift 2
+            ;;
+        --firstName)
+            FIRST_NAME="$2"
+            shift 2
+            ;;
+        *)
+            error_exit "Unknown option: $1\nUsage: $0 <username> --email <email> --firstName <firstName>"
+            ;;
+    esac
+done
+
+# Validate arguments
+if [ -z "$USERNAME" ]; then
+    error_exit "Username is required.\nUsage: $0 <username> --email <email> --firstName <firstName>"
+fi
+
+if [ -z "$EMAIL" ]; then
+    error_exit "Email is required (use --email flag).\nUsage: $0 <username> --email <email> --firstName <firstName>"
+fi
+
+if [ -z "$FIRST_NAME" ]; then
+    error_exit "First name is required (use --firstName flag).\nUsage: $0 <username> --email <email> --firstName <firstName>"
+fi
+
+echo -e "${GREEN}Updating user information...${NC}\n"
 echo "Username: $USERNAME"
 echo "Email: $EMAIL"
+echo "First Name: $FIRST_NAME"
 echo ""
 
 # Check if .env file exists
@@ -73,19 +106,21 @@ fi
 
 echo -e "${GREEN}Found user with ID: ${USER_ID}${NC}\n"
 
-# Update user email and set emailVerified to true
-echo "Updating user email..."
+# Update user email, firstName, and set emailVerified to true
+echo "Updating user information..."
 UPDATE_OUTPUT=$(docker compose exec keycloak /opt/keycloak/bin/kcadm.sh update users/"$USER_ID" \
     -s email="$EMAIL" \
-    -s emailVerified=true 2>&1)
+    -s emailVerified=true \
+    -s firstName="$FIRST_NAME" 2>&1)
 
 UPDATE_EXIT_CODE=$?
 
 if [ $UPDATE_EXIT_CODE -ne 0 ]; then
-    error_exit "Failed to update user email. Output:\n$UPDATE_OUTPUT"
+    error_exit "Failed to update user. Output:\n$UPDATE_OUTPUT"
 fi
 
-echo -e "${GREEN}✓ Email updated successfully!${NC}\n"
+echo -e "${GREEN}✓ User updated successfully!${NC}\n"
 echo "User: $USERNAME"
+echo -e "First name: ${YELLOW}${FIRST_NAME}${NC}"
 echo -e "New email: ${YELLOW}${EMAIL}${NC}"
 echo -e "Email verified: ${YELLOW}true${NC}"
