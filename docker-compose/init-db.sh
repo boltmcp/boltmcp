@@ -48,6 +48,12 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     ALTER DEFAULT PRIVILEGES IN SCHEMA ${BOLTMCP_INIT_PLAYGROUND_SCHEMA} GRANT ALL PRIVILEGES ON TABLES TO ${BOLTMCP_INIT_PLAYGROUND_USER};
     ALTER DEFAULT PRIVILEGES IN SCHEMA ${BOLTMCP_INIT_PLAYGROUND_SCHEMA} GRANT ALL PRIVILEGES ON SEQUENCES TO ${BOLTMCP_INIT_PLAYGROUND_USER};
     ALTER USER ${BOLTMCP_INIT_PLAYGROUND_USER} SET search_path TO ${BOLTMCP_INIT_PLAYGROUND_SCHEMA}, public;
+    -- Grant playground user SELECT access to public schema (same as mcp_server user)
+    GRANT USAGE ON SCHEMA public TO ${BOLTMCP_INIT_PLAYGROUND_USER};
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO ${BOLTMCP_INIT_PLAYGROUND_USER};
+    GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO ${BOLTMCP_INIT_PLAYGROUND_USER};
+    ALTER DEFAULT PRIVILEGES FOR ROLE ${BOLTMCP_INIT_PLATFORM_USER} IN SCHEMA public GRANT SELECT ON TABLES TO ${BOLTMCP_INIT_PLAYGROUND_USER};
+    ALTER DEFAULT PRIVILEGES FOR ROLE ${BOLTMCP_INIT_PLATFORM_USER} IN SCHEMA public GRANT SELECT ON SEQUENCES TO ${BOLTMCP_INIT_PLAYGROUND_USER};
 
     -- Create keycloak user with dedicated schema
     CREATE USER ${BOLTMCP_INIT_KEYCLOAK_USER} WITH PASSWORD '${BOLTMCP_INIT_KEYCLOAK_PASSWORD}';
@@ -96,5 +102,5 @@ EOSQL
 #   Schema Design Choices:
 
 #   - Platform & MCP Server: Use the public schema (PostgreSQL's default schema), so they share the same tables and can interact with the same data
-#   - Playground: Has its own dedicated schema (boltmcp_playground) to isolate its data
+#   - Playground: Has its own dedicated schema (boltmcp_playground) to isolate its data, but can also select from the public schema
 #   - Keycloak: Has its own dedicated schema (boltmcp_keycloak) to isolate authentication data from application data
