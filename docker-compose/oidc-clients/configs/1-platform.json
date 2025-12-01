@@ -1,0 +1,14 @@
+{
+  "clientId": "boltmcp-platform-1",
+  "name": "BoltMCP Platform",
+  "rootUrl": "http://host.docker.internal:3000",
+  "redirectUris": ["/api/auth/callback/keycloak"],
+  "protocol": "openid-connect",
+  "enabled": true,
+  "publicClient": false,
+  "serviceAccountsEnabled": false,
+  "directAccessGrantsEnabled": false,
+  "consentRequired": false,
+  "standardFlowEnabled": true,
+  "frontchannelLogout": true
+}

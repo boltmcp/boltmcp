@@ -1,0 +1,13 @@
+{
+  "clientId": "boltmcp-mcp-server-1",
+  "name": "MCP Server",
+  "rootUrl": "http://host.docker.internal:3001",
+  "protocol": "openid-connect",
+  "enabled": true,
+  "publicClient": false,
+  "serviceAccountsEnabled": false,
+  "directAccessGrantsEnabled": false,
+  "consentRequired": true,
+  "standardFlowEnabled": true,
+  "frontchannelLogout": true
+}

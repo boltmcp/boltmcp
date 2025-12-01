@@ -3,4 +3,4 @@
 !.env.example
 
 *.json
-!oidc-clients-config/*.json
+!oidc-clients/configs/*.json
