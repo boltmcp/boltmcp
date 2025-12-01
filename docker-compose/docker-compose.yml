@@ -47,11 +47,6 @@ services:
       - DB_SCHEMA=${DB_PLAYGROUND_SCHEMA:?}
       - DB_USER=${DB_PLAYGROUND_USER:?}
       - DB_PASSWORD=${DB_PLAYGROUND_PASSWORD:?}
-      - AUTH_ISSUER_URL=${OIDC_ISSUER_URL:?}
-      - BETTER_AUTH_SECRET=${PLAYGROUND_BETTER_AUTH_SECRET:?}
-      - BETTER_AUTH_URL=${PLAYGROUND_BASE_URL:?}
-      - AUTH_CLIENT_ID=${OIDC_MCP_CLIENT_CLIENT_ID:?}
-      - AUTH_CLIENT_SECRET=${OIDC_MCP_CLIENT_CLIENT_SECRET:?}
     restart: "no"
   web:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-web:latest

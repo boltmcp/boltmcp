@@ -179,7 +179,7 @@ docker logout https://europe-west2-docker.pkg.dev
 
 ### Images fail to pull
 
-If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have succesfully [authenticated with docker](#authenticate-docker-with-ghcr).
+If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have succesfully [authenticated with docker](#authenticate-docker).
 
 ### Port conflicts
 
