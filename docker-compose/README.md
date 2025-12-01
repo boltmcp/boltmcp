@@ -40,7 +40,7 @@ If it doesn't contain an entry for `host.docker.internal`, run the command below
 printf "\n127.0.0.1 host.docker.internal\n" | sudo tee -a /etc/hosts
 ```
 
-> **Note**: This command adds a line to your `/etc/hosts` which tells your computer to resolve the hostname `host.docker.internal` to the localhost IP address `127.0.0.1`.
+> This command adds a line to your `/etc/hosts` which tells your computer to resolve the hostname `host.docker.internal` to the localhost IP address `127.0.0.1`.
 
 ### 2. Download the application
 
@@ -83,6 +83,8 @@ This will create three clients in Keycloak:
 - One client for the MCP server to validate tokens
 - One client for MCP Clients to connect to, including the inspector and the playground
 
+#### Update environment variables
+
 Copy and paste the client IDs and secrets from the command above to the following variables in your [.env](.env):
 
 ```bash
@@ -98,7 +100,7 @@ OIDC_MCP_CLIENT_CLIENT_SECRET="..."
 
 #### Update admin user
 
-Finally we'll give our admin user a placeholder email address and name:
+Finally, we'll give our admin user a placeholder email address and name:
 
 ```bash
 ./keycloak/update-user.sh admin \
@@ -123,7 +125,7 @@ Now you can open [http://host.docker.internal:3000](http://host.docker.internal:
 
 > These credentials are defined under "Keycloak" in [.env](.env)
 
-> **Note**: BoltMCP uses Single Sign-On (SSO), meaning you don't need to provide credentials when signing in if your browser is already signed-in to the identity provider.
+> BoltMCP uses Single Sign-On (SSO), meaning you don't need to provide credentials when signing in if your browser is already signed-in to the identity provider.
 
 ## Stop the application
 
@@ -174,6 +176,8 @@ To remove your alpha tester credentials from your docker config:
 ```bash
 docker logout https://europe-west2-docker.pkg.dev
 ```
+
+Finally, you might choose to remove the line `127.0.0.1 host.docker.internal` from your `/etc/hosts`.
 
 ## Troubleshooting
 
