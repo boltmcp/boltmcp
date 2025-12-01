@@ -3,4 +3,4 @@
 !.env.example
 
 *.json
-!oidc-clients/configs/*.json
+!keycloak/clients/*.json

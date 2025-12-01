@@ -13,6 +13,13 @@ Make sure Docker Desktop is open and running (or alternatively, have Docker Comp
 
 ## Installation
 
+Clone this repository and navigate to the `docker-compose` directory:
+
+```bash
+git clone https://github.com/boltmcp/boltmcp.git
+cd boltmcp/docker-compose
+```
+
 ### 1. Set up your environment
 
 #### Create an environment file:
@@ -67,7 +74,7 @@ docker compose up keycloak --wait
 #### Create OIDC clients
 
 ```bash
-./oidc-clients/create-clients.sh ./oidc-clients/configs
+./keycloak/create-clients.sh ./keycloak/clients
 ```
 
 This will create three clients in Keycloak:
@@ -89,15 +96,28 @@ OIDC_MCP_CLIENT_CLIENT_ID="..."
 OIDC_MCP_CLIENT_CLIENT_SECRET="..."
 ```
 
+#### Set admin user email
+
+Finally we'll give our admin user a placeholder email address. For good practice we recommend replacing `you@example.com` in this command with an email address that you own.
+
+```bash
+./keycloak/set-user-email.sh admin you@example.com
+```
+
 ## Start the application
 
-After completing the setup above, run all the services:
+After completing the installation steps above, run all the services:
 
 ```bash
 docker compose up --wait
 ```
 
-Now you can open [http://host.docker.internal:3000](http://host.docker.internal:3000) and sign in.
+Now you can open [http://host.docker.internal:3000](http://host.docker.internal:3000) and sign in:
+
+- **Username**: `admin`
+- **Password**: `password`
+
+> These credentials are defined under "Keycloak" in [.env](.env)
 
 > **Note**: BoltMCP uses Single Sign-On (SSO), meaning you don't need to provide credentials when signing in if your browser is already signed-in to the identity provider.
 
@@ -165,14 +185,34 @@ If you get port conflict errors, make sure the following ports are not already i
 
 If services fail to connect to the database, ensure all required environment variables are set correctly in your [.env](.env) file.
 
-## Example: creating an OIDC client manually
+## Configuring Keycloak
 
-- Visit [http://host.docker.internal:8080](http://host.docker.internal:8080) and sign in:
-  - **Username**: `admin`
-  - **Password**: `password` (or whatever credentials are specified in [.env](.env))
+Visit [http://host.docker.internal:8080](http://host.docker.internal:8080) and sign in:
+
+- **Username**: `admin`
+- **Password**: `password`
+
+> These credentials are defined under "Keycloak" in [.env](.env)
+
+### Example: creating a client scope:
+
+- Click **Client scopes** then **Create client scope**:
+  - **Name**: `mcp:my-server`
+  - Toggle on **Display on consent screen**
+  - Toggle on **Include in token scope**
+- Click **Save** then click **Mappers**:
+  - Click **Configure a new mapper > Audience**
+  - **Name**: `audience-config`
+  - **Included Custom Audience**: `http://host.docker.internal:3001/my-server/mcp`
+- Click **Clients > boltmcp-mcp-client > Client scopes > Add client scope**
+  - Check `mcp:my-server`
+  - Click `Add > Optional`
+
+### Example: creating an OIDC client:
+
 - Click **Clients** then **Create client**:
   - **Client type**: `OpenID Connect`
-  - **Client ID**: `boltmcp-platform`
+  - **Client ID**: `my-client`
 - Click **Next**
   - Toggle on **Client authentication**
   <!-- - **PKCE Method**: `S256` -->

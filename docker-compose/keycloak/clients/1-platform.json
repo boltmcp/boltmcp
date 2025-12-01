@@ -1,13 +1,14 @@
 {
-  "clientId": "boltmcp-mcp-server-1",
-  "name": "MCP Server",
-  "rootUrl": "http://host.docker.internal:3001",
+  "clientId": "boltmcp-platform",
+  "name": "BoltMCP Platform",
+  "rootUrl": "http://host.docker.internal:3000",
+  "redirectUris": ["/api/auth/callback/keycloak"],
   "protocol": "openid-connect",
   "enabled": true,
   "publicClient": false,
   "serviceAccountsEnabled": false,
   "directAccessGrantsEnabled": false,
-  "consentRequired": true,
+  "consentRequired": false,
   "standardFlowEnabled": true,
   "frontchannelLogout": true
 }

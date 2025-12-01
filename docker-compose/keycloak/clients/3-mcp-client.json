@@ -1,5 +1,5 @@
 {
-  "clientId": "boltmcp-mcp-client-1",
+  "clientId": "boltmcp-mcp-client",
   "name": "MCP Client",
   "redirectUris": ["*"],
   "webOrigins": ["*"],
