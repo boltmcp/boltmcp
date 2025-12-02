@@ -1,5 +1,10 @@
+x-host-access: &host-access
+  extra_hosts:
+    # This is necessary for Linux + plain Docker Engine without Docker Desktop
+    - "host.docker.internal:host-gateway"
 services:
   database:
+    !!merge <<: *host-access
     image: postgres:15-alpine
     environment:
       - POSTGRES_DB=${DB_NAME:?}
@@ -25,6 +30,7 @@ services:
       retries: 5
   migrate:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-migrate:latest
+    !!merge <<: *host-access
     depends_on:
       database:
         condition: service_healthy
@@ -37,6 +43,7 @@ services:
     restart: "no"
   playground-migrate:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-playground-migrate:latest
+    !!merge <<: *host-access
     depends_on:
       database:
         condition: service_healthy
@@ -50,6 +57,7 @@ services:
     restart: "no"
   web:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-web:latest
+    !!merge <<: *host-access
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -77,6 +85,7 @@ services:
       - "3000:3000"
   mcp-server:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-mcp-server:latest
+    !!merge <<: *host-access
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -96,6 +105,7 @@ services:
     ports:
       - "3001:3001"
   keycloak:
+    !!merge <<: *host-access
     image: quay.io/keycloak/keycloak:26.4.1-0
     depends_on:
       database:
@@ -122,6 +132,7 @@ services:
       start_period: 60s
   playground:
     image: europe-west2-docker.pkg.dev/boltmcp-platform/boltmcp-alpha/boltmcp-platform-playground:latest
+    !!merge <<: *host-access
     depends_on:
       playground-migrate:
         condition: service_completed_successfully
@@ -144,6 +155,7 @@ services:
     ports:
       - "3002:3002"
   mcp-inspector:
+    !!merge <<: *host-access
     image: ghcr.io/modelcontextprotocol/inspector:0.17.2
     ports:
       - "6274:6274"
