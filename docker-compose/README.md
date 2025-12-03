@@ -185,7 +185,7 @@ Finally, you might choose to remove the line `127.0.0.1 host.docker.internal` fr
 
 ### Images fail to pull
 
-If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have succesfully [authenticated with docker](#authenticate-docker).
+If you get authentication errors when pulling images, ensure your GitHub account has been granted access by BoltMCP, and that you have successfully [authenticated with docker](#authenticate-docker).
 
 ### Port conflicts
 
