@@ -63,41 +63,7 @@ psql --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" \
     ALTER USER :"keycloak_user" SET search_path TO :"keycloak_schema";
 EOSQL
 
-
-#  What the GRANT PRIVILEGES statements mean:
-
-#   1. GRANT ALL PRIVILEGES ON SCHEMA [schema_name] TO [user]
-
-#   - Grants the user full control over the schema itself
-#   - Allows creating, altering, and dropping objects within the schema
-#   - Essential for schema ownership and management
-
-#   2. GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA [schema_name] TO [user]
-
-#   - Grants SELECT, INSERT, UPDATE, DELETE, and other table-level permissions
-#   - Applies to all existing tables in the schema at the time this command runs
-#   - Does NOT apply to tables created after this grant
-
-#   3. GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA [schema_name] TO [user]
-
-#   - Grants permissions on sequences (used for auto-incrementing IDs)
-#   - Allows the user to use NEXTVAL, CURRVAL, and SETVAL on sequences
-#   - Important for INSERT operations on tables with auto-increment columns
-
-#   4. ALTER DEFAULT PRIVILEGES IN SCHEMA [schema_name] GRANT ALL PRIVILEGES ON TABLES TO [user]
-
-#   - Sets default permissions for future tables created in this schema
-#   - Ensures any new tables automatically inherit these privileges
-#   - Critical for migrations and schema evolution
-
-#   5. ALTER DEFAULT PRIVILEGES IN SCHEMA [schema_name] GRANT ALL PRIVILEGES ON SEQUENCES TO [user]
-
-#   - Sets default permissions for future sequences created in this schema
-#   - Ensures any new sequences automatically inherit these privileges
-#   - Important for future auto-increment columns
-
-#   Schema Design Choices:
-
-#   - Platform & MCP Server: Use the public schema (PostgreSQL's default schema), so they share the same tables and can interact with the same data
-#   - Playground: Has its own dedicated schema (boltmcp_playground) to isolate its data, but can also select from the public schema
-#   - Keycloak: Has its own dedicated schema (boltmcp_keycloak) to isolate authentication data from application data
+#  Schema Design Choices:
+#    - Platform & MCP Server: Use the public schema (PostgreSQL's default schema), so they share the same tables and can interact with the same data
+#    - Playground: Has its own dedicated schema to isolate its data, but can also select from the public schema
+#    - Keycloak: Has its own dedicated schema to isolate authentication data from application data
