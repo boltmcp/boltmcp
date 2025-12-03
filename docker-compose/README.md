@@ -106,11 +106,11 @@ Finally, we'll give our admin user a placeholder email address and name:
 
 ```bash
 ./keycloak/update-user.sh admin \
-  --email "you@example.com" \
-  --firstName "You"
+  --firstName "Admin" \
+  --email "you@example.com"
 ```
 
-> Replace the values of `email` and `firstName` with your actual email address and name
+> Replace `you@example.com` with an email address you own
 
 ## Start the application
 
