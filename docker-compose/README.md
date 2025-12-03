@@ -1,6 +1,6 @@
-# Run BoltMCP locally with Docker Compose
+# Testing BoltMCP locally with Docker Compose
 
-This setup is only for local testing and not for production environments. Access is granted with a JSON credentials key.
+This setup is for local testing and not for production environments. Access is granted with a JSON credentials key.
 
 > **Warning**: Do not use this setup to deploy BoltMCP in a production setting.
 
@@ -8,8 +8,10 @@ This setup is only for local testing and not for production environments. Access
 
 - [Apply for access](https://boltmcp.io) to get alpha tester credentials
 - [Download and install Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/)
+- Ensure Docker Desktop is running
+- Ensure the following ports are available on your machine: `3000`, `3001`, `3002`, `6274`, `6277`, and `8080`
 
-Make sure Docker Desktop is open and running (or alternatively, have Docker Compose installed by other means).
+> Alternatively, on Linux you can use Docker Compose with the plain Docker Engine v20.10+ without needing Docker Desktop
 
 ## Installation
 
@@ -212,6 +214,7 @@ Visit [http://host.docker.internal:8080](http://host.docker.internal:8080) and s
   - Click **Configure a new mapper > Audience**
   - **Name**: `audience-config`
   - **Included Custom Audience**: `http://host.docker.internal:3001/my-server/mcp`
+  - Click **Save**
 - Click **Clients > boltmcp-mcp-client > Client scopes > Add client scope**
   - Check `mcp:my-server`
   - Click `Add > Optional`
