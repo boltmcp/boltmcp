@@ -64,8 +64,9 @@ if [ ! -f .env ]; then
     error_exit ".env file not found. Please create it from .env.example first."
 fi
 
-# Load environment variables
-source .env
+# Extract required environment variables safely (without executing .env file)
+KEYCLOAK_ADMIN_USERNAME=$(grep '^KEYCLOAK_ADMIN_USERNAME=' .env | cut -d'=' -f2- | tr -d '"' | tr -d "'")
+KEYCLOAK_ADMIN_PASSWORD=$(grep '^KEYCLOAK_ADMIN_PASSWORD=' .env | cut -d'=' -f2- | tr -d '"' | tr -d "'")
 
 # Check if required variables are set
 if [ -z "$KEYCLOAK_ADMIN_USERNAME" ] || [ -z "$KEYCLOAK_ADMIN_PASSWORD" ]; then
