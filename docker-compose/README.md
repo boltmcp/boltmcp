@@ -17,7 +17,6 @@ This setup is for local testing and not for production environments. Access is g
 - [Cleanup](#cleanup)
 - [Troubleshooting](#troubleshooting)
 - [Configuring Keycloak](#configuring-keycloak)
-- [OpenAI playground](#openai-playground)
 
 ## Prerequisites
 
