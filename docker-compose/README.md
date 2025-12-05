@@ -149,6 +149,12 @@ Then pull the latest configuration:
 git pull
 ```
 
+And pull the latest images:
+
+```bash
+docker compose pull
+```
+
 Check if you have any missing or redundant environment variables:
 
 ```bash
