@@ -4,6 +4,21 @@ This setup is for local testing and not for production environments. Access is g
 
 > **Warning**: Do not use this setup to deploy BoltMCP in a production setting.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  - [1. Set up your environment](#1-set-up-your-environment)
+  - [2. Download the application](#2-download-the-application)
+  - [3. Set up the identity provider](#3-set-up-the-identity-provider)
+- [Start the application](#start-the-application)
+- [Stop the application](#stop-the-application)
+- [Update to a newer version](#update-to-a-newer-version)
+- [Cleanup](#cleanup)
+- [Troubleshooting](#troubleshooting)
+- [Configuring Keycloak](#configuring-keycloak)
+- [OpenAI playground](#openai-playground)
+
 ## Prerequisites
 
 - [Apply for access](https://boltmcp.io) to get alpha tester credentials
