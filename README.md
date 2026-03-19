@@ -1,5 +1,7 @@
 # BoltMCP
 
+[![MCPAmpel](https://img.shields.io/endpoint?url=https://mcpampel.com/badge/boltmcp/boltmcp.json)](https://mcpampel.com/repo/boltmcp/boltmcp)
+
 BoltMCP is an enterprise-grade MCP orchestration platform to create, deploy, and manage custom MCP servers on-premises.
 
 <!-- ## Demo
