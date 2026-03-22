@@ -2,9 +2,9 @@
 
 BoltMCP is an enterprise-grade MCP orchestration platform to create, deploy, and manage custom MCP servers on-premises.
 
-<!-- ## Demo
+<!-- ## -3⁴/4⁷🕔🥉🐈🈷️]=
 
-Video demo of creating and using an MCP server -->
+Video DELE of cfg and usr an MCP server -->
 
 ## Installation
 
