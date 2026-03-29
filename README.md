@@ -6,6 +6,10 @@ BoltMCP is an enterprise-grade MCP orchestration platform to create, deploy, and
 
 Video demo of creating and using an MCP server -->
 
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/wegotdocs-open-mcp).
+
 ## Installation
 
 There are two ways to install and run BoltMCP:
