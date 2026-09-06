@@ -33,7 +33,7 @@ Run with `--dry-run=client` first to verify the rendered manifests and surface a
 </Callout>
 
 <Callout type="warn">
-The upgrade blocks on the post-upgrade hook jobs (database migration and seed). As with [installation](./deployment), `--timeout 15m` is required on EKS Auto Mode, where scheduling the hook pods can trigger a node scale-up that exceeds Helm's default 5m timeout. A timed-out upgrade leaves the release stuck in `pending-upgrade` (see below).
+The upgrade blocks on the hook jobs: `keycloak-reconcile` runs before anything rolls (pre-upgrade), then database migration and seed run post-upgrade. As with [installation](./deployment), `--timeout 15m` is required on EKS Auto Mode, where scheduling the hook pods can trigger a node scale-up that exceeds Helm's default 5m timeout. A timed-out upgrade leaves the release stuck in `pending-upgrade` (see below).
 </Callout>
 
 ## Verify the Upgrade
@@ -50,7 +50,7 @@ Watch pods until all show `Running` / `Completed`:
 kubectl get pods -n boltmcp -w
 ```
 
-The `boltmcp-migrate-core` and `boltmcp-seed` pods created by the post-upgrade hooks should show `Completed`. If a pod is not starting, check its logs and events:
+The `boltmcp-keycloak-reconcile` (pre-upgrade), `boltmcp-migrate-core` and `boltmcp-seed` (post-upgrade) hook pods should show `Completed`. The reconcile pod's log lists every Keycloak resource it created, updated or left unchanged. If a pod is not starting, check its logs and events:
 
 ```bash
 kubectl logs -n boltmcp <pod-name>

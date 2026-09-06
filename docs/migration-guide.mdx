@@ -20,6 +20,27 @@ export RELEASE=boltmcp
 export NAMESPACE=boltmcp
 ```
 
+## 0.5.x
+
+Before upgrading, rename the client secret for BoltMCP's Management REST API:
+
+```bash
+kubectl patch secret ${RELEASE}-oidc -n ${NAMESPACE} --type json -p '[
+  {"op": "move",
+   "from": "/data/rest-api-resource-server-client-secret",
+   "path": "/data/rest-api-to-keycloak-client-secret"}
+]'
+```
+
+Confirm the new key is present and non-empty before upgrading:
+
+```bash
+kubectl get secret ${RELEASE}-oidc -n ${NAMESPACE} \
+  -o go-template='{{range $k, $v := .data}}{{$k}}={{len $v}}{{"\n"}}{{end}}'
+```
+
+The client `boltmcp-rest-api` is now redundant, and you may optionally delete it from the Keycloak Admin Console.
+
 ## 0.4.x
 
 Two additional keys are now required in the [`boltmcp-auth`](./cluster-preparation#boltmcp-auth) Secret:
