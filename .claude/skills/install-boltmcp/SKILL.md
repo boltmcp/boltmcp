@@ -13,6 +13,12 @@ Here are the installed CLI tools, kubectl contexts, and `./keys` directory conte
 
 !`.claude/skills/install-boltmcp/scripts/get-workstation-info.sh`
 
+# Check for updates
+
+Before installing, updating or uninstalling BoltMCP, verify that this local repo is up-to-date with `main` at https://github.com/boltmcp/boltmcp
+
+If it isn't, prompt the user to git pull before starting a new chat session to do the install/update/uninstall.
+
 # Install BoltMCP
 
 ## Ask questions to gather context
