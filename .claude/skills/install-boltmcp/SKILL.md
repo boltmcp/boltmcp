@@ -9,9 +9,11 @@ metadata:
 
 # Workstation environment
 
-Here are the installed CLI tools, kubectl contexts, and `./keys` directory contents on this workstation:
+Here are the installed CLI tools, kubectl contexts, `./keys` directory contents and cloud credential status on this workstation:
 
 !`.claude/skills/install-boltmcp/scripts/get-workstation-info.sh`
+
+Under "Cloud credentials", only the provider being used for this install/upgrade/uninstall matters; ignore the others. If any credential you'll need shows `NOT VALID`, ask the user to run the suggested login command before you run any `terraform`, `kubectl` or `helm` commands, then re-run `./scripts/get-workstation-info.sh` to confirm. Terraform on GCP needs the application-default credentials; `kubectl`/`helm` on GKE need the regular `gcloud` login.
 
 # Check for updates
 
@@ -57,10 +59,7 @@ If you don't know their work email, ask them to type the domain. Recommend them 
 
 1. Check the `./keys` directory listing in the workstation info above for a JSON access key file. You don't have permission to read the file, just note its location. If no such file is present, prompt the user to put their BoltMCP access key file in `./keys` before continuing.
 2. Cross-reference the tool versions in the workstation info above against the prerequisites for the chosen install path (see below), and flag anything missing or out-of-range.
-3. If the user chose one of the big three providers, check that the appropriate CLI `gcloud` / `aws` / `az` is installed and also check that the user is logged in. **Do not run commands that print credentials** (e.g. `gcloud auth print-access-token`) — they leak tokens into the terminal output. Use identity-only probes instead:
-   - **gcloud:** `gcloud auth list --filter=status:ACTIVE --format='value(account)'` (prints the active account email, nothing else)
-   - **aws:** `aws sts get-caller-identity` (prints IAM identity, not credentials)
-   - **az:** `az account show --query user.name -o tsv` (prints username)
+3. If the user chose one of the big three providers, check their "Cloud credentials" status above (see "Workstation environment"). **Do not run commands that print credentials** (e.g. `gcloud auth print-access-token` without discarding its output) — they leak tokens into the terminal output.
 
    If they opted to create a new cluster but didn't specify a cloud provider, choose a default based on the available CLIs.
 
@@ -68,7 +67,7 @@ If you don't know their work email, ask them to type the domain. Recommend them 
 
 Choose the install path:
 
-- **New cluster on AWS or Google → Terraform.** Follow `docs/terraform-aws.mdx` (stack in `./terraform/aws`) or `docs/terraform-gcp.mdx` (stack in `./terraform/gcp`), including its Prerequisites and DNS sections. On Google, also ask for the GCP project ID to deploy into, and check Application Default Credentials exist with `test -f ~/.config/gcloud/application_default_credentials.json && echo ok` (don't read the file); if not, ask the user to run `gcloud auth application-default login` themselves. The stack enables every Google API it needs, so don't enable any yourself; run any pre-check `gcloud` commands with `--quiet` (otherwise gcloud hangs on an interactive "enable API?" prompt) and treat an API-not-enabled error as "nothing exists yet". If `terraform` isn't installed, ask the user's explicit permission before installing it, and offer them the option to install it themselves: https://developer.hashicorp.com/terraform/install
+- **New cluster on AWS or Google → Terraform.** Follow `docs/terraform-aws.mdx` (stack in `./terraform/aws`) or `docs/terraform-gcp.mdx` (stack in `./terraform/gcp`), including its Prerequisites and DNS sections. On Google, also ask for the GCP project ID to deploy into. The stack enables every Google API it needs, so don't enable any yourself; run any pre-check `gcloud` commands with `--quiet` (otherwise gcloud hangs on an interactive "enable API?" prompt) and treat an API-not-enabled error as "nothing exists yet". If `terraform` isn't installed, ask the user's explicit permission before installing it, and offer them the option to install it themselves: https://developer.hashicorp.com/terraform/install
 - **Anything else → manual.** Follow the pages in `docs/(manual)/meta.json` order. When creating a new cluster, always use the evaluation tier.
 
 Then follow `docs/vault-secret-store.mdx` and `docs/sign-in.mdx`. The end result should be a successful installation of BoltMCP on the user's cluster which they can successfully log in to.

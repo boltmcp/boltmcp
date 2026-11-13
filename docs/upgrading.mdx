@@ -7,6 +7,8 @@ Before upgrading, read the [Migration Guide](./migration-guide) to check for any
 
 ## Terraform installs
 
+Make sure Terraform can authenticate: on GCP run `gcloud auth application-default login`, on AWS run `aws login`.
+
 Pull the latest `boltmcp` repository, so the stack matches the new release:
 
 ```bash
@@ -27,7 +29,7 @@ To change chart values without a version bump, edit `helm_values` in `terraform.
 To deploy a new release, first set the target version and update the paths to your values file and access key file:
 
 ```bash
-export BOLTMCP_VERSION=0.6.1
+export BOLTMCP_VERSION=0.6.2
 export BOLTMCP_VALUES="$PWD/config/values-prod.yaml"
 export HELM_REGISTRY_CONFIG="$PWD/keys/boltmcp-key.json"
 ```
