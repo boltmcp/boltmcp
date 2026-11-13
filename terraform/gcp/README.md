@@ -58,7 +58,7 @@ The submodules are independent. On an existing GKE cluster (VPC-native, with Wor
 | `domain` | required | BoltMCP apex domain (`global.domain`), e.g. `boltmcp.example.com` |
 | `admin_email` | required | Email of the first BoltMCP admin user |
 | `dns_zone_name` | `null` | Cloud DNS managed zone (its name, not its DNS name) in the project that contains `domain`. When set, Terraform creates the A records |
-| `chart_version` | `0.5.29` | BoltMCP chart version |
+| `chart_version` | `0.6.1` | BoltMCP chart version |
 | `registry_key_path` | `../../keys/boltmcp-key.json` | BoltMCP access key |
 | `release_name` / `namespace` | `boltmcp` | Helm release name / namespace |
 | `helm_values` | `{}` | Extra chart values, deep-merged over the generated ones |
